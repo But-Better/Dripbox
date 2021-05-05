@@ -1,9 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+created with "rails new" on an Arch Linux System
 
 * Ruby version 
     - ruby 3.0.1p64
