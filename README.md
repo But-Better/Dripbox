@@ -31,3 +31,5 @@ created with "rails new" on an Arch Linux System
     - not yet defined
 
 * ...
+
+@kev : Ruby läuft
