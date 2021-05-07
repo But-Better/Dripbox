@@ -6,7 +6,7 @@ created with "rails new" on an Arch Linux System
     - ruby 3.0.1p64
 
 * System dependencies 
-    - fresh installation********
+    - fresh installation
     - sqlite3 - version : 3.27.2 2019-02-25 16:06:06
     - node - version :  v10.24.0
     - yarn - version : 1.22.10
@@ -31,3 +31,5 @@ created with "rails new" on an Arch Linux System
     - not yet defined
 
 * ...
+
+ich bin hackermen
