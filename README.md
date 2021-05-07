@@ -1,4 +1,4 @@
-# README1.0
+# README
 
 created with "rails new" on an Arch Linux System
 
@@ -31,5 +31,3 @@ created with "rails new" on an Arch Linux System
     - not yet defined
 
 * ...
-
-@kev : Ruby läuft
