@@ -3,6 +3,44 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.1'
 
+## HTML
+#Slim
+# https://github.com/slim-template/slim
+gem "slim-rails"
+
+## Style
+#Bootstrap
+# https://getbootstrap.com/
+gem "bootstrap", "~> 5.0.0"
+
+## Performence
+#bullet
+# https://github.com/flyerhzm/bullet
+gem 'bullet', group: 'development'
+
+#server timing
+# https://github.com/scoutapp/ruby_server_timing
+gem 'server_timing'
+
+##Security
+#Brakeman
+# https://brakemanscanner.org/docs/introduction/
+gem "brakeman"
+
+##Source code
+# Rubocop
+# https://github.com/rubocop/rubocop
+gem "rubocop", require: false
+
+#simplecov
+# https://github.com/simplecov-ruby/simplecov
+gem 'simplecov', require: false, group: :test
+
+# rouge one
+# https://github.com/rubocop/ruby-style-guide
+gem "rouge"
+
+## Default
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Use sqlite3 as the database for Active Record
