@@ -2,3 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "bootstrap";
+
+body{
+  margin-top: 150px;
+  margin-bottom: 50px;
+  background-color: #001f3f;
+}
+
+image{
+  background-color: white;
+}
+
+hr{
+  color:white;
+}
+
+h1{
+  margin-bottom: 50px;
+  padding: 5px 5px 5px 5px;
+  color: white;
+  font-size: 3.5em;
+  font-family: Arial;
+}
+input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.registieren{
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: white;
+}
+
+#PasswordValidationMessage{
+  padding: 5px 5px 5px 5px;
+  background-color: white;
+  color: #B00100;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+p{
+  color: white;
+}
