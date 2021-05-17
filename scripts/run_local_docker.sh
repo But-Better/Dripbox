@@ -1,20 +1,48 @@
 #!/bin/bash
-if ! command -v "docker" &> /dev/null
-then
-    echo "docker could not be found, install it first"
+
+function removeOldDocker() {
+  echo "> container already exists, rebuilding"
+  docker stop postgres > /dev/null
+  docker rm postgres > /dev/null
+}
+function createDocker() {
+  if [ "$( docker ps -a | grep -c postgres )" -gt 0 ]; then
+    removeOldDocker
+  fi
+    docker run -it -d -p 5432:5432 -v pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD="$password" --name postgres postgres:13.2-alpine > /dev/null
+    echo "> container running"
+}
+function installDockerIfNeeded() {
+    if ! command -v "docker" &> /dev/null
+    then
+      echo "> docker could not be found, installing it first"
+      ./setup_docker
     exit
-fi
-
-if [ "$( docker ps -a | grep -c postgres )" -gt 0 ]; then
-  echo "container already exists, starting"
-  docker start postgres
-
-else
-  echo "container does not exist, creating and starting"
+	fi
+}
+function readInPassword() {
+  echo "> give a password that you want to run on : "
+  read -r password
+}
+function readInPasswordIfNeeded() {
   if [ -z "$POSTGRESPROJECT_DATABASE_PASSWORD" ]
   then
-    echo "give a password that you want to run on -> "
-    read -r POSTGRESPROJECT_DATABASE_PASSWORD
+    readInPassword
+    printInfo=1
+  else
+    printInfo=0
   fi
-  docker run -it -d -p 5432:5432 -v pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD="$POSTGRESPROJECT_DATABASE_PASSWORD" --name postgres postgres:13.2-alpine
-fi
+}
+function printEnvInfo() {
+  if [ $printInfo -gt 0 ]; then
+    echo '> WARNING PASSWORD NOT IN ENVIRONMENT! '
+    echo '> add this to your enviroment: '
+	  echo "    -> export POSTGRESPROJECT_DATABASE_PASSWORD=\"${password}\""
+  fi
+  echo "> done"
+}
+
+installDockerIfNeeded
+readInPasswordIfNeeded
+createDocker
+printEnvInfo
