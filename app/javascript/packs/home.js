@@ -1,48 +1,71 @@
 //Check valid input from Password
 const password = document.getElementById("floatingPassword");
-const errorSmallLetters = "No small letters found";
-const errorBigLetters = "No big Letters found";
-const errorNoNumber = "No number found";
-const errorNoSpecialChar = "No special characters found";
-const errorMinLength = "Too small password"
-const minlength = 10;
+const message = document.getElementById("message");
 
-function callEvents() {
-    password.addEventListener('focusin', (event) => {
-        const value = scanInput(password.value);
-        console.log(value);
-        console.log(password.value)
-    })
-    password.addEventListener('focusout', (event) => {
-        const value = scanInput(password.value);
-        console.log(value);
-        console.log(password.value);
-    })
+const letter = document.getElementById("letter");
+const capital = document.getElementById("capital");
+const number = document.getElementById("number");
+const specialChar = document.getElementById("specialChar");
+const length = document.getElementById("length");
+const minLength = 10;
+
+//https://www.w3schools.com/howto/howto_js_password_validation.asp
+function validation() {
+    //Show validation property
+    password.onfocus = () => {
+        message.style.display = "block";
+    }
+
+    //make validation invisible
+    password.onblur = () => {
+        message.style.display = "none";
+    }
+
+    //check input
+    password.onkeyup = () => {
+        const lowerCase = /[a-z]/g;
+        const upperCase = /[A-Z]/g;
+        const numberCase = /[0-9]/g;
+        const specialCharacter = /[!@#$%^&*)(+=.<>{}\[\]:;'"|~`_\-]/g;
+
+        //LowerCase
+        if (password.value.match(lowerCase)) {
+            letter.style.display = "none";
+        } else {
+            letter.style.display = "block";
+        }
+
+        //upperCase
+        if(password.value.match(upperCase)){
+            capital.style.display = "none";
+        }else {
+            capital.style.display = "block";
+        }
+
+        //number
+        if(password.value.match(numberCase)){
+            number.style.display = "none";
+        }else {
+            number.style.display = "block";
+        }
+
+        //specialCharacter
+        if(password.value.match(specialCharacter)){
+            specialChar.style.display = "none";
+        }else {
+            specialChar.style.display = "block";
+        }
+
+        if(password.value.length >= minLength){
+            length.style.display = "none";
+        }else {
+            length.style.display = "block";
+        }
+    }
 }
 
-function scanInput(param) {
-
-    if(param.length < minlength){
-        return errorMinLength;
-    }
-
-    if (!param.match("^(?=.*[a-z])")) {
-        return errorSmallLetters;
-    }
-
-    if (!param.match("(?=.*[A-Z])(?=.*\d)")) {
-        return errorBigLetters;
-    }
-
-    if (!param.match("(?=.*[@$!%*?&])")) {
-        return errorNoSpecialChar;
-    }
-
-    if (!param.match("^(?=.*[0-9]+)")) {
-        return errorNoNumber;
-    }
-
-    return true;
+function main() {
+    validation();
 }
 
-callEvents();
+main();

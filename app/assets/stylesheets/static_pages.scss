@@ -9,12 +9,28 @@ body{
   background-color: #001f3f;
 }
 
-image{
-  background-color: white;
+image_tag{
+  border-radius: 30px;
 }
 
 hr{
   color:white;
+}
+.ShowPasswordCheckBox{
+  color: white;
+}
+
+#Switchlabel{
+  color: white;
+  float: left;
+}
+
+.mainImg{
+  border-radius: 30px;
+}
+
+#message{
+ display: none;
 }
 
 h1{
@@ -33,14 +49,6 @@ input{
   margin-top: 20px;
   font-size: 1.5em;
   color: white;
-}
-
-#PasswordValidationMessage{
-  padding: 5px 5px 5px 5px;
-  background-color: white;
-  color: #B00100;
-  margin-bottom: 20px;
-  margin-top: 20px;
 }
 
 p{

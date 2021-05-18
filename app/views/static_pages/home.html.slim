@@ -2,26 +2,46 @@ body.text-center
 .container
   main.form-signing
     h1 Dripbox but better
-    form[method="POST"]
-      img.mb-4 = image_tag "MainPage.PNG"
+    form[method="POST" action="/test" ]
+      .mb-4 = image_tag("MainPage.PNG", class: "mainImg")
       h1.h3.mb-3.fw-normal
         | Please sign in
       .form-floating
-        input#floatingInput.form-control[type="email" placeholder="name@example.com"]
+        input#floatingInput.form-control[type="email" placeholder="name@example.com" required]
         label[for="floatingInput"]
           | Email address
       .form-floating
-        input#floatingPassword.form-control[type="password" placeholder="Password"  ]
+        input#floatingPassword.form-control[type="password" placeholder="Password" required pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{10,}$" ]
         label[for="floatingPassword"]
           | Password
+      .form-check.form-switch
+        input#flexSwitchCheckDefault.form-check-input[type="checkbox"]
+        label.form-check-label[for="flexSwitchCheckDefault" id="Switchlabel" ]
+          | Show Password
       .container.col
-        label[id="PasswordValidationMessage" ]
-          | tests
+        #message
+          ul#letter[class="alert alert-danger" role="alert" ]
+            b
+              | A lowercase
+            |  letter
+          ul#capital[class="alert alert-danger" role="alert" ]
+            b
+              | A uppercase
+            |  letter
+          ul#number[class="alert alert-danger" role="alert" ]
+            b
+              |A number
+          ul#specialChar[class="alert alert-danger" role="alert" ]
+            b
+              |A SpecialChar
+          ul#length[class="alert alert-danger" role="alert" ]
+            b
+              | Minimum 10 characters
       button.w-100.btn.btn-lg.btn-primary[type="submit"]
         | Login
-      form[method="POST"]
-        button.registieren.btn.btn-link[type="submit"]
-          | Registieren
+    form[method="POST"]
+      button.registieren.btn.btn-link[type="submit"]
+        | Registieren
       p.mt-5.mb-3
         | © Dripbox
 
