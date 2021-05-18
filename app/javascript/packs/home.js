@@ -64,8 +64,21 @@ function validation() {
     }
 }
 
+function showPassword(){
+    const checkbox = document.getElementById("ShowSwitch");
+
+    checkbox.onclick = ()=>{
+        if(checkbox.checked){
+            password.type = "text";
+        }else {
+            password.type = "password";
+        }
+    }
+}
+
 function main() {
     validation();
+    showPassword();
 }
 
 main();
