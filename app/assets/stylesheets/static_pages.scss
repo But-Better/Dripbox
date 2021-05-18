@@ -3,14 +3,27 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "bootstrap";
 
-body{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-color: #001f3f;
+html{
+  height: 100%;
+  width: 100%;
 }
 
-image_tag{
-  border-radius: 30px;
+body{
+
+  //https://pixabay.com/de/photos/schreibtisch-computer-bildschirme-1245714/
+  background-image: url("desktop-1245714_1920.jpg");
+  opacity: 0.9;
+}
+
+main{
+  background-color: #001f3f;
+  padding: 20px 20px 20px 20px;
+  min-height: 100vh;
+}
+
+div .form-check{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 hr{
@@ -50,6 +63,7 @@ h1 b {
 input{
   margin-top: 10px;
   margin-bottom: 10px;
+  opacity: 1;
 }
 
 .registieren{
