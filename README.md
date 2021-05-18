@@ -7,19 +7,20 @@ created with "rails new" on an Arch Linux System
 
 * System dependencies 
     - fresh installation
-    - sqlite3 - version : 3.27.2 2019-02-25 16:06:06
+    - postgres - version : 13.2
     - node - version :  v10.24.0
     - yarn - version : 1.22.10
     - rails - version : Rails 6.1.3.1
 
 * Configuration
-    - not yet defined
+    - using Postgresql 
+        - (scripts found in "scripts/")
 
 * Database creation
-    - over "rails new" (no extra configuration)
+    - "rails new" (no extra initial configuration)
 
 * Database initialization
-    - not yet integrated
+    - Postgres
 
 * How to run the test suite
     - not yet integrated
