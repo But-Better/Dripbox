@@ -1,13 +1,14 @@
-meta[name="viewport" content="width=device-width, initial-scale=1"]
-body.text-center
+html[id="Home_Pic"]
+body[id="Home_Body" ]
 .container
-  main.form-signing
-    h1
+  main[id="Home_main" ]
+    .form-signing
+    h1.Home_h1
       b Dripbox
       |  but better
     form[method="POST" action="/test" ]
       .mb-4 = image_tag("MainPage.PNG", class: "mainImg")
-      h1.h3.mb-3.fw-normal
+      h2.Home_h2.mb-3.fw-normal
         | Please sign in
       .form-floating
         input#floatingInput.form-control[type="email" placeholder="name@example.com" required]
@@ -42,7 +43,7 @@ body.text-center
               | Minimum 10 characters
       button.w-100.btn.btn-lg.btn-primary[type="submit"]
         | Login
-    form[method="POST" action="/registration/index" ]
+    = form_tag(registrations_index_path, :method => "get") do
       button.registieren.btn.btn-link[type="submit"]
         | Registieren
       p.mt-5.mb-3
