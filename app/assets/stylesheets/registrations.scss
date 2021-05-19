@@ -1,0 +1,22 @@
+
+@media screen and (max-width: 1000px){
+  .Reg_AboutYou {
+    margin-bottom: 50px;
+    padding: 5px 5px 5px 5px;
+    font-size: xxx-large;
+    font-family: Arial;
+  }
+}
+
+@media screen and (min-width: 1001px){
+  .Reg_AboutYou {
+    margin-bottom: 50px;
+    padding: 5px 5px 5px 5px;
+    font-size: 9em;
+    font-family: Arial;
+  }
+}
+
+.Reg_Color{
+  color: #000;
+}

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/help'
-  get 'static_pages/home'
-  root 'static_pages#home'
+  get 'registrations/index'
+  get 'home_pages/index'
+  root 'home_pages#index'
 
 end

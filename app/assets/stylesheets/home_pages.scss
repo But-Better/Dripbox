@@ -1,22 +1,20 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
 @import "bootstrap";
 
 
-html {
+#Home_Pic {
   background-image: url("desktop-1245714_1920.jpg");
 }
 
-body {
+#Home_Body {
   //https://pixabay.com/de/photos/schreibtisch-computer-bildschirme-1245714/
   background-color: #001f3f;
   opacity: 0.9;
   height: 100%;
   width: 100%;
+  text-align: center;
 }
 
-main {
+#Home_main {
   padding: 20px 20px 20px 20px;
   min-height: 100vh;
 }
@@ -24,10 +22,6 @@ main {
 div .form-check {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-hr {
-  color: white;
 }
 
 .ShowPasswordCheckBox {
@@ -47,8 +41,13 @@ hr {
   display: none;
 }
 
-@media screen and (max-width: 600px){
-  h1 {
+.Home_h2{
+  color: white;
+  font-size: xx-large;
+}
+
+@media screen and (max-width: 1000px){
+  .Home_h1 {
     margin-bottom: 50px;
     padding: 5px 5px 5px 5px;
     color: white;
@@ -57,8 +56,8 @@ hr {
   }
 }
 
-@media screen and (min-width: 1200px){
-  h1 {
+@media screen and (min-width: 1001px){
+  .Home_h1 {
     margin-bottom: 50px;
     padding: 5px 5px 5px 5px;
     color: white;
@@ -67,7 +66,7 @@ hr {
   }
 }
 
-h1 b {
+.Home_h1 b {
   color: #001f3f;
   background-color: white;
   padding: 5px 5px 5px 5px;
