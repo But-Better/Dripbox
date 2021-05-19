@@ -46,7 +46,8 @@ body[id="Home_Body" ]
     = form_tag(registrations_index_path, :method => "get") do
       button.registieren.btn.btn-link[type="submit"]
         | Registieren
-      p.mt-5.mb-3
-        | © Dripbox
+      p[class="copyright"]
+        .mt-5.mb-3
+          | © Dripbox
 
   = javascript_pack_tag 'home'
