@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function stop_local_postgres_server_if_running() {
+    if [ "$(sudo systemctl list-unit-files | grep -c postgresql.service)" -gt 0 ]; then
+      sudo systemctl disable --now postgresql.service
+    fi
+}
 function removeOldDocker() {
   echo "> container already exists, rebuilding"
   docker stop postgres > /dev/null
@@ -42,6 +47,7 @@ function printEnvInfo() {
   echo "> done"
 }
 
+stop_local_postgres_server_if_running
 installDockerIfNeeded
 readInPasswordIfNeeded
 createDocker

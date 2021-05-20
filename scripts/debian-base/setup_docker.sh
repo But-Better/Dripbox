@@ -3,7 +3,7 @@
 echo "updating system"
 sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y
 echo "installing docker.io"
-sudo apt install docker.io
+sudo apt install docker.io postgres-full
 echo "setting up usermod"
 sudo usermod -aG docker $USER
 echo "done"
