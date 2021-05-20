@@ -1,43 +1,71 @@
+<html class="Reg_Html">
 <body class="Reg_Body">
-<main class="Reg_Main">
-  <div class="container Reg_container">
-    <div class="row">
-      <div class="col">
-        <b class="Reg_AboutYou">About You</b>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h3>
-          <b>Contact data:</b>
-        </h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <input type="email" class="form-control" placeholder="email@a.de" aria-label="Email" required>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <input type="password" class="form-control" placeholder="Password" aria-label="Password" required>
-          </div>
-          <div class="col">
-            <input type="password" class="form-control" placeholder="Again Password" aria-label="Again Password" required>
-          </div>
-        </div>
-      </div>
+<div class="container Reg_Marg">
+  <div class="row">
+    <div class="col">
     </div>
   </div>
+</div>
+<%= form_with url: home_pages_index_url, method: :push do |form| %>
+  <main class="Reg_Main Reg_container">
+    <div class="container">
+      <div class="row">
+        <div class="col Reg_AboutYou">
+          <b class="Reg_b_About">About</b>
+          <b class="Reg_b_You">You</b>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3>
+            <b>Contact data:</b>
+          </h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="email" class="form-control" placeholder="email@a.de" aria-label="Email" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="password" class="form-control" placeholder="Password" aria-label="Password" required>
+            </div>
+            <div class="col">
+              <input type="password" class="form-control" placeholder="Again Password" aria-label="Again Password" required>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="useragreement" value="option1" required>
+            <label class="form-check-label" for="useragreement">Nutzungsbedingungen</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="PrivacyPolicy" value="option1" required>
+            <label class="form-check-label" for="PrivacyPolicy">Datenschutzerklärung</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <%= form.submit "Registierung", class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+<% end %>
 </main>
 </body>
+</html>

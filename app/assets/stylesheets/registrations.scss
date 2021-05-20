@@ -1,10 +1,4 @@
 
-.Reg_Body {
-  background-color: #DCDCDC;
-  min-height: 100vh;
-  min-width: 100vw;
-}
-
 @media screen and (max-width: 1000px){
   .Reg_AboutYou {
     margin-bottom: 50px;
@@ -24,12 +18,18 @@
 }
 
 .Reg_container{
-  background-color: #F0FFF0;
-  box-shadow: 15px 15px 20px silver;
-  border-radius: 10px;
+  background-color: #001f3f;
+  box-shadow: 15px 15px 25px #001f3f;
   padding: 30px 30px 30px 30px;
+  color: white;
 }
 
-.Reg_Main{
-  margin-top: 50px;
+.Reg_b_About{
+  background-color: white;
+  color: #001f3f;
+  padding: 5px 5px 5px 5px;
+}
+
+.Reg_b_You{
+  margin-left: 10px;
 }
