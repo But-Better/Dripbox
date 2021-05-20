@@ -34,15 +34,18 @@
           </div>
           <div class="row">
             <div class="col">
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" required>
+            </div>
+            <div class="col">
               <input type="email" class="form-control" placeholder="email@a.de" aria-label="Email" required>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <input type="password" class="form-control" placeholder="Password" aria-label="Password" required>
+              <input type="password" class="form-control" placeholder="Password" aria-label="Password" id="passwordId" required>
             </div>
             <div class="col">
-              <input type="password" class="form-control" placeholder="Again Password" aria-label="Again Password" required>
+              <input type="password" class="form-control" placeholder="Again Password" aria-label="Again Password" id="passwordAgainId" required>
             </div>
           </div>
         </div>
@@ -59,6 +62,9 @@
           </div>
         </div>
       </div>
+      <div id="Reg_Red_Alert" class="alert alert-danger Reg_Red_Alert" role="alert">
+        A simple danger alert—check it out!
+      </div>
       <div class="row">
         <div class="col">
           <%= form.submit "Registierung", class: 'btn btn-primary' %>
@@ -68,4 +74,5 @@
 <% end %>
 </main>
 </body>
+<%= javascript_pack_tag "Registration"%>
 </html>
