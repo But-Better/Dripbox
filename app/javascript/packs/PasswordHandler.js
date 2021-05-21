@@ -1,4 +1,12 @@
-function showPassword(checkbox) {
+export const MIN_LENGTH = 10;
+
+
+/**
+ * Change type "password" to "text"
+ * @param checkbox = switch btn
+ * @param password = password input
+ */
+export function showPassword(checkbox, password) {
     checkbox.onclick = () => {
         if (checkbox.checked) {
             password.type = "text";
@@ -8,7 +16,19 @@ function showPassword(checkbox) {
     }
 }
 
-function validation(password, message, letter, capital, number, specialChar, length, minLength) {
+/**
+ * Check is password valid
+ *
+ * @param password = value of password
+ * @param message = container element
+ * @param letter = alert box
+ * @param capital = alert box
+ * @param number = alert box
+ * @param specialChar = alert box
+ * @param length = alert box
+ * @param minLength = password min length
+ */
+export function validation(password, message, letter, capital, number, specialChar, length, minLength) {
     //Show validation property
     password.onfocus = () => {
         message.style.display = "block";
@@ -50,6 +70,7 @@ function validation(password, message, letter, capital, number, specialChar, len
         //specialCharacter
         if (password.value.match(specialCharacter)) {
             specialChar.style.display = "none";
+            specialChar.innertext = ""
         } else {
             specialChar.style.display = "block";
         }

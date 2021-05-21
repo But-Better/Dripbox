@@ -62,17 +62,34 @@
           </div>
         </div>
       </div>
-      <div id="Reg_Red_Alert" class="alert alert-danger Reg_Red_Alert" role="alert">
-        A simple danger alert—check it out!
+      <div class="row" id="message">
+        <div id="Reg_Red_Alert" class="alert alert-danger Reg_Red_Alert" role="alert">
+          A simple danger alert—check it out!
+        </div>
+        <div id="Reg_Red_Alert_Letter" class="alert alert-danger Reg_Red_Alert" role="alert">
+          A simple danger alert—check it out!
+        </div>
+        <div id="Reg_Red_Alert_capital" class="alert alert-danger Reg_Red_Alert" role="alert">
+          A simple danger alert—check it out!
+        </div>
+        <div id="Reg_Red_Alert_number" class="alert alert-danger Reg_Red_Alert" role="alert">
+          A simple danger alert—check it out!
+        </div>
+        <div id="Reg_Red_Alert_specialChar" class="alert alert-danger Reg_Red_Alert" role="alert">
+          A simple danger alert—check it out!
+        </div>
+        <div id="Reg_Red_Alert_length" class="alert alert-danger Reg_Red_Alert" role="alert">
+          A simple danger alert—check it out!
+        </div>
       </div>
       <div class="row">
         <div class="col">
-          <%= form.submit "Registierung", class: 'btn btn-primary' %>
+          <%= form.submit "Registierung", id: "regBtn", class: 'btn btn-primary' %>
         </div>
       </div>
     </div>
 <% end %>
 </main>
 </body>
-<%= javascript_pack_tag "Registration"%>
+<%= javascript_pack_tag "Registration" %>
 </html>
