@@ -2,7 +2,7 @@ import {
     isEqual,
     isLengthCorrect,
     lowercaseRegex,
-    numberRegex,
+    numberRegex, showPassword,
     specialRegex,
     uppercaseRegex
 } from "./PasswordHandler";
@@ -55,7 +55,7 @@ function events() {
 function main() {
     events();
     showPasswordParameter();
-
+    showPassword(document.getElementById("Reg_ShowPassword"),password)
 }
 
 main();
