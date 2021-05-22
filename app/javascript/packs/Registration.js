@@ -1,5 +1,5 @@
 import {
-    isAComparableToB,
+    isEqual,
     isLengthCorrect,
     lowercaseRegex,
     numberRegex,
@@ -44,11 +44,11 @@ function events() {
         validationHandler("numberSVGPath", numberRegex(password.value));
         validationHandler("specialCharSVGPath", specialRegex(password.value));
         validationHandler("lengthSVGPath", isLengthCorrect(password.value));
-        validationHandler("equalSVGPath", isAComparableToB(password.value, passwordAgain.value));
+        validationHandler("equalSVGPath", isEqual(password.value, passwordAgain.value));
     });
 
     passwordAgain.addEventListener("keyup", () => {
-        validationHandler("equalSVGPath", isAComparableToB(password.value, passwordAgain.value));
+        validationHandler("equalSVGPath", isEqual(password.value, passwordAgain.value));
     });
 }
 

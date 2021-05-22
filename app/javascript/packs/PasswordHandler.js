@@ -60,9 +60,13 @@ export function specialRegex(value) {
  * Is value a equal b
  * @param a
  * @param b
- * @returns {boolean}
+ * @returns {boolean} is a or b length == 0 return false | else check is a and b equal
  */
-export function isAComparableToB(a, b){
+export function isEqual(a, b){
+    if(a.length === 0 || b.length === 0 ){
+        return false;
+    }
+
     return a === b;
 }
 
