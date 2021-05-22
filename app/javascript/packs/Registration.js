@@ -36,37 +36,20 @@ function validationHandler(id, value) {
     }
 }
 
-
 function events() {
 
     password.addEventListener("keyup", () => {
         validationHandler("lowercaseSVGPath", lowercaseRegex(password.value));
-    });
-
-    password.addEventListener("keyup", () => {
         validationHandler("uppercaseSVGPath", uppercaseRegex(password.value));
-    });
-
-    password.addEventListener("keyup", () => {
         validationHandler("numberSVGPath", numberRegex(password.value));
-    });
-
-    password.addEventListener("keyup", () => {
         validationHandler("specialCharSVGPath", specialRegex(password.value));
-    });
-
-    password.addEventListener("keyup", () => {
         validationHandler("lengthSVGPath", isLengthCorrect(password.value));
-    });
-
-    password.addEventListener("keyup", () => {
         validationHandler("equalSVGPath", isAComparableToB(password.value, passwordAgain.value));
     });
 
     passwordAgain.addEventListener("keyup", () => {
         validationHandler("equalSVGPath", isAComparableToB(password.value, passwordAgain.value));
     });
-
 }
 
 function main() {
