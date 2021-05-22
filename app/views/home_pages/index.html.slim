@@ -22,25 +22,6 @@ body[id="Home_Body"]
         input#ShowSwitch.form-check-input[type="checkbox"]
         label.form-check-label[for="ShowSwitch" id="Switchlabel" ]
           | Show Password
-      .container.col
-        #message
-          ul#letter[class="alert alert-danger" role="alert" ]
-            b
-              | A lowercase
-            |  letter
-          ul#capital[class="alert alert-danger" role="alert" ]
-            b
-              | A uppercase
-            |  letter
-          ul#number[class="alert alert-danger" role="alert" ]
-            b
-              |A number
-          ul#specialChar[class="alert alert-danger" role="alert" ]
-            b
-              |A SpecialChar
-          ul#length[class="alert alert-danger" role="alert" ]
-            b
-              | Minimum 10 characters
       button.w-100.btn.btn-lg.btn-primary[type="submit"]
         | Login
     = form_tag(registrations_index_path, :method => "get") do

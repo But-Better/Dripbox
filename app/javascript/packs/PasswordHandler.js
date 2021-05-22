@@ -17,68 +17,60 @@ export function showPassword(checkbox, password) {
 }
 
 /**
- * Check is password valid
- *
- * @param password = value of password
- * @param message = container element
- * @param letter = alert box
- * @param capital = alert box
- * @param number = alert box
- * @param specialChar = alert box
- * @param length = alert box
- * @param minLength = password min length
+ * Has value a lowercase
+ * @param value
+ * @returns {boolean}
  */
-export function validation(password, message, letter, capital, number, specialChar, length, minLength) {
-    //Show validation property
-    password.onfocus = () => {
-        message.style.display = "block";
-    }
+export function lowercaseRegex(value) {
+    const lowerCase = /[a-z]/g;
+    return !!value.match(lowerCase);
+}
 
-    //make validation invisible
-    password.onblur = () => {
-        message.style.display = "none";
-    }
+/**
+ * Has value a uppercase
+ * @param value
+ * @returns {boolean}
+ */
+export function uppercaseRegex(value) {
+    const lowerCase = /[A-Z]/g;
+    return !!value.match(lowerCase);
+}
 
-    //check input
-    password.onkeyup = () => {
-        const lowerCase = /[a-z]/g;
-        const upperCase = /[A-Z]/g;
-        const numberCase = /[0-9]/g;
-        const specialCharacter = /[!@#$%^&*)(+=.<>{}\[\]:;'"|~`_\-]/g;
+/**
+ * Has value a number
+ * @param value
+ * @returns {boolean}
+ */
+export function numberRegex(value) {
+    const numberCase = /[0-9]/g;
+    return !!value.match(numberCase);
+}
 
-        //LowerCase
-        if (password.value.match(lowerCase)) {
-            letter.style.display = "none";
-        } else {
-            letter.style.display = "block";
-        }
+/**
+ * Has value a special char
+ * @param value
+ * @returns {boolean}
+ */
+export function specialRegex(value) {
+    const specialCharacter = /[!@#$%^&*)(+=.<>{}\[\]:;'"|~`_\-]/g;
+    return !!value.match(specialCharacter);
+}
 
-        //upperCase
-        if (password.value.match(upperCase)) {
-            capital.style.display = "none";
-        } else {
-            capital.style.display = "block";
-        }
+/**
+ * Is value a equal b
+ * @param a
+ * @param b
+ * @returns {boolean}
+ */
+export function isAComparableToB(a, b){
+    return a === b;
+}
 
-        //number
-        if (password.value.match(numberCase)) {
-            number.style.display = "none";
-        } else {
-            number.style.display = "block";
-        }
-
-        //specialCharacter
-        if (password.value.match(specialCharacter)) {
-            specialChar.style.display = "none";
-            specialChar.innertext = ""
-        } else {
-            specialChar.style.display = "block";
-        }
-
-        if (password.value.length >= minLength) {
-            length.style.display = "none";
-        } else {
-            length.style.display = "block";
-        }
-    }
+/**
+ * Is length bigger than or equal MIN_LENGTH
+ * @param value
+ * @returns {boolean}
+ */
+export function isLengthCorrect(value){
+    return value.length >= MIN_LENGTH;
 }

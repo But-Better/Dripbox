@@ -37,3 +37,18 @@
 .Reg_Red_Alert{
   display: none;
 }
+
+.Reg_alerts{
+  display: none;
+}
+
+.Reg_alerts div{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+#lowercase #uppercase #number #specialChar #length{
+  padding: 10px 10px 10px 10px;
+  font-size: large;
+}

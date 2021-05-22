@@ -62,6 +62,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    angularjs-rails (1.8.0)
     ast (2.4.2)
     autoprefixer-rails (10.2.5.0)
       execjs (< 2.8.0)
@@ -252,6 +253,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  angularjs-rails
   bootsnap (>= 1.4.4)
   bootstrap (~> 5.0.0)
   brakeman
