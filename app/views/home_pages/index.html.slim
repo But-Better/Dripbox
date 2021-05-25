@@ -24,7 +24,7 @@ body[id="Home_Body"]
           | Show Password
       button.w-100.btn.btn-lg.btn-primary[type="submit"]
         | Login
-    = form_tag(registrations_index_path, :method => "get") do
+    = form_tag("/registrations", :method => "get") do
       button.registieren.btn.btn-link[type="submit"]
         | Registieren
       p[class="copyright"]
