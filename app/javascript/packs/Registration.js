@@ -48,6 +48,27 @@ function validationHandler(id, value) {
     }
 }
 
+function passwordEquals() {
+
+    let fun = () => {
+        const btn = document.getElementById("regBtn")
+        let result = isEqual(password.value, passwordAgain.value);
+        if (result) {
+            btn.removeAttribute("disabled");
+        } else {
+            btn.setAttribute("disabled", "true");
+        }
+    }
+
+    passwordAgain.addEventListener("keyup", () => {
+        fun();
+    })
+
+    password.addEventListener("keyup", () => {
+        fun();
+    })
+}
+
 function events() {
 
     password.addEventListener("keyup", () => {
@@ -66,7 +87,7 @@ function events() {
 
 function main() {
     events();
-    //showPasswordParameter();
+    passwordEquals()
     showPassword(document.getElementById("Reg_ShowPassword"), password)
 }
 
