@@ -4,4 +4,7 @@ class SiteInformationsController < ApplicationController
 
   def datenschutz
   end
+
+  def about
+  end
 end
