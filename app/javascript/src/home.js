@@ -22,11 +22,26 @@ function animationOfImage() {
 
 }
 
-function main() {
-    const showSwitch = document.getElementById("ShowSwitch");
+function moveImage() {
+    const id = document.getElementById("mainImgId");
+    const x = 0;
+    document.addEventListener("mousemove", (e) => {
+        id.setAttribute("transform", "translate3d(" + e.clientX + "," + e.clientY + "," + 0 + ")");
+        id.style.position = 'absolute';
+        id.style.left = e.clientX + "px";
+        id.style.top = e.clientY + "px";
+    });
+}
 
-    animationOfImage();
-    showPassword(showSwitch, password);
+function main() {
+    document.onreadystatechange = function (){
+        if(document.readyState === "complete") {
+            const showSwitch = document.getElementById("ShowSwitch");
+            animationOfImage();
+            showPassword(showSwitch, password);
+        }
+    }
+    //moveImage();
 }
 
 

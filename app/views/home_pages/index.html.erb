@@ -1,32 +1,40 @@
 <html id="Home_html">
 <body id="Home_Body">
-<main id="Home_main">
-  <div>
-    <h1 class="Home_h1">
-      <b>
-        Dripbox
-      </b>
-      but better
-    </h1>
-  </div>
-  <div>
-    <%= image_tag("MainPage.PNG", class: "mainImg mb-4", id: "mainImgId") %>
-  </div>
-  <div>
-    <h2>Please sign in</h2>
-  </div>
-  <div class="form-floating">
-    <%= form_with url: "/test", model: @user do |user| %>
-      <%= user.email_field :email, class: "form-control", id: "floatingInput", placeholder: "email address" %>
-      <%= user.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "password" %>
-      <%= user.submit %>
-    <% end %>
-  </div>
-  <div>
+<div class="container">
+  <main id="Home_main">
     <div>
-      <%= link_to "Registieren", registrations_index_url, :class => "btn btn-link" %>
+      <h1 class="Home_h1">
+        <b>
+          Dripbox
+        </b>
+        but better
+      </h1>
     </div>
-  </div>
-</main>
+    <div>
+      <%= image_tag("MainPage.PNG", class: "mainImg mb-4", id: "mainImgId") %>
+    </div>
+    <div>
+      <h2>Please sign in</h2>
+    </div>
+    <div class="form-floating">
+      <%= form_with url: "/test", model: @user do |user| %>
+        <%= user.email_field :email, class: "form-control", id: "floatingInput", placeholder: "email address" %>
+        <%= user.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "password" %>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" id="ShowSwitch" type="checkbox"><label class="form-check-label" for="ShowSwitch" id="Switchlabel">Show
+          Password</label>
+        </div>
+
+        <%= user.submit "login", class: "w-100 btn btn-lg btn-primary" %>
+      <% end %>
+    </div>
+    <div>
+      <div>
+        <%= link_to "Registieren", registrations_index_url, :class => "btn btn-link" %>
+      </div>
+    </div>
+  </main>
+</div>
 </body>
 </html>
