@@ -1,4 +1,5 @@
-<body class="container">
+<html id="Home_html">
+<body id="Home_Body">
 <main id="Home_main">
   <div>
     <h1 class="Home_h1">
@@ -9,15 +10,15 @@
     </h1>
   </div>
   <div>
-    <%= image_tag("MainPage.PNG", class: "mainImg", id: "mainImgId") %>
+    <%= image_tag("MainPage.PNG", class: "mainImg mb-4", id: "mainImgId") %>
   </div>
   <div>
     <h2>Please sign in</h2>
   </div>
-  <div>
+  <div class="form-floating">
     <%= form_with url: "/test", model: @user do |user| %>
-      <%= user.email_field :email %>
-      <%= user.password_field :password %>
+      <%= user.email_field :email, class: "form-control", id: "floatingInput", placeholder: "email address" %>
+      <%= user.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "password" %>
       <%= user.submit %>
     <% end %>
   </div>
@@ -28,3 +29,4 @@
   </div>
 </main>
 </body>
+</html>

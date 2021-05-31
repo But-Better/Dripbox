@@ -1,4 +1,4 @@
-const {showPassword} = require("../password/PasswordHandler");
+const {showPassword} = require("./PasswordHandler");
 
 const password = document.getElementById("floatingPassword");
 
