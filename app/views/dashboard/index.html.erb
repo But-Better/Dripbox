@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="dashboard.scss" rel="stylesheet">
+</header>
+
+<body>
+  <div class="container-fluid">
+    <div class="dashboard-container">
+      <div class="content">
+        <div id="heading">
+          <h1>Dashboard</h1>
+        </div>
+        <div id="recentUploadsSection">
+          <div id="searchBar">
+            <label>
+              <input type="text" placeholder="Search..">
+            </label>
+          </div>
+          <div id="heading2">
+            <h2>Recent Uploads:</h2>
+          </div>
+          <div id="recentUploadsList">
+            <% @files.each do |file| %>
+              <div id="ru_item">
+                <img id="img" src="<%= file.url %>" alt="">
+                <i id="name"><%= file.name.length > 12 ? file.name[0,12] + '...' : file.name %></i>
+                <i id="desc"><%= file.desc.length > 20 ? file.desc[0,20] + '...' : file.desc %></i>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div id="categorySection">
+          <div id="heading2">
+            <h2>Categories:</h2>
+          </div>
+          <div id="categoryList">
+            <div id="cat_item">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "bootstrap";
+
+:root {
+  --main-container-width: clamp(200px, 85%, 100%);
+  --hrz-list-height: clamp(50px, 80px, 100px);
+  --ver-list-width:  clamp(50px, 100px, 110px);
+  --ver-list-height: clamp(100px, 150px, 180px);
+  --list-padding: 15px;
+  --resc-prev-size: 100px;
+  --resc-prev-border: 3px;
+  --default-opacity: 0.84;
+  --section-padding: 20px;
+}
+
+body {
+  background-image: url("daylight-environment-forest-459225.jpg");
+  background-size: 180%;
+  background-blend-mode: darken;
+  background-position: center;
+}
+
+.dashboard-container {
+  opacity: var(--default-opacity);
+  color: white;
+
+  margin: auto;
+  height: 100vh;
+  background-color: var(--bs-blue);
+
+  width: var(--main-container-width);
+
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.content {
+  padding: var(--section-padding);
+}
+
+#recentUploadsSection {
+  padding-bottom: var(--section-padding);
+}
+
+#recentUploadsSection #heading2 {
+  padding-bottom: var(--section-padding);
+}
+
+#recentUploadsSection #searchBar {
+  position: relative;
+  float: right;
+  padding-right: 10px;
+}
+
+#recentUploadsList {
+  display: inline-flex;
+  flex-basis: var(--resc-prev-size);
+  grid-template-columns: 100px ;
+  padding: var(--section-padding);
+  place-items: center;
+  width: 100%;
+  height: var(--resc-prev-size)
+}
+
+#recentUploadsList #ru_item {
+  position: relative;
+  text-align: center;
+  color: white;
+
+  opacity: var(--default-opacity);
+  height: var(--resc-prev-size);
+  width: var(--resc-prev-size);
+  margin-right: var(--list-padding);
+}
+
+#recentUploadsList #name {
+  opacity: var(--default-opacity);
+  padding-right: 3px;
+  background-color: var(--bs-dark);
+  position: absolute;
+  top: var(--resc-prev-border);
+  left: var(--resc-prev-border);
+  font-size: medium;
+
+  // making sure that the centered name of the
+  // resource doesn't overlap with the image borders
+
+  // image_size - (2 * border_size_of_image)-->
+  width: calc(var(--resc-prev-size) - calc(var(--resc-prev-border) * 2));
+}
+
+#recentUploadsList #desc {
+  font-size: x-small;
+  text-anchor: end;
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  padding-right: calc(var(--resc-prev-border) + 1px);
+}
+
+#recentUploadsList #img {
+  height: var(--resc-prev-size);
+  width: var(--resc-prev-size);
+  background-color: #666666;
+  border-style: solid;
+  border-color: white;
+  border-width: var(--resc-prev-border);
+}
+
+#categoryList {
+  display: grid;
+  padding: var(--list-padding);
+  place-items: start;
+  width: var(--ver-list-width);
+  height: var(--ver-list-height);
+}
+
