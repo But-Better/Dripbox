@@ -10,10 +10,12 @@
   --full-screen: 100vh;
   --default-opacity: 0.83;
 
-  --main-container-width: clamp(200px, 85%, 100%);
+  --min-width: 300px;
+
+  --main-container-width: clamp(var(--min-width), 100%, 100%);
   --hrz-list-height: clamp(50px, 100px, 150px);
-  --ver-list-width:  clamp(50px, 200px, 200px);
-  --ver-list-height: clamp(100px, 250px, 500px);
+  --ver-list-width:  clamp(250px, 35%, 800px);
+  --ver-list-height: clamp(100px, 350px, 500px);
 
   --item-text-font-size: 12px;
   --list-item-margin: 10px;
@@ -43,9 +45,6 @@ body {
   background-color: var(--background-color);
 
   width: var(--main-container-width);
-
-  padding-top: 10px;
-  padding-bottom: 5px;
 }
 
 .content {
