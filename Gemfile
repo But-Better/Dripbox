@@ -8,32 +8,35 @@ ruby '3.0.1'
 # https://getbootstrap.com/
 gem "bootstrap", "~> 5.0.0"
 
-## Performence
+## Performance
 #bullet
 # https://github.com/flyerhzm/bullet
 gem 'bullet', group: 'development'
 
-#server timing
+# server timing
 # https://github.com/scoutapp/ruby_server_timing
 gem 'server_timing'
 
-##Security
+## Security
 #Brakeman
 # https://brakemanscanner.org/docs/introduction/
 gem "brakeman"
 
-##Source code
+## Source code
 # Rubocop
 # https://github.com/rubocop/rubocop
 gem "rubocop", require: false
 
-#simplecov
+# simplecov
 # https://github.com/simplecov-ruby/simplecov
 gem 'simplecov', require: false, group: :test
 
 # rouge one
 # https://github.com/rubocop/ruby-style-guide
 gem "rouge"
+
+# Rails 4+ Asset Pipeline on Heroku
+gem 'rails_12factor', group: :production
 
 ## Default
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
