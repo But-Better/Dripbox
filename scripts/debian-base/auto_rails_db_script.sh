@@ -8,6 +8,7 @@ fi
 
 echo "resetting db..."
 rails db:reset
+rails db:create
 echo "migrating schema..."
 rails db:migrate
 

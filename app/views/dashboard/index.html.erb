@@ -48,6 +48,7 @@
               <div id="categoryList">
               <% @categories.each do |cat| %>
                 <div id="cat_item">
+                  <img id="img" src="<%= cat.img_url %>" alt="">
                   <i id="title"><%= cat.title %></i>
                 </div>
               <% end %>

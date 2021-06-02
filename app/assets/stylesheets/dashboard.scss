@@ -14,14 +14,18 @@
 
   --main-container-width: clamp(var(--min-width), 100%, 100%);
   --hrz-list-height: clamp(50px, 100px, 150px);
-  --ver-list-width:  clamp(250px, 35%, 800px);
+  --ver-list-width:  clamp(250px, 450px, 800px);
   --ver-list-height: clamp(100px, 350px, 500px);
 
   --item-text-font-size: 12px;
   --list-item-margin: 10px;
 
   --resc-prev-size: 100px;
-  --resc-prev-border: 3px;
+  --list-item-border: 3px;
+
+  --cat-item-height: 55px;
+  // making sure the margin of the item itself and the border are correctly calculated
+  --cat-item-width: calc(var(--ver-list-width) - calc(var(--list-item-margin) * 2) - calc(var(--list-item-border) * 2));
 
   --section-padding: 15px;
   --hrz-list-padding: 0px 20px 0px 20px;
@@ -105,11 +109,11 @@ body {
   width: 100%;
   // height of horizontal list calculated by
   // item height + (upper margin of item * lower margin of item) + (upper border size * lower border size)
-  height: calc(var(--resc-prev-size) + calc(var(--list-item-margin) * 2) + calc(var(--resc-prev-border) * 2));
+  height: calc(var(--resc-prev-size) + calc(var(--list-item-margin) * 2) + calc(var(--list-item-border) * 2));
 
   border-style: solid;
   border-color: var(--bs-gray-dark);
-  border-width: var(--resc-prev-border);
+  border-width: var(--list-item-border);
 
   background-color: var(--bs-gray);
 }
@@ -122,7 +126,7 @@ body {
   opacity: var(--default-opacity);
   height: var(--resc-prev-size);
   width: var(--resc-prev-size);
-  margin: var(--list-item-margin);
+  margin-left: var(--list-item-margin);
 }
 
 #recentUploadsList #name {
@@ -130,15 +134,15 @@ body {
   padding-right: 3px;
   background-color: var(--bs-dark);
   position: absolute;
-  top: var(--resc-prev-border);
-  left: var(--resc-prev-border);
+  top: var(--list-item-border);
+  left: var(--list-item-border);
   font-size: var(--item-text-font-size);
 
   // making sure that the centered name of the
   // resource doesn't overlap with the image borders
 
   // image_size - (2 * border_size_of_image)-->
-  width: calc(var(--resc-prev-size) - calc(var(--resc-prev-border) * 2));
+  width: calc(var(--resc-prev-size) - calc(var(--list-item-border) * 2));
 }
 
 #recentUploadsList #desc {
@@ -147,16 +151,17 @@ body {
   position: absolute;
   bottom: 1px;
   right: 1px;
-  padding-right: calc(var(--resc-prev-border) + 1px);
+  padding-right: calc(var(--list-item-border) + 1px);
 }
 
 #recentUploadsList #img {
   height: var(--resc-prev-size);
   width: var(--resc-prev-size);
+
   background-color: #666666;
   border-style: solid;
   border-color: white;
-  border-width: var(--resc-prev-border);
+  border-width: var(--list-item-border);
 }
 
 #categoryAreal {
@@ -165,13 +170,50 @@ body {
 
   border-style: solid;
   border-color: var(--bs-gray-dark);
-  border-width: var(--resc-prev-border);
+  border-width: var(--list-item-border);
 
   background-color: var(--bs-gray);
 }
 
 #categoryList {
-  display: grid;
+  display: block;
   padding: var(--list-item-margin);
-  place-items: start;
+
+  position: absolute;
+
+}
+
+#categoryList #cat_item {
+  background-color: #666666;
+
+  position: relative;
+
+  text-align: center;
+  font-size: calc(var(--cat-item-height) - 25px);
+
+  border-style: solid;
+  border-color: white;
+  border-width: var(--list-item-border);
+
+  height: var(--cat-item-height);
+  width: var(--cat-item-width);
+
+  margin-bottom: var(--list-item-margin);
+}
+
+#categoryList #cat_item #title {
+  position: absolute;
+  left: var(--list-item-border);
+  width: calc(var(--cat-item-width) - calc(var(--list-item-border) * 2));
+}
+
+#categoryList #cat_item #img {
+  opacity: 0.5;
+  height: calc(var(--cat-item-height) - calc(var(--list-item-border) * 2));
+  width: calc(var(--cat-item-width) - calc(var(--list-item-border) * 2));
+  object-fit: cover;
+  object-position: center;
+
+  // need to overwrite because of bootstrap
+  vertical-align: 0;
 }
