@@ -13,31 +13,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto w-100 justify-content-end">
 
-        <li class="nav-item active">
-          <a class="nav-link" href="/dashboard">Dashboard<span class="sr-only">(current)</span></a><!-- //////////////////////link hier für Dashboard-->
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="/profil">Profil</a><!-- //////////////////////link hier für Profil-->
-        </li>
-
+        <!-- fällt eventuell weg, da Daten auf Dashboard seite -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="/data" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><!-- //////////////////////link hier für Daten-->
             Data
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Dokumente</a> <!-- Link für eigene Dokumentseite -->
+            <a class="dropdown-item" href="#">Bilder</a> <!-- Link für eigene Bilderseite -->
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">Für mich freigegeben</a> <!-- Link für Seite, die alle für mich freigegebenen Dateien  -->
           </div>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profil</a><!-- //////////////////////link hier für Profil-->
         </li>
 
       </ul>
+
+      <!-- Für mittleres feature -->
       <!--
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
