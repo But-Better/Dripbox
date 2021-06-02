@@ -14,8 +14,8 @@
 
   --main-container-width: clamp(var(--min-width), 100%, 100%);
   --hrz-list-height: clamp(50px, 100px, 150px);
-  --ver-list-width:  clamp(250px, 450px, 800px);
-  --ver-list-height: clamp(100px, 350px, 500px);
+  --ver-list-width:  clamp(250px, 400px, 800px);
+  --ver-list-height: clamp(100px, 400px, 500px);
 
   --item-text-font-size: 12px;
   --list-item-margin: 10px;
@@ -67,23 +67,30 @@ body {
   align-items: center;
 }
 
-#heading h1 {
-  width: min-content;
+#heading2 h2, #heading h1 {
+  width: fit-content;
 
   color: #001f3f;
   background-color: white;
   padding: 5px;
+}
 
+#heading h1 {
   font-size: xxx-large;
   font-weight: bolder;
 }
 
+#heading {
+  padding-bottom: var(--section-padding);
+}
+
 #heading2 {
+  font-size: inherit;
   padding-bottom: var(--section-padding);
 }
 
 #recentUploadsSection {
-  padding-bottom: var(--section-padding);
+  padding-bottom: calc(var(--section-padding) * 2);
 }
 
 #recentUploadsSection #searchBar {
