@@ -36,7 +36,7 @@ gem 'simplecov', require: false, group: :test
 gem "rouge"
 
 # Rails 4+ Asset Pipeline on Heroku
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 ## Default
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
