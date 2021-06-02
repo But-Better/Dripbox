@@ -25,9 +25,11 @@
   --hrz-list-padding: 0px 20px 0px 20px;
 }
 
+
 body {
   background-image: asset-url("daylight-environment-forest-459225.jpg");
-  background-size: 180%;
+  background-size: cover;
+
   background-blend-mode: darken;
   background-position: center;
   height: var(--full-screen);
