@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+FileResource.create(name: 'image',
+                    url: 'https://raw.githubusercontent.com/Ktechen/Dripbox/feature/MainPage/app/assets/images/desktop-1245714_1920.jpg',
+                    desc: 'test this stuff out',
+                    user_id: 0,
+                    upload: '31-05-2021')
+Category.create(title: 'Images', desc: 'files in this category are just images')
+FileResourceCategoryRelation.create(file_resource_id: 1, category_id: 1)

@@ -11,7 +11,7 @@
   --default-opacity: 0.83;
 
   --main-container-width: clamp(200px, 85%, 100%);
-  --hrz-list-height: clamp(200px, 250px, 300px);
+  --hrz-list-height: clamp(50px, 100px, 150px);
   --ver-list-width:  clamp(50px, 200px, 200px);
   --ver-list-height: clamp(100px, 250px, 500px);
 
@@ -30,6 +30,7 @@ body {
   background-size: 180%;
   background-blend-mode: darken;
   background-position: center;
+  height: var(--full-screen);
 }
 
 .dashboard-container {
@@ -37,7 +38,6 @@ body {
   color: white;
 
   margin: auto;
-  height: var(--full-screen);
   background-color: var(--background-color);
 
   width: var(--main-container-width);
