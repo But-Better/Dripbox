@@ -6,8 +6,8 @@ if ! [ "$(docker inspect -f {{.State.Running}} postgres)" == "true" ]; then
   ./run_local_docker
 fi
 
-echo "creating db..."
-rails db:create
+echo "resetting db..."
+rails db:reset
 echo "migrating schema..."
 rails db:migrate
 
