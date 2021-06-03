@@ -6,9 +6,10 @@ import {
     specialRegex,
     uppercaseRegex
 } from "./PasswordHandler";
+import async from "async";
 
-const password = document.getElementById("passwordId");
-const passwordAgain = document.getElementById("passwordAgainId")
+let password = document.getElementById("passwordId");
+let passwordAgain = document.getElementById("passwordAgainId");
 
 const plus = "M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z";
 const minus = "M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z";
@@ -58,6 +59,12 @@ function passwordEquals() {
 
 }
 
+function eventHandler(event) {
+    if (event.type === 'keyup') {
+
+    }
+}
+
 function events() {
 
     password.addEventListener("keyup", () => {
@@ -74,14 +81,19 @@ function events() {
     });
 }
 
-function main() {
-    document.onreadystatechange = function () {
-        if (document.readyState === "complete") {
-            events();
-            passwordEquals()
-            showPassword(document.getElementById("Reg_ShowPassword"), password)
-        }
-    }
+function init() {
+    password = document.getElementById("passwordId");
+    password.value = "";
+
+    passwordAgain = document.getElementById("passwordAgainId");
+    passwordAgain.value = "";
 }
 
-main();
+document.onreadystatechange = function () {
+    if (document.readyState === "complete") {
+        init();
+        events();
+        passwordEquals()
+        showPassword(document.getElementById("Reg_ShowPassword"), password)
+    }
+}

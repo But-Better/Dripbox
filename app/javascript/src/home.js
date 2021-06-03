@@ -1,6 +1,6 @@
 const {showPassword} = require("./PasswordHandler");
 
-const password = document.getElementById("floatingPassword");
+let password = document.getElementById("floatingPassword");
 
 function animationOfImage() {
     const image = document.getElementById("mainImgId");
@@ -33,16 +33,16 @@ function moveImage() {
     });
 }
 
-function main() {
-    document.onreadystatechange = function (){
-        if(document.readyState === "complete") {
-            const showSwitch = document.getElementById("ShowSwitch");
-            animationOfImage();
-            showPassword(showSwitch, password);
-        }
-    }
-    //moveImage();
+function init(){
+    password = document.getElementById("floatingPassword");
+    password.value = "";
 }
 
-
-main();
+document.onreadystatechange = function () {
+    if (document.readyState === "complete") {
+        init();
+        const showSwitch = document.getElementById("ShowSwitch");
+        animationOfImage();
+        showPassword(showSwitch, password);
+    }
+}
