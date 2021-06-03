@@ -6,7 +6,6 @@ import {
     specialRegex,
     uppercaseRegex
 } from "./PasswordHandler";
-import async from "async";
 
 let password = document.getElementById("passwordId");
 let passwordAgain = document.getElementById("passwordAgainId");
