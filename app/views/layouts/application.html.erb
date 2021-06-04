@@ -14,7 +14,9 @@
   </head>
 
   <body>
-    <%=render "layouts/_header" %>
+    <%unless current_page?('/')%><!-- Header soll nicht in Registration Log in auftauchen -> Links für die beiden Seiten hier noch einzufügen-->
+      <%=render "layouts/_header" %>
+    <%end%>
     <%= yield %>
     <%=render "layouts/_footer" %>
   </body>
