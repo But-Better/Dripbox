@@ -18,11 +18,12 @@
     </div>
     <div class="form-floating">
       <%= form_with model: @user do |form| %>
-        <%= form.email_field :email, class: "form-control", id: "floatingInput", placeholder: "email address" %>
-        <%= form.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "password" %>
+        <%= form.email_field :email, class: "form-control", id: "floatingInput", placeholder: "email address", required: true %>
+        <%= form.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "password", required: true %>
 
         <div class="form-check form-switch">
           <%= form.check_box "", id: "ShowSwitch", class: "form-check-input" %>
+
           <%= form.label "Show Password", for: "Switch", class: "form-check-label" %>
         </div>
 
