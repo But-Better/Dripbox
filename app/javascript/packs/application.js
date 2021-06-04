@@ -7,9 +7,6 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import "../src/Registration"
-import "../src/home"
-import "../src/PasswordHandler"
 
 Rails.start()
 Turbolinks.start()
