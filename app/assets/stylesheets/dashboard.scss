@@ -7,15 +7,19 @@
 :root {
   --background-color: none;
 
-  --full-screen: 100vh;
+  --full-vertical-height: 100vh;
+  --full-horizontal-width: 100vw;
+
+  --fluid-container-padding: var(--bs-gutter-x, 0.75rem);
+
   --default-opacity: 0.83;
 
   --min-width: 300px;
 
   --main-container-width: clamp(var(--min-width), 100%, 100%);
   --hrz-list-height: clamp(50px, 100px, 150px);
-  --ver-list-width:  clamp(250px, 400px, 800px);
-  --ver-list-height: clamp(100px, 400px, 500px);
+  --cat-list-width:  clamp(250px, 400px, 400px);
+  --cat-list-height: clamp(100px, 400px, 400px);
 
   --item-text-font-size: 12px;
   --list-item-margin: 10px;
@@ -25,10 +29,12 @@
 
   --cat-item-height: 55px;
   // making sure the margin of the item itself and the border are correctly calculated
-  --cat-item-width: calc(var(--ver-list-width) - calc(var(--list-item-margin) * 2) - calc(var(--list-item-border) * 2));
+  --cat-item-width: calc(var(--cat-list-width) - calc(var(--list-item-margin) * 2) - calc(var(--list-item-border) * 2));
 
   --section-padding: 15px;
   --hrz-list-padding: 0px 20px 0px 20px;
+
+  --cat-inf-padding: 15px;
 }
 
 
@@ -38,7 +44,7 @@ body {
 
   background-blend-mode: darken;
   background-position: center;
-  height: var(--full-screen);
+  height: var(--full-vertical-height);
 }
 
 .dashboard-container {
@@ -53,7 +59,7 @@ body {
 
 .content {
   padding: var(--section-padding);
-  height: var(--full-screen);
+  height: var(--full-vertical-height);
 }
 
 #nothing_found {
@@ -171,9 +177,13 @@ body {
   border-width: var(--list-item-border);
 }
 
-#categoryAreal {
-  width: var(--ver-list-width);
-  height: var(--ver-list-height);
+#categorySection {
+  float: left;
+}
+
+#categoryAreal, #informationField {
+  width: var(--cat-list-width);
+  height: var(--cat-list-height);
 
   border-style: solid;
   border-color: var(--bs-gray-dark);
@@ -223,4 +233,49 @@ body {
 
   // need to overwrite because of bootstrap
   vertical-align: 0;
+}
+
+#informationSection {
+  float: right;
+
+
+}
+
+#informationField {
+  padding-top: var(--section-padding);
+  padding-left: var(--section-padding);
+
+  display: block;
+  list-style-type: none;
+
+  height: var(--cat-list-height);
+
+  // calculate width of information field by taking the full width of the screen
+  // and subtracting all existent paddings and the width of the category field
+  // plus a custom padding between the category and the information field
+  width: calc(var(--full-horizontal-width) - calc(var(--cat-list-width) + calc(var(--fluid-container-padding) * 2) + var(--cat-inf-padding) + calc(var(--section-padding) * 2)));
+
+  overflow:hidden;
+  overflow-y: scroll;
+}
+
+#informationField p {
+  font-size: large;
+  text-decoration: underline;
+  opacity: 1;
+  margin-bottom: 0;
+}
+
+#informationField i {
+  margin-left: 6px;
+}
+
+#informationField img {
+  height: 80%;
+  width: 80%;
+  object-fit: cover;
+}
+
+#informationField a {
+  color: white;
 }

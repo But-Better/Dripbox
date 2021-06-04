@@ -1,0 +1,3 @@
+class FileResourceCategoryRelationsController < ApplicationController
+
+end
