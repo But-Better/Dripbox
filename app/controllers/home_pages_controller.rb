@@ -1,5 +1,5 @@
-class HomePagesController < ApplicationController
-  def index
+# frozen_string_literal: true
 
-  end
+class HomePagesController < ApplicationController
+  def index; end
 end

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   require 'uri'
-  #has_secure_password
+  # has_secure_password
 
-  #attr_accessible :username, :email, :password_digest, :password_digest_confirmation
+  # attr_accessible :username, :email, :password_digest, :password_digest_confirmation
 
   validates :username,
             uniqueness: true,
@@ -16,7 +18,7 @@ class User < ApplicationRecord
             allow_nil: false,
             format: { with: URI::MailTo::EMAIL_REGEXP }
 
-  #https://stackoverflow.com/questions/5123972/ruby-on-rails-password-validation/33632569
+  # https://stackoverflow.com/questions/5123972/ruby-on-rails-password-validation/33632569
   PASSWORD_FORMAT = /\A
   (?=.{8,})          # Must contain 8 or more characters
   (?=.*\d)           # Must contain a digit
