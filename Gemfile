@@ -3,11 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.1'
 
-## HTML
-#Slim
-# https://github.com/slim-template/slim
-gem "slim-rails"
-
 ## Style
 #Bootstrap
 # https://getbootstrap.com/
