@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get 'home_pages/index'
   root 'home_pages#index'
 
+  resource :users
+
 end

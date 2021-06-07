@@ -1,60 +1,29 @@
-<html class="Reg_Html">
-<body class="Reg_Body">
+
 <div class="container">
   <div class="row">
     <div class="col">
     </div>
   </div>
 </div>
-<%= form_with model: @user do |form| %>
-  <main class="Reg_Main Reg_container">
-    <div class="container">
-      <div class="row">
-        <div class="col Reg_AboutYou">
-          <b class="Reg_b_About">About</b>
-          <b class="Reg_b_You">You</b>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h3>
-            <b>Contact data:</b>
-          </h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <%= form.text_field :username, placeholder: "Username", class: "form-control", required: true %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <%= form.email_field :email, placeholder: "email", class: "form-control", required: true %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <%= form.password_field :password, placeholder: "password", class: "form-control", required: true %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <%= form.password_field :password_confirmed, placeholder: "password-confirmed", class: "form-control", required: true %>
-        </div>
-      </div>
-
-      <div class="form-check form-switch">
-        <input classg="form-check-input" type="checkbox" id="Reg_ShowPassword">
-        <label class="form-check-label" for="Reg_ShowPassword">Show Password</label>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <%= form.submit "Registierung", id: "regBtn", class: 'btn btn-primary' %>
-        </div>
+<main class="Reg_Main Reg_container">
+  <div class="container Reg_border">
+    <div class="row">
+      <div class="col Reg_AboutYou">
+        <b class="Reg_b_About">About</b>
+        <b class="Reg_b_You">You</b>
       </div>
     </div>
-<% end %>
+    <div class="row">
+      <div class="col">
+        <h3>
+          <b>Contact data:</b>
+        </h3>
+      </div>
+    </div>
+    <%= render "users/formRegistration" %>
+    <div class="form-check form-switch">
+      <input classg="form-check-input" type="checkbox" id="Reg_ShowPassword">
+      <label class="form-check-label" for="Reg_ShowPassword">Show Password</label>
+    </div>
+  </div>
 </main>
-</body>
-</html>

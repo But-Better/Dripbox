@@ -1,0 +1,34 @@
+<div class="container">
+  <%= form_with model: @user do |user| %>
+    <div class="row">
+      <div class="col">
+        <%= user.text_field :username, placeholder: "Username", class: "form-control", required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= user.email_field :email, placeholder: "email", class: "form-control", required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= user.password_field :password, placeholder: "password", class: "form-control", required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= user.password_field :password_confirmed, placeholder: "password-confirmed", class: "form-control", required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= @user.errors.full_messages.first if @user.errors.any? %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= user.submit "Registierung", id: "regBtn", class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>
