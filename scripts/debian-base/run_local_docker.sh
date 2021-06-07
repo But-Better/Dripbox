@@ -14,7 +14,7 @@ function createDocker() {
   if [ "$( docker ps -a | grep -c postgres )" -gt 0 ]; then
     removeOldDocker
   fi
-    docker run -it -d -p 5432:5432 -v pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD="$password" --name postgres postgres:13.2-alpine > /dev/null
+    docker run -it -d -p 5432:5432 -v pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD="$POSTGRESPROJECT_DATABASE_PASSWORD" --name postgres postgres:13.2-alpine > /dev/null
     echo "> container running"
 }
 function installDockerIfNeeded() {
@@ -27,7 +27,7 @@ function installDockerIfNeeded() {
 }
 function readInPassword() {
   echo "> give a password that you want to run on : "
-  read -r password
+  read -r POSTGRESPROJECT_DATABASE_PASSWORD
 }
 function readInPasswordIfNeeded() {
   if [ -z "$POSTGRESPROJECT_DATABASE_PASSWORD" ]
@@ -42,7 +42,7 @@ function printEnvInfo() {
   if [ $printInfo -gt 0 ]; then
     echo '> WARNING PASSWORD NOT IN ENVIRONMENT! '
     echo '> add this to your enviroment: '
-	  echo "    -> export POSTGRESPROJECT_DATABASE_PASSWORD=\"${password}\""
+	  echo "    -> export POSTGRESPROJECT_DATABASE_PASSWORD=\"${POSTGRESPROJECT_DATABASE_PASSWORD}\""
   fi
   echo "> done"
 }
