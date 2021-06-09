@@ -1,7 +1,6 @@
 const {showPassword} = require("./PasswordHandler");
 
 
-let gif = "/assets/home_page/hacking-hack.gif";
 let password = document.getElementById("floatingPassword");
 
 function animationOfImage() {
@@ -9,9 +8,10 @@ function animationOfImage() {
   const email = document.getElementById("floatingInput");
 
   const defaultSrc = image.src;
+  const gif = document.getElementById("hiddenGif");
 
   email.addEventListener("focusin", () => {
-    image.setAttribute("src", gif);
+    image.setAttribute("src", gif.src);
   })
 
   document.addEventListener("focusout", () => {
@@ -19,7 +19,7 @@ function animationOfImage() {
   })
 
   password.addEventListener("focusin", () => {
-    image.setAttribute("src", "https://c.tenor.com/pBrzvwLzbwoAAAAi/hacking-hack.gif");
+    image.setAttribute("src", gif.src);
   });
 
 }
