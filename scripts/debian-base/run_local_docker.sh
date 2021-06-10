@@ -14,7 +14,7 @@ function createDocker() {
   if [ "$( docker ps -a | grep -c postgres )" -gt 0 ]; then
     removeOldDocker
   fi
-    docker run -it -d -p 5432:5432 -v pgdata:/var/lib/postgresql/data -e POSTGRES_PASSWORD="$POSTGRESPROJECT_DATABASE_PASSWORD" --name postgres postgres:13.2-alpine > /dev/null
+    docker run -it -d -p 5432:5432 -v pgdata:/var/lib/postgres/data -e POSTGRES_PASSWORD="$POSTGRESPROJECT_DATABASE_PASSWORD" --name postgres postgres:13.2-alpine
     echo "> container running"
 }
 function installDockerIfNeeded() {
