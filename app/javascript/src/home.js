@@ -40,7 +40,7 @@ function init() {
   password.value = "";
 }
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   init();
   const showSwitch = document.getElementById("ShowSwitch");
   animationOfImage();
