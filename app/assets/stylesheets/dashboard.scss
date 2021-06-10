@@ -1,0 +1,281 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "bootstrap";
+
+:root {
+  --background-color: none;
+
+  --full-vertical-height: 100vh;
+  --full-horizontal-width: 100vw;
+
+  --fluid-container-padding: var(--bs-gutter-x, 0.75rem);
+
+  --default-opacity: 0.83;
+
+  --min-width: 300px;
+
+  --main-container-width: clamp(var(--min-width), 100%, 100%);
+  --hrz-list-height: clamp(50px, 100px, 150px);
+  --cat-list-width:  clamp(250px, 400px, 400px);
+  --cat-list-height: clamp(100px, 400px, 400px);
+
+  --item-text-font-size: 12px;
+  --list-item-margin: 10px;
+
+  --resc-prev-size: 100px;
+  --list-item-border: 3px;
+
+  --cat-item-height: 55px;
+  // making sure the margin of the item itself and the border are correctly calculated
+  --cat-item-width: calc(var(--cat-list-width) - calc(var(--list-item-margin) * 2) - calc(var(--list-item-border) * 2));
+
+  --section-padding: 15px;
+  --hrz-list-padding: 0px 20px 0px 20px;
+
+  --cat-inf-padding: 15px;
+}
+
+
+body {
+  background-image: asset-url("daylight-environment-forest-459225.jpg");
+  background-size: cover;
+
+  background-blend-mode: darken;
+  background-position: center;
+  height: var(--full-vertical-height);
+}
+
+.dashboard-container {
+  opacity: var(--default-opacity);
+  color: white;
+
+  margin: auto;
+  background-color: var(--background-color);
+
+  width: var(--main-container-width);
+}
+
+.content {
+  padding: var(--section-padding);
+  height: var(--full-vertical-height);
+}
+
+#nothing_found {
+  position: center;
+
+  color: #001f3f;
+  background-color: white;
+  padding: 5px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+#heading2 h2, #heading h1 {
+  width: fit-content;
+
+  color: #001f3f;
+  background-color: white;
+  padding: 5px;
+}
+
+#heading h1 {
+  font-size: xxx-large;
+  font-weight: bolder;
+}
+
+#heading {
+  padding-bottom: var(--section-padding);
+}
+
+#heading2 {
+  font-size: inherit;
+  padding-bottom: var(--section-padding);
+}
+
+#recentUploadsSection {
+  padding-bottom: calc(var(--section-padding) * 2);
+}
+
+#recentUploadsSection #searchBar {
+  position: relative;
+  float: right;
+  padding-right: 10px;
+}
+
+#recentUploadsList {
+  display: inline-flex;
+
+  // center items
+  // justify-content: center; // center on x
+  align-items: center; // center on y
+
+  flex-basis: var(--resc-prev-size);
+  grid-template-columns: 100px;
+
+  overflow:hidden;
+  overflow-x:scroll;
+
+  //padding: var(--hrz-list-padding);
+  width: 100%;
+  // height of horizontal list calculated by
+  // item height + (upper margin of item * lower margin of item) + (upper border size * lower border size)
+  height: calc(var(--resc-prev-size) + calc(var(--list-item-margin) * 2) + calc(var(--list-item-border) * 2));
+
+  border-style: solid;
+  border-color: var(--bs-gray-dark);
+  border-width: var(--list-item-border);
+
+  background-color: var(--bs-gray);
+}
+
+#recentUploadsList #ru_item {
+  position: relative;
+  text-align: center;
+  color: white;
+
+  opacity: var(--default-opacity);
+  height: var(--resc-prev-size);
+  width: var(--resc-prev-size);
+  margin-left: var(--list-item-margin);
+}
+
+#recentUploadsList #name {
+  opacity: var(--default-opacity);
+  padding-right: 3px;
+  background-color: var(--bs-dark);
+  position: absolute;
+  top: var(--list-item-border);
+  left: var(--list-item-border);
+  font-size: var(--item-text-font-size);
+
+  // making sure that the centered name of the
+  // resource doesn't overlap with the image borders
+
+  // image_size - (2 * border_size_of_image)-->
+  width: calc(var(--resc-prev-size) - calc(var(--list-item-border) * 2));
+}
+
+#recentUploadsList #desc {
+  font-size: x-small;
+  text-anchor: end;
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  padding-right: calc(var(--list-item-border) + 1px);
+}
+
+#recentUploadsList #img {
+  height: var(--resc-prev-size);
+  width: var(--resc-prev-size);
+
+  background-color: #666666;
+  border-style: solid;
+  border-color: white;
+  border-width: var(--list-item-border);
+}
+
+#categorySection {
+  float: left;
+}
+
+#categoryAreal, #informationField {
+  width: var(--cat-list-width);
+  height: var(--cat-list-height);
+
+  border-style: solid;
+  border-color: var(--bs-gray-dark);
+  border-width: var(--list-item-border);
+
+  background-color: var(--bs-gray);
+}
+
+#categoryList {
+  display: block;
+  padding: var(--list-item-margin);
+
+  position: absolute;
+
+}
+
+#categoryList #cat_item {
+  background-color: #666666;
+
+  position: relative;
+
+  text-align: center;
+  font-size: calc(var(--cat-item-height) - 25px);
+
+  border-style: solid;
+  border-color: white;
+  border-width: var(--list-item-border);
+
+  height: var(--cat-item-height);
+  width: var(--cat-item-width);
+
+  margin-bottom: var(--list-item-margin);
+}
+
+#categoryList #cat_item #title {
+  position: absolute;
+  left: var(--list-item-border);
+  width: calc(var(--cat-item-width) - calc(var(--list-item-border) * 2));
+}
+
+#categoryList #cat_item #img {
+  opacity: 0.5;
+  height: calc(var(--cat-item-height) - calc(var(--list-item-border) * 2));
+  width: calc(var(--cat-item-width) - calc(var(--list-item-border) * 2));
+  object-fit: cover;
+  object-position: center;
+
+  // need to overwrite because of bootstrap
+  vertical-align: 0;
+}
+
+#informationSection {
+  float: right;
+
+
+}
+
+#informationField {
+  padding-top: var(--section-padding);
+  padding-left: var(--section-padding);
+
+  display: block;
+  list-style-type: none;
+
+  height: var(--cat-list-height);
+
+  // calculate width of information field by taking the full width of the screen
+  // and subtracting all existent paddings and the width of the category field
+  // plus a custom padding between the category and the information field
+  width: calc(var(--full-horizontal-width) - calc(var(--cat-list-width) + calc(var(--fluid-container-padding) * 2) + var(--cat-inf-padding) + calc(var(--section-padding) * 2)));
+
+  overflow:hidden;
+  overflow-y: scroll;
+}
+
+#informationField p {
+  font-size: large;
+  text-decoration: underline;
+  opacity: 1;
+  margin-bottom: 0;
+}
+
+#informationField i {
+  margin-left: 6px;
+}
+
+#informationField img {
+  height: 80%;
+  width: 80%;
+  object-fit: cover;
+}
+
+#informationField a {
+  color: white;
+}

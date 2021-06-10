@@ -1,0 +1,2 @@
+class FileResource < ApplicationRecord
+end
