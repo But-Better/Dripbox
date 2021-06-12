@@ -1,0 +1,24 @@
+<div id="informationField">
+  <% if params.key?('id') %>
+    <p>Name</p>
+    <i><%= @called_file.name %></i>
+    <p>Preview</p>
+    <img src="<%= @called_file.url %>" alt="<broken link>"/>
+    <p>Direct Link</p>
+    <a href="<%= @called_file.url %>"><%= @called_file.url %></a>
+    <p>Categories</p>
+    <div id="relations">
+      <%   @called_file_cats.each do | relation |   %>
+        <i id="relation_id"><%= relation.title %></i>
+      <%  end  %>
+    </div>
+    <p>Uploaded</p>
+    <i><%= @called_file.created_at %></i>
+    <p>Uploaded by</p>
+    <i><%= @user_name %></i>
+    <p>Description</p>
+    <i><%= @called_file.desc %></i>
+  <% else %>
+    <p>Nothing selected</p>
+  <% end %>
+</div>
