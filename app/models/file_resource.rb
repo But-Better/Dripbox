@@ -1,2 +1,0 @@
-class FileResource < ApplicationRecord
-end

@@ -8,7 +8,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 FileResource.create(name: 'image',
-                    url: 'https://raw.githubusercontent.com/Ktechen/Dripbox/feature/MainPage/app/assets/images/desktop-1245714_1920.jpg',
                     desc: 'test this stuff out',
                     user_id: 0,
                     upload: '31-05-2021')
