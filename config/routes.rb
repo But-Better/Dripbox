@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'registrations/index'
   get 'home_pages/index'
   root 'home_pages#index'
-  
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:id', to: 'dashboard#index'
 
