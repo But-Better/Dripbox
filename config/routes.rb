@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'home_pages/index'
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:id', to: 'dashboard#index'
+  get '/resources', to: 'resources#index'
+
   root 'home_pages#index'
 
 
