@@ -1,0 +1,15 @@
+<div id="recentUploadsList">
+  <% if @files.empty? %>
+    <i id="nothing_found">no recent files found</i>
+  <%  else  %>
+    <%   @files.each do |file|   %>
+      <div id="ru_item">
+        <a href="<%=   file.id   %>">
+          <img id="img" src="<%=   file.url   %>" alt="">
+        </a>
+        <i id="name"><%=   file.name.length > 12 ? file.name[0,12] + '...' : file.name   %></i>
+        <i id="desc"><%=   file.desc.length > 20 ? file.desc[0,20] + '...' : file.desc   %></i>
+      </div>
+    <%  end  %>
+  <%  end %>
+</div>
