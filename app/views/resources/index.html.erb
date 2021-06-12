@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing</title>
+    <link href="dashboard.scss" rel="stylesheet"/>
+</head>
+<body>
+  <div class="content">
+      <% @resources.each do |res| %>
+      <%  res.to_array.each do |info| %>
+      <%=    info %>
+      <%  end %>
+      <% end %>
+  </div>
+</body>
+</html>
