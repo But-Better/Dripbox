@@ -1,5 +1,7 @@
 # README 
 
+## Dropbox-like Web-Service from the "but-better"-Group
+
 created with "rails new" on an Arch Linux System
 
 * Ruby version 
