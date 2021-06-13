@@ -1,6 +1,6 @@
 # README 
 
-## Dropbox-like Web-Service from the "but-better"-Group
+### Dropbox-like Web-Service from the "but-better"-Group
 
 created with "rails new" on an Arch Linux System
 
