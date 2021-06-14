@@ -19,9 +19,9 @@
   </head>
 
   <body>
-    <%unless current_page?('/registrations/index')%><!-- Header soll nicht in Registration Log in auftauchen -> Links für die beiden Seiten hier noch einzufügen-->
-      <%=render "layouts/_header" %>
-    <%end%>
+
+    <%= yield :header if !current_page?('/registrations/index')%>
+
     <%= yield %>
     <%=render "layouts/_footer" %>
   </body>
