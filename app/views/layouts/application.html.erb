@@ -20,7 +20,7 @@
 
   <body>
 
-    <%= yield :header if !current_page?('/registrations/index')%>
+    <%= yield :header if !current_page?(registration_path)%>
 
     <%= yield %>
     <%=render "layouts/_footer" %>
