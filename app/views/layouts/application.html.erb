@@ -20,10 +20,10 @@
 
   <body>
 
-    <%= yield :header if !current_page?(registration_path)%>
+    <%= yield :header if !current_page?(agb_path)%> <!-- needs to be changed to registration_path after merge -->
 
     <%= yield %>
-    <%=render "layouts/_footer" %>
+    <%=render 'layouts/footer' %>
   </body>
 
 </html>
