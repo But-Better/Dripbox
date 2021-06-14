@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   require 'uri'
-  # has_secure_password
+  has_secure_password
 
   validates :username,
             uniqueness: true,

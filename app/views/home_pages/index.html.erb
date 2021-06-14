@@ -21,7 +21,7 @@
         </div>
         <div class="form-floating">
           <%= form_with model: @user do |form| %>
-            <%= form.email_field :email, class: "form-control", id: "floatingInput", placeholder: "email address", required: true %>
+            <%= form.text_field :email, class: "form-control", id: "floatingInput", placeholder: "email address", required: true %>
             <%= form.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "password", required: true %>
             <div class="form-check form-switch">
               <%= form.check_box "", id: "ShowSwitch", class: "form-check-input" %>
@@ -32,7 +32,7 @@
         </div>
         <div>
           <div>
-            <%= link_to "Registieren", registrations_index_url, :class => "btn btn-link" %>
+            <%= link_to "Registieren", "/registrations/index", :class => "btn btn-link" %>
           </div>
         </div>
       </main>

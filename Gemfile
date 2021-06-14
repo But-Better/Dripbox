@@ -26,7 +26,6 @@ gem 'server_timing'
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
 
-
 ## Source code
 # Rubocop
 # https://github.com/rubocop/rubocop
@@ -39,6 +38,8 @@ gem 'simplecov', require: false, group: :test
 # rouge one
 # https://github.com/rubocop/ruby-style-guide
 gem 'rouge'
+
+gem 'bcrypt'
 
 # Rails 4+ Asset Pipeline on Heroku
 # gem 'rails_serve_static_assets', group: :production
