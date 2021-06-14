@@ -15,19 +15,19 @@
             Data
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Dokumente</a> <!-- Link für eigene Dokumentseite -->
-            <a class="dropdown-item" href="#">Bilder</a> <!-- Link für eigene Bilderseite -->
+            <%= link_to "Dokumente", "/dokumente_path", class: "dropdown-item"%><!-- Link für eigene Dokumentseite -->
+            <%= link_to "Bilder", "/biler_path", class: "dropdown-item"%><!-- Link für eigene Bilderseite -->
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Für mich freigegeben</a> <!-- Link für Seite, die alle für mich freigegebenen Dateien  -->
+            <%= link_to "Für mich freigegeben", "/freigegeben_path", class: "dropdown-item"%><!-- Link für Seite, die alle für mich freigegebenen Dateien  -->
           </div>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/dashboard">Dashboard</a>
+          <%= link_to "Dashboard", "/dashboard_path", class: "nav-link"%><!-- Link für Dashboard -->
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/profile">Profil</a>
+          <%= link_to "Profil", "/profile_path", class: "nav-link"%><!-- Link für Profil -->
         </li>
 
       </ul>
