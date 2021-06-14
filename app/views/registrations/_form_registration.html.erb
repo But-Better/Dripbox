@@ -29,5 +29,10 @@ new<div class="container">
         <%= user.submit "Registierung", id: "regBtn", class: 'btn btn-primary' %>
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <%= render "layouts/_error_messages" %>
+      </div>
+    </div>
   <% end %>
 </div>

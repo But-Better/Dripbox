@@ -15,3 +15,7 @@ FileResource.create(name: 'image',
                     upload: '31-05-2021')
 Category.create(title: 'Images', desc: 'files in this category are just images', img_url: 'https://github.com/Ktechen/Dripbox/raw/feature/dashboard/app/assets/images/category_background_images/Images/background.jpg')
 FileResourceCategoryRelation.create(file_resource_id: 1, category_id: 1)
+
+User.create(username: "Kevin",
+                   email: "test@email.de",
+                   password_digest: "1234")

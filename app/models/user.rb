@@ -4,6 +4,8 @@ class User < ApplicationRecord
   require 'uri'
   has_secure_password
 
+  before_save { self.email = email.downcase }
+
   validates :username,
             uniqueness: true,
             presence: true,
