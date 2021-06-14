@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'home_pages/index', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  get 'registrations/index', to: "user#new"
+
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:id', to: 'dashboard#index'
 
