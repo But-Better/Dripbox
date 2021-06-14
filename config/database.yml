@@ -13,6 +13,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   user: postgres
   password: <%= ENV['POSTGRESPROJECT_DATABASE_PASSWORD'] %>
+  
 
 development:
   <<: *default

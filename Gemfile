@@ -12,6 +12,7 @@ gem 'bootstrap', '~> 5.0.0'
 
 ## Performence
 # bullet
+
 # https://github.com/flyerhzm/bullet
 gem 'bullet', group: 'development'
 
@@ -19,12 +20,14 @@ gem 'bullet', group: 'development'
 # https://github.com/scoutapp/ruby_server_timing
 gem 'server_timing'
 
-# #Security
-# Brakeman
+## Security
+#Brakeman
+
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
 
-# #Source code
+
+## Source code
 # Rubocop
 # https://github.com/rubocop/rubocop
 gem 'rubocop', require: false
@@ -36,6 +39,9 @@ gem 'simplecov', require: false, group: :test
 # rouge one
 # https://github.com/rubocop/ruby-style-guide
 gem 'rouge'
+
+# Rails 4+ Asset Pipeline on Heroku
+# gem 'rails_serve_static_assets', group: :production
 
 ## Default
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -88,4 +94,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
