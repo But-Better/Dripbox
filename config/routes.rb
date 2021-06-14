@@ -1,16 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
-  get 'registrations/index'
-  get 'home_pages/index'
+  get 'registrations/index', to: 'users#new', as: 'signup'
+  get 'home_pages/index', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
   root 'home_pages#index'
-  
-  get '/dashboard', to: 'dashboard#index'
-  get '/dashboard/:id', to: 'dashboard#index'
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resource :users
+  resources :users
+  resources :sessions, only: %i[new create destroy]
 end
