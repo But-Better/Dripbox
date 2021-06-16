@@ -1,0 +1,41 @@
+<div id="Home_html">
+  <div id="Home_Body">
+    <div class="container">
+      <main id="Home_main">
+        <div>
+          <h1 class="Home_h1">
+            <b>
+              Dripbox
+            </b>
+            but better
+          </h1>
+        </div>
+        <div>
+          <%= image_tag("home_page/MainPage.PNG", class: "mainImg mb-4", id: "mainImgId") %>
+        </div>
+        <div>
+          <%= image_tag("home_page/hacking-hack.gif", id: "hiddenGif", style: "visibility: hidden;  display: none;") %>
+        </div>
+        <div>
+          <h2 class="colorWhite">Please sign in</h2>
+        </div>
+        <div class="form-floating">
+          <%= form_with url: login_path do |form| %>
+            <%= form.text_field :email, class: "form-control", id: "floatingInput", placeholder: "email address", required: true %>
+            <%= form.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "password", required: true %>
+            <div class="form-check form-switch">
+              <%= form.check_box "", id: "ShowSwitch", class: "form-check-input" %>
+              <%= form.label "Show Password", for: "Switch", class: "form-check-label colorWhite" %>
+            </div>
+            <%= form.submit "login", class: "w-100 btn btn-lg btn-primary" %>
+          <% end %>
+        </div>
+        <div>
+          <div>
+            <%= link_to "Registieren", new_user_url, :class => "btn btn-link" %>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

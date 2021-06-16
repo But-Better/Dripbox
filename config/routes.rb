@@ -2,9 +2,10 @@
 
 Rails.application.routes.draw do
   get 'registrations/index', to: 'users#new', as: 'signup'
-  get 'home_pages/index', to: 'sessions#new', as: 'login'
-  post 'home_pages/index', to: 'sessions#create', as: 'login'
-  delete 'logout', to: 'sessions#destroy', as: 'logout'
+
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
 
   get 'users', to: 'users#new'
 
@@ -20,6 +21,5 @@ Rails.application.routes.draw do
 
   root 'home_pages#index'
 
-  resources :users
-  resources :sessions, only: %i[new create destroy]
+  resources :users, only: %i[new create]
 end
