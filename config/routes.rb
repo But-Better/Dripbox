@@ -3,9 +3,11 @@
 Rails.application.routes.draw do
   get 'registrations/index', to: 'users#new', as: 'signup'
 
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   get 'users', to: 'users#new'
 
@@ -21,5 +23,9 @@ Rails.application.routes.draw do
 
   root 'home_pages#index'
 
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create] do
+    member do
+      get :confirm_email
+    end
+  end
 end

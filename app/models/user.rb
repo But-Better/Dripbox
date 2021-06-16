@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  before_create :confirmation_token
+
+  has_secure_password
   require 'uri'
 
   before_save { self.email = email.downcase }
@@ -26,10 +29,19 @@ class User < ApplicationRecord
   (?=.*[[:^alnum:]]) # Must contain a symbol
 /x
 
-  has_secure_password
   validates :password_digest,
             presence: true,
             allow_nil: false,
             format: { with: PASSWORD_FORMAT },
             confirmation: true
+
+  def confirmation_token
+    self.confirm_token = SecureRandom.urlsafe_base64.to_s if confirm_token.blank?
+  end
+
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(validate: false)
+  end
 end
