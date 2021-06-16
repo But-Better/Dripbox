@@ -3,7 +3,8 @@
 Rails.application.routes.draw do
   get 'registrations/index', to: 'users#new', as: 'signup'
   get 'home_pages/index', to: 'sessions#new', as: 'login'
-  get 'logout', to: 'sessions#destroy', as: 'logout'
+  post 'home_pages/index', to: 'sessions#create', as: 'login'
+  delete 'logout', to: 'sessions#destroy', as: 'logout'
 
   get 'users', to: 'users#new'
 
