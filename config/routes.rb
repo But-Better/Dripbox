@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'users', to: 'users#new'
 
-  get 'registrations/index', to: 'users#new'
+  get 'registrations/index'
 
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:id', to: 'dashboard#index'
