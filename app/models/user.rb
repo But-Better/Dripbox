@@ -2,7 +2,6 @@
 
 class User < ApplicationRecord
   require 'uri'
-  has_secure_password
 
   before_save { self.email = email.downcase }
 
@@ -27,10 +26,10 @@ class User < ApplicationRecord
   (?=.*[[:^alnum:]]) # Must contain a symbol
 /x
 
+  has_secure_password
   validates :password_digest,
             presence: true,
             allow_nil: false,
-            length: { minimum: 8, maximum: 256 },
             format: { with: PASSWORD_FORMAT },
             confirmation: true
 end
