@@ -9,9 +9,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get 'users', to: 'users#new'
-
-  get 'registrations/index'
+  get 'registrations/index', to: 'users#new'
 
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:id', to: 'dashboard#index'
