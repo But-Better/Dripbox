@@ -41,6 +41,8 @@ gem 'rouge'
 
 gem 'bcrypt'
 
+gem 'devise'
+
 # Rails 4+ Asset Pipeline on Heroku
 # gem 'rails_serve_static_assets', group: :production
 
