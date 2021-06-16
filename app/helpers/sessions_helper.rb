@@ -2,6 +2,7 @@
 
 module SessionsHelper
   def logged_in?
+    logger.info "logged_in? is:  #{!!session[:user_id]}"
     !!session[:user_id]
   end
 
@@ -11,5 +12,6 @@ module SessionsHelper
     else
       @current_user = nil
     end
+    logger.info "current_user #{@current_user}"
   end
 end
