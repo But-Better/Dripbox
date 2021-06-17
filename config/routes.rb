@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   root 'home_pages#index'
 
+  resources :password_resets
+
   resources :users, only: %i[new create] do
     member do
       get :confirm_email
