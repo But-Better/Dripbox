@@ -30,6 +30,11 @@
             <%= form.submit "login", class: "w-100 btn btn-lg btn-primary" %>
           <% end %>
         </div>
+        <div class="flashes">
+          <% if flash[:alert] %>
+            <div class="alert"><%= flash[:alert] %></div>
+          <% end %>
+        </div>
         <div>
           <div>
             <%= link_to "Registieren", new_user_url, :class => "btn btn-link" %>
