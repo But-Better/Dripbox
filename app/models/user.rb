@@ -27,7 +27,7 @@ class User < ApplicationRecord
   (?=.*[A-Z])        # Must contain an upper case character
 /x
 
-  has_secure_password(:password_digest)
+  has_secure_password
 
   validates :password_digest,
             presence: true,
