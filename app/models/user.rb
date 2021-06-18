@@ -31,7 +31,7 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :password_digest,
+  validates :password,
             presence: true,
             allow_nil: false,
             format: { with: PASSWORD_FORMAT },
