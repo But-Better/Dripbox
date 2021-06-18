@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'Erfolgreich angemeldet!'
     else
-      render :new
+      render root_path
     end
   end
 
