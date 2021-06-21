@@ -6,8 +6,11 @@ class User < ApplicationRecord
   before_create :confirmation_token
 
   require 'uri'
+  validates_uniqueness_of :email
 
-  before_save { self.email = email.downcase }
+  before_save do
+    self.email = email.downcase
+  end
 
   validates :username,
             uniqueness: true,
@@ -15,7 +18,7 @@ class User < ApplicationRecord
             length: { minimum: 2, maximum: 20 }
 
   validates :email,
-            uniqueness: true,
+            uniqueness: { case_sensitive: false },
             presence: true,
             format: { with: URI::MailTo::EMAIL_REGEXP }
 
@@ -55,5 +58,9 @@ class User < ApplicationRecord
       self[column] = SecureRandom.urlsafe_base64
       break unless User.exists?(column => self[column])
     end
+  end
+
+  def find_by_email(i)
+    # code here
   end
 end

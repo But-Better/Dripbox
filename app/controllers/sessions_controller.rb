@@ -5,12 +5,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email].downcase)
-    if user&.authenticate(params[:password])
+    auth_result = user&.authenticate(params[:password])
+    if auth_result
       if user.email_confirmed
         session[:user_id] = user.id
         redirect_to dashboard_path
       else
-        render :new
+        render "user_mailer/confirm_your_email"
       end
     else
       flash[:alert] = 'Email or password was invalid'
