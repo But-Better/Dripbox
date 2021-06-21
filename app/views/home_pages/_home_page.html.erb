@@ -30,9 +30,12 @@
             <%= form.submit "login", class: "w-100 btn btn-lg btn-primary" %>
           <% end %>
         </div>
-        <div class="flashes">
+        <div>
           <% if flash[:alert] %>
-            <div class="alert"><%= flash[:alert] %></div>
+            <div class="flashes">
+              <div class="alert"><%= flash[:alert] %></div>
+            </div>
+            <%= image_tag("home_page/crewmate_amongus-256px-5.gif") %>
           <% end %>
         </div>
         <div>

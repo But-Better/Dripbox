@@ -10,11 +10,11 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to dashboard_path
       else
-        render 'user_mailer/Index'
+        render :new
       end
     else
       flash[:alert] = 'Email or password was invalid'
-      redirect_to root_url
+      render :new
     end
 
   end
