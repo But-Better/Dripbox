@@ -12,13 +12,11 @@ class User < ApplicationRecord
   validates :username,
             uniqueness: true,
             presence: true,
-            length: { minimum: 2, maximum: 20 },
-            allow_nil: false
+            length: { minimum: 2, maximum: 20 }
 
   validates :email,
             uniqueness: true,
             presence: true,
-            allow_nil: false,
             format: { with: URI::MailTo::EMAIL_REGEXP }
 
   # https://stackoverflow.com/questions/5123972/ruby-on-rails-password-validation/33632569
@@ -29,11 +27,8 @@ class User < ApplicationRecord
   (?=.*[A-Z])        # Must contain an upper case character
 /x
 
-  has_secure_password
-
   validates :password,
             presence: true,
-            allow_nil: false,
             format: { with: PASSWORD_FORMAT },
             confirmation: true
 

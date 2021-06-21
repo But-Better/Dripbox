@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'Erfolgreich angemeldet!'
     else
-      redirect_to root_path
+      render :new
     end
   end
 
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password_digest)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 
 end

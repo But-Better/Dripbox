@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'registrations/index', to: 'users#new', as: 'signup'
-
   get '/logout', to: 'sessions#destroy'
 
   get '/login', to: 'sessions#new'
