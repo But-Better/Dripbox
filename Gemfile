@@ -26,6 +26,12 @@ gem 'server_timing'
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
 
+# dotenv rails gem
+gem 'dotenv-rails'
+
+# dropzonejs-rails
+# https://github.com/ncuesta/dropzonejs-rails
+gem 'dropzonejs-rails'
 
 ## Source code
 # Rubocop

@@ -2,12 +2,14 @@
 
 one:
   name: MyString
-  user_id: 
-  uploaded_on: 2021-06-12
   desc: MyText
+  user: one
+  category: 
+  file: 
 
 two:
   name: MyString
-  user_id: 
-  uploaded_on: 2021-06-12
   desc: MyText
+  user: two
+  category: 
+  file: 

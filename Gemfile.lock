@@ -99,6 +99,12 @@ GEM
     connection_pool (2.2.5)
     crass (1.0.6)
     docile (1.4.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
+    dropzonejs-rails (0.8.5)
+      rails (> 3.1)
     erubi (1.10.0)
     execjs (2.7.0)
     faraday (1.4.3)
@@ -279,6 +285,8 @@ DEPENDENCIES
   bullet
   byebug
   capybara (>= 3.26)
+  dotenv-rails
+  dropzonejs-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.2, >= 1.2.3)
