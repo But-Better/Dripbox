@@ -7,7 +7,7 @@ class PasswordResetsController < ApplicationController
     user = User.find_by_email(params[:email].downcase)
 
     if user
-      user&.send_password_reset
+      user.send_password_reset
       flash[:notice] = 'E-mail sent with password reset instructions.'
     else
       flash[:notice] = 'E-mail not found'

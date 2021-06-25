@@ -11,13 +11,12 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to dashboard_path
       else
-        render "user_mailer/confirm_your_email"
+        render 'user_mailer/confirm_your_email'
       end
     else
       flash[:alert] = 'Email or password was invalid'
       render :new
     end
-
   end
 
   def destroy
