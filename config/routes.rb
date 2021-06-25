@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   get '/datenschutz', to: 'site_informations#datenschutz'
   get '/uber',        to: 'site_informations#about'
   get '/ueber',       to: 'site_informations#about'
+
   get 'registrations/index'
   get 'home_pages/index'
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:id', to: 'dashboard#index'
   get '/resources', to: 'resources#index'
+  get 'create_resource/index', to: 'create_resource#index'
 
   root 'home_pages#index'
 

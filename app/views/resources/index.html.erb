@@ -1,17 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Testing</title>
-    <link href="dashboard.scss" rel="stylesheet"/>
-</head>
-<body>
-  <div class="content">
-      <% @resources.each do |res| %>
-      <%  res.to_array.each do |info| %>
-      <%=    info %>
-      <%  end %>
-      <% end %>
-  </div>
-</body>
-</html>
+<p id="notice"><%= notice %></p>
+
+<h1>Resources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th>User</th>
+      <th>Category</th>
+      <th>File</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @resources.each do |resource| %>
+      <tr>
+        <td><%= resource.name %></td>
+        <td><%= resource.desc %></td>
+        <td><%= resource.user_id %></td>
+        <td><%= resource.category %></td>
+        <td><%= resource.file %></td>
+        <td><%= link_to 'Show', resource %></td>
+        <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
+        <td><%= link_to 'Destroy', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Resource', new_resource_path %>
