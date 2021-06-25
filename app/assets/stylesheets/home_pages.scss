@@ -1,0 +1,87 @@
+@import "bootstrap";
+
+#Home_html {
+  background-image: asset-url("home_page/BackgroundImage.jpg");
+}
+
+#Home_Body {
+  //https://pixabay.com/de/photos/schreibtisch-computer-bildschirme-1245714/
+  background-color: #001f3f;
+  opacity: 0.9;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+#Home_main {
+  padding: 20px 20px 20px 20px;
+  min-height: 100vh;
+}
+
+div .form-check {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.ShowPasswordCheckBox {
+  color: white;
+}
+
+#Switchlabel {
+  color: white;
+  float: left;
+}
+
+.mainImg {
+  border-radius: 30px;
+}
+
+#message {
+  display: none;
+}
+
+.Home_h2{
+  color: white;
+  font-size: xx-large;
+}
+
+@media screen and (max-width: 1000px){
+  .Home_h1 {
+    margin-bottom: 50px;
+    padding: 5px 5px 5px 5px;
+    color: white;
+    font-size: xxx-large;
+    font-family: Arial;
+  }
+}
+
+@media screen and (min-width: 1001px){
+  .Home_h1 {
+    margin-bottom: 50px;
+    padding: 5px 5px 5px 5px;
+    color: white;
+    font-size: 9em;
+    font-family: Arial;
+  }
+}
+
+.Home_h1 b {
+  color: #001f3f;
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.registieren {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.colorWhite {
+  color: white;
+}

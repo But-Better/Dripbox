@@ -1,4 +1,7 @@
-# README 
+# Dripbox
+
+Dropbox-like Web-Service 
+by the "but-better"-Group
 
 created with "rails new" on an Arch Linux System
 
@@ -7,20 +10,19 @@ created with "rails new" on an Arch Linux System
 
 * System dependencies 
     - fresh installation
-    - postgres - version : 13.2
+    - sqlite3 - version : 3.27.2 2019-02-25 16:06:06
     - node - version :  v10.24.0
     - yarn - version : 1.22.10
     - rails - version : Rails 6.1.3.1
 
 * Configuration
-    - using Postgresql 
-        - (scripts found in "scripts/")
+    - not yet defined
 
 * Database creation
-    - "rails new" (no extra initial configuration)
+    - over "rails new" (no extra configuration)
 
 * Database initialization
-    - Postgres
+    - not yet integrated
 
 * How to run the test suite
     - not yet integrated
