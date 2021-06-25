@@ -1,0 +1,45 @@
+// Place all the styles related to the siteInformations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap";
+
+@media screen and(min-width: 1000px){
+    .center{
+      float: right;
+    }
+}
+
+.center{
+  text-align: center;
+}
+
+.textcolorred{
+  color:red;
+}
+
+.backroundcolorAbout{
+  background-color: aquamarine;
+}
+
+.backgroundImageAGB{
+  background-image: image_url("background_plant.jpg");
+}
+
+.lateinFormat{
+  text-align: justify;
+  width: 500px;
+}
+
+.lostImageFormat{
+  width: 500px;
+  height: 300px;
+}
+
+.headerPic{
+  height: 100px;
+  width:100px;
+}
+
+.headTextSize{
+  font-size: xxx-large;
+}
