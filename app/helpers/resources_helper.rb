@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ResourcesHelper
   def any_error
     if @user.errors.any?
