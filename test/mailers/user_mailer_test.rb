@@ -2,11 +2,11 @@
 
 require 'test_helper'
 class UserMailerTest < ActionMailer::TestCase
-
   test 'test_confirm_mail' do
     password = 'Admin123'
     username = '10Head'
-    user = User.create(username: username, email: 'MailerMeister@5head.de', password: password, password_confirmation: password)
+    user = User.create(username: username, email: 'MailerMeister@5head.de', password: password,
+                       password_confirmation: password)
 
     # Send the email, then test that it got queued
     email = UserMailer.registration_confirmation(user).deliver
@@ -23,9 +23,9 @@ class UserMailerTest < ActionMailer::TestCase
   test 'Wrong (Password) Registration confirm mail' do
     password = 'admin123'
     username = '10Head'
-    user = User.create(username: username, email: 'MailerMeister@5head.de', password: password, password_confirmation: password)
+    user = User.create(username: username, email: 'MailerMeister@5head.de', password: password,
+                       password_confirmation: password)
 
     assert_not !ActionMailer::Base.deliveries.empty?
   end
-
 end
