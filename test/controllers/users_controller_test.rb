@@ -64,5 +64,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     user = User.create(username: username, email: email, password: password, password_confirmation: "#{password}123")
     assert_not user.valid?
   end
-
 end

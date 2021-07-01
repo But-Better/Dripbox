@@ -60,5 +60,4 @@ class User < ApplicationRecord
       break unless User.exists?(column => self[column])
     end
   end
-
 end

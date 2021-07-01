@@ -3,8 +3,6 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
-
-
   test 'Login' do
     password = 'Admin123'
     username = '10Head'
