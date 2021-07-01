@@ -1,51 +1,6 @@
 // Place all the styles related to the dashboard controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
-@import "bootstrap";
-
-:root {
-  --background-color: none;
-
-  --full-vertical-height: 100vh;
-  --full-horizontal-width: 100vw;
-
-  --fluid-container-padding: var(--bs-gutter-x, 0.75rem);
-
-  --default-opacity: 0.83;
-
-  --min-width: 300px;
-
-  --main-container-width: clamp(var(--min-width), 100%, 100%);
-  --hrz-list-height: clamp(50px, 100px, 150px);
-  --cat-list-width:  clamp(250px, 400px, 400px);
-  --cat-list-height: clamp(100px, 400px, 400px);
-
-  --item-text-font-size: 12px;
-  --list-item-margin: 10px;
-
-  --resc-prev-size: 100px;
-  --list-item-border: 3px;
-
-  --cat-item-height: 55px;
-  // making sure the margin of the item itself and the border are correctly calculated
-  --cat-item-width: calc(var(--cat-list-width) - calc(var(--list-item-margin) * 2) - calc(var(--list-item-border) * 2));
-
-  --section-padding: 15px;
-  --hrz-list-padding: 0px 20px 0px 20px;
-
-  --cat-inf-padding: 15px;
-}
-
-
-body {
-  background-image: asset-url("daylight-environment-forest-459225.jpg");
-  background-size: cover;
-
-  background-blend-mode: darken;
-  background-position: center;
-  height: var(--full-vertical-height);
-}
 
 .dashboard-container {
   opacity: var(--default-opacity);
@@ -99,7 +54,7 @@ body {
   padding-bottom: calc(var(--section-padding) * 2);
 }
 
-#recentUploadsSection #searchBar {
+#recentUploadsSection #searchBar, #recentUploadsSection #newResourceButton {
   position: relative;
   float: right;
   padding-right: 10px;
@@ -281,3 +236,4 @@ body {
 #resource-creation {
   display: flex;
 }
+
