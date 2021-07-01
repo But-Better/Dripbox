@@ -61,7 +61,4 @@ class User < ApplicationRecord
     end
   end
 
-  def find_by_email(i)
-    # code here
-  end
 end
