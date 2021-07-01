@@ -39,6 +39,8 @@ gem 'simplecov', require: false, group: :test
 # https://github.com/rubocop/ruby-style-guide
 gem 'rouge'
 
+gem 'dotenv-rails'
+
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
 # Rails 4+ Asset Pipeline on Heroku

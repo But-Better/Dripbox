@@ -18,6 +18,9 @@ Rails.application.configure do
   # preloads Rails for running tests, you may have to set it to true.
   config.eager_load = false
 
+  config.fog_directory  = ENV['GMAIL']
+  config.fog_directory  = ENV['GMAIL_PW']
+
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # Configure public file server for tests with Cache-Control for performance.
