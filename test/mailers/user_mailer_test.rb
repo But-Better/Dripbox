@@ -28,6 +28,4 @@ class UserMailerTest < ActionMailer::TestCase
     assert_not !ActionMailer::Base.deliveries.empty?
   end
 
-
-
 end
