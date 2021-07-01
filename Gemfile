@@ -31,6 +31,8 @@ gem 'brakeman'
 # https://github.com/rubocop/rubocop
 gem 'rubocop', require: false
 
+gem 'auto-session-timeout'
+
 # simplecov
 # https://github.com/simplecov-ruby/simplecov
 gem 'simplecov', require: false, group: :test
