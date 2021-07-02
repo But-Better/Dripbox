@@ -23,7 +23,7 @@ class UserMailerTest < ActionMailer::TestCase
   test 'Wrong (Password) Registration confirm mail' do
     password = 'admin123'
     username = '10Head'
-    user = User.create(username: username, email: 'MailerMeister@5head.de', password: password,
+    User.create(username: username, email: 'MailerMeister@5head.de', password: password,
                        password_confirmation: password)
 
     assert_not !ActionMailer::Base.deliveries.empty?
