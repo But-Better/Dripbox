@@ -13,7 +13,12 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  config.action_mailer.default_url_options = { host: ENV['KEV_PC'] }
+  ip = "localhost"
+  if ENV.key?("KEV_PC")
+    ip = ENV['KEV_PC']
+  end
+
+  config.action_mailer.default_url_options = { host: ip }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     port: 587,
