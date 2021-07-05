@@ -13,10 +13,8 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-  ip = "localhost"
-  if ENV.key?("KEV_PC")
-    ip = ENV['KEV_PC']
-  end
+  ip = 'localhost'
+  ip = ENV['KEV_PC'] if ENV.key?('KEV_PC')
 
   config.action_mailer.default_url_options = { host: ip }
   config.action_mailer.delivery_method = :smtp

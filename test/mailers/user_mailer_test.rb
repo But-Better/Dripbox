@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'test_helper'
+
 class UserMailerTest < ActionMailer::TestCase
   test 'test_confirm_mail' do
     password = 'Admin123'
@@ -24,8 +25,13 @@ class UserMailerTest < ActionMailer::TestCase
     password = 'admin123'
     username = '10Head'
     User.create(username: username, email: 'MailerMeister@5head.de', password: password,
-                       password_confirmation: password)
+                password_confirmation: password)
 
     assert_not !ActionMailer::Base.deliveries.empty?
+  end
+
+  test 'forgot password not found' do
+    post password_reset_url, params: { email: 'Lol@gmx.de' }
+    assert_equal('E-mail not found', flash[:alert])
   end
 end
