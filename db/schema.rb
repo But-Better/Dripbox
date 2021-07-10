@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,15 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_527_200_903) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+ActiveRecord::Schema.define(version: 2021_06_02_211053) do
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'username'
-    t.string 'email'
-    t.string 'password_digest'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.text "desc"
+    t.string "img_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
+
+  create_table "file_resource_category_relations", force: :cascade do |t|
+    t.bigint "file_resource_id"
+    t.bigint "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "file_resources", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.date "upload"
+    t.bigint "user_id"
+    t.text "desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
 end
