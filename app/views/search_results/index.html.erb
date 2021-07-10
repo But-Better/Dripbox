@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="dashboard.scss" rel="stylesheet">
+</header>
+<body>
+  <ul>
+    <%@filesToFilter.each do |file| %>
+    <li>
+      <%= file.name %>
+    </li>
+    <% end %>
+  </ul>
+
+</body>
+
+</html>
