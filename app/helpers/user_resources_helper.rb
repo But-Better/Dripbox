@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-module CreateResourceHelper
+module UserResourcesHelper
 end

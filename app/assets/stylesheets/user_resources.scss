@@ -1,0 +1,40 @@
+// Place all the styles related to the UserResources controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#new_resource_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#new_resource_field #selection_field {
+  border-style: solid;
+  border-color: var(--bs-gray-dark);
+  border-width: var(--list-item-border);
+
+  background-color: var(--bs-gray);
+
+  display: grid;
+}
+
+#selection_field div {
+  margin: 5px;
+  display: grid;
+}
+
+div #new_category_link {
+  background: var(--bs-light);
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+#new_category_link a {
+  color: var(--bs-gray);
+}
+
+#createNewResource_button {
+  display: flex;
+  justify-content: center;
+}
