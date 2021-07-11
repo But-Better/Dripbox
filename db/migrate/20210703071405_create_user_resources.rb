@@ -4,7 +4,7 @@ class CreateUserResources < ActiveRecord::Migration[6.1]
   def change
     create_table :user_resources do |t|
       t.belongs_to :user
-      t.belongs_to :category
+      t.has_many :tags
 
       t.string :name
       t.text :desc
