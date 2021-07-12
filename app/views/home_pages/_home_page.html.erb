@@ -14,7 +14,7 @@
           <%= image_tag("home_page/MainPage.PNG", class: "mainImg mb-4", id: "mainImgId") %>
         </div>
         <div>
-          <%= image_tag("home_page/hacking-hack.gif", id: "hiddenGif", style: "visibility: hidden;  display: none;") %>
+          <%= image_tag("home_page/hacking-hack.gif", id: "hiddenGif", class: "hiddenImage") %>
         </div>
         <div>
           <h2 class="colorWhite">Please sign in</h2>
@@ -40,12 +40,12 @@
         </div>
         <div>
           <div>
-            <%= link_to "Registieren", new_users_url, :class => "btn btn-link" %>
+            <%= link_to "Registieren", new_user_url, :class => "btn btn-link" %>
           </div>
         </div>
         <div>
           <div>
-            <%= link_to 'Forgot password?', new_password_resets_url %>
+            <%= link_to 'Forgot password?', new_password_reset_url %>
           </div>
         </div>
       </main>
