@@ -43,14 +43,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.valid?
   end
 
-    test 'Create User with Wrong Password no numbers' do
+  test 'Create User with Wrong Password no numbers' do
     password = 'admin'
     username = 'Meister'
     email = 'PeterAgile@5head.de'
     user = User.create(username: username, email: email, password: password, password_confirmation: password)
     assert_not user.valid?
   end
-  
+
   test 'Created user Password_Digest != enter password' do
     password = 'Admin123'
     username = 'MeisterProper'
