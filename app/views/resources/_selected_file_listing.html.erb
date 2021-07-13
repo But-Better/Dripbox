@@ -3,14 +3,34 @@
     <p>Name</p>
     <i><%= @called_file.name %></i>
     <p>Preview</p>
-    <img src="<%= @called_file.url %>" alt="<broken link>"/>
+    <% if !@file_of_current_resource.nil? %>
+      <% if @file_of_current_resource.representable? %>
+        <%= image_tag @file_of_current_resource.representation(resize_to_limit: [100, 100]) %>
+      <% else %>
+        <%= link_to rails_blob_path(@file_of_current_resource, disposition: "attachment") do %>
+          <%= image_tag "placeholder.png", alt: "Download file" %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <i>none</i>
+    <% end %>
     <p>Direct Link</p>
-    <a href="<%= @called_file.url %>"><%= @called_file.url %></a>
-    <p>Categories</p>
+    <% if !@file_of_current_resource.nil? %>
+      <%= link_to rails_blob_path(@file_of_current_resource, disposition: "attachment") do %>
+        <i><%= @file_of_current_resource.filename %></i>
+      <% end %>
+    <% else %>
+      <i>none</i>
+    <% end %>
+    <p>Tags:</p>
     <div id="relations">
-      <%   @called_file_cats.each do | relation |   %>
-        <i id="relation_id"><%= relation.title %></i>
+      <% if @called_file.tags.length == 0 %>
+        <i id="relation_id">none</i>
+      <%  else %>
+      <%    @called_file.tags.each do | relation |   %>
+          <i id="relation_id"> - <%= relation.title %></i>
       <%  end  %>
+      <% end %>
     </div>
     <p>Uploaded</p>
     <i><%= @called_file.created_at %></i>

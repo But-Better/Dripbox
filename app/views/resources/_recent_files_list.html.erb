@@ -4,10 +4,12 @@
   <%  else  %>
     <%   @files.each do |file|   %>
       <div id="ru_item">
-        <a href="<%=   file.id   %>">
-          <img id="img" src="<%=   file.url   %>" alt="">
+        <a href="/dashboard/<%=   file.id   %>">
+          <% if file.file.representable? %>
+            <%= image_tag file.file.representation(resize_to_limit: [1000, 1000]) %>
+          <% end %>
         </a>
-        <i id="name"><%=   file.name.length > 12 ? file.name[0,12] + '...' : file.name   %></i>
+        <a href="/dashboard/<%=   file.id   %>"><i id="name"><%=   file.name.length > 12 ? file.name[0,12] + '...' : file.name   %></i></a>
         <i id="desc"><%=   file.desc.length > 20 ? file.desc[0,20] + '...' : file.desc   %></i>
       </div>
     <%  end  %>

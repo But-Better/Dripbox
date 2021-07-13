@@ -1,42 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-  <header>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="dashboard.scss" rel="stylesheet">
-  </header>
-
-  <body>
-    <div class="container-fluid">
-      <div class="dashboard-container">
-        <div class="content">
-          <div id="heading">
-            <h1>Dashboard</h1>
-          </div>
-          <div id="recentUploadsSection">
-            <div id="searchBar">
-              <label>
-                <input type="text" placeholder="Search..">
-              </label>
-            </div>
-            <div id="heading2">
-              <h2>Recent Uploads:</h2>
-            </div>
-              <%= render "resources/recent_files_list" %>
-          </div>
-          <div id="categorySection">
-            <div id="heading2">
-              <h2>Categories:</h2>
-            </div>
-           <%= render "resources/categories_listing" %>
-          </div>
-          <div id="informationSection">
-            <div id="heading2">
-              <h2>Information:</h2>
-            </div>
-            <%= render "resources/selected_file_listing" %>
-          </div>
+<body>
+<div class="container-fluid">
+  <div class="dashboard-container">
+    <div class="content">
+      <div id="heading">
+        <h1>Dashboard</h1>
+      </div>
+      <div id="recentUploadsSection">
+        <div id="newResourceButton">
+            <%= link_to 'New User Resource', new_user_resource_path %>
+        </div>
+        <div id="editResourceButton">
+          <%= link_to 'Edit Own Resources', user_resources_path %>
+        </div>
+        <div id="searchBar">
+          <label>
+            <input type="text" placeholder="Search..">
+          </label>
+        </div>
+        <div id="heading2">
+          <h2>Recent Uploads:</h2>
+        </div>
+        <div id=contentField>
+          <%= render "resources/recent_files_list" %>
+        </div>
+      </div>
+      <div id="categorySection">
+        <div id="heading2">
+          <h2>Tags:</h2>
+        </div>
+        <div id=contentField>
+          <%= render "resources/categories_listing" %>
+        </div>
+      </div>
+      <div id="informationSection">
+        <div id="heading2">
+          <h2>Information:</h2>
+        </div>
+        <div id=contentField>
+          <%= render "resources/selected_file_listing" %>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
