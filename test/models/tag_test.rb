@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class CreateResourceControllerTest < ActionDispatch::IntegrationTest
+class TagTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
