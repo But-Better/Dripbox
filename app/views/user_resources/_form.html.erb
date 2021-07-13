@@ -13,21 +13,21 @@
   <div class="new_resource_wrapper">
     <div id="selection_field">
       <div>
-        <%= form.label :file %>
-        <%= form.file_field :file%>
+        <%= form.label :file%>
+        <%= form.file_field :file, required: true%>
       </div>
       <div>
         <%= form.label :name %>
-        <%= form.text_field :name %>
+        <%= form.text_field :name, required: true %>
       </div>
       <div>
         <%= form.label :desc %>
-        <%= form.text_area :desc %>
+        <%= form.text_area :desc, required: true %>
       </div>
       
       <div>
         <%= form.label :tag %>
-        <%= form.text_field :tag %>
+        <%= form.text_field :tag, required: true %>
       </div>
     </div>
 
