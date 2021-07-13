@@ -12,9 +12,7 @@
   border-style: solid;
   border-color: var(--bs-gray-dark);
   border-width: var(--list-item-border);
-
   background-color: var(--bs-gray);
-
   display: grid;
 }
 
@@ -44,7 +42,7 @@ div #new_category_link {
 }
 
 #resourceTable {
-  width:70%;
+  width: 70%;
   background: var(--bs-gray);
   display: grid;
   grid-template-columns: 0.1fr 0.2fr 0.2fr 0.2fr 0.3fr;
@@ -53,13 +51,10 @@ div #new_category_link {
 }
 
 #resourceTable i {
+  background: var(--bs-light);
   color: var(--bs-gray);
 }
 
-#resourceTableWrapper button  {
+#resourceTableWrapper button {
   margin-bottom: 5px;
-}
-
-#resourceTable i {
-  background: var(--bs-light);
 }
