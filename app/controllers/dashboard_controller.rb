@@ -4,10 +4,10 @@ class DashboardController < ApplicationController
   def index
     @files = UserResource.all
     @categories = Tag.all
+
     return unless params.key?('id')
 
     @called_file = UserResource.find params[:id]
-
     @user_name = User.find(@called_file.user_id).username
 
     return if @called_file.file.filename.nil?

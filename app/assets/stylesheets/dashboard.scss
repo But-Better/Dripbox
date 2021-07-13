@@ -54,7 +54,9 @@
   padding-bottom: calc(var(--section-padding) * 2);
 }
 
-#recentUploadsSection #searchBar, #recentUploadsSection #newResourceButton, #recentUploadsSection #editResourceButton {
+#recentUploadsSection #searchBar,
+#recentUploadsSection #newResourceButton,
+#recentUploadsSection #editResourceButton {
   position: relative;
   float: right;
   padding-right: 10px;
@@ -237,4 +239,3 @@
 #resource-creation {
   display: flex;
 }
-
