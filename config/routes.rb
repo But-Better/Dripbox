@@ -10,12 +10,14 @@ Rails.application.routes.draw do
   get 'home_pages/index'
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:id', to: 'dashboard#index'
-  get '/resources', to: 'resources#index'
 
-  get 'create_resource/index', to: 'create_resource#index'
-  root 'create_resource#index'
+  get 'user_resource/index', to: 'user_resources#index'
+  get 'user_resource/:id/edit', to: 'user_resources#edit'
+
+  root 'dashboard#index'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resource :users
-  resources :resources
+  resource :user
+  resources :user_resources
+  resources :tags
 end
