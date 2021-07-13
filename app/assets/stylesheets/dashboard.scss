@@ -54,7 +54,7 @@
   padding-bottom: calc(var(--section-padding) * 2);
 }
 
-#recentUploadsSection #searchBar, #recentUploadsSection #newResourceButton {
+#recentUploadsSection #searchBar, #recentUploadsSection #newResourceButton, #recentUploadsSection #editResourceButton {
   position: relative;
   float: right;
   padding-right: 10px;
@@ -105,6 +105,7 @@
   top: var(--list-item-border);
   left: var(--list-item-border);
   font-size: var(--item-text-font-size);
+  color: var(--bs-light);
 
   // making sure that the centered name of the
   // resource doesn't overlap with the image borders
@@ -224,8 +225,8 @@
 }
 
 #informationField img {
-  height: 80%;
-  width: 80%;
+  height: 150px;
+  width: 150px;
   object-fit: cover;
 }
 
