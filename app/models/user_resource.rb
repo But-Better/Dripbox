@@ -6,7 +6,8 @@ class UserResource < ApplicationRecord
   has_and_belongs_to_many :tags
 
   def self.search(params)
-    where("LOWER(name) LIKE ?", "%#{params}%")
+    #desc vom typ text!
+    joins(:user).where("LOWER(name) LIKE :lookUp OR LOWER(username) LIKE :lookUp", lookUp:"%#{params}%")
   end
 end
 
