@@ -2,7 +2,10 @@
 
 Rails.application.routes.draw do
 
+  post '/searchresults/index', to: 'search_results#index'
+  post '/searchresults',       to: 'search_results#index'
   get '/searchresults/index', to: 'search_results#index'
+  get '/searchresults',       to: 'search_results#index'
   get '/agb',         to: 'site_informations#agb'
   get '/datenschutz', to: 'site_informations#datenschutz'
   get '/uber',        to: 'site_informations#about'
@@ -17,4 +20,6 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resource :users
+  resources :user_resources
+  resources :tags
 end

@@ -5,13 +5,23 @@
   <link href="dashboard.scss" rel="stylesheet">
 </header>
 <body>
-  <ul>
-    <%@filesToFilter.each do |file| %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= @suchEingabe %>
+<br>
+<%= @gefundeneFiles.name %>
+
+<ul>
+  <% @gefundeneFiles.each do |file|%>
     <li>
+      Ja etwas gefunden:
       <%= file.name %>
     </li>
-    <% end %>
-  </ul>
+  <% end %>
+</ul>
 
 </body>
 

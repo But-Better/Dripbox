@@ -1,2 +1,0 @@
-class FileResourceCategoryRelation < ApplicationRecord
-end
