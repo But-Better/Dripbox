@@ -5,23 +5,22 @@
   <link href="dashboard.scss" rel="stylesheet">
 </header>
 <body>
+<h1>Suchergebnisse für <%=@suchEingabe%></h1>
 <br>
-<br>
-<br>
-<br>
-<br>
-<%= @suchEingabe %>
-<br>
-<%= @gefundeneFiles.name %>
 
-<ul>
+<table>
+  <tr><th>  File-Name  </th> <th>  User-Name  </th> <th>  Link  </th></tr>
   <% @gefundeneFiles.each do |file|%>
-    <li>
-      Ja etwas gefunden:
-      <%= file.name %>
-    </li>
+  <tr> 
+    <td><%=file.name %></td>
+    <td><%=file.user.username %></td>
+    <td>
+      Link
+    </td>
+  </tr>
   <% end %>
-</ul>
+</table>
+
 
 </body>
 
