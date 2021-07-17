@@ -4,8 +4,7 @@ class SearchResultsController < ApplicationController
     @suchEingabe = params[:search_query]
 
     if !params[:search_query].empty?
-      sucheNach = @suchEingabe.downcase
-      @gefundeneFiles = UserResource.search(sucheNach)
+      @gefundeneFiles = UserResource.search(@suchEingabe)
     else
       @gefundeneFiles = UserResource.all
     end

@@ -7,6 +7,7 @@ class UserResource < ApplicationRecord
 
   def self.search(params)
     #desc vom typ text!
+    params = params.downcase
     joins(:user).where("LOWER(name) LIKE :lookUp OR LOWER(username) LIKE :lookUp", lookUp:"%#{params}%")
   end
 end

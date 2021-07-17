@@ -1,7 +1,7 @@
 require "test_helper"
 
 class FileResourceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test test_the_search do
+
+  end
 end
