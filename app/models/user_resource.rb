@@ -5,6 +5,7 @@ class UserResource < ApplicationRecord
   belongs_to :user
   has_and_belongs_to_many :tags
 
+  #such in dem namen des files und usernamen nach einer nicht leeren eingabe
   def self.search(params)
     #desc vom typ text!
     params = params.downcase
