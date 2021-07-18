@@ -8,11 +8,5 @@ class SearchResultsController < ApplicationController
     else
       @gefundeneFiles = UserResource.all
     end
-    #Funktioniert:
-    #@suchEingabe = params[:search_query]
-    #@gefundeneFiles = UserResource.all.where("name LIKE ?","%#{@suchEingabe}%")
-
-
   end
-
 end
