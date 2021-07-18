@@ -4,11 +4,14 @@ require 'test_helper'
 
 class UserResourcesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user_resource = user_resources(:one)
+    @user = User.create username: "name", email: "note@mail.com", password_digest: "abcdefg4"
+    @user_resource = @user.user_resources.create id: 1, name: "e", desc: "EE"
+
   end
 
   test 'should get index' do
     get user_resources_url
+    assert_equal 1, @user_resource.id
     assert_response :success
   end
 
@@ -22,23 +25,24 @@ class UserResourcesControllerTest < ActionDispatch::IntegrationTest
       post user_resources_url, params: { user_resource: { desc: @user_resource.desc, name: @user_resource.name } }
     end
 
-    assert_redirected_to user_resource_url(UserResource.last)
+    assert_redirected_to dashboard_url(UserResource.last)
   end
 
   test 'should show user_resource' do
-    get user_resource_url(@user_resource)
+    get user_resources_url
+    assert_not_empty @user_resources
     assert_response :success
   end
 
   test 'should get edit' do
-    get edit_user_resource_url(@user_resource)
+    get edit_user_resource_url(id: @user_resource.id)
     assert_response :success
   end
 
   test 'should update user_resource' do
-    patch user_resource_url(@user_resource),
+    patch user_resource_url @user_resource,
           params: { user_resource: { desc: @user_resource.desc, name: @user_resource.name } }
-    assert_redirected_to user_resource_url(@user_resource)
+    assert_redirected_to dashboard_url(@user_resource)
   end
 
   test 'should destroy user_resource' do

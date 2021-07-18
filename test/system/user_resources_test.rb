@@ -4,11 +4,11 @@ require 'application_system_test_case'
 
 class UserResourcesTest < ApplicationSystemTestCase
   setup do
-    @user_resource = user_resources(:one)
+    @user_resource = UserResource.create(name: "name1", desc: "desc1")
   end
 
   test 'visiting the index' do
-    visit user_resources_url
+    visit user_resource_index_url
     assert_selector 'h1', text: 'User Resources'
   end
 
