@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
   get '/agb', to: 'site_informations#agb'
   get '/datenschutz', to: 'site_informations#datenschutz'
   get '/uber',        to: 'site_informations#about'

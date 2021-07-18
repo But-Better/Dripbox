@@ -28,7 +28,7 @@
         <i id="relation_id">none</i>
       <%  else %>
       <%    @called_file.tags.each do | relation |   %>
-          <i id="relation_id"> - <%= relation.title %></i>
+          <i id="relation_id"> - <%= relation.name %></i>
       <%  end  %>
       <% end %>
     </div>
@@ -38,6 +38,7 @@
     <i><%= @user_name %></i>
     <p>Description</p>
     <i><%= @called_file.desc %></i>
+    <br><br>
   <% else %>
     <p>Nothing selected</p>
   <% end %>

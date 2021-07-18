@@ -23,10 +23,7 @@
     <%= yield :header unless current_page?(registrations_index_path)%> <!-- needs to be changed to registration_path after merge -->
 
     <%= yield %>
-    <%=render 'layouts/footer' %>
-    
-    <!-- Debug overview -->
-    <%= debug(params) if Rails.env.development? %>
-    <%= yield %>
+    <!-- TODO: <%=render 'layouts/footer' %> -->
+  
   </body>
 </html>

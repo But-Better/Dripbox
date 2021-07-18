@@ -13,6 +13,5 @@ class DashboardController < ApplicationController
     return if @called_file.file.filename.nil?
 
     @file_of_current_resource = @called_file.file
-    # @called_file_cats = Category.where({ id: FileResourceCategoryRelation.where({ file_resource_id: params[:id] }) })
   end
 end

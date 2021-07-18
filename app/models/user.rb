@@ -1,7 +1,8 @@
-
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :user_resources
+
   require 'uri'
   # has_secure_password
 
@@ -30,6 +31,5 @@ class User < ApplicationRecord
             presence: true,
             allow_nil: false,
             length: { minimum: 8, maximum: 256 },
-            format: { with: PASSWORD_FORMAT },
-            confirmation: true
+            confirmation: false
 end
