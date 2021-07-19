@@ -1,4 +1,4 @@
-class SearchResultsController < ApplicationController
+class SearchController < ApplicationController
   def index
 
     if !params[:search_query].empty?
