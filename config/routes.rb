@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   resource :users
   resources :user_resources
   resources :tags
+  resources :search,only::index
 end

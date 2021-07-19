@@ -1,8 +1,9 @@
 class SearchController < ApplicationController
   def index
 
-    if !params[:search_query].empty?
-      @suchEingabe = params[:search_query]
+    @suchEingabe = params[:search_query]
+
+    if !@suchEingabe.empty?
       @gefundeneFiles = UserResource.search(@suchEingabe)
     else
       @gefundeneFiles = UserResource.all
