@@ -1,0 +1,36 @@
+
+<div class="dashboard-container">
+  <div class="content">
+    <div id='heading'>
+      <h1>Direkte Resources Suche</h1>
+    </div>
+    <div id='heading2'>
+      <h2>Gefundene Dateien für: "<%= @suchEingabe %>"</h2>
+    </div>
+    <div id="searchTableWrapper">
+      <br>
+      <div id="searchTable">
+        <i>id</i>
+        <i>name</i>
+        <i>Description</i>
+        <i>direct link</i>
+        <% @gefundeneFiles.each do |user_resource| %>
+          <i><%= user_resource.id %></i>
+          <i><%= user_resource.name %></i>
+          <i><%= user_resource.desc %></i>
+          <% if !user_resource.file.filename.nil?%>
+            <i><%= link_to rails_blob_path(user_resource.file, disposition: "attachment") do %>
+                <i><%= user_resource.file.filename.to_s.length > 12 ? user_resource.file.filename.to_s[0,12] + '...' : user_resource.file.filename.to_s%></i>
+              <% end %></i>
+          <% else %>
+            <i>no link available</i>
+          <% end %>
+        <% end %>
+      </div>
+      <br>
+      <button><%= link_to 'Dashboard', dashboard_path %></button>
+    </div>
+  </div>
+</div>
+
+

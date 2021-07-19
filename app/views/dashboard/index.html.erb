@@ -1,93 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <header>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="dashboard.scss" rel="stylesheet">
-  </header>
-
-  <body>
-    <div class="container-fluid">
-      <div class="dashboard-container">
-        <div class="content">
-          <div id="heading">
-            <h1>Dashboard</h1>
-          </div>
-          <div id="recentUploadsSection">
-            <div id="searchBar">
-              <label>
-                <input type="text" placeholder="Search..">
-              </label>
-            </div>
-            <div id="heading2">
-              <h2>Recent Uploads:</h2>
-            </div>
-            <div id="recentUploadsList">
-              <% if @files.empty? %>
-              <i id="nothing_found">no recent files found</i>
-              <%  else  %>
-              <%   @files.each do |file|   %>
-              <div id="ru_item">
-                <a href="<%=   file.id   %>">
-                  <img id="img" src="<%=   file.url   %>" alt="">
-                </a>
-                <i id="name"><%=   file.name.length > 12 ? file.name[0,12] + '...' : file.name   %></i>
-                <i id="desc"><%=   file.desc.length > 20 ? file.desc[0,20] + '...' : file.desc   %></i>
-              </div>
-              <%  end  %>
-              <%  end %>
-            </div>
-          </div>
-          <div id="categorySection">
-            <div id="heading2">
-              <h2>Categories:</h2>
-            </div>
-            <div id="categoryAreal">
-                <% if @categories.empty? %>
-                  <p id="nothing_found">no categories found</p>
-                <% else %>
-                <div id="categoryList">
-                <% @categories.each do |cat| %>
-                  <div id="cat_item">
-                    <img id="img" src="<%= cat.img_url %>" alt="">
-                    <i id="title"><%= cat.title %></i>
-                  </div>
-                <% end %>
-                </div>
-                <% end %>
-            </div>
-          </div>
-          <div id="informationSection">
-            <div id="heading2">
-              <h2>Information:</h2>
-            </div>
-
-            <div id="informationField">
-              <% if params.key?('id') %>
-                <p>Name</p>
-                <i><%= @called_file.name %></i>
-                <p>Preview</p>
-                <img src="<%= @called_file.url %>" alt="<broken link>"/>
-                <p>Direct Link</p>
-                <a href="<%= @called_file.url %>"><%= @called_file.url %></a>
-                <p>Categories</p>
-                <div id="relations">
-                <%   @called_file_cats.each do | relation |   %>
-                  <i id="relation_id"><%= relation.title %></i>
-                <%  end  %>
-                </div>
-                <p>Uploaded</p>
-                <i><%= @called_file.created_at %></i>
-                <p>Uploaded by</p>
-                <i><%= @user_name %></i>
-                <p>Description</p>
-                <i><%= @called_file.desc %></i>
-              <% else %>
-                <p>Nothing selected</p>
-              <% end %>
-            </div>
-          </div>
+<div class="container-fluid">
+  <div class="dashboard-container">
+    <div class="content">
+      <div id="heading">
+        <h1>Dashboard</h1>
+      </div>
+      <div id="recentUploadsSection">
+        <div id="newResourceButton">
+          New User Resource
+        </div>
+        <div id="editResourceButton">
+          Edit Own Resources
+        </div>
+        <div id="searchBar">
+          <%= form_with(url: searchresults_path, method: 'get') do | form |%>
+            <%= form.text_field :search_query%>
+          <% end %>
+        </div>
+        <div id="heading2">
+          <h2>Recent Uploads:</h2>
+        </div>
+        <div id=contentField>
+          <%= render "resources/recent_files_list" %>
+        </div>
+      </div>
+      <div id="categorySection">
+        <div id="heading2">
+          <h2>Tags:</h2>
+        </div>
+        <div id=contentField>
+          <%= render "resources/categories_listing" %>
+        </div>
+      </div>
+      <div id="informationSection">
+        <div id="heading2">
+          <h2>Information:</h2>
+        </div>
+        <div id=contentField>
+          <%= render "resources/selected_file_listing" %>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
