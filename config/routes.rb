@@ -2,8 +2,6 @@
 
 Rails.application.routes.draw do
 
-  post '/searchresults/index', to: 'search_results#index'
-  post '/searchresults',       to: 'search_results#index'
   get '/searchresults/index', to: 'search_results#index'
   get '/searchresults',       to: 'search_results#index'
   get '/agb',         to: 'site_informations#agb'
