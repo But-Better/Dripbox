@@ -3,7 +3,6 @@
 Rails.application.routes.draw do
 
   get '/searchresults/index', to: 'search_results#index'
-  get '/searchresults',       to: 'search_results#index'
   get '/agb',         to: 'site_informations#agb'
   get '/datenschutz', to: 'site_informations#datenschutz'
   get '/uber',        to: 'site_informations#about'
@@ -20,5 +19,5 @@ Rails.application.routes.draw do
   resource :users
   resources :user_resources
   resources :tags
-  resources :search,only::index
+  resources :search, only: :index
 end
