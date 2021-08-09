@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_07_10_111138) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.boolean "email_confirmed", default: false
+    t.string "confirm_token"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_reset_token"
