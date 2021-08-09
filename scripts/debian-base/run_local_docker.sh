@@ -7,8 +7,8 @@ function stop_local_postgres_server_if_running() {
 }
 function removeOldDocker() {
   echo "> container already exists, rebuilding"
-  docker stop postgres
-  docker rm postgres
+  docker stop postgres > /dev/null
+  docker rm postgres > /dev/null
 }
 function createDocker() {
   if [ "$( docker ps -a | grep -c postgres )" -gt 0 ]; then

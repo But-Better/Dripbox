@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ErrorControllerTest < ActionDispatch::IntegrationTest
+class FileResourceCategoryRelationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -9,7 +9,7 @@ class DashboardControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index but with argument' do
-    get dashboard_url(UserResource.first)
+    get dashboard_url(FileResource.first)
     assert_response :success
   end
 end

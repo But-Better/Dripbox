@@ -12,6 +12,7 @@ gem 'bootstrap', '~> 5.0.0'
 
 ## Performence
 # bullet
+
 # https://github.com/flyerhzm/bullet
 gem 'bullet', group: 'development'
 
@@ -21,15 +22,10 @@ gem 'server_timing'
 
 ## Security
 #Brakeman
+
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
 
-# dotenv rails gem
-gem 'dotenv-rails'
-
-# dropzonejs-rails
-# https://github.com/ncuesta/dropzonejs-rails
-gem 'dropzonejs-rails'
 
 ## Source code
 # Rubocop
@@ -39,10 +35,6 @@ gem 'rubocop', require: false
 # simplecov
 # https://github.com/simplecov-ruby/simplecov
 gem 'simplecov', require: false, group: :test
-
-# azure storage support
-# https://github.com/Azure/azure-storage-ruby
-gem 'azure-storage-blob', require: false, group: :production
 
 # rouge one
 # https://github.com/rubocop/ruby-style-guide
@@ -70,11 +62,6 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
-# sinatra-activerecord
-gem 'activerecord'
-# require_all
-gem 'require_all'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
