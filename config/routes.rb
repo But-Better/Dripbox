@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'users', to: 'users#new'
   get 'registrations/index', to: 'users#new'
 
+  get '/searchresults', to: 'search_results#index'
+
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:id', to: 'dashboard#index'
 
@@ -27,4 +29,10 @@ Rails.application.routes.draw do
       get :confirm_email
     end
   end
+
+  resources :user_resources
+  resources :tags
+  resources :search, only: :index
+
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

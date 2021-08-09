@@ -21,17 +21,16 @@ gem 'bullet', group: 'development'
 gem 'server_timing'
 
 ## Security
-# Brakeman
+#Brakeman
 
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
+
 
 ## Source code
 # Rubocop
 # https://github.com/rubocop/rubocop
 gem 'rubocop', require: false
-
-gem 'auto-session-timeout'
 
 # simplecov
 # https://github.com/simplecov-ruby/simplecov
@@ -40,10 +39,6 @@ gem 'simplecov', require: false, group: :test
 # rouge one
 # https://github.com/rubocop/ruby-style-guide
 gem 'rouge'
-
-gem 'dotenv-rails'
-
-gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
 # Rails 4+ Asset Pipeline on Heroku
 # gem 'rails_serve_static_assets', group: :production
@@ -99,4 +94,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
