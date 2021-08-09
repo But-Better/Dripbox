@@ -1,0 +1,45 @@
+<div id="informationField">
+  <% if params.key?('id') %>
+    <p>Name</p>
+    <i><%= @called_file.name %></i>
+    <p>Preview</p>
+    <% if !@file_of_current_resource.nil? %>
+      <% if @file_of_current_resource.representable? %>
+        <%= image_tag @file_of_current_resource.representation(resize_to_limit: [100, 100]) %>
+      <% else %>
+        <%= link_to rails_blob_path(@file_of_current_resource, disposition: "attachment") do %>
+          <%= image_tag "placeholder.png", alt: "Download file" %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <i>none</i>
+    <% end %>
+    <p>Direct Link</p>
+    <% if !@file_of_current_resource.nil? %>
+      <%= link_to rails_blob_path(@file_of_current_resource, disposition: "attachment") do %>
+        <i><%= @file_of_current_resource.filename %></i>
+      <% end %>
+    <% else %>
+      <i>none</i>
+    <% end %>
+    <p>Tags:</p>
+    <div id="relations">
+      <% if @called_file.tags.length == 0 %>
+        <i id="relation_id">none</i>
+      <%  else %>
+      <%    @called_file.tags.each do | relation |   %>
+          <i id="relation_id"> - <%= relation.name %></i>
+      <%  end  %>
+      <% end %>
+    </div>
+    <p>Uploaded</p>
+    <i><%= @called_file.created_at %></i>
+    <p>Uploaded by</p>
+    <i><%= @user_name %></i>
+    <p>Description</p>
+    <i><%= @called_file.desc %></i>
+    <br><br>
+  <% else %>
+    <p>Nothing selected</p>
+  <% end %>
+</div>
