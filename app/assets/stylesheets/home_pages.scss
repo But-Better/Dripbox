@@ -1,6 +1,12 @@
+@import "bootstrap";
 
 #Home_html {
   background-image: asset-url("home_page/BackgroundImage.jpg");
+}
+
+.hiddenImage {
+  visibility: hidden;
+  display: none;
 }
 
 #Home_Body {
@@ -39,12 +45,12 @@ div .form-check {
   display: none;
 }
 
-.Home_h2{
+.Home_h2 {
   color: white;
   font-size: xx-large;
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1000px) {
   .Home_h1 {
     margin-bottom: 50px;
     padding: 5px 5px 5px 5px;
@@ -54,7 +60,7 @@ div .form-check {
   }
 }
 
-@media screen and (min-width: 1001px){
+@media screen and (min-width: 1001px) {
   .Home_h1 {
     margin-bottom: 50px;
     padding: 5px 5px 5px 5px;

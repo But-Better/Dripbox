@@ -1,35 +1,63 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :user_resources
+  has_secure_password
+
+  before_create :confirmation_token
 
   require 'uri'
-  # has_secure_password
+  validates_uniqueness_of :email
+
+  before_save do
+    self.email = email.downcase
+  end
 
   validates :username,
             uniqueness: true,
             presence: true,
-            length: { minimum: 2, maximum: 20 },
-            allow_nil: false
+            length: { minimum: 2, maximum: 20 }
 
   validates :email,
-            uniqueness: true,
+            uniqueness: { case_sensitive: false },
             presence: true,
-            allow_nil: false,
             format: { with: URI::MailTo::EMAIL_REGEXP }
 
   # https://stackoverflow.com/questions/5123972/ruby-on-rails-password-validation/33632569
   PASSWORD_FORMAT = /\A
   (?=.{8,})          # Must contain 8 or more characters
   (?=.*\d)           # Must contain a digit
-  (?=.*[a-z])        # Must contain a lower case character
+  (?=.*[a-z])        # Must contain a lower cas e character
   (?=.*[A-Z])        # Must contain an upper case character
-  (?=.*[[:^alnum:]]) # Must contain a symbol
 /x
 
-  validates :password_digest,
+  validates :password,
             presence: true,
             allow_nil: false,
-            length: { minimum: 8, maximum: 256 },
-            confirmation: false
+            format: { with: PASSWORD_FORMAT },
+            confirmation: true
+
+  def confirmation_token
+    self.confirm_token = SecureRandom.urlsafe_base64.to_s if confirm_token.blank?
+  end
+
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(validate: false)
+  end
+
+  def send_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    UserMailer.forgot_password(self).deliver # This sends an e-mail with a link for the user to reset the password
+    save!(validate: false)
+  end
+
+  # This generates a random password reset token for the user
+  def generate_token(column)
+    loop do
+      self[column] = SecureRandom.urlsafe_base64
+      break unless User.exists?(column => self[column])
+    end
+  end
 end

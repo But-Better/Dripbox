@@ -1,0 +1,25 @@
+// Place all the styles related to the searchResults controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#searchTableWrapper {
+  width: 100%;
+}
+
+#searchTable {
+  width: 70%;
+  background: var(--bs-gray);
+  display: grid;
+  grid-template-columns: 0.1fr 0.3fr 0.3fr 0.3fr;
+  grid-gap: 0.5em;
+  padding: 0.5em;
+}
+
+#searchTable i {
+  background: var(--bs-light);
+  color: var(--bs-gray);
+}
+
+#searchTableWrapper button {
+  margin-bottom: 5px;
+}

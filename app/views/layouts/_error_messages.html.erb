@@ -1,0 +1,12 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li class='text-danger'>
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+    <%= image_tag("home_page/crewmate_amongus-256px-18.gif") %>
+  </div>
+<% end %>
