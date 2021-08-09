@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-module UserResourcesHelper
+class Category < ApplicationRecord
 end

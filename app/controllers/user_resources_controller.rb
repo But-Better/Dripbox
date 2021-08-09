@@ -1,22 +1,20 @@
 # frozen_string_literal: true
 
 class UserResourcesController < ApplicationController
+  #before_action :set_user_resource, only: %i[show edit update destroy]
+
   # GET /user_resources or /user_resources.json
   def index
-    @user = session[:user_id]
-    redirect_to registrations_index_path if @user.nil?
-
-    @user_resources = @user.user_resources
+    @user_resources = UserResource.all
+    @categories = Tag.all
   end
 
   # GET /user_resources/1 or /user_resources/1.json
-  def show
-    @user_resource = UserResource.find(params[:id])
-  end
+  def show; end
 
   # GET /user_resources/new
   def new
-    @user = session[:user_id]
+    @user = 2
     redirect_to registrations_index_path if @user.nil?
 
     @user_resource = UserResource.new
@@ -24,36 +22,23 @@ class UserResourcesController < ApplicationController
   end
 
   # GET /user_resources/1/edit
-  def edit
-    @user_resource = UserResource.find(params[:id])
-  end
+  def edit; end
 
   # POST /user_resources or /user_resources.json
   def create
     @user = session[:user_id]
     redirect_to registrations_index_path if @user.nil?
 
-    tag_string = if params[:tag].nil?
-                   ''
-                 else
-                   params[:tag]
-                 end
+    string_split = :tag.split(',')
 
-
-    string_split = tag_string.split(',')
     tags = []
 
-    string_split.each do |tag|
-      tags[tags.length] = if !Tag.find_by(name: tag.strip).nil?
-                            Tag.find_by(name: tag.strip)
-                          else
-                            Tag.create(name: tag.strip)
-                          end
+    string_split.each do |tag_|
+      tags[tags.length] = Tag.find_by(name: tag_)
     end
 
-    @user_resource = @user.user_resources.new user_resource_params
-
-    @user_resource.tags = tags
+    @user_resource.new user_resource_params
+    @user_resource.user_id = :user_id
 
     respond_to do |format|
       if @user_resource.save
@@ -68,7 +53,6 @@ class UserResourcesController < ApplicationController
 
   # PATCH/PUT /user_resources/1 or /user_resources/1.json
   def update
-    @user_resource = UserResource.find(params[:id])
     respond_to do |format|
       if @user_resource.update(user_resource_params)
         format.html { redirect_to @user_resource, notice: 'User resource was successfully updated.' }
@@ -82,7 +66,7 @@ class UserResourcesController < ApplicationController
 
   # DELETE /user_resources/1 or /user_resources/1.json
   def destroy
-    UserResource.find(params[:id]).destroy
+    @user_resource.destroy
     respond_to do |format|
       format.html { redirect_to user_resources_url, notice: 'User resource was successfully destroyed.' }
       format.json { head :no_content }
@@ -98,6 +82,6 @@ class UserResourcesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_resource_params
-    params.require(:user_resource).permit(:name, :desc, :file)
+    params.require(:user_resource).permit(:name, :desc)
   end
 end

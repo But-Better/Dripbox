@@ -15,9 +15,6 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index'
   get '/dashboard/:id', to: 'dashboard#index'
 
-  get 'user_resource/index', to: 'user_resources#index'
-  get 'user_resource/:id/edit', to: 'user_resources#edit'
-
   get '/agb', to: 'site_informations#agb'
   get '/datenschutz', to: 'site_informations#datenschutz'
   get '/uber', to: 'site_informations#about'
