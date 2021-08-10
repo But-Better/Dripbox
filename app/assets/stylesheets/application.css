@@ -14,3 +14,7 @@
  *= require_self
  *= require _bootstrap
  */
+
+input {
+    margin-bottom: 5px !important;
+}
