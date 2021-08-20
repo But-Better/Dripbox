@@ -36,6 +36,10 @@ gem 'rubocop', require: false
 # https://github.com/simplecov-ruby/simplecov
 gem 'simplecov', require: false, group: :test
 
+# azure storage support
+# https://github.com/Azure/azure-storage-ruby
+gem 'azure-storage-blob', require: false, group: :production
+
 # rouge one
 # https://github.com/rubocop/ruby-style-guide
 gem 'rouge'
