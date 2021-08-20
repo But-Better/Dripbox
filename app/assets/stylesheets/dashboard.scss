@@ -99,6 +99,11 @@
   margin-left: var(--list-item-margin);
 }
 
+#recentUploadsList #ru_item img {
+  height: 100%;
+  width: 100%;
+}
+
 #recentUploadsList #name {
   opacity: var(--default-opacity);
   padding-right: 3px;
