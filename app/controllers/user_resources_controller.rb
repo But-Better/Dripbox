@@ -3,8 +3,8 @@
 class UserResourcesController < ApplicationController
   # GET /user_resources or /user_resources.json
   def index
+    redirect_to registrations_index_path unless logged_in?
     @user = User.find_by_id(session[:user_id])
-    redirect_to registrations_index_path if @user.nil?
 
     @user_resources = @user.user_resources
   end
@@ -16,8 +16,8 @@ class UserResourcesController < ApplicationController
 
   # GET /user_resources/new
   def new
+    redirect_to registrations_index_path unless logged_in?
     @user = User.find_by_id(session[:user_id])
-    redirect_to registrations_index_path if @user.nil?
 
     @user_resource = UserResource.new
     @categories = Tag.all
@@ -30,8 +30,8 @@ class UserResourcesController < ApplicationController
 
   # POST /user_resources or /user_resources.json
   def create
+    redirect_to registrations_index_path unless logged_in?
     @user = User.find_by_id(session[:user_id])
-    redirect_to registrations_index_path if @user.nil?
 
     tag_string = if params[:tag].nil?
                    ''
