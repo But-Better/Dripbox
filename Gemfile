@@ -26,6 +26,8 @@ gem 'server_timing'
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
 
+#image processing for storage_blob
+gem 'image_processing', '~> 1.2'
 
 ## Source code
 # Rubocop
