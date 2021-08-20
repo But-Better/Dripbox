@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get 'users', to: 'users#new'
+  get '/users', to: 'users#new'
   get 'registrations/index', to: 'users#new'
 
   get '/searchresults', to: 'search_results#index'
@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/ueber', to: 'site_informations#about'
 
   root 'home_pages#index'
+
+  get '/password_resets', to: 'password_resets#new'
 
   resources :password_resets
 

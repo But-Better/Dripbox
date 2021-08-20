@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.1'
+ruby '3.0.2'
 
 ## Style
 # Bootstrap
@@ -26,6 +26,8 @@ gem 'server_timing'
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
 
+#image processing for storage_blob
+gem 'image_processing', '~> 1.2'
 
 ## Source code
 # Rubocop
@@ -35,6 +37,10 @@ gem 'rubocop', require: false
 # simplecov
 # https://github.com/simplecov-ruby/simplecov
 gem 'simplecov', require: false, group: :test
+
+# azure storage support
+# https://github.com/Azure/azure-storage-ruby
+gem 'azure-storage-blob', require: false, group: :production
 
 # rouge one
 # https://github.com/rubocop/ruby-style-guide
