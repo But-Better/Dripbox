@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UserMailer < ActionMailer::Base
-  default from: 'dripbox.herokuapp.com'
+  default from: 'dripbox@herokuapp.com'
 
   def registration_confirmation(user)
     @user = user
