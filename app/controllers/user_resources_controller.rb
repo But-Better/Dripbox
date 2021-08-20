@@ -30,7 +30,7 @@ class UserResourcesController < ApplicationController
 
   # POST /user_resources or /user_resources.json
   def create
-    @user = session[:user_id]
+    @user = User.find(session[:user_id])
     redirect_to registrations_index_path if @user.nil?
 
     tag_string = if params[:tag].nil?
