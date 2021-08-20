@@ -24,10 +24,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'dripbox.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
     port: 587,
-    address: 'smtp.gmail.com',
-    user_name: ENV['Gmail'],
-    password: ENV['Gmail-PW'],
+    domain: "gmail.com",
+    user_name: ENV['GMAIL'],
+    password: ENV['GMAIL_PW'],
     authentication: :plain,
     enable_starttls_auto: true
   }
