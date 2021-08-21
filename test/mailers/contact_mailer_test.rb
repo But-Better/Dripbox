@@ -12,5 +12,7 @@ class ContactMailerTest < ActionMailer::TestCase
 
     assert_equal [contact.email], send_email.to
 
+    assert_equal "You has created a contact", send_email.subject
+
   end
 end
