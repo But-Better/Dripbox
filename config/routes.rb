@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
   get '/logout', to: 'sessions#destroy'
 
   get '/login', to: 'sessions#new'
@@ -36,5 +37,7 @@ Rails.application.routes.draw do
   resources :tags
   resources :search, only: :index
 
+  get 'contacts', to: 'contacts#new'
+  resources :contacts, only: %i[new create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

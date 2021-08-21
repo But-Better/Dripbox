@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_212923) do
+ActiveRecord::Schema.define(version: 2021_08_21_150812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,39 @@ ActiveRecord::Schema.define(version: 2021_07_12_212923) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.text "desc"
+    t.string "img_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.text "message"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "file_resource_category_relations", force: :cascade do |t|
+    t.bigint "file_resource_id"
+    t.bigint "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "file_resources", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.date "upload"
+    t.bigint "user_id"
+    t.text "desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -55,9 +88,9 @@ ActiveRecord::Schema.define(version: 2021_07_12_212923) do
   end
 
   create_table "user_resources", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "name"
     t.text "desc"
-    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_user_resources_on_user_id"
