@@ -1,0 +1,38 @@
+<%= form_with(model: @user_resource) do |form| %>
+  <% if @user_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_resource.errors.count, "error") %> prohibited this user_resource from being saved:</h2>
+
+      <ul>
+        <% @user_resource.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="new_resource_wrapper">
+    <div id="selection_field">
+      <div>
+        <%= form.label :file%>
+        <%= form.file_field :file, required: true%>
+      </div>
+      <div>
+        <%= form.label :name %>
+        <%= form.text_field :name, required: true %>
+      </div>
+      <div>
+        <%= form.label :desc %>
+        <%= form.text_area :desc, required: true %>
+      </div>
+      
+      <div>
+        <%= form.label :tag %>
+        <%= form.text_field :tag, required: true %>
+      </div>
+    </div>
+
+    <div id="createNewResource_button">
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>
