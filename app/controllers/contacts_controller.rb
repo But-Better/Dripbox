@@ -5,6 +5,13 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    if @contact.save
+      ContactMailer.send_information(@contact).deliver
+      redirect_to root_path
+    else
+      render :new
+    end
+
   end
 
   private

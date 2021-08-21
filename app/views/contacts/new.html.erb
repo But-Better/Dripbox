@@ -23,5 +23,10 @@
         <%= contact.submit "Create", class: "btn btn-primary btn-lg" %>
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <%= render "layouts/error_messages", elem: @contact  %>
+      </div>
+    </div>
   <% end %>
 </div>

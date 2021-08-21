@@ -9,7 +9,6 @@ class Contact < ApplicationRecord
             format: { with: URI::MailTo::EMAIL_REGEXP }
 
   validates :message,
-            length: {minimum: 1, maximum: 8192}
-
+            length: {minimum: 10, maximum: 8192}
 
 end
