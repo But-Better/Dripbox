@@ -5,4 +5,9 @@ class ContactMailer < ApplicationMailer
     @contact = contact
     mail to: contact.email, subject: 'You has created a contact'
   end
+
+  def send_to_management(contact)
+    @contact = contact
+    mail to: contact.email, subject:  "<#{contact.name}> has asked them | This email is from the contact form"
+  end
 end

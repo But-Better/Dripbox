@@ -12,4 +12,9 @@ class ContactTest < ActiveSupport::TestCase
     contact = Contact.create(name: 'Peter', email: 'Peter@Peter.de', message: 'opandasd0o312kd<%$&$§/§""')
     assert contact.valid?
   end
+
+  test 'message length > 9' do
+    contact = Contact.create(name: 'Peter', email: 'Peter@Peter.de', message: '12345678')
+    assert_not contact.valid?
+  end
 end
