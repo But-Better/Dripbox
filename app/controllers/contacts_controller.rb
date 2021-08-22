@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
@@ -10,13 +8,20 @@ class ContactsController < ApplicationController
     if @contact.save
       ContactMailer.send_information(@contact).deliver
 
-      User.all.each
+      # Send to all contactable user a contact email
+      contactable = User.where(contact_status: true)
 
-      ContactMailer.send_to_management('').deliver
+      unless contactable.nil?
+        contactable.each do |user|
+          ContactMailer.send_to_management(user).deliver
+        end
+      end
+
       redirect_to root_path
     else
       render :new
     end
+
   end
 
   private
