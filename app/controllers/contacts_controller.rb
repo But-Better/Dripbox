@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
@@ -10,14 +12,11 @@ class ContactsController < ApplicationController
 
       User.all.each
 
-
-
-      ContactMailer.send_to_management("").deliver
+      ContactMailer.send_to_management('').deliver
       redirect_to root_path
     else
       render :new
     end
-
   end
 
   private

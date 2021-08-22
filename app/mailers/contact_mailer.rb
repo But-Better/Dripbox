@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ContactMailer < ApplicationMailer
   default from: 'dripbox@herokuapp.com'
 
@@ -8,6 +10,6 @@ class ContactMailer < ApplicationMailer
 
   def send_to_management(contact)
     @contact = contact
-    mail to: contact.email, subject:  "<#{contact.name}> has asked them | This email is from the contact form"
+    mail to: contact.email, subject: "<#{contact.name}> has asked them | This email is from the contact form"
   end
 end

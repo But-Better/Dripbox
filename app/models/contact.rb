@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Contact < ApplicationRecord
-
   require 'uri'
 
   validates :name,
@@ -11,6 +10,5 @@ class Contact < ApplicationRecord
             format: { with: URI::MailTo::EMAIL_REGEXP }
 
   validates :message,
-            length: {minimum: 10, maximum: 8192}
-
+            length: { minimum: 10, maximum: 8192 }
 end
