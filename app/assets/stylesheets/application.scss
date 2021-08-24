@@ -61,3 +61,12 @@ body {
 input {
   margin-bottom: 5px !important;
 }
+
+#page-container{
+  position: relative;
+  min-height: 100%;
+}
+
+#content-wrap{
+  padding-bottom: 60px; /*Höhe des Footers*/
+}
