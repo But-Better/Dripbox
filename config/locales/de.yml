@@ -13,3 +13,6 @@ de:
   registration:
     title: "Kontaktdaten:"
     registration_submit: "Registration"
+  reset_password:
+    title: "Password wiederherstellen"
+    reset_submit: "Password zurücksetzen"

@@ -13,3 +13,6 @@ en:
   registration:
     title: "Contact data:"
     registration_submit: "Signup"
+  reset_password:
+    title: "Reset Password"
+    reset_submit: "Reset Password"

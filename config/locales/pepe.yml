@@ -13,3 +13,6 @@ pepe:
   registration:
     title: "Deine Daten ran eh:"
     registration_submit: "Trust me"
+  reset_password:
+    title: "Password vergessen???????? -5Head"
+    reset_submit: "Trust me"
