@@ -1,6 +1,11 @@
 pepe:
-  login: "Log dich ein MonkaS"
-  login_submit: "Trust me"
-  password: "Guck doch dein Passwort Lol"
-  password_forgot: "Password vergessen? Lost?????"
-  registration: "Registration pepe in love"
+  login_page:
+    login: "Log dich ein MonkaS"
+    login_submit: "Trust me"
+    password: "Guck doch dein Passwort Lol"
+    password_forgot: "Password vergessen? Lost?????"
+    registration: "Registration pepe in love"
+  footer:
+    terms: "terms and conditions"
+    privacy: "privacy"
+    about: "About"

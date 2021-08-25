@@ -1,6 +1,11 @@
 de:
-  login: "Bitte einloggen"
-  login_submit: "Anmelden"
-  password: "Password anzeigen"
-  password_forgot: "Password vergessen?"
-  registration: "Registration"
+  login_page:
+    login: "Bitte einloggen"
+    login_submit: "Anmelden"
+    password: "Password anzeigen"
+    password_forgot: "Password vergessen?"
+    registration: "Registration"
+  footer:
+    terms: "AGB"
+    privacy: "Datenschutz"
+    about: "Über"

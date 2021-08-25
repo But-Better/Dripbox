@@ -15,17 +15,28 @@
           </p>
       </div>
 
-      <div class="col">
+      <div class="col ">
         <!--empty col: mögliche Erweiterung-->
+        <div class="dropdown d-grid gap-2">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Language
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="?locale=en">English</a>
+            <a class="dropdown-item" href="?locale=de">Deutsch</a>
+            <a class="dropdown-item" href="?locale=pepe">Pepe</a>
+          </div>
+        </div>
       </div>
 
       <div id="footer-link-style" class="col">
 
-          <%=link_to "AGB", agb_path, class: "center"%> <br>
-          <%=link_to "Datenschutz", datenschutz_path, class: "center"%> <br>
-          <%=link_to "Über", ueber_path, class: "center"%>
+          <%=link_to "#{t('footer.terms')}", agb_path, class: "center"%> <br>
+          <%=link_to "#{t('footer.privacy')}", datenschutz_path, class: "center"%> <br>
+          <%=link_to "#{t('footer.about')}", ueber_path, class: "center"%>
 
       </div>
 
     </div>
 </div>
+</footer>
