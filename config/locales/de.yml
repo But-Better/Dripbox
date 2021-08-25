@@ -1,7 +1,10 @@
 de:
+  submit:
+    login_submit: "Anmelden"
+    registration_submit: "Registieren"
+    reset_submit: "Password wiederherstellen"
   login_page:
     login: "Bitte einloggen"
-    login_submit: "Anmelden"
     password: "Password anzeigen"
     password_forgot: "Password vergessen?"
     registration: "Registration"
@@ -15,4 +18,8 @@ de:
     registration_submit: "Registration"
   reset_password:
     title: "Password wiederherstellen"
-    reset_submit: "Password zurücksetzen"
+  confirm_email:
+    text1: "Bitte bestätigen Sie Ihre E-Mail"
+    text2: "Überprüfen Sie Ihren Spam-Ordner"
+  confirmed_email:
+    text1: "E-Mail wurde erfolgreich bestätigt"

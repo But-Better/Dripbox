@@ -1,7 +1,10 @@
 en:
+  submit:
+    login_submit: "Login"
+    registration_submit: "Signup"
+    reset_submit: "Reset Password"
   login_page:
     login: "Please sign in"
-    login_submit: "Login"
     password: "show password"
     password_forgot: "Forgot password?"
     registration: "Registration"
@@ -12,7 +15,10 @@ en:
     lang_button: "language"
   registration:
     title: "Contact data:"
-    registration_submit: "Signup"
   reset_password:
     title: "Reset Password"
-    reset_submit: "Reset Password"
+  confirm_email:
+    text1: "Please confirm your E-Mail"
+    text2: "Check out your Spam folder"
+  confirmed_email:
+    text1: "Email was confirmed successfully"
