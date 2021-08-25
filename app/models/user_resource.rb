@@ -10,7 +10,7 @@ class UserResource < ApplicationRecord
   validates :name,
             uniqueness: true,
             presence: true,
-            length: { minimum: 2, maximum: 30},
+            length: { minimum: 2, maximum: 30 },
             allow_nil: false,
             allow_blank: false
 
@@ -19,12 +19,10 @@ class UserResource < ApplicationRecord
             presence: true,
             allow_nil: false
 
-
-
-  #such in dem namen des files und usernamen nach einer nicht leeren eingabe
+  # such in dem namen des files und usernamen nach einer nicht leeren eingabe
   def self.search(params)
-    #desc vom typ text!
+    # desc vom typ text!
     params = params.downcase
-    joins(:user).where("LOWER(name) LIKE :lookUp OR LOWER(username) LIKE :lookUp", lookUp:"%#{params}%")
+    joins(:user).where('LOWER(name) LIKE :lookUp OR LOWER(username) LIKE :lookUp', lookUp: "%#{params}%")
   end
 end
