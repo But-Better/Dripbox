@@ -83,3 +83,11 @@ input {
   font-size: inherit;
   padding-bottom: var(--section-padding);
 }
+
+.gray-boxing {
+  border-style: solid;
+  border-color: var(--bs-gray-dark);
+  border-width: var(--list-item-border);
+
+  background-color: var(--bs-gray);
+}
