@@ -1,3 +1,14 @@
 // Place all the styles related to the userpage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#userpage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#user_information {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+

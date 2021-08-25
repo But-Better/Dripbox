@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="dashboard-container">
+    <div class="content">
+      <div id="heading"><h1>Userpage of <%= @current_user.username %></h1></div>
+      <div id="userpage">
+        <div id="user_information" class="gray-boxing">
+          <span>Name:</span>
+          <span><%= @current_user.username %></span>
+          <span>Email:</span>
+          <span><%= @current_user.email %></span>
+          <span>last uploaded File:</span>
+          <span><i><%= @last_uploaded_file %></i></span>
+        </div>
+        <div id="upload_statistics" class="gray-boxing">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
