@@ -9,3 +9,7 @@ pepe:
     terms: "terms and conditions"
     privacy: "privacy"
     about: "About"
+    lang_button: "Ssssssssprache"
+  registration:
+    title: "Deine Daten ran eh:"
+    registration_submit: "Trust me"

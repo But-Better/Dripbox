@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col">
         <h3>
-          <b>Contact data:</b>
+          <b><%= "#{t('registration.title')}" %></b>
         </h3>
       </div>
     </div>
@@ -47,7 +47,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <%= user.submit "Registierung", id: "regBtn", class: 'btn btn-primary' %>
+            <%= user.submit "#{t('registration.registration_submit')}", id: "regBtn", class: 'btn btn-primary' %>
           </div>
         </div>
         <div class="row">

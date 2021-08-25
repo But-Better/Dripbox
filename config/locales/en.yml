@@ -9,4 +9,7 @@ en:
     terms: "terms and conditions"
     privacy: "Privacy"
     about: "About"
-    
+    lang_button: "language"
+  registration:
+    title: "Contact data:"
+    registration_submit: "Signup"

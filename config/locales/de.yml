@@ -9,3 +9,7 @@ de:
     terms: "AGB"
     privacy: "Datenschutz"
     about: "Über"
+    lang_button: "Sprache"
+  registration:
+    title: "Kontaktdaten:"
+    registration_submit: "Registration"
