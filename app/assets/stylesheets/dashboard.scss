@@ -28,28 +28,6 @@
   align-items: center;
 }
 
-#heading2 h2, #heading h1 {
-  width: fit-content;
-
-  color: #001f3f;
-  background-color: white;
-  padding: 5px;
-}
-
-#heading h1 {
-  font-size: xxx-large;
-  font-weight: bolder;
-}
-
-#heading {
-  padding-bottom: var(--section-padding);
-}
-
-#heading2 {
-  font-size: inherit;
-  padding-bottom: var(--section-padding);
-}
-
 #recentUploadsSection {
   padding-bottom: calc(var(--section-padding) * 2);
 }
