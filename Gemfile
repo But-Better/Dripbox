@@ -21,12 +21,12 @@ gem 'bullet', group: 'development'
 gem 'server_timing'
 
 ## Security
-#Brakeman
+# Brakeman
 
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
 
-#image processing for storage_blob
+# image processing for storage_blob
 gem 'image_processing', '~> 1.2'
 
 ## Source code
@@ -100,4 +100,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

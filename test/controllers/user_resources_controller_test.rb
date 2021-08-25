@@ -4,9 +4,8 @@ require 'test_helper'
 
 class UserResourcesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = User.create username: "name", email: "note@mail.com", password_digest: "abcdefg4"
-    @user_resource = @user.user_resources.create id: 1, name: "e", desc: "EE"
-
+    @user = User.create username: 'name', email: 'note@mail.com', password_digest: 'abcdefg4'
+    @user_resource = @user.user_resources.create id: 1, name: 'e', desc: 'EE'
   end
 
   test 'should get index' do
@@ -41,7 +40,7 @@ class UserResourcesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update user_resource' do
     patch user_resource_url @user_resource,
-          params: { user_resource: { desc: @user_resource.desc, name: @user_resource.name } }
+                            params: { user_resource: { desc: @user_resource.desc, name: @user_resource.name } }
     assert_redirected_to dashboard_url(@user_resource)
   end
 
