@@ -23,3 +23,18 @@ pepe:
     text2: "Check out your Spam folder"
   confirmed_email:
     text1: "Ja haste fein gemacht Pepe Love | E-Mail wurde erfolgreich bestätigt"
+  user_resources:
+    name: "Dein Name alter:"
+    desc: "Description TEXT !!!:"
+    preview: "Show me what your got:"
+    edit: "Edit"
+    back: "Back"
+    new_title: "New Resource"
+    index_title: "Your Resources"
+    direct_link: "Direkt link"
+    options: "Optionen"
+    show: "Zeigen"
+    destroy: "Löschen einfach alles"
+    dashboard: "Hauptmenü"
+    new_user_link: "Neues Benutzer file | oder auch nicht "
+    edit_user: "Editing User Resource"

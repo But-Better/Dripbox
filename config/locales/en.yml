@@ -22,3 +22,18 @@ en:
     text2: "Check out your Spam folder"
   confirmed_email:
     text1: "Email was confirmed successfully"
+  user_resources:
+    name: "Name:"
+    desc: "Description:"
+    preview: "Preview:"
+    edit: "Edit"
+    back: "Back"
+    new_title: "New Resource"
+    index_title: "Your Resources"
+    direct_link: "Direct link"
+    options: "Options"
+    show: "Show"
+    destroy: "Destroy"
+    dashboard: "Dashboard"
+    new_user_link: "New User Resource"
+    edit_user: "Editing User Resource"

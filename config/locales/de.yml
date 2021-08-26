@@ -23,3 +23,18 @@ de:
     text2: "Überprüfen Sie Ihren Spam-Ordner"
   confirmed_email:
     text1: "E-Mail wurde erfolgreich bestätigt"
+  user_resources:
+    name: "Name:"
+    desc: "Beschreibung:"
+    preview: "Vorschau:"
+    edit: "Bearbeiten"
+    back: "Zurück"
+    new_title: "New Datei hinzufügen"
+    index_title: "Your Resources"
+    direct_link: "Direkt link"
+    options: "Optionen"
+    show: "Zeigen"
+    destroy: "Löschen"
+    dashboard: "Hauptmenü"
+    new_user_link: "Neues Benutzer file"
+    edit_user: "Verändere Benutzer Dokumente"
