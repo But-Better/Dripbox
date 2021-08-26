@@ -38,3 +38,8 @@ pepe:
     dashboard: "Hauptmenü"
     new_user_link: "Neues Benutzer file | oder auch nicht "
     edit_user: "Editing User Resource"
+  user_mailer:
+    text1: "To reset your password, click the URL below: "
+    text2: "If you did not request your password to be reset, just ignore this e-mail and your password will stay the same."
+    text3: "Danke für gar nichts"
+    text_confirm: "Guck mal in dein MAILER du bob"

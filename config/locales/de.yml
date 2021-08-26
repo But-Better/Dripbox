@@ -38,3 +38,8 @@ de:
     dashboard: "Hauptmenü"
     new_user_link: "Neues Benutzer file"
     edit_user: "Verändere Benutzer Dokumente"
+  user_mailer:
+    text1: "Um Ihr Passwort zurückzusetzen, klicken Sie auf die unten stehende URL: "
+    text2: "Wenn Sie die Zurücksetzung Ihres Passworts nicht beantragt haben, ignorieren Sie diese E-Mail einfach, und Ihr Passwort bleibt unverändert."
+    text3: "Vielen Dank für Ihre Anmeldung! Um Ihre Anmeldung zu bestätigen, klicken Sie auf die URL unten."
+    text_confirm: "Bitte bestätigen Sie Ihre E-Mail"

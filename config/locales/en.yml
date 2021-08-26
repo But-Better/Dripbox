@@ -37,3 +37,8 @@ en:
     dashboard: "Dashboard"
     new_user_link: "New User Resource"
     edit_user: "Editing User Resource"
+  user_mailer:
+    text1: "To reset your password, click the URL below: "
+    text2: "If you did not request your password to be reset, just ignore this e-mail and your password will stay the same."
+    text3: "Thanks for registering! To confirm your registration click the URL below."
+    text_confirm: "Please confirm your E-Mail"
