@@ -1,4 +1,9 @@
 pepe:
+  placeholder:
+    email: "only-for-hacker@group.hacker"
+    username: "your hacker name"
+    password: "Password!123.hacker"
+    password-confirmed: "Password!123.hacker"
   submit:
     login_submit: "Trust me"
     registration_submit: "Trust me"
@@ -10,8 +15,8 @@ pepe:
     password_forgot: "Password vergessen? Lost?????"
     registration: "Registration pepe in love"
   footer:
-    terms: "terms and conditions"
-    privacy: "privacy"
+    terms: "No Rules"
+    privacy: "Privacy"
     about: "About"
     lang_button: "Ssssssssprache"
   registration:

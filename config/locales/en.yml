@@ -1,18 +1,23 @@
 en:
+  placeholder:
+    email: "but-better@group.com"
+    username: "your name"
+    password: "Password!123.com"
+    password-confirmed: "Password!123.com"
   submit:
     login_submit: "Login"
     registration_submit: "Signup"
     reset_submit: "Reset Password"
   login_page:
     login: "Please sign in"
-    password: "show password"
+    password: "Show password"
     password_forgot: "Forgot password?"
     registration: "Registration"
   footer:
-    terms: "terms and conditions"
+    terms: "Terms of service"
     privacy: "Privacy"
     about: "About"
-    lang_button: "language"
+    lang_button: "Language"
   registration:
     title: "Contact data:"
   reset_password:

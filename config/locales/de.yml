@@ -1,4 +1,9 @@
 de:
+  placeholder:
+    email: "but-better@group.de"
+    username: "your name"
+    password: "Password!123.de"
+    password-confirmed: "Password!123.de"
   submit:
     login_submit: "Anmelden"
     registration_submit: "Registieren"
