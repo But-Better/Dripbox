@@ -9,25 +9,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto w-100 justify-content-end">
 
-        <!-- Links können in Kombination mit dem mittleren Suchfeature realisiert werden -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/data" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><!-- //////////////////////link hier für Daten-->
-            Data
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Dokumente", "/dokumente_path", class: "dropdown-item"%><!-- Link für eigene Dokumentseite -->
-            <%= link_to "Bilder", "/biler_path", class: "dropdown-item"%><!-- Link für eigene Bilderseite -->
-            <div class="dropdown-divider"></div>
-            <%= link_to "Für mich freigegeben", "/freigegeben_path", class: "dropdown-item"%><!-- Link für Seite, die alle für mich freigegebenen Dateien  -->
-          </div>
-        </li>
-
         <li class="nav-item">
-          <%= link_to "Dashboard", "/dashboard_path", class: "nav-link"%><!-- Link für Dashboard -->
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Profil", "/profile_path", class: "nav-link"%><!-- Link für Profil -->
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link"%><!-- Link für Dashboard -->
         </li>
 
       </ul>
