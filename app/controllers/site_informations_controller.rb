@@ -1,9 +1,16 @@
 # frozen_string_literal: true
 
 class SiteInformationsController < ApplicationController
-  def agb; end
+  def agb
+    current_user
+  end
 
-  def datenschutz; end
+  def datenschutz
+    current_user
+  end
 
-  def about; end
+  def about
+    current_user
+  end
+
 end

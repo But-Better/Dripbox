@@ -1,7 +1,6 @@
-
 <header class="sticky-top">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand headTextSize" href="/"><%= image_tag"pepe_hacker.gif", class:"headerPic"%>DripBox</a>
+    <a class="navbar-brand headTextSize" href="/"><%= image_tag "pepe_hacker.gif", class: "headerPic" %>DripBox</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,23 +9,24 @@
       <ul class="navbar-nav mr-auto w-100 justify-content-end">
 
         <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link"%>
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
         </li>
 
-        
-          <%if 1 == 0%>
+        <!-- liefert einen Link zum Login wenn noch nicht eingeloggt und eine Begüßung + Link zum Logout wenn eingeloggt-->
+        <% if @current_user.nil?%>
           <li class="nav-item">
-          <%= link_to "Login", root_path, class: "nav-link"%>
+            <%= link_to "Login", root_path, class: "nav-link" %>
           </li>
-            <%else %>
-            <li class="welcome-text">
-            Willkommen UserName
-            </li>
+
+        <% else %>
+          <li class="welcome-text">
+            Willkommen <span class="welcomed-userName"><%= @current_user.username %></span>
+          </li>
           <li class="nav-item">
-            <%= link_to "Logout", root_path, class: "nav-link"%>
+            <%= link_to "Logout", "logout", class: "nav-link" %>
           </li>
-            <%end%>
-        
+        <% end %>
+
 
       </ul>
 

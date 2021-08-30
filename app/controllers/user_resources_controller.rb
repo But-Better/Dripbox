@@ -3,7 +3,13 @@
 class UserResourcesController < ApplicationController
   # GET /user_resources or /user_resources.json
   def index
-    redirect_to registrations_index_path unless logged_in?
+
+    unless logged_in?
+      redirect_to registrations_index_path
+      return
+    end
+    current_user
+
     @user = User.find_by_id(session[:user_id])
 
     @user_resources = @user.user_resources
