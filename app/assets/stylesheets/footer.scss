@@ -18,7 +18,7 @@ footer {
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 60px;
+  height: 0px; /*höhe des Footers wenn der Webseiteninhalt das Fenster nicht ausfüllt*/
 }
 
 /*sets color for the link pointer to background color of footer*/
