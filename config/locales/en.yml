@@ -32,6 +32,8 @@ en:
     desc: "Description:"
     preview: "Preview:"
     edit: "Edit"
+    file: "File:"
+    tag: "Tags:"
     back: "Back"
     new_title: "New Resource"
     index_title: "Your Resources"

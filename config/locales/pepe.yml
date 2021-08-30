@@ -33,6 +33,8 @@ pepe:
     desc: "Description TEXT !!!:"
     preview: "Show me what your got:"
     edit: "Edit"
+    file: "File"
+    tag: "Tags"
     back: "Back"
     new_title: "New Resource"
     index_title: "Your Resources"

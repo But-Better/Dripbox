@@ -19,6 +19,12 @@ module Dripbox
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
+
+    # Permitted locales available for the application
+    I18n.available_locales = [:en, :de, :pepe]
+
+    # Set default locale to something other than :en
+    I18n.default_locale = :en
   end
 end
