@@ -55,9 +55,18 @@ body {
 
     background-blend-mode: darken;
     background-position: center;
-    height: var(--full-vertical-height);
+    min-height: var(--full-vertical-height);
 }
 
 input {
   margin-bottom: 5px !important;
+}
+
+#page-container{
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap{
+  padding-bottom: 0; /*höhe des Footers wenn der Webseiteninhalt das Fenster nicht ausfüllt*/
 }
