@@ -6,7 +6,7 @@
 }
 
 /*sets link colors and style of links without setting pointer style*/
-.footer-link-pointer a{
+.footer-link-pointer a {
   font-weight: normal;
   color: #F7F7F7;
   text-decoration: none;
@@ -14,7 +14,7 @@
 
 
 /*positions footer at bottom of the site*/
-footer{
+footer {
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -22,26 +22,26 @@ footer{
 }
 
 /*sets color for the link pointer to background color of footer*/
-.footer-link-pointer{
-  color:#212529;
+.footer-link-pointer {
+  color: #212529;
   font-weight: bold;
   float: right;
 }
 
 
 /*lets the pointer appear, when user hovers over the link*/
-.footer-link-pointer:hover{
-  color:#F7F7F7;
+.footer-link-pointer:hover {
+  color: #F7F7F7;
 }
 
 /*link will be bold when hovered above, only pointer will show*/
-.footer-link-pointer a:hover{
+.footer-link-pointer a:hover {
   color: #F7F7F7;
   font-weight: bold;
 }
 
 /*sets different color, when site was visited*/
-.footer-link-pointer a:visited{
-  color:aquamarine;
+.footer-link-pointer a:visited {
+  color: aquamarine;
 }
 
