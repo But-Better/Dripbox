@@ -10,8 +10,23 @@
       <ul class="navbar-nav mr-auto w-100 justify-content-end">
 
         <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link"%><!-- Link für Dashboard -->
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link"%>
         </li>
+
+        
+          <%if 1 == 0%>
+          <li class="nav-item">
+          <%= link_to "Login", root_path, class: "nav-link"%>
+          </li>
+            <%else %>
+            <li class="welcome-text">
+            Willkommen UserName
+            </li>
+          <li class="nav-item">
+            <%= link_to "Logout", root_path, class: "nav-link"%>
+          </li>
+            <%end%>
+        
 
       </ul>
 
