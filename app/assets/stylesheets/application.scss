@@ -55,7 +55,7 @@ body {
 
     background-blend-mode: darken;
     background-position: center;
-    height: var(--full-vertical-height);
+    min-height: var(--full-vertical-height);
 }
 
 input {
@@ -68,5 +68,5 @@ input {
 }
 
 #content-wrap{
-  padding-bottom: 0px; /*höhe des Footers wenn der Webseiteninhalt das Fenster nicht ausfüllt*/
+  padding-bottom: 0; /*höhe des Footers wenn der Webseiteninhalt das Fenster nicht ausfüllt*/
 }
