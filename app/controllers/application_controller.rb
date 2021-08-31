@@ -22,4 +22,15 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
+
+  def dark
+    cookies[:dark]={
+      value: 'dark mode on'
+    }
+    redirect_to :back
+  end
+
+  def light
+    cookies.delete(:dark)
+  end
 end
