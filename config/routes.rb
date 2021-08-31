@@ -24,9 +24,6 @@ Rails.application.routes.draw do
 
   get '/password_resets', to: 'password_resets#new'
 
-  get '/dark', to: 'application#dark'
-  get '/light', to: 'application#light'
-
 
   resources :password_resets
 
