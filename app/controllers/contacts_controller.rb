@@ -11,9 +11,9 @@ class ContactsController < ApplicationController
       # Send to all contactable user a contact email
       contactable = User.where(contact_status: true)
 
-      unless contactable.nil?
+      if contactable
         contactable.each do |user|
-          ContactMailer.send_to_management(user).deliver
+          ContactMailer.send_to_management(@contact, user).deliver
         end
       end
 
