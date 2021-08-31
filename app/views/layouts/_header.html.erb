@@ -10,11 +10,11 @@
 
         <% if cookies[:theme] == "light" %>
           <li class="nav-item">
-            <%= link_to "dark", root_path(theme: "dark"), class: "nav-link"%>
+            <%= link_to  image_tag("darkmode.png",class: 'darkmode-lightmode-symbol'), root_path(theme: "dark"), class: "nav-link"%>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "light", root_path(theme: "light"), class: "nav-link"%>
+            <%= link_to image_tag("lightmode.png", class: 'darkmode-lightmode-symbol'), root_path(theme: "light"), class: "nav-link"%>
           </li>
         <% end %>
 
