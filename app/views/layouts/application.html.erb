@@ -19,11 +19,6 @@
 <body class="<%= cookies[:theme] %>">
 <%= debug(params) if Rails.env.development? %>
 
-<% if cookies[:theme] == "light" %>
-  <%= link_to "go dark", root_path(theme: "dark") %>
-<% else %>
-  <%= link_to "go light", root_path(theme: "light") %>
-<% end %>
 
 <%= yield :header unless current_page?(registrations_index_path) %> 
 
