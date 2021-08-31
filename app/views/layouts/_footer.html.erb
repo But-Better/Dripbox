@@ -1,5 +1,4 @@
 <footer>
-  <div class="fixed-bottom">
 
   <div class="p-3 bg-dark text-white">
 
@@ -11,7 +10,7 @@
             Mustermannstraße 99 <br>
             12345 Musterstadt <br>
             Deutschland <br>
-            E-Mail:<a href="mailto:max.mustermann@beispiel.de"> max.mustermann@beispiel.de</a><br>
+            E-Mail: <a href="mailto:max.mustermann@beispiel.de">max.mustermann@beispiel.de</a><br>
             Telefon: 030 12345678901
           </p>
       </div>
@@ -20,15 +19,18 @@
         <!--empty col: mögliche Erweiterung-->
       </div>
 
-      <div class="col">
+      <div id="footer-link-style" class="col">
 
-          <%=link_to "AGB", agb_path, class: "center"%> <br>
-          <%=link_to "Datenschutz", datenschutz_path, class: "center"%> <br>
-          <%=link_to "Über", ueber_path, class: "center"%>
+        <span class="footer-link-pointer">> <%=link_to "AGB", agb_path, class: "center"%></span>
+        <br>
+        
+        <span class="footer-link-pointer">> <%=link_to "Datenschutz", datenschutz_path, class: "center"%></span>
+        <br>
+        
+        <span class="footer-link-pointer">> <%=link_to "Über", ueber_path, class: "center"%></span>
 
       </div>
 
     </div>
-  </div>
-  </div>
+</div>
 </footer>
