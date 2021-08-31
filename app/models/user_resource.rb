@@ -2,7 +2,7 @@
 
 class UserResource < ApplicationRecord
   has_and_belongs_to_many :tags
-  has_one_attached :file, service: :microsoft
+  has_one_attached :file, service: :local
   belongs_to :user
 
   validates_associated :tags
