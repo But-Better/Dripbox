@@ -6,7 +6,7 @@ by the "but-better"-Group
 created with "rails new" on an Arch Linux System
 
 * Ruby version
-    - ruby 3.0.1p64
+    - ruby 3.0.2p64
 
 * System dependencies
     - fresh installation
