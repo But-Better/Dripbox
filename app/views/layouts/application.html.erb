@@ -16,9 +16,14 @@
 </head>
 
 <body>
-<%= yield :header unless current_page?(agb_path) %> <!-- needs to be changed to registration_path after merge -->
+<div id="page-container">
+  <div id="content-wrap">
+    <%= yield :header unless current_page?(registrations_index_path) %>
 
-<%= yield %>
+    <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
+</div>
 </body>
 
 </html>

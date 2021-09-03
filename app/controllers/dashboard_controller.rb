@@ -3,6 +3,7 @@
 class DashboardController < ApplicationController
   def index
     redirect_to registrations_index_path unless logged_in?
+    current_user
 
     @files = UserResource.all
     @categories = Tag.all
