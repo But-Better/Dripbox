@@ -9,6 +9,7 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
+import * as metric from 'metrics-graphics'
 
 import "channels"
 import "../src/home"
