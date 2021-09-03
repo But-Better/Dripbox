@@ -48,7 +48,7 @@ gem 'rouge'
 
 # graphing tool
 # https://github.com/dgilperez/metrics-graphics-rails
-gem 'metrics-graphics-rails', '~> 2.9'
+gem 'metrics-graphics-rails'
 
 # Rails 4+ Asset Pipeline on Heroku
 # gem 'rails_serve_static_assets', group: :production
