@@ -56,7 +56,10 @@ body {
 
     background-blend-mode: darken;
     background-position: center;
-    height: var(--full-vertical-height);
+}
+
+.container-fluid {
+    overflow-y: scroll;
 }
 
 input {

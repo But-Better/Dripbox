@@ -66,6 +66,11 @@
   background-color: var(--bs-gray);
 }
 
+#dashboard-middle-line {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
 #recentUploadsList #ru_item {
   position: relative;
   text-align: center;
@@ -136,15 +141,10 @@
 #categoryList {
   display: block;
   padding: var(--list-item-margin);
-
-  position: absolute;
-
 }
 
 #categoryList #cat_item {
   background-color: #666666;
-
-  position: relative;
 
   text-align: center;
   font-size: calc(var(--cat-item-height) - 25px);
@@ -160,7 +160,6 @@
 }
 
 #categoryList #cat_item #title {
-  position: absolute;
   left: var(--list-item-border);
   width: calc(var(--cat-item-width) - calc(var(--list-item-border) * 2));
 }
