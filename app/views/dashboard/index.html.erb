@@ -1,6 +1,6 @@
-<% content_for :header do%>
-  <%=render "layouts/header" %>
-<%end %>
+<% content_for :header do %>
+  <%= render "layouts/header" %>
+<% end %>
 
 <div class="container-fluid">
   <div class="dashboard-container">
@@ -8,7 +8,7 @@
       <div id="heading">
         <h1>Dashboard</h1>
       </div>
-      <div id="recentUploadsSection">
+      <div id="dashboard-middle-wrapper">
         <div id="newResourceButton">
           <%= link_to 'New User Resource', new_user_resource_path %>
         </div>
@@ -20,29 +20,42 @@
             <input type="text" placeholder="Search..">
           </label>
         </div>
-        <div id="heading2">
-          <h2>Recent Uploads:</h2>
+        <div id="recentUploadsSection" class="dashboard_div_item">
+          <div id="heading2">
+            <h2>Recent Uploads:</h2>
+          </div>
+          <div id=contentField>
+            <%= render "resources/recent_files_list" %>
+          </div>
         </div>
-        <div id=contentField>
-          <%= render "resources/recent_files_list" %>
+        <div id="divSlice" class="dashboard_div_item">
+          <div id="categorySection">
+            <div id="heading2">
+              <h2>Tags:</h2>
+            </div>
+            <div id=contentField>
+              <%= render "resources/categories_listing" %>
+            </div>
+          </div>
+          <div id="informationSection">
+            <div id="heading2">
+              <h2>Information:</h2>
+            </div>
+            <div id=contentField>
+              <%= render "resources/selected_file_listing" %>
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="categorySection">
-        <div id="heading2">
-          <h2>Tags:</h2>
-        </div>
-        <div id=contentField>
-          <%= render "resources/categories_listing" %>
-        </div>
-      </div>
-      <div id="informationSection">
-        <div id="heading2">
-          <h2>Information:</h2>
-        </div>
-        <div id=contentField>
-          <%= render "resources/selected_file_listing" %>
+        <div id="statisticsSection" class="dashboard_div_item">
+          <div id="heading2">
+            <h2>Statistics of <%= @current_user.username %></h2>
+          </div>
+          <div id="content-field">
+            <%= render "statistics/recent_statistics" %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+

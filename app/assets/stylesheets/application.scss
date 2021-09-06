@@ -59,7 +59,7 @@ body {
 }
 
 .container-fluid {
-    overflow-y: scroll;
+    //overflow-y: scroll;
 }
 
 input {
@@ -67,8 +67,8 @@ input {
 }
 
 #heading2 h2, #heading h1 {
-  width: fit-content;
 
+  text-align: left;
   color: #001f3f;
   background-color: white;
   padding: 5px;
@@ -79,13 +79,10 @@ input {
   font-weight: bolder;
 }
 
-#heading {
-  padding-bottom: var(--section-padding);
-}
-
-#heading2 {
-  font-size: inherit;
-  padding-bottom: var(--section-padding);
+#heading, #heading2{
+  height: fit-content;
+  width: fit-content;
+  margin-bottom: var(--section-padding);
 }
 
 .gray-boxing {
@@ -95,3 +92,4 @@ input {
 
   background-color: var(--bs-gray);
 }
+
