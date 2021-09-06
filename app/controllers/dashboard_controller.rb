@@ -34,14 +34,17 @@ class DashboardController < ApplicationController
 
   # noinspection RubyNilAnalysis
   def load_last_uploaded_file
-    @last_uploaded_file = @current_user.user_resources.last
-    @last_uploaded_file = 'none' if @last_uploaded_file.nil?
+    unless @current_user.uploaded_before?
+      @last_uploaded_file = 'none'
+      return
+    end
+    @last_uploaded_file = @current_user.user_resources.last.name
   end
 
   # noinspection RubyNilAnalysis
   def load_upload_file_history
     @upload_file_history = @current_user.user_resources.all
-    # TODO: code here
+
   end
 
   # noinspection RubyNilAnalysis
