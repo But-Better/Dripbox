@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<header>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="dashboard.scss" rel="stylesheet">
-</header>
+<% content_for :header do%>
+  <%=render "layouts/header" %>
+<%end %>
 
-<body>
 <div class="container-fluid">
   <div class="dashboard-container">
     <div class="content">
@@ -50,5 +46,3 @@
     </div>
   </div>
 </div>
-</body>
-</html>

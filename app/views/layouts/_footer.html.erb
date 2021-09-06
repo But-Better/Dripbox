@@ -5,14 +5,14 @@
     <div class="row">
 
       <div class="col">
-          <p>
-            <u><b>Impressum</b> </u><br>
-            Mustermannstraße 99 <br>
-            12345 Musterstadt <br>
-            Deutschland <br>
-            E-Mail:<a href="mailto:max.mustermann@beispiel.de"> max.mustermann@beispiel.de</a><br>
-            Telefon: 030 12345678901
-          </p>
+        <p>
+          <u><b>Impressum</b> </u><br>
+          Mustermannstraße 99 <br>
+          12345 Musterstadt <br>
+          Deutschland <br>
+          E-Mail: <a href="mailto:max.mustermann@beispiel.de">max.mustermann@beispiel.de</a><br>
+          Telefon: 030 12345678901
+        </p>
       </div>
 
       <div class="col ">
@@ -30,13 +30,22 @@
       </div>
 
       <div id="footer-link-style" class="col">
+        
+        <%= link_to "#{t('footer.terms')}", agb_path, class: "center" %> <br>
+        <%= link_to "#{t('footer.privacy')}", datenschutz_path, class: "center" %> <br>
+        <%= link_to "#{t('footer.about')}", ueber_path, class: "center" %>
 
-          <%=link_to "#{t('footer.terms')}", agb_path, class: "center"%> <br>
-          <%=link_to "#{t('footer.privacy')}", datenschutz_path, class: "center"%> <br>
-          <%=link_to "#{t('footer.about')}", ueber_path, class: "center"%>
+        <span class="footer-link-pointer">> <%= link_to "AGB", agb_path, class: "center" %></span>
+        <br>
+
+        <span class="footer-link-pointer">> <%= link_to "Datenschutz", datenschutz_path, class: "center" %></span>
+        <br>
+
+        <span class="footer-link-pointer">> <%= link_to "Über", ueber_path, class: "center" %></span>
+
 
       </div>
 
     </div>
-</div>
+  </div>
 </footer>
