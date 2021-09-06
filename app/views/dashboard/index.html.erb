@@ -1,3 +1,7 @@
+<% content_for :header do%>
+  <%=render "layouts/header" %>
+<%end %>
+
 <div class="container-fluid">
   <div class="dashboard-container">
     <div class="content">
@@ -23,27 +27,22 @@
           <%= render "resources/recent_files_list" %>
         </div>
       </div>
-      <div id="dashboard-middle-line">
-        <div id="categorySection">
-          <div id="heading2">
-            <h2>Tags:</h2>
-          </div>
-          <div id=contentField>
-            <%= render "resources/categories_listing" %>
-          </div>
+      <div id="categorySection">
+        <div id="heading2">
+          <h2>Tags:</h2>
         </div>
-        <div id="informationSection">
-          <div id="heading2">
-            <h2>Information:</h2>
-          </div>
-          <div id=contentField>
-            <%= render "resources/selected_file_listing" %>
-          </div>
+        <div id=contentField>
+          <%= render "resources/categories_listing" %>
         </div>
       </div>
-      <%= render "statistics/recent_statistics" %>
+      <div id="informationSection">
+        <div id="heading2">
+          <h2>Information:</h2>
+        </div>
+        <div id=contentField>
+          <%= render "resources/selected_file_listing" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-

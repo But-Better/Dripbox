@@ -8,7 +8,7 @@
         <%= image_tag @file_of_current_resource.representation(resize_to_limit: [700, 700]) %>
       <% else %>
         <%= link_to rails_blob_path(@file_of_current_resource, disposition: "attachment") do %>
-          <%= image_tag "placeholder.png", alt: "Download file" %>
+          <%= image_tag "placeholder.svg", alt: "Download file" %>
         <% end %>
       <% end %>
     <% else %>
