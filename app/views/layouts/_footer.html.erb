@@ -1,7 +1,7 @@
 <footer>
 
   <div class="p-3 bg-dark text-white">
-
+    Yarn add bootstrap jquery popper.js
     <div class="row">
 
       <div class="col">
@@ -30,20 +30,13 @@
       </div>
 
       <div id="footer-link-style" class="col">
-        
-        <%= link_to "#{t('footer.terms')}", agb_path, class: "center" %> <br>
-        <%= link_to "#{t('footer.privacy')}", datenschutz_path, class: "center" %> <br>
-        <%= link_to "#{t('footer.about')}", ueber_path, class: "center" %>
-
-        <span class="footer-link-pointer">> <%= link_to "AGB", agb_path, class: "center" %></span>
+        <span class="footer-link-pointer">> <%= link_to "#{t('footer.terms')}", agb_path, class: "center" %></span>
         <br>
 
-        <span class="footer-link-pointer">> <%= link_to "Datenschutz", datenschutz_path, class: "center" %></span>
+        <span class="footer-link-pointer">> <%= link_to "#{t('footer.privacy')}", datenschutz_path, class: "center" %></span>
         <br>
 
-        <span class="footer-link-pointer">> <%= link_to "Über", ueber_path, class: "center" %></span>
-
-
+        <span class="footer-link-pointer">> <%= link_to "#{t('footer.about')}", ueber_path, class: "center" %></span>
       </div>
 
     </div>
