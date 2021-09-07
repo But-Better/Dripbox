@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :room_messages
+  resources :rooms
   get '/logout', to: 'sessions#destroy'
 
   get '/login', to: 'sessions#new'
@@ -35,6 +37,8 @@ Rails.application.routes.draw do
   resources :user_resources
   resources :tags
   resources :search, only: :index
+  resources :room_messages
+  resources :rooms
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
