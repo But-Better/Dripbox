@@ -61,4 +61,7 @@ class User < ApplicationRecord
       break unless User.exists?(column => self[column])
     end
   end
+
+  # @return [TrueClass, FalseClass]
+  def uploaded_before? = !user_resources.all.empty?
 end

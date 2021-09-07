@@ -14,7 +14,8 @@
 
 .content {
   padding: var(--section-padding);
-  height: var(--full-vertical-height);
+  min-height: var(--full-vertical-height);
+  height: inherit;
 }
 
 #nothing_found {
@@ -28,13 +29,9 @@
   align-items: center;
 }
 
-#recentUploadsSection {
-  padding-bottom: calc(var(--section-padding) * 2);
-}
-
-#recentUploadsSection #searchBar,
-#recentUploadsSection #newResourceButton,
-#recentUploadsSection #editResourceButton {
+#searchBar,
+#newResourceButton,
+#editResourceButton {
   position: relative;
   float: right;
   padding-right: 10px;
@@ -66,9 +63,14 @@
   background-color: var(--bs-gray);
 }
 
-#dashboard-middle-line {
+#divSlice {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  grid-gap: 6px;
+}
+
+.dashboard_div_item {
+  margin-bottom: 25px;
 }
 
 #recentUploadsList #ru_item {
@@ -123,12 +125,7 @@
   border-width: var(--list-item-border);
 }
 
-#categorySection {
-  float: left;
-}
-
 #categoryAreal, #informationField {
-  width: var(--cat-list-width);
   height: var(--cat-list-height);
 
   border-style: solid;
@@ -154,7 +151,8 @@
   border-width: var(--list-item-border);
 
   height: var(--cat-item-height);
-  width: var(--cat-item-width);
+  // TODO: remove not needed for Tag/Category-Section
+  //width: var(--cat-item-width);
 
   margin-bottom: var(--list-item-margin);
 }
@@ -171,7 +169,6 @@
   object-fit: cover;
   object-position: center;
 
-  // need to overwrite because of bootstrap
   vertical-align: 0;
 }
 
@@ -188,10 +185,11 @@
 
   height: var(--cat-list-height);
 
+  // TODO: remove
   // calculate width of information field by taking the full width of the screen
   // and subtracting all existent paddings and the width of the category field
   // plus a custom padding between the category and the information field
-  width: calc(var(--full-horizontal-width) - calc(var(--cat-list-width) + calc(var(--fluid-container-padding) * 2) + var(--cat-inf-padding) + calc(var(--section-padding) * 2)));
+  //width: calc(calc(var(--full-horizontal-width) - calc(var(--cat-list-width) + calc(var(--fluid-container-padding) * 2) + var(--cat-inf-padding) + calc(var(--section-padding) * 2))));
 
   overflow: hidden;
   overflow-y: scroll;

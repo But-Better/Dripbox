@@ -3,10 +3,14 @@
 class UserResourcesController < ApplicationController
   # GET /user_resources or /user_resources.json
   def index
+
     unless logged_in?
-      redirect_to login_path
+      redirect_to registrations_index_path
       return
     end
+
+    current_user
+
     @user = User.find_by_id(session[:user_id])
 
     @user_resources = @user.user_resources
@@ -20,9 +24,10 @@ class UserResourcesController < ApplicationController
   # GET /user_resources/new
   def new
     unless logged_in?
-      redirect_to login_path
+      redirect_to registrations_index_path
       return
     end
+
     @user = User.find_by_id(session[:user_id])
 
     @user_resource = UserResource.new
@@ -31,14 +36,17 @@ class UserResourcesController < ApplicationController
 
   # GET /user_resources/1/edit
   def edit
+    unless logged_in?
+      redirect_to registrations_index_path
+      return
+    end
     @user_resource = UserResource.find(params[:id])
   end
 
   # POST /user_resources or /user_resources.json
   def create
-
     unless logged_in?
-      redirect_to login_path
+      redirect_to registrations_index_path
       return
     end
     @user = User.find_by_id(session[:user_id])
@@ -77,6 +85,12 @@ class UserResourcesController < ApplicationController
 
   # PATCH/PUT /user_resources/1 or /user_resources/1.json
   def update
+
+    unless logged_in?
+      redirect_to registrations_index_path
+      return
+    end
+
     @user_resource = UserResource.find(params[:id])
     respond_to do |format|
       if @user_resource.update(user_resource_params)
@@ -92,25 +106,14 @@ class UserResourcesController < ApplicationController
   # DELETE /user_resources/1 or /user_resources/1.json
   def destroy
     unless logged_in?
-      redirect_to login_path
-      return
-    end
-
-    unless User.find_by_id(session[:user_id]).id == UserResource.find(params[:id]).user_id
-      format.html do
-        redirect_to user_resources_url,
-                    notice: 'You are not the owner of this resource, therefore could not be deleted'
-      end
+      redirect_to registrations_index_path
       return
     end
 
     UserResource.find(params[:id]).destroy
     respond_to do |format|
-      format.html do
-        redirect_to user_resources_url,
-                    notice: 'User resource was successfully destroyed.'
-        format.json { head :no_content }
-      end
+      format.html { redirect_to user_resources_url, notice: 'User resource was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
