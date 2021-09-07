@@ -1,9 +1,6 @@
 <footer>
-
   <div class="p-3 bg-dark text-white">
-    Yarn add bootstrap jquery popper.js
     <div class="row">
-
       <div class="col">
         <p>
           <u><b>Impressum</b> </u><br>
@@ -14,7 +11,6 @@
           Telefon: 030 12345678901
         </p>
       </div>
-
       <div class="col ">
         <!--empty col: mögliche Erweiterung-->
         <div class="dropdown d-grid gap-2">
@@ -28,17 +24,13 @@
           </div>
         </div>
       </div>
-
       <div id="footer-link-style" class="col">
         <span class="footer-link-pointer">> <%= link_to "#{t('footer.terms')}", agb_path, class: "center" %></span>
         <br>
-
         <span class="footer-link-pointer">> <%= link_to "#{t('footer.privacy')}", datenschutz_path, class: "center" %></span>
         <br>
-
         <span class="footer-link-pointer">> <%= link_to "#{t('footer.about')}", ueber_path, class: "center" %></span>
       </div>
-
     </div>
   </div>
 </footer>
