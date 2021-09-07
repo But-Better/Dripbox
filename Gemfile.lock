@@ -219,6 +219,9 @@ GEM
     semantic_range (3.0.0)
     server_timing (1.0.2)
       scout_apm
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     simplecov (0.21.2)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -287,6 +290,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   server_timing
+  simple_form
   simplecov
   spring
   turbolinks (~> 5)
