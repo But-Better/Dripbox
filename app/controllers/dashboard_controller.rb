@@ -8,6 +8,7 @@ class DashboardController < ApplicationController
     end
 
     current_user
+    load_all_current_user_res
 
     load_last_uploaded_file
     load_upload_file_history
@@ -33,6 +34,11 @@ class DashboardController < ApplicationController
   private
 
   # noinspection RubyNilAnalysis
+  def load_all_current_user_res
+    @res_of_user = @current_user.user_resources.all
+  end
+
+  # noinspection RubyNilAnalysis
   def load_last_uploaded_file
     unless @current_user.uploaded_before?
       @last_uploaded_file = 'none'
@@ -43,21 +49,18 @@ class DashboardController < ApplicationController
 
   # noinspection RubyNilAnalysis
   def load_upload_file_history
-    # TODO: clean up multiple resource fetching
-    uploaded_files = @current_user.user_resources.all
     @upload_file_history = []
     # TODO: gets multiple dates
     all_upload_dates.each do |item|
-      puts "\t- " + item.to_s unless item.nil?
-      @upload_file_history.append({ 'date': item, 'number': get_number_of_files_at_date(item) })
+      @upload_file_history.append({ 'date': item, 'number': get_number_of_files_at_date(item) }) unless item.nil?
     end
   end
 
   # noinspection RubyNilAnalysis
   def load_number_of_files_per_type
-    # TODO: clean up multiple resource fetching
-    @number_of_files_per_type = @current_user.user_resources.all
-    # TODO: code here
+    @res_of_user.each do |item|
+      puts "\t - " + item.file.to_s
+    end
   end
 
   # noinspection RubyNilAnalysis
@@ -82,22 +85,24 @@ class DashboardController < ApplicationController
   # @return [Array]
   def all_upload_dates
     all_upload_dates = []
-    # TODO: clean up multiple resource fetching
-    all_res = @current_user.user_resources.all
-    all_res.each do |item|
+    @res_of_user.each do |item|
       all_upload_dates.append(item.created_at.to_date)
     end
-    all_upload_dates.uniq
+    RailsDateRange(all_upload_dates.min..all_upload_dates.max).every(days: +1)
+    # RailsDateRange((4.years.ago)..Time.now).every(years: 1)
+  end
+
+  # Convenience method
+  def RailsDateRange(range)
+    RailsDateRange.new(range.begin, range.end, range.exclude_end?)
   end
 
   # noinspection RubyNilAnalysis
   def get_number_of_files_at_date(date)
-    # TODO: clean up multiple resource fetching
-    all_files = @current_user.user_resources.all
     nof = 0 # number of files
     # TODO: doesn't find any it, need to find out why
-    all_files.each do |item|
-      nof += 1 if item.created_at.to_date.equal?(date)
+    @res_of_user.each do |item|
+      nof += 1 if item.created_at.to_date == date
     end
     nof
   end
