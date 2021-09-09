@@ -1,13 +1,10 @@
 # frozen_string_literal: true
 
 class UserResourcesController < ApplicationController
+  before_action :check_if_logged_in
+
   # GET /user_resources or /user_resources.json
   def index
-
-    unless logged_in?
-      redirect_to registrations_index_path
-      return
-    end
 
     current_user
 
@@ -23,11 +20,6 @@ class UserResourcesController < ApplicationController
 
   # GET /user_resources/new
   def new
-    unless logged_in?
-      redirect_to registrations_index_path
-      return
-    end
-
     @user = User.find_by_id(session[:user_id])
 
     @user_resource = UserResource.new
@@ -36,19 +28,11 @@ class UserResourcesController < ApplicationController
 
   # GET /user_resources/1/edit
   def edit
-    unless logged_in?
-      redirect_to registrations_index_path
-      return
-    end
     @user_resource = UserResource.find(params[:id])
   end
 
   # POST /user_resources or /user_resources.json
   def create
-    unless logged_in?
-      redirect_to registrations_index_path
-      return
-    end
     @user = User.find_by_id(session[:user_id])
 
     tag_string = if params[:tag].nil?
@@ -85,12 +69,6 @@ class UserResourcesController < ApplicationController
 
   # PATCH/PUT /user_resources/1 or /user_resources/1.json
   def update
-
-    unless logged_in?
-      redirect_to registrations_index_path
-      return
-    end
-
     @user_resource = UserResource.find(params[:id])
     respond_to do |format|
       if @user_resource.update(user_resource_params)
@@ -105,11 +83,6 @@ class UserResourcesController < ApplicationController
 
   # DELETE /user_resources/1 or /user_resources/1.json
   def destroy
-    unless logged_in?
-      redirect_to registrations_index_path
-      return
-    end
-
     UserResource.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to user_resources_url, notice: 'User resource was successfully destroyed.' }
@@ -127,5 +100,9 @@ class UserResourcesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def user_resource_params
     params.require(:user_resource).permit(:name, :desc, :file)
+  end
+
+  def check_if_logged_in
+    redirect_to registrations_index_path unless logged_in?
   end
 end
