@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
     redirect_to registrations_index_path unless logged_in?
     current_user
 
-    @files = UserResource.all
+    @files = @current_user.user_resources.all
     @categories = Tag.all
 
     return unless params.key?('id')
