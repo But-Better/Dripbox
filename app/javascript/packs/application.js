@@ -12,6 +12,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import * as jquery from "jquery"
 
 import "channels"
+import "./rooms"
 import "../src/home"
 
 Rails.start()
