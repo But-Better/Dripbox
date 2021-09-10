@@ -38,7 +38,7 @@ class User < ApplicationRecord
             confirmation: true
 
   def session_deadline
-    self.deadline = Time.now + 1.minutes
+    self.deadline = Time.now + 30.minutes
   end
 
   def confirmation_token
