@@ -14,7 +14,7 @@ class DashboardController < ApplicationController
     @total_number_of_uploads = @current_user.total_number_of_uploads
     @total_upload_size = @current_user.total_upload_size
 
-    @files = UserResource.all
+    @files = @current_user.user_resources.all
     @categories = Tag.all
 
     return unless params.key?('id')
