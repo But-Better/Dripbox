@@ -7,16 +7,6 @@
     <span>last uploaded File:</span>
     <span><i><%= @last_uploaded_file %></i></span>
     <div id="chart">
-      <%= metrics_graphic_for @upload_file_history, 
-                              title: "Uploads", 
-                              description: "This graphic shows a time-series of your uploads.", 
-                              width: 600, 
-                              height: 250, 
-                              target: '#chart', 
-                              x_accessor: 'date',
-                              y_accessor: 'number'
-      %>
-      
       <%= javascript_pack_tag 'statistics_scripts/upload_files_history' %>
     </div>
   </div>

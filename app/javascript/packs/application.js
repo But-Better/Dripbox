@@ -4,11 +4,11 @@
 // that code so it'll be compiled.
 //= require_tree .
 //= require jquery
-//= require metrics-graphics
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
+import * as MG from "metrics-graphics"
 
 import "channels"
 import "../src/home"

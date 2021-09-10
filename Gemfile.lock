@@ -128,6 +128,11 @@ GEM
     ffi (1.15.3)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    gon (6.4.0)
+      actionpack (>= 3.0.20)
+      i18n (>= 0.7)
+      multi_json
+      request_store (>= 1.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.1)
@@ -154,6 +159,7 @@ GEM
     mini_mime (1.1.1)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multi_json (1.15.0)
     multipart-post (2.1.1)
     net-http-persistent (4.0.1)
       connection_pool (~> 2.2)
@@ -208,6 +214,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.1.1)
+    request_store (1.5.0)
+      rack (>= 1.4)
     rexml (3.2.5)
     rouge (3.26.0)
     rubocop (1.20.0)
@@ -300,6 +308,7 @@ DEPENDENCIES
   bullet
   byebug
   capybara (>= 3.26)
+  gon
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -325,4 +334,4 @@ RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.2.25
+   2.2.26

@@ -50,6 +50,10 @@ gem 'rouge'
 # https://github.com/dgilperez/metrics-graphics-rails
 gem 'metrics-graphics-rails'
 
+# gon variable pipeline
+# https://github.com/gazay/gon
+gem 'gon'
+
 # Rails 4+ Asset Pipeline on Heroku
 # gem 'rails_serve_static_assets', group: :production
 
