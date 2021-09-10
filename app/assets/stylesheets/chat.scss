@@ -1,0 +1,12 @@
+.chat {
+  border: 1px solid red;
+  background: black;
+  height: 50vh;
+  border-radius: 5px 5px 0 0;
+  overflow-y: auto;
+}
+
+.chat-input {
+  border-top: 0 none;
+  border-radius: 0 0 5px 5px;
+}
