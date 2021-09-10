@@ -10,6 +10,10 @@
 
 @user = User.create(username: 'note', email: 'note@mail.com', password: '123456789asdfghxA', email_confirmed: true,
                     confirm_token: nil)
+
+User.create(username: 'admin', email: 'admin@admin.de', password: 'Admin123', email_confirmed: true,
+                    confirm_token: nil, deadline: Time.now)
+
 @res = @user.user_resources.create(name: 'file', desc: 'eleven')
 Tag.create(name: 'Images')
 Tag.create(name: 'Sound')

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  helper_method :logged_in?
+  helper_method :logged_in?, :deadline_checker
 
   def logged_in?
     !!session[:user_id]
@@ -22,6 +22,21 @@ class ApplicationController < ActionController::Base
       redirect_to dashboard_url
     else
       redirect_to root_url
+    end
+  end
+
+  def deadline_checker
+    th = Thread.new do
+      current_user
+      while true do
+        deadline = @current_user.deadline
+        if deadline < Time.now
+          @current_user = nil
+          session[:user_id] = nil
+          break
+        end
+        sleep 1.seconds
+      end
     end
   end
 end

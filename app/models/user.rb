@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :user_resources
   has_secure_password
 
-  before_create :confirmation_token
+  before_create :confirmation_token, :session_deadline
 
   require 'uri'
   validates_uniqueness_of :email
@@ -36,6 +36,10 @@ class User < ApplicationRecord
             allow_nil: false,
             format: { with: PASSWORD_FORMAT },
             confirmation: true
+
+  def session_deadline
+    self.deadline = Time.now + 1.minutes
+  end
 
   def confirmation_token
     self.confirm_token = SecureRandom.urlsafe_base64.to_s if confirm_token.blank?
