@@ -67,6 +67,7 @@ input {
   min-height: 100vh;
 }
 
-#content-wrap{
+#content-wrap {
   padding-bottom: 0; /*höhe des Footers wenn der Webseiteninhalt das Fenster nicht ausfüllt*/
+  min-height: 100vh;
 }
