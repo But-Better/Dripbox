@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def deadline_checker
-    th = Thread.new do
+    Thread.new do
       current_user
       while true do
         deadline = @current_user.deadline
