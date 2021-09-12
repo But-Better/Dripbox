@@ -65,8 +65,8 @@ input {
   margin-bottom: 5px !important;
 }
 
-#heading2 h2, #heading h1 {
-
+#heading2 h2,
+#heading h1 {
   text-align: left;
   color: #001f3f;
   background-color: white;
@@ -78,7 +78,8 @@ input {
   font-weight: bolder;
 }
 
-#heading, #heading2{
+#heading,
+#heading2{
   height: fit-content;
   width: fit-content;
   margin-bottom: var(--section-padding);
@@ -88,7 +89,6 @@ input {
   border-style: solid;
   border-color: var(--bs-gray-dark);
   border-width: var(--list-item-border);
-
   background-color: var(--bs-gray);
 }
 
