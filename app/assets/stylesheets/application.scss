@@ -16,57 +16,82 @@
  */
 
 :root {
-    --background-color: none;
+  --background-color: none;
 
-    --full-vertical-height: 100vh;
-    --full-horizontal-width: 100vw;
+  --full-vertical-height: 100vh;
+  --full-horizontal-width: 100vw;
 
-    --fluid-container-padding: var(--bs-gutter-x, 0.75rem);
+  --fluid-container-padding: var(--bs-gutter-x, 0.75rem);
 
-    --default-opacity: 0.83;
+  --default-opacity: 0.83;
 
-    --min-width: 300px;
+  --min-width: 300px;
 
-    --main-container-width: clamp(var(--min-width), 100%, 100%);
-    --hrz-list-height: clamp(50px, 100px, 150px);
-    --cat-list-width:  clamp(250px, 400px, 400px);
-    --cat-list-height: clamp(100px, 400px, 400px);
+  --main-container-width: clamp(var(--min-width), 100%, 100%);
+  --hrz-list-height: clamp(50px, 100px, 150px);
+  --cat-list-width:  clamp(250px, 400px, 400px);
+  --cat-list-height: clamp(100px, 400px, 400px);
 
-    --item-text-font-size: 12px;
-    --list-item-margin: 10px;
+  --item-text-font-size: 12px;
+  --list-item-margin: 10px;
 
-    --resc-prev-size: 100px;
-    --list-item-border: 3px;
+  --resc-prev-size: 100px;
+  --list-item-border: 3px;
 
-    --cat-item-height: 55px;
-    /* making sure the margin of the item itself and the border are correctly calculated */
-    --cat-item-width: calc(var(--cat-list-width) - calc(var(--list-item-margin) * 2) - calc(var(--list-item-border) * 2));
+  --cat-item-height: 55px;
+  /* making sure the margin of the item itself and the border are correctly calculated */
+  --cat-item-width: calc(var(--cat-list-width) - calc(var(--list-item-margin) * 2) - calc(var(--list-item-border) * 2));
 
-    --section-padding: 15px;
-    --hrz-list-padding: 0px 20px 0px 20px;
+  --section-padding: 15px;
+  --hrz-list-padding: 0px 20px 0px 20px;
 
-    --cat-inf-padding: 15px;
+  --cat-inf-padding: 15px;
 }
 
 
 body {
-    background-image: asset-url("daylight-environment-forest-459225.jpg");
-    background-size: cover;
+  background-image: asset-url("daylight-environment-forest-459225.jpg");
+  background-size: cover;
 
-    background-blend-mode: darken;
-    background-position: center;
-    min-height: var(--full-vertical-height);
+  background-blend-mode: darken;
+  background-position: center;
+}
+
+.container-fluid {
+  //overflow-y: scroll;
 }
 
 input {
   margin-bottom: 5px !important;
 }
 
-#page-container{
-  position: relative;
-  min-height: 100vh;
+#heading2 h2,
+#heading h1 {
+  text-align: left;
+  color: #001f3f;
+  background-color: white;
+  padding: 5px;
 }
 
-#content-wrap{
-  padding-bottom: 0; /*höhe des Footers wenn der Webseiteninhalt das Fenster nicht ausfüllt*/
+#heading h1 {
+  font-size: xxx-large;
+  font-weight: bolder;
+}
+
+#heading,
+#heading2 {
+  height: fit-content;
+  width: fit-content;
+  margin-bottom: var(--section-padding);
+}
+
+.gray-boxing {
+  border-style: solid;
+  border-color: var(--bs-gray-dark);
+  border-width: var(--list-item-border);
+  background-color: var(--bs-gray);
+}
+
+#content-wrap {
+  min-height: 100vh;
 }
