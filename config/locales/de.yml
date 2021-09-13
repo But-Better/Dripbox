@@ -61,3 +61,6 @@ de:
     information: "Informationen"
     new_user: "Neue User Resource"
     edit_user: "Ändern deine Resources"
+    nothing_file: "keine aktuellen Dateien gefunden"
+    nothing_cate: "keine Kategorien gefunden"
+    nothing_select: "Nichts ausgewählt"

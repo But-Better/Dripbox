@@ -60,3 +60,6 @@ en:
     information: "Information"
     new_user: "New User Resource"
     edit_user: "Edit Own Resources"
+    nothing_file: "no recent files found"
+    nothing_cate: "no categories found"
+    nothing_select: "Nothing selected"
