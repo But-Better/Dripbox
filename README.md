@@ -42,6 +42,7 @@ created with "rails new" on an Arch Linux System
 
 * Services (job queues, cache servers, search engines, etc.)
     - docker
+    - postgresql
 
 
 * Deployment instructions
