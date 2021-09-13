@@ -4,6 +4,7 @@ de:
     username: "your name"
     password: "Password!123.de"
     password-confirmed: "Password!123.de"
+    search: "suche..."
   submit:
     login_submit: "Anmelden"
     registration_submit: "Registieren"
@@ -54,3 +55,9 @@ de:
     welcome: "Willkommen"
     login: "Anmelden"
     logout: "Abmelden"
+  dashboard:
+    recent: "Neueste Uploads:"
+    tags: "Kennzeichnungen:"
+    information: "Informationen"
+    new_user: "Neue User Resource"
+    edit_user: "Ändern deine Resources"

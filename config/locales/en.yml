@@ -4,6 +4,7 @@ en:
     username: "your name"
     password: "Password!123.com"
     password-confirmed: "Password!123.com"
+    search: "search..."
   submit:
     login_submit: "Login"
     registration_submit: "Signup"
@@ -53,3 +54,9 @@ en:
     welcome: "Welcome"
     login: "login"
     logout: "logout"
+  dashboard:
+    recent: "Recent Uploads:"
+    tags: "Tags:"
+    information: "Information"
+    new_user: "New User Resource"
+    edit_user: "Edit Own Resources"

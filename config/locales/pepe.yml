@@ -4,6 +4,7 @@ pepe:
     username: "your hacker name"
     password: "Password!123.hacker"
     password-confirmed: "Password!123.hacker"
+    search: "search..."
   submit:
     login_submit: "Trust me"
     registration_submit: "Trust me"
@@ -54,3 +55,9 @@ pepe:
     welcome: "Welcome"
     login: "login"
     logout: "logout"
+  dashboard:
+    recent: "Recent Uploads:"
+    tags: "Tags:"
+    information: "Information"
+    new_user: "New User Resource"
+    edit_user: "Edit Own Resources"
