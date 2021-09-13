@@ -50,3 +50,7 @@ pepe:
     text2: "If you did not request your password to be reset, just ignore this e-mail and your password will stay the same."
     text3: "Danke für gar nichts"
     text_confirm: "Guck mal in dein MAILER du bob"
+  header:
+    welcome: "Welcome"
+    login: "login"
+    logout: "logout"

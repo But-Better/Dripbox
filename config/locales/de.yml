@@ -50,3 +50,7 @@ de:
     text2: "Wenn Sie die Zurücksetzung Ihres Passworts nicht beantragt haben, ignorieren Sie diese E-Mail einfach, und Ihr Passwort bleibt unverändert."
     text3: "Vielen Dank für Ihre Anmeldung! Um Ihre Anmeldung zu bestätigen, klicken Sie auf die URL unten."
     text_confirm: "Bitte bestätigen Sie Ihre E-Mail"
+  header:
+    welcome: "Willkommen"
+    login: "Anmelden"
+    logout: "Abmelden"

@@ -49,3 +49,7 @@ en:
     text2: "If you did not request your password to be reset, just ignore this e-mail and your password will stay the same."
     text3: "Thanks for registering! To confirm your registration click the URL below."
     text_confirm: "Please confirm your E-Mail"
+  header:
+    welcome: "Welcome"
+    login: "login"
+    logout: "logout"
