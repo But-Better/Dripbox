@@ -12,5 +12,4 @@ class SiteInformationsController < ApplicationController
   def about
     current_user
   end
-
 end

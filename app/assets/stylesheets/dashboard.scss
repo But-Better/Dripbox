@@ -14,7 +14,8 @@
 
 .content {
   padding: var(--section-padding);
-  height: var(--full-vertical-height);
+  min-height: var(--full-vertical-height);
+  height: inherit;
 }
 
 #nothing_found {
@@ -28,35 +29,9 @@
   align-items: center;
 }
 
-#heading2 h2, #heading h1 {
-  width: fit-content;
-
-  color: #001f3f;
-  background-color: white;
-  padding: 5px;
-}
-
-#heading h1 {
-  font-size: xxx-large;
-  font-weight: bolder;
-}
-
-#heading {
-  padding-bottom: var(--section-padding);
-}
-
-#heading2 {
-  font-size: inherit;
-  padding-bottom: var(--section-padding);
-}
-
-#recentUploadsSection {
-  padding-bottom: calc(var(--section-padding) * 2);
-}
-
-#recentUploadsSection #searchBar,
-#recentUploadsSection #newResourceButton,
-#recentUploadsSection #editResourceButton {
+#searchBar,
+#newResourceButton,
+#editResourceButton {
   position: relative;
   float: right;
   padding-right: 10px;
@@ -86,6 +61,16 @@
   border-width: var(--list-item-border);
 
   background-color: var(--bs-gray);
+}
+
+#divSlice {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 6px;
+}
+
+.dashboard_div_item {
+  margin-bottom: 25px;
 }
 
 #recentUploadsList #ru_item {
@@ -140,12 +125,7 @@
   border-width: var(--list-item-border);
 }
 
-#categorySection {
-  float: left;
-}
-
 #categoryAreal, #informationField {
-  width: var(--cat-list-width);
   height: var(--cat-list-height);
 
   border-style: solid;
@@ -158,15 +138,10 @@
 #categoryList {
   display: block;
   padding: var(--list-item-margin);
-
-  position: absolute;
-
 }
 
 #categoryList #cat_item {
   background-color: #666666;
-
-  position: relative;
 
   text-align: center;
   font-size: calc(var(--cat-item-height) - 25px);
@@ -176,13 +151,11 @@
   border-width: var(--list-item-border);
 
   height: var(--cat-item-height);
-  width: var(--cat-item-width);
 
   margin-bottom: var(--list-item-margin);
 }
 
 #categoryList #cat_item #title {
-  position: absolute;
   left: var(--list-item-border);
   width: calc(var(--cat-item-width) - calc(var(--list-item-border) * 2));
 }
@@ -193,8 +166,6 @@
   width: calc(var(--cat-item-width) - calc(var(--list-item-border) * 2));
   object-fit: cover;
   object-position: center;
-
-  // need to overwrite because of bootstrap
   vertical-align: 0;
 }
 
@@ -210,11 +181,6 @@
   list-style-type: none;
 
   height: var(--cat-list-height);
-
-  // calculate width of information field by taking the full width of the screen
-  // and subtracting all existent paddings and the width of the category field
-  // plus a custom padding between the category and the information field
-  width: calc(var(--full-horizontal-width) - calc(var(--cat-list-width) + calc(var(--fluid-container-padding) * 2) + var(--cat-inf-padding) + calc(var(--section-padding) * 2)));
 
   overflow: hidden;
   overflow-y: scroll;

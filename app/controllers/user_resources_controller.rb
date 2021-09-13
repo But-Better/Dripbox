@@ -3,7 +3,6 @@
 class UserResourcesController < ApplicationController
   # GET /user_resources or /user_resources.json
   def index
-
     unless logged_in?
       redirect_to registrations_index_path
       return

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  helper_method :logged_in?
   around_action :switch_locale
   before_action :default_url_options
 
