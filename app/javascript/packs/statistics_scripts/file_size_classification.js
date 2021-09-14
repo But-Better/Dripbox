@@ -8,11 +8,11 @@ for (let i = 0; i < data.length; i++) {
 }
 
 MG.data_graphic({
-  title: 'Top 5 Files in Terms of Size ',
+  title: 'Top 5 Files in Terms of Size',
   data: data,
   chart_type: 'bar',
-  x_accessor: 'size',
-  y_accessor: 'file',
+  y_accessor: 'size',
+  x_accessor: 'file',
   height: 200,
   full_width: true,
   target: '#file_size_classification',
