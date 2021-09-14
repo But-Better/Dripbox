@@ -42,6 +42,12 @@ gem 'simplecov', require: false, group: :test
 # https://github.com/Azure/azure-storage-ruby
 gem 'azure-storage-blob', require: false, group: :production
 
+# Minitests
+gem 'minitest', '~> 5.14', '>= 5.14.4'
+
+#RSpec testing
+gem 'rspec'
+
 # rouge one
 # https://github.com/rubocop/ruby-style-guide
 gem 'rouge'
