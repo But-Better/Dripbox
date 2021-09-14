@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :password_digest
       t.boolean :email_confirmed, default: false
       t.string :confirm_token
+      t.integer :login_counter, default: 0
       t.timestamps
     end
   end

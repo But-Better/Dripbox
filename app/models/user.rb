@@ -113,7 +113,7 @@ class User < ApplicationRecord
   end
 
   def times_of_login
-    @number_of_logins = 0
+    login_counter
   end
 
   def total_number_of_uploads
