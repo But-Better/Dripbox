@@ -57,8 +57,6 @@ class UsersController < ApplicationController
     redirect_to logout_url unless logged_in?
   end
 
-  private
-
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
