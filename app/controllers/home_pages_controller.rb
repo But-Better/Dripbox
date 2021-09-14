@@ -12,8 +12,6 @@ class HomePagesController < ApplicationController
   private
 
   def check_is_login
-    if logged_in?
-      redirect_to dashboard_url
-    end
+    redirect_to dashboard_url if logged_in?
   end
 end
