@@ -1,0 +1,6 @@
+<% if @upload_file_history.nil? %>
+  <div id="missing-data"></div>
+<% else %>
+  <div id="upload_file_history"></div>
+<% end %>
+<%= javascript_pack_tag 'statistics_scripts/upload_files_history' %>

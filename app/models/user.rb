@@ -80,10 +80,21 @@ class User < ApplicationRecord
     upload_file_history
   end
 
+  # @return Hash
   def number_of_files_per_type
+    hash_array = []
+    types = {}
     user_resources.each do |item|
-      puts "\t - " + item.file.to_s
+      if types.include? item.file.content_type.to_s
+        types[item.file.content_type.to_s] += 1
+      else
+        types[item.file.content_type.to_s] = 1
+      end
     end
+    types.each do |item|
+      hash_array.append({ 'type': item[0], 'number': item[1] })
+    end
+    hash_array
   end
 
   def times_of_login
@@ -114,7 +125,7 @@ class User < ApplicationRecord
     user_resources.each do |item|
       all_upload_dates.append(item.created_at.to_date)
     end
-    RailsDateRange(all_upload_dates.min..all_upload_dates.max).every(days: +1)
+    all_upload_dates
   end
 
   # noinspection RubyNilAnalysis
@@ -126,4 +137,6 @@ class User < ApplicationRecord
     end
     nof
   end
+
+
 end

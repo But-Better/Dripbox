@@ -1,0 +1,13 @@
+// Place all the styles related to the statistics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#user_information {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#chart-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

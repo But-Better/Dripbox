@@ -1,0 +1,6 @@
+<% if @file_size_classification.nil? %>
+  <div id="missing-data"></div>
+<% else %>
+  <div id="file_size_classification"></div>
+<% end %>
+<%= javascript_pack_tag 'statistics_scripts/file_size_classification' %>

@@ -1,21 +1,26 @@
-const gon_data = gon.upload_file_history;
+import * as MG from 'metrics-graphics'
+import * as d3 from 'd3'
 
-const data = [];
-
-for (let i = 0; i < gon_data.size; i++) {
-  data[i] = {"date": new Date(gon_data[i]["date"].toString()), "number": gon_data[i]["number"]};
-  console.log(data[i])
-}
-
+const data = MG.convert.date(gon.upload_file_history, 'date');
 
 MG.data_graphic({
-  title: "Downloads",
-  description: "This graphic shows a time-series of downloads.",
+  title: "Upload History Graph",
   data: data,
-  width: 600,
-  height: 250,
-  target: '#chart',
-  x_accessor: 'date',
-  y_accessor: 'number'
-})
+  interpolate: d3.curveLinear,
+  missing_is_zero: true,
+  full_width: true,
+  height: 200,
+  right: 40,
+  y_accessor: 'number',
+  //x_axis: false,
+  target: '#upload_file_history',
+});
 
+MG.data_graphic({
+  title: "Upload History Graph",
+  chart_type: 'missing-data',
+  missing_text: 'No Data for this Statistic given yet',
+  target: '#missing-data',
+  full_width: true,
+  height: 200
+});

@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  *= require _bootstrap
- */
+ *= require metricsgraphics
+*/
 
 :root {
     --background-color: none;
