@@ -3,7 +3,6 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 //= require_tree .
-//= require jquery
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -15,7 +14,3 @@ import "../src/home"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-$(document).on('turbolinks:load', function(){
-  console.log('yiha, we are ready!')
-})
