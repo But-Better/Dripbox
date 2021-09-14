@@ -11,10 +11,11 @@
         <li class="nav-item">
           <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
         </li>
-
-        <li class="nav-item">
-          <%= link_to "Contact", contacts_path, class: "nav-link" %>
-        </li>
+        <% unless @current_user.nil? %>
+          <li class="nav-item">
+            <%= link_to "Settings", edit_user_url(@current_user), class: "nav-link" %>
+          </li>
+        <% end %>
 
         <!-- liefert einen Link zum Login wenn noch nicht eingeloggt und eine Begüßung + Link zum Logout wenn eingeloggt-->
         <% if @current_user.nil? %>

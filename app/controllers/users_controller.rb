@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :check_login
+
   def new
     @user = User.new
   end
@@ -25,6 +27,19 @@ class UsersController < ApplicationController
     @current_user = nil
   end
 
+  def edit
+    current_user
+  end
+
+  def update
+    current_user
+
+    @current_user.update_attribute(:contact_status, !@current_user.contact_status)
+    flash[:contactable_status] = @current_user.contact_status
+
+    redirect_to edit_user_path
+  end
+
   def confirm_email
     user = User.find_by_confirm_token(params[:id])
     if user
@@ -34,6 +49,12 @@ class UsersController < ApplicationController
     else
       flash[:error] = 'Sorry. User does not exist'
     end
+  end
+
+  private
+
+  def check_login
+    redirect_to logout_url unless logged_in?
   end
 
   private

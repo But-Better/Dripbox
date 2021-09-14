@@ -26,11 +26,14 @@ Rails.application.routes.draw do
 
   resources :password_resets
 
-  resources :users, only: %i[new create] do
+  resources :users, only: %i[new create edit update] do
     member do
       get :confirm_email
     end
   end
+
+
+  post 'users/:id/edit' => 'users#update'
 
   resources :user_resources
   resources :tags

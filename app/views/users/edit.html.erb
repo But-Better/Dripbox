@@ -1,0 +1,15 @@
+<div class="container whiteboard">
+  <h2>Add Contactable:</h2>
+  <hr>
+  <%= form_with model: @user do |user| %>
+    <div class="row">
+      <div class="col">
+        <span>Enable Contactable: </span>
+        <%= user.submit "On/Off", class: "btn btn-primary" %>
+      </div>
+      <div class="col">
+        <%= flash[:contactable_status] %>
+      </div>
+    </div>
+  <% end %>
+</div>
