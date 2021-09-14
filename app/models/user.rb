@@ -72,6 +72,7 @@ class User < ApplicationRecord
     user_resources.last.name
   end
 
+  # @return Array[Hash]
   def upload_file_history
     upload_file_history = []
     all_upload_dates.each do |item|
@@ -82,6 +83,7 @@ class User < ApplicationRecord
   end
 
   # @return Array[Hash]
+  # rubocop:disable Metrics/MethodLength
   def number_of_files_per_type
     hash_array = []
     types = {}
@@ -98,6 +100,7 @@ class User < ApplicationRecord
     end
     hash_array
   end
+  # rubocop:enable Metrics/MethodLength
 
   # @return Array[Hash]
   def top_five_files_by_size
