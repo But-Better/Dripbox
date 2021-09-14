@@ -12,7 +12,7 @@
                     confirm_token: nil)
 
 @res = @user.user_resources.create(name: 'file', desc: 'eleven', created_at: "2021-09-06 11:42:29.946328")
-@res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: 'file.jpg')
+@res.file.attach(io: File.open('app/assets/images/placeholder.svg'), filename: 'file.jpg')
 @res.save
 @res = @user.user_resources.create(name: 'file2', desc: 'twelve', created_at: "2021-09-05 11:42:29.946328")
 @res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: 'file.jpg')
