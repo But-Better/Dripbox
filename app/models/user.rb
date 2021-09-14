@@ -2,7 +2,6 @@
 
 class User < ApplicationRecord
   has_many :user_resources
-  has_many :messages
   has_secure_password
 
   before_create :confirmation_token
