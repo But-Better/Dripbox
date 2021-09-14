@@ -14,6 +14,7 @@ MG.data_graphic({
   y_accessor: 'number',
   //x_axis: false,
   target: '#upload_file_history',
+  x_extended_ticks: true
 });
 
 MG.data_graphic({
