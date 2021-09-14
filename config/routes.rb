@@ -24,9 +24,6 @@ Rails.application.routes.draw do
 
   get '/password_resets', to: 'password_resets#new'
 
-  get '/chat/index', to:'chat#index'
-  get '/chat', to:'chat#index'
-
   resources :password_resets
 
   resources :users, only: %i[new create] do
