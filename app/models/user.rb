@@ -97,6 +97,16 @@ class User < ApplicationRecord
     hash_array
   end
 
+  # @return Array[Hash]
+  def top_five_files_by_size
+    hash_array = []
+    user_resources.each do |item|
+      hash_array.append({'file': item.name, 'size': item.byte_filesize})
+    end
+    hash_array.sort!{|a,b| a[:size] <=> b[:size]}
+    hash_array.reverse.first 5
+  end
+
   def times_of_login
     @number_of_logins = 0
   end
