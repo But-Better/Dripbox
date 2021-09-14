@@ -3,7 +3,7 @@
 require 'test_helper'
 
 class UserResourceTest < ActiveSupport::TestCase
-  test 'the truth' do
-    assert true
+  test 'normal name validation' do
+    # TODO: !!!
   end
 end
