@@ -95,5 +95,17 @@ class UserTest < ActiveSupport::TestCase
     assert(user.upload_file_history == [{'date': "2021-09-06 11:42:29.946328".to_date, 'number': 3}, {'date': '2021-09-07 11:42:29.946328'.to_date, 'number': 4}, {'date': '2021-09-08 11:42:29.946328'.to_date, 'number': 3}])
 
   end
+  test 'get full upload size' do
+    files = []
+    (1..10).each do |i|
+      files.append(create_file_mock(i.to_s, i, "some", ""))
+    end
+
+    user = create_user 'user1', 'user@user.com'
+
+    user.user_resources.append files.reverse
+
+    assert(user.total_upload_size == 55)
+  end
 
 end
