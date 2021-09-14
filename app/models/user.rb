@@ -75,22 +75,24 @@ class User < ApplicationRecord
   def upload_file_history
     upload_file_history = []
     all_upload_dates.each do |item|
-      upload_file_history.append({ 'date': item, 'number': get_number_of_files_at_date(item) }) unless item.nil?
+      upload_file_history.append({ 'date': item, 'number': get_number_of_files_at_date(item) })
     end
+    puts upload_file_history
     upload_file_history
   end
 
-  # @return Hash
+  # @return Array[Hash]
   def number_of_files_per_type
     hash_array = []
     types = {}
     user_resources.each do |item|
-      if types.include? item.file.content_type.to_s
-        types[item.file.content_type.to_s] += 1
+      if types.include? item.type.to_s
+        types[item.type.to_s] += 1
       else
-        types[item.file.content_type.to_s] = 1
+        types[item.type.to_s] = 1
       end
     end
+
     types.each do |item|
       hash_array.append({ 'type': item[0], 'number': item[1] })
     end
@@ -123,19 +125,15 @@ class User < ApplicationRecord
 
   private
 
-  # Convenience method
-  def RailsDateRange(range)
-    RailsDateRange.new(range.begin, range.end, range.exclude_end?)
-  end
 
   # noinspection RubyNilAnalysis
   # @return [Array]
   def all_upload_dates
     all_upload_dates = []
     user_resources.each do |item|
-      all_upload_dates.append(item.created_at.to_date)
+      all_upload_dates.append(item.creation_date)
     end
-    all_upload_dates
+    all_upload_dates.uniq
   end
 
   # noinspection RubyNilAnalysis
@@ -143,7 +141,7 @@ class User < ApplicationRecord
     nof = 0 # number of files
     # TODO: doesn't find any it, need to find out why
     user_resources.each do |item|
-      nof += 1 if item.created_at.to_date == date
+      nof += 1 if item.creation_date == date
     end
     nof
   end
