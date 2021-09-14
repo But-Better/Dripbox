@@ -8,8 +8,8 @@ class DashboardController < ApplicationController
 
     @last_uploaded_file = @current_user.last_uploaded_file
     @upload_file_history = @current_user.upload_file_history
-    @number_of_files_per_type = @current_user.number_of_files_per_type # TODO: this
-    @file_size_classification = @current_user.top_five_files_by_size # TODO: this
+    @number_of_files_per_type = @current_user.number_of_files_per_type
+    @file_size_classification = @current_user.top_five_files_by_size # TODO: this (use other layout, it looks terrible)
     @times_of_login = @current_user.times_of_login # TODO: this
     @total_number_of_uploads = @current_user.total_number_of_uploads # TODO: this
     @total_upload_size = @current_user.total_upload_size # TODO: this
