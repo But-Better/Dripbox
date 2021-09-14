@@ -7,11 +7,11 @@
     <span>last uploaded File:</span>
     <span><i><%= @last_uploaded_file %></i></span>
     <span>total number of Uploads:</span>
-    <span><%= @times_of_login %></span>
+    <span><%= @total_number_of_uploads %></span>
     <span>numbers of Login:</span>
     <span><%= @times_of_login %></span>
     <span>full upload size:</span>
-    <span><%= @total_upload_size %></span>
+    <span><%= @total_upload_size / 1024 %> MB </span>
   </div>
   <div id="chart-section">
     <%= render 'statistics/upload_file_history' %>

@@ -117,13 +117,15 @@ class User < ApplicationRecord
   end
 
   def total_number_of_uploads
-    @total_number_of_uploads = 0
-    # TODO: code here
+    user_resources.count
   end
 
   def total_upload_size
-    @total_number_of_uploads = 0
-    # TODO: code here
+    total_upload_size = 0
+    user_resources.each do |item|
+      total_upload_size += item.byte_filesize
+    end
+    total_upload_size
   end
 
   private
