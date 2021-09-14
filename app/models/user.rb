@@ -78,7 +78,6 @@ class User < ApplicationRecord
     all_upload_dates.each do |item|
       upload_file_history.append({ 'date': item, 'number': get_number_of_files_at_date(item) })
     end
-    puts upload_file_history
     upload_file_history
   end
 
