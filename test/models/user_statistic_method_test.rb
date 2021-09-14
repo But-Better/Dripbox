@@ -25,6 +25,8 @@ class UserTest < ActiveSupport::TestCase
     end
     file
   end
+  # rubocop:enable Metrics/MethodLength
+
   def create_user(name, mail)
     User.create(username: name, email: mail, password: '123456789asdfghxA', email_confirmed: true, confirm_token: nil)
   end
