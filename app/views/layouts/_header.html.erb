@@ -13,23 +13,20 @@
         </li>
 
         <!-- liefert einen Link zum Login wenn noch nicht eingeloggt und eine Begüßung + Link zum Logout wenn eingeloggt-->
-        <% if @current_user.nil?%>
+        <% if @current_user.nil? %>
           <li class="nav-item">
-            <%= link_to "Login", root_path, class: "nav-link" %>
+            <%= link_to "#{t('header.login')}", root_path, class: "nav-link" %>
           </li>
 
         <% else %>
-          <li class="welcome-text">
-            Willkommen <span class="welcomed-userName"><%= @current_user.username %></span>
+          <li class="welcome-text"><%= "#{t('header.welcome')}" %>
+            <span class="welcomed-userName"><%= @current_user.username %></span>
           </li>
           <li class="nav-item">
-            <%= link_to "Logout", "logout", class: "nav-link" %>
+            <%= link_to "#{t('header.logout')}", "logout", class: "nav-link" %>
           </li>
         <% end %>
-
-
       </ul>
-
     </div>
   </nav>
 </header>

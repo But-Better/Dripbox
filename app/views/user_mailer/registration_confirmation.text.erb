@@ -1,5 +1,5 @@
 Hi <%= @user.username %>,
 
-Thanks for registering! To confirm your registration click the URL below.
+<%= "#{t('user_mailer.text3')}" %>
 
 <%= confirm_email_user_url(@user.confirm_token) %>
