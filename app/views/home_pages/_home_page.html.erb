@@ -17,17 +17,17 @@
           <%= image_tag("home_page/hacking-hack.gif", id: "hiddenGif", class: "hiddenImage") %>
         </div>
         <div>
-          <h2 class="colorWhite">Please sign in</h2>
+          <h2 class="colorWhite"><%= "#{t('login_page.login')}" %></h2>
         </div>
         <div class="form-floating">
           <%= form_with url: login_path do |form| %>
-            <%= form.text_field :email, class: "form-control", id: "floatingInput", placeholder: "email address", required: true %>
-            <%= form.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "password", required: true %>
+            <%= form.text_field :email, class: "form-control", id: "floatingInput", placeholder: "#{t('placeholder.username')}", required: true %>
+            <%= form.password_field :password, class: "form-control", id: "floatingPassword", placeholder: "#{t('placeholder.password')}", required: true %>
             <div class="form-check form-switch">
               <%= form.check_box "", id: "ShowSwitch", class: "form-check-input" %>
-              <%= form.label "Show Password", for: "Switch", class: "form-check-label colorWhite" %>
+              <%= form.label "#{t('login_page.password')}", for: "Switch", class: "form-check-label colorWhite" %>
             </div>
-            <%= form.submit "login", class: "w-100 btn btn-lg btn-primary" %>
+            <%= form.submit "#{t('submit.login_submit')}", class: "w-100 btn btn-lg btn-primary" %>
           <% end %>
         </div>
         <div>
@@ -40,12 +40,12 @@
         </div>
         <div>
           <div>
-            <%= link_to "Registieren", new_user_url, :class => "btn btn-link" %>
+            <%= link_to "#{t('login_page.registration')}", new_user_url, :class => "btn btn-link" %>
           </div>
         </div>
         <div>
           <div>
-            <%= link_to 'Forgot password?', new_password_reset_url %>
+            <%= link_to "#{t('login_page.password_forgot')}", new_password_reset_url %>
           </div>
         </div>
       </main>
