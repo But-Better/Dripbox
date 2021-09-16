@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ContactsControllerTest < ActionDispatch::IntegrationTest
+class ContactsControllerTest < ActiveSupport::TestCase
   test 'should get new' do
     get contacts_path
     assert_response :success
