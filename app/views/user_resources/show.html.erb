@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Name:</strong>
+  <strong><%= "#{t('user_resources.name')}" %></strong>
   <%= @user_resource.name %>
 </p>
 
 <p>
-  <strong>Desc:</strong>
+  <strong><%= "#{t('user_resources.desc')}" %></strong>
   <%= @user_resource.desc %>
 </p>
 
 <p>
-  <strong>Preview:</strong>
+  <strong><%= "#{t('user_resources.preview')}" %></strong>
   <li>
     <% unless @user_resource.file.filename.nil? %>
       <% if @user_resource.file.representable? %>
@@ -25,5 +25,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_resource_path(@user_resource) %> |
-<%= link_to 'Back', user_resources_path %>
+<%= link_to "#{t('user_resources.edit')}", edit_user_resource_path(@user_resource) %> |
+<%= link_to "#{t('user_resources.back')}", user_resources_path %>

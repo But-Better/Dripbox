@@ -1,33 +1,65 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  placeholder:
+    email: "but-better@group.com"
+    username: "your name"
+    password: "Password!123.com"
+    password-confirmed: "Password!123.com"
+    search: "search..."
+  submit:
+    login_submit: "Login"
+    registration_submit: "Signup"
+    reset_submit: "Reset Password"
+  login_page:
+    login: "Please sign in"
+    password: "Show password"
+    password_forgot: "Forgot password?"
+    registration: "Registration"
+  footer:
+    terms: "Terms of service"
+    privacy: "Privacy"
+    about: "About"
+    lang_button: "Language"
+  registration:
+    title: "Contact data:"
+  reset_password:
+    title: "Reset Password"
+  confirm_email:
+    text1: "Please confirm your E-Mail"
+    text2: "Check out your Spam folder"
+  confirmed_email:
+    text1: "Email was confirmed successfully"
+  user_resources:
+    name: "Name:"
+    desc: "Description:"
+    preview: "Preview:"
+    edit: "Edit"
+    file: "File:"
+    tag: "Tags:"
+    back: "Back"
+    new_title: "New Resource"
+    index_title: "Your Resources"
+    direct_link: "Direct link"
+    options: "Options"
+    show: "Show"
+    destroy: "Destroy"
+    dashboard: "Dashboard"
+    new_user_link: "New User Resource"
+    edit_user: "Editing User Resource"
+  user_mailer:
+    text1: "To reset your password, click the URL below: "
+    text2: "If you did not request your password to be reset, just ignore this e-mail and your password will stay the same."
+    text3: "Thanks for registering! To confirm your registration click the URL below."
+    text_confirm: "Please confirm your E-Mail"
+  header:
+    welcome: "Welcome"
+    login: "login"
+    logout: "logout"
+  dashboard:
+    recent: "Recent Uploads:"
+    tags: "Tags:"
+    information: "Information"
+    new_user: "New User Resource"
+    edit_user: "Edit Own Resources"
+    nothing_file: "no recent files found"
+    nothing_cate: "no categories found"
+    nothing_select: "Nothing selected"
