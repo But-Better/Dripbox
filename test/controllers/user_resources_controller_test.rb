@@ -1,16 +1,21 @@
 # frozen_string_literal: true
 
 require 'test_helper'
+require 'rails-controller-testing'
+Rails::Controller::Testing.install
 
 class UserResourcesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = User.create username: 'name', email: 'note@mail.com', password_digest: 'abcdefg4'
-    @user_resource = @user.user_resources.create id: 1, name: 'e', desc: 'EE'
+    @user = User.create(username: 'note', email: 'note@mail.com', password: '123456789asdfghxA', email_confirmed: true,
+                        confirm_token: nil)
+    @user_resource = @user.user_resources.create(name: 'file', desc: 'eleven', created_at: "2021-09-06 11:42:29.946328")
+    @user_resource.file.attach(io: File.open('app/assets/images/placeholder.svg'), filename: 'file.jpg')
+    @user_resource.save
   end
 
   test 'should get index' do
-    get user_resources_url
-    assert_equal 1, @user_resource.id
+    get registrations_index_path
+    assert_equal 0, assigns(@something)
     assert_response :success
   end
 
