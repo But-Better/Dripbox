@@ -1,0 +1,15 @@
+<h1>Einen neuen Raum erstellen</h1>
+
+
+<%= form_with model: @room do |form| %>
+  <div>
+    <%= form.label :RaumName %>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<%end %>
+
+

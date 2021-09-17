@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :rooms
+
   get '/logout', to: 'sessions#destroy'
 
   get '/login', to: 'sessions#new'

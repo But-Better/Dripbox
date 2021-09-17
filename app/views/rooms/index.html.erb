@@ -1,8 +1,8 @@
 <h1>Existierende Chatrooms</h1>
 <br>
-
+<h1>-----------</h1>
 <%if @existingRooms.present?%>
-<ul>
+<ul class = "Existing-Chatrooms">
 <%@existingRooms.each do |existingRoom|%>
   <li>
   <%=link_to existingRoom.name, existingRoom%>
