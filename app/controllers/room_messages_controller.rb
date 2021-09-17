@@ -1,2 +1,3 @@
 class RoomMessagesController < ApplicationController
+
 end
