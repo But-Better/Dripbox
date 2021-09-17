@@ -16,7 +16,7 @@ def new
 end
 
 def create
-  @room = Room.new(name: "Test RaumName")
+  @room = Room.new(room_params)
 
   if @room.save
     redirect_to @room
@@ -24,5 +24,11 @@ def create
     render :new
   end
 end
+
+private
+def room_params
+  params.require(:room).permit(:name)
+end
+
 end
 

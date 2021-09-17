@@ -1,6 +1,8 @@
 <h1>Existierende Chatrooms</h1>
 <br>
 <h1>-----------</h1>
+<%= link_to "Chatraum erstellen", new_room_path %>
+<br>
 <%if @existingRooms.present?%>
 <ul class = "Existing-Chatrooms">
 <%@existingRooms.each do |existingRoom|%>
