@@ -8,7 +8,7 @@ class RoomMessagesController < ApplicationController
                                     message: params.dig(:room_message, :message_content)
 
     if @roomMessage.save
-      redirect_to dashboard_path
+      redirect_back(fallback_location: root_path)
     end
   end
 

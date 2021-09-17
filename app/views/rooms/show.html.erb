@@ -7,7 +7,7 @@
 <%= form_with model: @roomMessage do |form| %>
   <div>
     <%= form.label :Nachricht %>
-    <%= form.text_field :message_content %>
+    <%= form.text_field :message_content, autofocus: true %>
   </div>
   <div>
     <%= form.hidden_field :room, value: @selectedRoom.id %>
