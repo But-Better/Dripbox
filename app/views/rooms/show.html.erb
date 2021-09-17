@@ -3,10 +3,14 @@
 <div>---------</div>
 <br>
 
+<!-- creating new message by calling room_messages_controller: create action-->
 <%= form_with model: @roomMessage do |form| %>
   <div>
     <%= form.label :Nachricht %>
     <%= form.text_field :message_content %>
+  </div>
+  <div>
+    <%= form.hidden_field :room, value: @selectedRoom.id %>
   </div>
   <div>
     <%= form.submit %>

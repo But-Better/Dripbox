@@ -9,8 +9,8 @@ end
 #load data of selected Chatroom
 def show
   @selectedRoom = Room.find(params[:id])
-  @roomMessages = @selectedRoom.room_messages.all
 
+  @roomMessages = @selectedRoom.room_messages.all
   @roomMessage = RoomMessage.new
 end
 
@@ -29,6 +29,7 @@ def create
 end
 
 private
+
 def room_params
   params.require(:room).permit(:name)
 end
