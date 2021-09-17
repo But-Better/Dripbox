@@ -21,7 +21,7 @@
 <ul>
   <%if @roomMessages.present? %>
   <% @roomMessages.each do |roomMessage| %>
-    <li><%= roomMessage.message %></li>
+    <li><%= roomMessage.user.username%>: <%= roomMessage.message %></li>
     <% end %>
     <%end %>
 </ul>
