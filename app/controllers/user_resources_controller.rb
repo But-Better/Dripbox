@@ -5,11 +5,7 @@ class UserResourcesController < ApplicationController
 
   # GET /user_resources or /user_resources.json
   def index
-
     current_user
-
-    @user = User.find_by_id(session[:user_id])
-
     @user_resources = @user.user_resources
   end
 
