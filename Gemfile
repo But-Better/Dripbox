@@ -23,6 +23,14 @@ gem 'server_timing'
 ## Security
 # Brakeman
 
+# rspek-rails
+# https://github.com/rspec/rspec-rails
+gem 'rspec-rails'
+
+# rails-controller-testing gem
+# https://github.com/rails/rails-controller-testing
+gem 'rails-controller-testing'
+
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
 
