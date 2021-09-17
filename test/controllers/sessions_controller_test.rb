@@ -15,11 +15,12 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'Wrong Login' do
+    username = '10Head'
     password = 'Admin123'
     email = '10Head@bbg.com'
     user = User.create(username: username, email: email, password: 'password', password_confirmation: password)
 
-    post :"/login", params: { email: user[email], password: user[password] }
+    post :"/login", params: { email: user[:email], password: user[password] }
 
     assert_nil session[:id]
     assert_response :success
