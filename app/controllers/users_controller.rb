@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :check_login
-
   def new
     @user = User.new
   end
@@ -28,10 +26,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    is_login
     current_user
   end
 
   def update
+    is_login
     current_user
 
     @current_user.update_attribute(:contact_status, !@current_user.contact_status)
@@ -53,8 +53,8 @@ class UsersController < ApplicationController
 
   private
 
-  def check_login
-    redirect_to logout_url unless logged_in?
+  def is_login
+    redirect_to dashboard_url if logged_in?
   end
 
   def user_params
