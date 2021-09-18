@@ -6,7 +6,7 @@ class UserResourcesController < ApplicationController
   # GET /user_resources or /user_resources.json
   def index
     current_user
-    @user_resources = @user.user_resources
+    @user_resources = @current_user.user_resources
   end
 
   # GET /user_resources/1 or /user_resources/1.json
