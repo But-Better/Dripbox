@@ -4,24 +4,20 @@ require 'application_system_test_case'
 
 class DashboardsTest < ApplicationSystemTestCase
   setup do
-    @user_resource = UserResource.create(name: 'name1', desc: 'desc1')
-  end
-
-  setup do
-    testUser1 = User.create(username: 'testUsername')
-    user1Data1 = testUser1.user_resources.new(name: 'user1Data1', desc: 'description11')
-    user1Data2 = testUser1.user_resources.new(name: 'user1Data2', desc: 'description12')
-
-    user1Data1.save
-    user1Data2.save
+    @password = "123456789asdfghxA"
+    @user = User.create(username: 'note', email: 'note@mail.com', password: @password, email_confirmed: true,
+                        confirm_token: nil)
+    @test_resource = @user.user_resources.create(name: 'file', desc: 'eleven', created_at: "2021-09-06 11:42:29.946328")
+    @test_resource.file.attach(io: File.open('app/assets/images/placeholder.svg'), filename: 'file.jpg')
+    @test_resource.save
   end
 
   test 'visiting the index of search results with search entry' do
-    visit dashboard_url
-    fill_in 'search_query', with: 'user1Data1\n'
+    visit login_url
+    fill_in 'floatingInput', with: @user.email
+    fill_in 'floatingPassword', with: @password
+    click_button 'commit'
     sleep 1
-
-    visit searchresults_url
-    sleep 5
+    assert_selector "h1", text: "Dashboard"
   end
 end
