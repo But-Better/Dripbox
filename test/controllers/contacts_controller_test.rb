@@ -13,6 +13,9 @@ class ContactsControllerTest < ActionDispatch::IntegrationTest
          params: { contact: { name: 'Johannes kann es', email: 'KannEs@Johannes.de',
                               message: 'i am jo---han---es and show me what your got' } }
     assert Contact.find_by_email('KannEs@Johannes.de')
+
+    get contacts_url
+    assert_select "tr th#scope='row", 1
   end
 
   test 'Check validation from message length Contact' do

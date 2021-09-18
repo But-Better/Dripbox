@@ -2,6 +2,12 @@
   <%= render "layouts/header" %>
 <% end %>
 
+<% if flash[:contactable_notice] %>
+  <div class="alert alert-danger">
+    <%= flash[:contactable_notice] %>
+  </div>
+<% end %>
+
 <div class="container-fluid">
   <div class="dashboard-container">
     <div class="content">

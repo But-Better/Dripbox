@@ -15,6 +15,9 @@
           <li class="nav-item">
             <%= link_to "Settings", edit_user_url(@current_user), class: "nav-link" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Contacts overview", contacts_url, class: "nav-link" %>
+          </li>
         <% end %>
 
         <!-- liefert einen Link zum Login wenn noch nicht eingeloggt und eine Begüßung + Link zum Logout wenn eingeloggt-->
