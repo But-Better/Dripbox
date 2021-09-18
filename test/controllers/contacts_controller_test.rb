@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ContactsControllerTest < ActiveSupport::TestCase
+class ContactsControllerTest < ActionDispatch::IntegrationTest
   test 'should get new' do
     get contacts_path
     assert_response :success
@@ -30,7 +30,7 @@ class ContactsControllerTest < ActiveSupport::TestCase
 
   test 'Check validation from name Contact' do
     post contacts_url,
-         params: { contact: { name: 'Jo', email: 'Peter@Johannes.de',
+         params: { contact: { name: 'J', email: 'Peter@Johannes.de',
                               message: 'Ich möchte mich Bewwerben TROLLLLLLLL' } }
     assert_not Contact.find_by_email('Peter@Johannes.de')
   end
