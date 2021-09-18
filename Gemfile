@@ -23,7 +23,7 @@ gem 'server_timing'
 ## Security
 # Brakeman
 
-# rspek-rails
+# rspec-rails
 # https://github.com/rspec/rspec-rails
 gem 'rspec-rails'
 
