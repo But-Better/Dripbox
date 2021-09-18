@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   private
 
   def is_login
-    redirect_to dashboard_url if logged_in?
+    redirect_to dashboard_url unless logged_in?
   end
 
   def user_params
