@@ -60,15 +60,4 @@ class UserResourcesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to user_resources_url params: { locale: 'en' }
   end
-
-  test 'Login' do
-    password = 'Admin123'
-    username = '10Head'
-    user = User.create(username: username, email: 'Admin@5head.de', password: password, password_confirmation: password)
-
-    post :"/login", params: { email: user[:email], password: user[password] }
-
-    assert_nil session[:id]
-    assert_response :success
-  end
 end

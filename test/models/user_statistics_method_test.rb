@@ -25,6 +25,7 @@ class UserTest < ActiveSupport::TestCase
     end
     file
   end
+
   # rubocop:enable Metrics/MethodLength
 
   def create_user(name, mail)
@@ -71,10 +72,8 @@ class UserTest < ActiveSupport::TestCase
     end
 
     user = create_user 'user1', 'user@user.com'
-
     user.user_resources.append files
-
-    assert(user.number_of_files_per_type == [{ 'type': 'some', 'number': 8}, {'type': 'some other', number: 2}])
+    assert(user.number_of_files_per_type == [{ 'type': 'some', 'number': 8 }, { 'type': 'some other', number: 2 }])
   end
   test 'get upload file history' do
     files = []
@@ -89,10 +88,8 @@ class UserTest < ActiveSupport::TestCase
     end
 
     user = create_user 'user1', 'user@user.com'
-
     user.user_resources.append files
-
-    assert(user.upload_file_history == [{'date': "2021-09-06 11:42:29.946328".to_date, 'number': 3}, {'date': '2021-09-07 11:42:29.946328'.to_date, 'number': 4}, {'date': '2021-09-08 11:42:29.946328'.to_date, 'number': 3}])
+    assert(user.upload_file_history == [{ 'date': "2021-09-06 11:42:29.946328".to_date, 'number': 3 }, { 'date': '2021-09-07 11:42:29.946328'.to_date, 'number': 4 }, { 'date': '2021-09-08 11:42:29.946328'.to_date, 'number': 3 }])
 
   end
   test 'get full upload size' do
@@ -102,9 +99,7 @@ class UserTest < ActiveSupport::TestCase
     end
 
     user = create_user 'user1', 'user@user.com'
-
     user.user_resources.append files.reverse
-
     assert(user.total_upload_size == 55)
   end
 
