@@ -1,5 +1,4 @@
 import * as MG from 'metrics-graphics'
-import * as d3 from 'd3'
 
 const data = gon.file_size_classification;
 
@@ -16,13 +15,4 @@ MG.data_graphic({
   height: 500,
   full_width: true,
   target: '#file_size_classification',
-})
-
-MG.data_graphic({
-  title: "Files and their space-usage",
-  chart_type: 'missing-data',
-  missing_text: 'No Data for this Statistic given yet',
-  target: '#missing_file_size_data',
-  full_width: true,
-  height: 200,
 });
