@@ -108,7 +108,11 @@ class User < ApplicationRecord
       hash_array.append({'file': item.name, 'size': item.byte_filesize})
     end
     hash_array.sort!{|a,b| a[:size] <=> b[:size]}
-    hash_array.reverse.first 5
+    if hash_array.size >= 5
+      hash_array.reverse.first 5
+    else
+      hash_array.reverse
+    end
   end
 
   def times_of_login
