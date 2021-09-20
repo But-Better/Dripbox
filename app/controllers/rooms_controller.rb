@@ -12,6 +12,8 @@ def show
 
   @roomMessages = @selectedRoom.room_messages.all
   @roomMessage = RoomMessage.new
+
+  @room_id = params[:id]
 end
 
 def new
