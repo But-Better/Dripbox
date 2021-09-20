@@ -8,6 +8,7 @@ class RoomMessagesController < ApplicationController
                                     message: params.dig(:room_message, :message_content)
 
     if @roomMessage.save
+      ActionCable.server.broadcast "room_channel_#{@roomMessage.room_id}", @roomMessage
       redirect_back(fallback_location: root_path)
     end
   end
