@@ -1,3 +1,5 @@
+<div class="container whiteboard">
+
 <h1>Aktueller Chatroom: <%= @selectedRoom.name %></h1>
 <br>
 <div>---------</div>
@@ -21,7 +23,9 @@
 <ul>
   <%if @roomMessages.present? %>
   <% @roomMessages.each do |roomMessage| %>
-    <li><%= roomMessage.user.username%>: <%= roomMessage.message %></li>
+    <li class="alert alert-danger"><%= roomMessage.user.username%>: <%= roomMessage.message %></li>
     <% end %>
     <%end %>
 </ul>
+
+</div>

@@ -1,6 +1,8 @@
+<div class="container whiteboard">
+
 <h1>Existierende Chatrooms</h1>
 <br>
-<h1>-----------</h1>
+<hr>
 <%= link_to "Chatraum erstellen", new_room_path %>
 <br>
 <%if @existingRooms.present?%>
@@ -12,3 +14,4 @@
 <% end %>
 </ul>
 <%end%>
+</div>
