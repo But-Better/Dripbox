@@ -10,6 +10,7 @@ class UserTest < ActiveSupport::TestCase
   # @param [String] type
   # @return [Minitest::Mock]
   # rubocop:disable Metrics/MethodLength
+  # this might be very dirty, but I wanted to use mocking in this at least once ^^
   def create_file_mock(name, size, type, creation_time)
     file = Minitest::Mock.new
     100.times do
