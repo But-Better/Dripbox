@@ -46,6 +46,8 @@ gem 'azure-storage-blob', require: false, group: :production
 # https://github.com/rubocop/ruby-style-guide
 gem 'rouge'
 
+gem 'faker'
+
 # Rails 4+ Asset Pipeline on Heroku
 # gem 'rails_serve_static_assets', group: :production
 

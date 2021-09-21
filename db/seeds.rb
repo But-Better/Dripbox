@@ -29,8 +29,6 @@ User.create(username: 'Peter', email: 'Enis@mail.com', password: 'Admin123', ema
 User.create(username: 'Admin', email: 'Admin@Admin.admin', password: 'Admin123', email_confirmed: true,
             confirm_token: nil, contact_status: true)
 
-Contact.create(name: 'Peter', email: 'Peter@Peter.de', message: 'opandasd0o312kd<%$&$§/§""')
-Contact.create(name: 'Joachim', email: 'Joachim@Lol.com', message: 'Wir möchten Urgot buffen')
-Contact.create(name: 'Uwe', email: 'Uwe-ewU@Toaster.org', message: 'Toaster Toaster Toaster Toaster kennen Sie schon denn Toaster')
-Contact.create(name: 'Robin', email: 'WeMake@A.hood', message: '5 Gold auf dem Polenmarkt gefunden')
-Contact.create(name: 'Peter Zwegar', email: 'Make@RTL.real', message: 'Wollen Sie nicht eine Staffe RTL folgen nur für 400€ machen !!!')
+20.times do
+  Contact.create(name: Faker::Name.name, email: Faker::Internet.email, message: Faker::Lorem.sentence(word_count: 20))
+end

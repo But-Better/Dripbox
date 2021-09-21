@@ -104,6 +104,8 @@ GEM
     docile (1.4.0)
     erubi (1.10.0)
     execjs (2.8.1)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     faraday (0.17.4)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.14.0)
@@ -275,6 +277,7 @@ DEPENDENCIES
   bullet
   byebug
   capybara (>= 3.26)
+  faker
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
