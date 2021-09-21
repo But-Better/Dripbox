@@ -18,7 +18,9 @@ consumer.subscriptions.create("RoomsChannel", {
     const element = document.getElementById('site-id');
     const site_id = element.getAttribute('data-site-id');
 
-    if(site-id != null){
+    console.log("site-id" + site_id);
+
+    if(site_id != null){
       location.reload();
     }
   }
