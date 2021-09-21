@@ -1,11 +1,12 @@
-class RoomMessagesController < ApplicationController
+# frozen_string_literal: true
 
-  before_action :load_params , :not_logged_in
+class RoomMessagesController < ApplicationController
+  before_action :load_params, :not_logged_in
 
   def create
     @roomMessage = RoomMessage.create user: @current_user,
-                                    room: @room,
-                                    message: params.dig(:room_message, :message_content)
+                                      room: @room,
+                                      message: params.dig(:room_message, :message_content)
 
     if @roomMessage.save
       ActionCable.server.broadcast "room_channel_#{@roomMessage.room_id}", @roomMessage
@@ -14,6 +15,7 @@ class RoomMessagesController < ApplicationController
   end
 
   private
+
   def load_params
     current_user
     @current_user = User.find_by(id: session[:user_id])
@@ -22,9 +24,6 @@ class RoomMessagesController < ApplicationController
   end
 
   def not_logged_in
-    if @current_user.nil?
-      redirect_to login_path
-    end
+    redirect_to login_path if @current_user.nil?
   end
-
 end

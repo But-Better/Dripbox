@@ -1,15 +1,15 @@
-class RoomsController < ApplicationController
+# frozen_string_literal: true
 
+class RoomsController < ApplicationController
   before_action :load_params, :not_logged_in
 
-  #load all existing Chatrooms for display
+  # load all existing Chatrooms for display
   def index
     @existingRooms = Room.all
   end
 
-  #load data of selected Chatroom
+  # load data of selected Chatroom
   def show
-
     @selectedRoom = Room.find(params[:id])
 
     @roomMessages = @selectedRoom.room_messages.all
@@ -26,7 +26,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
 
-    #check if room name is unique
+    # check if room name is unique
     alreadyExistingRooms = Room.all
     alreadyExistingRooms.each do |alreadyExistingRoom|
       if @room.name == alreadyExistingRoom.name
@@ -35,9 +35,9 @@ class RoomsController < ApplicationController
       end
     end
 
-    if !@nameConflict
+    unless @nameConflict
       if @room.save
-        ActionCable.server.broadcast "rooms_channel", @room
+        ActionCable.server.broadcast 'rooms_channel', @room
         redirect_to @room
       else
         render :new
@@ -57,10 +57,6 @@ class RoomsController < ApplicationController
   end
 
   def not_logged_in
-    if @current_user.nil?
-      redirect_to login_path
-    end
+    redirect_to login_path if @current_user.nil?
   end
-
 end
-
