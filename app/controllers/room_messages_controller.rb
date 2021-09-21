@@ -1,6 +1,6 @@
 class RoomMessagesController < ApplicationController
 
-  before_action :load_params
+  before_action :load_params , not_logged_in
 
   def create
     @roomMessage = RoomMessage.create user: @current_user,
@@ -19,6 +19,12 @@ class RoomMessagesController < ApplicationController
     @current_user = User.find_by(id: session[:user_id])
 
     @room = Room.find params.dig(:room_message, :room)
+  end
+
+  def not_logged_in
+    if @current_user.nil?
+      redirect_to login_path
+    end
   end
 
 end

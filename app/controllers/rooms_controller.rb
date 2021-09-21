@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
 
-  before_action :load_params
+  before_action :load_params , :not_logged_in
 
 #load all existing Chatrooms for display
 def index
@@ -42,6 +42,12 @@ def load_params
   current_user
   @current_user = User.find_by(id: session[:user_id])
 end
+
+  def not_logged_in
+    if @current_user.nil?
+      redirect_to login_path
+    end
+    end
 
 end
 
