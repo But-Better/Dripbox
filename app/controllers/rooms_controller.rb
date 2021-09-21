@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
 
+  before_action :load_params
 
 #load all existing Chatrooms for display
 def index
@@ -35,6 +36,11 @@ private
 
 def room_params
   params.require(:room).permit(:name)
+end
+
+def load_params
+  current_user
+  @current_user = User.find_by(id: session[:user_id])
 end
 
 end

@@ -25,7 +25,11 @@
 <ul>
   <%if @roomMessages.present? %>
   <% @roomMessages.each do |roomMessage| %>
-    <li class="alert alert-danger"><%= roomMessage.user.username%>: <%= roomMessage.message %></li>
+      <%if roomMessage.user.id == @current_user.id %>
+        <li class="alert alert-success"><%= roomMessage.user.username%>: <%= roomMessage.message %></li>
+        <%else %>
+        <li class="alert alert-danger"><%= roomMessage.user.username%>: <%= roomMessage.message %></li>
+<%end %>
     <% end %>
     <%end %>
 </ul>
