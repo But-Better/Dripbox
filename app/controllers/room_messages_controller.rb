@@ -1,6 +1,6 @@
 class RoomMessagesController < ApplicationController
 
-  before_action :load_params , not_logged_in
+  before_action :load_params , :not_logged_in
 
   def create
     @roomMessage = RoomMessage.create user: @current_user,
