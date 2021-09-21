@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'rails-controller-testing'
-require 'rspec-rails'
 
 class UserResourcesControllerTest < ActionDispatch::IntegrationTest
   setup do
