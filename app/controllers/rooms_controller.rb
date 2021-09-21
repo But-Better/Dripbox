@@ -19,16 +19,28 @@ end
 
 def new
   @room = Room.new
+  @nameConflict = false
 end
 
 def create
   @room = Room.new(room_params)
 
-  if @room.save
-    ActionCable.server.broadcast "rooms_channel", @room
-    redirect_to @room
-  else
-    render :new
+  #check if room name is unique
+  alreadyExistingRooms = Room.all
+  alreadyExistingRooms.each do |alreadyExistingRoom|
+    if @room.name == alreadyExistingRoom.name
+      @nameConflict = true
+      render :new
+    end
+  end
+
+  if !@nameConflict
+    if @room.save
+      ActionCable.server.broadcast "rooms_channel", @room
+      redirect_to @room
+    else
+      render :new
+    end
   end
 end
 
