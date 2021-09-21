@@ -9,6 +9,7 @@ end
 
 #load data of selected Chatroom
 def show
+
   @selectedRoom = Room.find(params[:id])
 
   @roomMessages = @selectedRoom.room_messages.all
