@@ -14,7 +14,8 @@ consumer.subscriptions.create("RoomsChannel", {
   received(data) {
     // Called when there's incoming data on the websocket for this channel
     console.log(data);
-    //<div id="site-id" data-site-id="room-list">
+
+    //site will only reload if the site is the one with the existing rooms
     const element = document.getElementById('site-id');
     const site_id = element.getAttribute('data-site-id');
 
