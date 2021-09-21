@@ -24,6 +24,7 @@ def create
   @room = Room.new(room_params)
 
   if @room.save
+    ActionCable.server.broadcast "rooms_channel", @room
     redirect_to @room
   else
     render :new
