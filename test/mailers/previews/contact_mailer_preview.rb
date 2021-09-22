@@ -3,22 +3,14 @@
 # Preview all emails at http://localhost:3000/rails/mailers/contact_mailer
 class ContactMailerPreview < ActionMailer::Preview
   def send_information
-    ContactMailer.send_information(
-      Contact.create(
-        name: contacts(:preview_data).name,
-        email: contacts(:preview_data).email,
-        message: contacts(:preview_data).message
-      )
-    )
+    contact_data
+    ContactMailer.send_information(@contact)
   end
 
   def send_to_management
+    contact_data
     ContactMailer.send_to_management(
-      Contact.create(
-        name: 'Peter',
-        email: 'Enis@at.de',
-        message: 'Ja, lol bin ich schon drin so schnell ging das ich bin im Internet'
-      ),
+      @contact,
       User.create(
         username: 'Admin',
         email: 'Admin@Admin.admin',
@@ -27,6 +19,16 @@ class ContactMailerPreview < ActionMailer::Preview
         confirm_token: nil,
         contact_status: true
       )
+    )
+  end
+
+  private
+
+  def contact_data
+    @contact = Contact.create(
+      name: Faker::Name.name,
+      email: Faker::Internet.email,
+      message: Faker::Lorem.sentence(word_count: 20)
     )
   end
 end
