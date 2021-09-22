@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 class ContactsController < ApplicationController
-
   def index
     current_user
     unless @current_user.contact_status
-      flash[:contactable_notice] = "You have no permission to read contacts"
+      flash[:contactable_notice] = 'You have no permission to read contacts'
       redirect_to dashboard_path
     end
 

@@ -1,11 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  message: MyText
-  email: MyString
-
-two:
-  name: MyString
-  message: MyText
-  email: MyString
+preview_data:
+  name: "Peter"
+  message: "Enis@at.de"
+  email: "Ja, lol bin ich schon drin so schnell ging das ich bin im Internet"
