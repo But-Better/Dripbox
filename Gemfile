@@ -46,6 +46,8 @@ gem 'azure-storage-blob', require: false, group: :production
 # https://github.com/rubocop/ruby-style-guide
 gem 'rouge'
 
+# faker data generator
+# https://github.com/faker-ruby/faker
 gem 'faker'
 
 # Rails 4+ Asset Pipeline on Heroku
