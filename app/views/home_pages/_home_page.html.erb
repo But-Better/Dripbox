@@ -31,14 +31,6 @@
           <% end %>
         </div>
         <div>
-          <% if flash[:alert] %>
-            <div class="flashes">
-              <div class="alert"><%= flash[:alert] %></div>
-            </div>
-            <%= image_tag("home_page/crewmate_amongus-256px-5.gif") %>
-          <% end %>
-        </div>
-        <div>
           <div>
             <%= link_to "#{t('login_page.registration')}", new_user_url, :class => "btn btn-link" %>
           </div>
@@ -47,6 +39,14 @@
           <div>
             <%= link_to "#{t('login_page.password_forgot')}", new_password_reset_url %>
           </div>
+        </div>
+        <div>
+          <% if flash[:alert] %>
+            <div class="flashes">
+              <div class="alert"><%= flash[:alert] %></div>
+            </div>
+            <%= image_tag("home_page/crewmate_amongus-256px-5.gif") %>
+          <% end %>
         </div>
       </main>
     </div>

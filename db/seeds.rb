@@ -10,6 +10,7 @@
 
 @user = User.create(username: 'note', email: 'note@mail.com', password: '123456789asdfghxA', email_confirmed: true,
                     confirm_token: nil)
+
 @res = @user.user_resources.create(name: 'file', desc: 'eleven')
 Tag.create(name: 'Images')
 Tag.create(name: 'Sound')
@@ -21,3 +22,13 @@ Tag.create(name: 'Find')
 
 @res.tags = Tag.all
 @res.save
+
+User.create(username: 'Peter', email: 'Enis@mail.com', password: 'Admin123', email_confirmed: true,
+            confirm_token: nil, contact_status: true)
+
+User.create(username: 'Admin', email: 'Admin@Admin.admin', password: 'Admin123', email_confirmed: true,
+            confirm_token: nil, contact_status: true)
+
+20.times do
+  Contact.create(name: Faker::Name.name, email: Faker::Internet.email, message: Faker::Lorem.sentence(word_count: 20))
+end
