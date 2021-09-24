@@ -22,6 +22,8 @@ gem 'server_timing'
 
 ## Security
 # Brakeman
+# https://brakemanscanner.org/docs/introduction/
+gem 'brakeman'
 
 # rspec-rails
 # https://github.com/rspec/rspec-rails
@@ -30,9 +32,6 @@ gem 'rspec-rails'
 # rails-controller-testing gem
 # https://github.com/rails/rails-controller-testing
 gem 'rails-controller-testing'
-
-# https://brakemanscanner.org/docs/introduction/
-gem 'brakeman'
 
 # image processing for storage_blob
 gem 'image_processing', '~> 1.2'
@@ -67,6 +66,10 @@ gem 'metrics-graphics-rails'
 # gon variable pipeline
 # https://github.com/gazay/gon
 gem 'gon'
+
+# faker data generator
+# https://github.com/faker-ruby/faker
+gem 'faker'
 
 # Rails 4+ Asset Pipeline on Heroku
 # gem 'rails_serve_static_assets', group: :production

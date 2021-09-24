@@ -25,6 +25,21 @@ class UsersController < ApplicationController
     @current_user = nil
   end
 
+  def edit
+    is_login
+    current_user
+  end
+
+  def update
+    is_login
+    current_user
+
+    @current_user.update_attribute(:contact_status, !@current_user.contact_status)
+    flash[:contactable_status] = @current_user.contact_status
+
+    redirect_to edit_user_path
+  end
+
   def confirm_email
     user = User.find_by_confirm_token(params[:id])
     if user
@@ -37,6 +52,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def is_login
+    redirect_to dashboard_url unless logged_in?
+  end
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
