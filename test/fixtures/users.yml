@@ -1,0 +1,6 @@
+user_fixures:
+  username: 'note'
+  email: 'note@mail.com'
+  password_digest: '123456789asdfghxA'
+  email_confirmed: true
+  confirm_token: nil
