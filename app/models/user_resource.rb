@@ -19,6 +19,9 @@ class UserResource < ApplicationRecord
             presence: true,
             allow_nil: false
 
+  validates :file,
+            presence: true
+
   # such in dem namen des files und usernamen nach einer nicht leeren eingabe
   def self.search(params)
     # desc vom typ text!
