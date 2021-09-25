@@ -10,25 +10,17 @@
 
 @user = User.create(username: 'note', email: 'note@mail.com', password: '123456789asdfghxA', email_confirmed: true,
                     confirm_token: nil)
-@res = @user.user_resources.create(name: 'file', desc: 'eleven', created_at: "2021-09-06 11:42:29.946328")
+
+@res = @user.user_resources.new(name: 'file', desc: 'eleven', created_at: "2021-09-06 11:42:29.946328")
 @res.file.attach(io: File.open('app/assets/images/placeholder.svg'), filename: 'file.jpg')
 @res.save
-@res = @user.user_resources.create(name: 'file2', desc: 'twelve', created_at: "2021-09-05 11:42:29.946328")
-@res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: 'file.jpg')
-@res.save
-@res = @user.user_resources.create(name: 'file3', desc: 'yeah', created_at: "2021-09-04 11:42:29.946328")
-@res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: 'file.jpg')
-@res.save
-@res = @user.user_resources.create(name: 'file4', desc: 'thast', created_at: "2021-09-03 11:42:29.946328")
-@res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: 'file.jpg')
-@res.save
-@res = @user.user_resources.create(name: 'file5', desc: 'asfn', created_at: "2021-09-02 11:42:29.946328")
-@res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: 'file.jpg')
-@res.save
-@res = @user.user_resources.create(name: 'file6', desc: 'com', created_at: "2021-09-01 11:42:29.946328")
-@res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: 'file.jpg')
-@res.save
-@res = @user.user_resources.create(name: 'file7', desc: 'cool', created_at: "2021-08-15 11:42:29.946328")
+
+5.times do |i|
+  @res = @user.user_resources.new(name: Faker::Beer.name, desc: Faker::Lorem.sentence(word_count: 20), created_at: "2021-09-#{i} 11:42:29.946328")
+  @res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: "#{Faker::File.name}.jpg")
+  @res.save
+end
+@res = @user.user_resources.new(name: 'file7', desc: 'cool', created_at: "2021-08-15 11:42:29.946328")
 @res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: 'file.jpg')
 @res.save
 
