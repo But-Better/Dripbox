@@ -153,6 +153,4 @@ class User < ApplicationRecord
     end
     nof
   end
-
-
 end
