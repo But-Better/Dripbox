@@ -14,7 +14,6 @@ class DashboardController < ApplicationController
     return if @called_file.file.filename.nil?
 
     @file_of_current_resource = @called_file.file
-
   end
 
   private

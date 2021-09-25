@@ -105,9 +105,9 @@ class User < ApplicationRecord
   def top_five_files_by_size
     hash_array = []
     user_resources.each do |item|
-      hash_array.append({'file': item.name, 'size': item.byte_filesize})
+      hash_array.append({ 'file': item.name, 'size': item.byte_filesize })
     end
-    hash_array.sort!{|a,b| a[:size] <=> b[:size]}
+    hash_array.sort! { |a, b| a[:size] <=> b[:size] }
     if hash_array.size >= 5
       hash_array.reverse.first 5
     else
@@ -132,7 +132,6 @@ class User < ApplicationRecord
   end
 
   private
-
 
   # noinspection RubyNilAnalysis
   # @return [Array]

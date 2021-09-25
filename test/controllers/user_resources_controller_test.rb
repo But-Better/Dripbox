@@ -4,10 +4,12 @@ require 'test_helper'
 
 class UserResourcesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    password = "123456789asdfghxA"
+    #noinspection SpellCheckingInspection
+    password = '123456789asdfghxA'
+
     @user = User.create(username: 'note', email: 'note@mail.com', password: password, email_confirmed: true,
                         confirm_token: nil)
-    @test_resource = @user.user_resources.create(name: 'file', desc: 'eleven', created_at: "2021-09-06 11:42:29.946328")
+    @test_resource = @user.user_resources.create(name: 'file', desc: 'eleven', created_at: '2021-09-06 11:42:29.946328')
     @test_resource.file.attach(io: File.open('app/assets/images/placeholder.svg'), filename: 'file.jpg')
     @test_resource.save
 

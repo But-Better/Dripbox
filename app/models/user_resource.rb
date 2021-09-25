@@ -34,7 +34,7 @@ class UserResource < ApplicationRecord
   end
 
   def type
-    self.file.content_type
+    file.content_type
   end
 
   def creation_date

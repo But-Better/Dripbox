@@ -4,7 +4,6 @@ require 'test_helper'
 require 'minitest/autorun'
 
 class UserTest < ActiveSupport::TestCase
-
   # @param [String] name
   # @param [Integer] size
   # @param [String] type
@@ -33,10 +32,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'get top 5 files in terms of size' do
-
     files = []
     (1..10).each do |i|
-      files.append(create_file_mock(i.to_s, i, "some", ""))
+      files.append(create_file_mock(i.to_s, i, 'some', ''))
     end
 
     user = create_user 'user1', 'user@user.com'
@@ -49,10 +47,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'get top 5 files in terms of size given reverse' do
-
     files = []
     (1..10).each do |i|
-      files.append(create_file_mock(i.to_s, i, "some", ""))
+      files.append(create_file_mock(i.to_s, i, 'some', ''))
     end
 
     user = create_user 'user1', 'user@user.com'
@@ -67,10 +64,10 @@ class UserTest < ActiveSupport::TestCase
   test 'get number of files per type' do
     files = []
     (1..8).each do |i|
-      files.append(create_file_mock(i.to_s, i, "some", ""))
+      files.append(create_file_mock(i.to_s, i, 'some', ''))
     end
     (9..10).each do |i|
-      files.append(create_file_mock(i.to_s, i, "some other", ""))
+      files.append(create_file_mock(i.to_s, i, 'some other', ''))
     end
 
     user = create_user 'user1', 'user@user.com'
@@ -81,25 +78,25 @@ class UserTest < ActiveSupport::TestCase
   test 'get upload file history' do
     files = []
     (1..3).each do |i|
-      files.append(create_file_mock(i.to_s, i, "some", "2021-09-06 11:42:29.946328".to_date))
+      files.append(create_file_mock(i.to_s, i, 'some', '2021-09-06 11:42:29.946328'.to_date))
     end
     (4..7).each do |i|
-      files.append(create_file_mock(i.to_s, i, "some", "2021-09-07 11:42:29.946328".to_date))
+      files.append(create_file_mock(i.to_s, i, 'some', '2021-09-07 11:42:29.946328'.to_date))
     end
     (8..10).each do |i|
-      files.append(create_file_mock(i.to_s, i, "some", "2021-09-08 11:42:29.946328".to_date))
+      files.append(create_file_mock(i.to_s, i, 'some', '2021-09-08 11:42:29.946328'.to_date))
     end
 
     user = create_user 'user1', 'user@user.com'
     user.user_resources.append files
-    assert(user.upload_file_history == [{ 'date': "2021-09-06 11:42:29.946328".to_date, 'number': 3 }, { 'date': '2021-09-07 11:42:29.946328'.to_date, 'number': 4 }, { 'date': '2021-09-08 11:42:29.946328'.to_date, 'number': 3 }])
-
+    assert(user.upload_file_history == [{ 'date': '2021-09-06 11:42:29.946328'.to_date, 'number': 3 },
+                                        { 'date': '2021-09-07 11:42:29.946328'.to_date, 'number': 4 }, { 'date': '2021-09-08 11:42:29.946328'.to_date, 'number': 3 }])
   end
 
   test 'get full upload size' do
     files = []
     (1..10).each do |i|
-      files.append(create_file_mock(i.to_s, i, "some", ""))
+      files.append(create_file_mock(i.to_s, i, 'some', ''))
     end
 
     user = create_user 'user1', 'user@user.com'
@@ -110,7 +107,7 @@ class UserTest < ActiveSupport::TestCase
   test 'get top 5 files in terms of size given less than 5 tho' do
     files = []
     (1..3).each do |i|
-      files.append(create_file_mock(i.to_s, i, "some", ""))
+      files.append(create_file_mock(i.to_s, i, 'some', ''))
     end
 
     user = create_user 'user1', 'user@user.com'

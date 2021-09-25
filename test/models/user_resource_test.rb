@@ -3,7 +3,6 @@
 require 'test_helper'
 
 class UserResourceTest < ActiveSupport::TestCase
-
   test 'no data given' do
     res = UserResource.new
     assert_not res.valid?
@@ -41,8 +40,8 @@ class UserResourceTest < ActiveSupport::TestCase
     username = 'note'
     email = 'note@mail.com'
     password = '123456789asdfghxA'
-    user = User.new(id: 1, username: username, email: email, password: password, email_confirmed: true,
-                    confirm_token: nil)
+    user = User.new(id: 1, username: username, email: email, password: password,
+                    email_confirmed: true, confirm_token: nil)
 
     res = UserResource.new(user_id: user.id, name: 'test_res', desc: 'some given description',
                            tags: [Tag.create(name: 'Test')])

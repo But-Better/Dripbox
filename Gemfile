@@ -52,7 +52,7 @@ gem 'azure-storage-blob', require: false, group: :production
 # Minitests
 gem 'minitest', '~> 5.14', '>= 5.14.4'
 
-#RSpec testing
+# RSpec testing
 gem 'rspec'
 
 # rouge one
