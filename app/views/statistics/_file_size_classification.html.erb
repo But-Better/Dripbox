@@ -1,7 +1,7 @@
 <% if @file_size_classification.nil? || !@file_size_classification.any?(&:present?) %>
   <div id="missing_file_size_data">
     <!-- TODO: do this for every other statistics rendering as well -->
-    <%= javascript_pack_tag'statistics_scripts/missing/missing_file_size_classification' %>
+    <%= javascript_pack_tag 'statistics_scripts/missing/missing_file_size_classification' %>
   </div>
 <% else %>
   <div id="file_size_classification">

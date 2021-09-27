@@ -10,8 +10,9 @@
     <p><%= @user_resource.desc %></p>
     <strong>Tags:</strong>
     <p>
-      <% @user_resource.tags.each do | tag |%>
-        - <% tag.to_s %>
+      <% @user_resource.tags.each do |tag| %>
+        -
+        <% tag.to_s %>
       <% end %>
     </p>
   </div>
@@ -22,13 +23,13 @@
       <% if @user_resource.file.representable? %>
         <%= image_tag @user_resource.file.representation(resize_to_limit: [500, 500]) %>
       <% else %>
-        <div id="placeholder_img">
-          <%= link_to rails_blob_path(@user_resource.file, disposition: "attachment") do %>
-            <%= image_tag "placeholder.svg", alt: "Download file" %>
-          <% end %>
-        </div>
-      <% end %>
+      <div id="placeholder_img">
+        <%= link_to rails_blob_path(@user_resource.file, disposition: "attachment") do %>
+          <%= image_tag "placeholder.svg", alt: "Download file" %>
+        <% end %>
+      </div>
     <% end %>
+  <% end %>
   </p>
 </div>
 

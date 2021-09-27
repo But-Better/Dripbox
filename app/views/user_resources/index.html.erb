@@ -31,7 +31,7 @@
             <i>no link available</i>
           <% end %>
           <i><%= button_to "#{t('user_resources.show')}", user_resource, method: :get %>
-            <%= button_to "#{t('user_resources.edit')}", edit_user_resource_url(user_resource), method: :get%>
+            <%= button_to "#{t('user_resources.edit')}", edit_user_resource_url(user_resource), method: :get %>
             <%= button_to "#{t('user_resources.destroy')}", user_resource, method: :delete, data: { confirm: 'Are you sure?' } %></i>
         <% end %>
       </div>

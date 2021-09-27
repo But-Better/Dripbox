@@ -99,6 +99,7 @@ class User < ApplicationRecord
     end
     hash_array
   end
+
   # rubocop:enable Metrics/MethodLength
 
   # @return Array[Hash]
