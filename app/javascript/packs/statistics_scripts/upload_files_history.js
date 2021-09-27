@@ -1,10 +1,11 @@
 import * as MG from 'metrics-graphics'
 import * as d3 from 'd3'
 
+/* global MG, gon */
 // noinspection JSUnresolvedVariable
-/* eslint no-undef: "error" */
 const data = MG.convert.date(gon.upload_file_history, 'date');
 
+/* eslint-env es6 */
 // noinspection JSUnresolvedFunction
 MG.data_graphic(
   {
