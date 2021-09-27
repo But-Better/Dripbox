@@ -4,11 +4,11 @@ require 'test_helper'
 
 class UserResourcesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    #noinspection SpellCheckingInspection
+    # noinspection SpellCheckingInspection
     password = '123456789asdfghxA'
 
     user = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: password, email_confirmed: true,
-                        confirm_token: nil, password_confirmation: password)
+                       confirm_token: nil, password_confirmation: password)
     @test_resource = user.user_resources.new(name: 'file', desc: 'eleven', created_at: '2021-09-06 11:42:29.946328')
     @test_resource.file.attach(io: File.open('app/assets/images/placeholder.svg'), filename: 'file.jpg')
     @test_resource.save
@@ -28,7 +28,9 @@ class UserResourcesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create user_resource' do
     assert_difference('UserResource.count') do
-      post user_resources_url, params: { user_resource: { desc: 'and there is some good text here', name: 'another', tags: 'this, that, and more' } }
+      post user_resources_url,
+           params: { user_resource: { desc: 'and there is some good text here', name: 'another',
+                                      tags: 'this, that, and more' } }
     end
 
     assert_redirected_to UserResource.last, params: { locale: 'en' }

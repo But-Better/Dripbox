@@ -41,7 +41,7 @@ class DashboardController < ApplicationController
              })
   end
 
-  #noinspection RubyNilAnalysis
+  # noinspection RubyNilAnalysis
   def load_in_files_and_categories
     @files = @current_user.user_resources.all
     @categories = Tag.all
