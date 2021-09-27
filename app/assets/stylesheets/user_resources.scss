@@ -1,0 +1,13 @@
+#new_resource_container {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.new_resource_wrapper #selection_field {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
