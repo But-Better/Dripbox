@@ -8,7 +8,7 @@ MG.data_graphic({
   chart_type: 'bar',
   y_accessor: 'number',
   x_accessor: 'type',
-  full_height: true,
+  height: 200,
   full_width: true,
   target: '#file_type_classification'
 });
