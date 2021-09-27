@@ -98,9 +98,8 @@ input {
 }
 
 /*lightmode settings*/
-body.light {
+.light {
   color: black;
-  background-color: white;
 
   /*header*/
   .header-background-lightmode{
@@ -148,7 +147,7 @@ body.light {
 }
 
 /*darkmode settings*/
-body.dark {
+.dark {
   color: white;
   background-color: black;
 
