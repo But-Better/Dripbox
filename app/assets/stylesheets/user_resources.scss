@@ -2,7 +2,6 @@
   height: 80vh;
   width: 100%;
   display: flex;
-
   justify-content: center;
   align-items: center;
 }
@@ -14,7 +13,6 @@
 
 #resourceTable {
   display: grid;
-
   grid-template-columns: repeat(5, 1fr);
 }
 
