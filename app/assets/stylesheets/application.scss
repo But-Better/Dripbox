@@ -60,6 +60,14 @@ body {
     height: 100vh;
 }
 
+.floating-right {
+  float: right;
+}
+
+.floating-left {
+  float: left;
+}
+
 #page-container {
     height: inherit;
     overflow-y: scroll;

@@ -13,7 +13,7 @@
   <div class="new_resource_wrapper gray-boxing">
     <div id="selection_field">
         <%= form.label "#{t('user_resources.file')}" %>
-        <%= form.file_field :file, required: true%>
+        <%= form.file_field :file, required: true %>
       
         <%= form.label "#{t('user_resources.name')}" %>
         <%= form.text_field :name, required: true %>
@@ -22,12 +22,12 @@
         <%= form.text_area :desc, required: true %>
       
         <%= form.label "#{t('user_resources.tag')}" %>
-        <%= form.text_field :tag, required: true %>
+        <%= form.text_field :tags, required: true %>
     </div>
 
     <div id="createNewResource_button">
       <%= form.submit %>
-      <%= button_to "#{t('user_resources.back')}", user_resources_path %>
+      <%= button_to "#{t('user_resources.back')}", user_resources_path, method: :get %>
     </div>
   </div>
 <% end %>

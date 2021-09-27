@@ -1,18 +1,21 @@
-<% content_for :header do%>
-  <%=render "layouts/header" %>
-<%end %>
+<% content_for :header do %>
+  <%= render "layouts/header" %>
+<% end %>
 
 <p id="notice"><%= notice %></p>
 <div class="dashboard-container">
   <div class="content">
+    <div class="floating-right">
+      <button><%= link_to "#{t('user_resources.new_user_link')}", new_user_resource_path %></button>
+      <button><%= link_to "#{t('user_resources.dashboard')}", dashboard_path %></button>
+    </div>
     <div id='heading'>
       <h1><%= "#{t('user_resources.index_title')}" %></h1>
     </div>
-    <div id="resourceTableWrapper">
-      <br>
+    <div id="resourceTableWrapper" class="gray-boxing">
       <div id="resourceTable">
-        <i>id</i>
-        <i><%= "#{t('user_resources.name')}" %></i> 
+        <i>Id</i>
+        <i><%= "#{t('user_resources.name')}" %></i>
         <i><%= "#{t('user_resources.desc')}" %></i>
         <i><%= "#{t('user_resources.direct_link')}" %></i>
         <i><%= "#{t('user_resources.options')}" %></i>
@@ -20,22 +23,18 @@
           <i><%= user_resource.id %></i>
           <i><%= user_resource.name %></i>
           <i><%= user_resource.desc %></i>
-          <% if !user_resource.file.filename.nil?%>
+          <% if !user_resource.file.filename.nil? %>
             <i><%= link_to rails_blob_path(user_resource.file, disposition: "attachment") do %>
                 <%= user_resource.file.filename %>
               <% end %></i>
           <% else %>
             <i>no link available</i>
           <% end %>
-          <i><%= link_to "#{t('user_resources.show')}", user_resource %>
-          <%= link_to "#{t('user_resources.edit')}", edit_user_resource_path(user_resource) %>
-          <%= link_to "#{t('user_resources.destroy')}", user_resource, method: :delete, data: { confirm: 'Are you sure?' } %></i>
+          <i><%= button_to "#{t('user_resources.show')}", user_resource, method: :get %>
+            <%= button_to "#{t('user_resources.edit')}", edit_user_resource_url(user_resource), method: :get%>
+            <%= button_to "#{t('user_resources.destroy')}", user_resource, method: :delete, data: { confirm: 'Are you sure?' } %></i>
         <% end %>
       </div>
-      <br>
-      <button><%= link_to "#{t('user_resources.new_user_link')}", new_user_resource_path %></button>
-      <br>
-      <button><%= link_to "#{t('user_resources.dashboard')}", dashboard_path %></button>
     </div>
   </div>
 </div>

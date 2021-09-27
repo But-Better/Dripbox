@@ -31,10 +31,10 @@ class UserResourcesController < ApplicationController
   def create
     @user = User.find_by_id(session[:user_id])
 
-    tag_string = if params[:tag].nil?
+    tag_string = if params[:tags].nil?
                    ''
                  else
-                   params[:tag]
+                   params[:tags]
                  end
 
     string_split = tag_string.split(',')
