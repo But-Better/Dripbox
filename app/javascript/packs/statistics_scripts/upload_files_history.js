@@ -2,6 +2,7 @@ import * as MG from 'metrics-graphics'
 import * as d3 from 'd3'
 
 // noinspection JSUnresolvedVariable
+/* eslint no-undef: "error" */
 const data = MG.convert.date(gon.upload_file_history, 'date');
 
 // noinspection JSUnresolvedFunction
