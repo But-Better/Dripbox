@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+#user_statistical_data {
+  padding: 5px;
+}
+
 #user_information {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
