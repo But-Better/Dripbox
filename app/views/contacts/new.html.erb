@@ -1,0 +1,32 @@
+<div class="container whiteboard">
+  <div class="row">
+    <h2>Contact field</h2>
+  </div>
+  <%= form_with model: @contact, class: "form-floating" do |contact| %>
+    <div class="row">
+      <div class="col">
+        <%= contact.text_field :name, class: "form-control", placeholder: "name", required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= contact.email_field :email, class: "form-control", placeholder: "but-butter@5head.de", required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= contact.text_area :message, class: "form-control", size: "70x5", placeholder: "message", required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= contact.submit "Create", class: "btn btn-primary btn-lg" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= render "layouts/error_messages", elem: @contact  %>
+      </div>
+    </div>
+  <% end %>
+</div>

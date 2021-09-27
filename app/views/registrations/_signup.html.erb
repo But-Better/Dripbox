@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col">
         <h3>
-          <b>Contact data:</b>
+          <b><%= "#{t('registration.title')}" %></b>
         </h3>
       </div>
     </div>
@@ -23,22 +23,22 @@
       <%= form_with model: @user do |user| %>
         <div class="row">
           <div class="col">
-            <%= user.text_field :username, placeholder: "Username", class: "form-control", required: true %>
+            <%= user.text_field :username, placeholder: "#{t('placeholder.username')}", class: "form-control", required: true %>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <%= user.text_field :email, placeholder: "email", class: "form-control", required: true %>
+            <%= user.text_field :email, placeholder: "#{t('placeholder.email')}", class: "form-control", required: true %>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <%= user.password_field :password, placeholder: "password", class: "form-control", required: true %>
+            <%= user.password_field :password, placeholder: "#{t('placeholder.password')}", class: "form-control", required: true %>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <%= user.password_field :password_confirmation, placeholder: "password-confirmed", class: "form-control", required: true %>
+            <%= user.password_field :password_confirmation, placeholder: "#{t('placeholder.password-confirmed')}", class: "form-control", required: true %>
           </div>
         </div>
         <div class="row">
@@ -47,12 +47,12 @@
         </div>
         <div class="row">
           <div class="col">
-            <%= user.submit "Registierung", id: "regBtn", class: 'btn btn-primary' %>
+            <%= user.submit "#{t('submit.registration_submit')}", id: "regBtn", class: 'btn btn-primary' %>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <%= render "layouts/error_messages" %>
+            <%= render "layouts/error_messages", elem: @user %>
           </div>
         </div>
       <% end %>

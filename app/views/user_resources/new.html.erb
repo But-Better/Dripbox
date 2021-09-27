@@ -2,13 +2,13 @@
   <div class="content">
 
     <div id="heading">
-      <h1>New Resource</h1>
+      <h1><%= "#{t('user_resources.new_title')}" %></h1>
     </div>
     <div id="new_resource_container">
       <div id="new_resource_field">
         <%= render 'form', user_resource: @user_resource %>
       </div>
-      <%= link_to 'Back', user_resources_path %>
+      <%= link_to "#{t('user_resources.back')}", user_resources_path %>
     </div>
   </div>
 </div>

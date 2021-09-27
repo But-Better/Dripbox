@@ -7,7 +7,6 @@
   <div class="row">
     <div class="from-group">
       <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
-        <%= render "layouts/error_messages" %>
 
         <div class='field'>
           <%= f.label :password %>
@@ -21,5 +20,8 @@
       <% end %>
     </div>
     <%= render "flash_notice" %>
+    <div>
+      <%= render "layouts/error_messages", elem: @user %>
+    </div>
   </div>
 </div>

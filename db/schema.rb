@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_712_212_923) do
+ActiveRecord::Schema.define(version: 20_210_821_185_834) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20_210_712_212_923) do
     t.index %w[blob_id variation_digest], name: 'index_active_storage_variant_records_uniqueness', unique: true
   end
 
+  create_table 'contacts', force: :cascade do |t|
+    t.string 'name'
+    t.text 'message'
+    t.string 'email'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+  end
+
   create_table 'tags', force: :cascade do |t|
     t.string 'name'
     t.datetime 'created_at', precision: 6, null: false
@@ -75,6 +83,7 @@ ActiveRecord::Schema.define(version: 20_210_712_212_923) do
     t.datetime 'updated_at', precision: 6, null: false
     t.string 'password_reset_token'
     t.datetime 'password_reset_sent_at'
+    t.boolean 'contact_status', default: false
   end
 
   add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'

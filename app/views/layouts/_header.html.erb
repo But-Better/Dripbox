@@ -21,19 +21,27 @@
         <li class="nav-item">
           <%= link_to "Dashboard", dashboard_path, class: "nav-link header-text-lightmode" %>
         </li>
+        <% unless @current_user.nil? %>
+          <li class="nav-item">
+            <%= link_to "Settings", edit_user_path(@current_user), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contacts overview", contacts_url, class: "nav-link" %>
+          </li>
+        <% end %>
 
         <!-- liefert einen Link zum Login wenn noch nicht eingeloggt und eine Begüßung + Link zum Logout wenn eingeloggt-->
         <% if @current_user.nil? %>
           <li class="nav-item">
-            <%= link_to "Login", root_path, class: "nav-link header-text-lightmode" %>
+            <%= link_to "#{t('header.login')}", root_path, class: "nav-link header-text-lightmode" %>
           </li>
 
         <% else %>
-          <li id="welcome-no-hover" class="welcome-text header-text-lightmode">
-            Willkommen <span class="welcomed-userName"><%= @current_user.username %></span>
+          <li id="welcome-no-hover" class="welcome-text header-text-lightmode"><%= "#{t('header.welcome')}" %>
+            <span class="welcomed-userName"><%= @current_user.username %></span>
           </li>
           <li class="nav-item">
-            <%= link_to "Logout", "logout", class: "nav-link header-text-lightmode" %>
+            <%= link_to "#{t('header.logout')}", "logout", class: "nav-link header-text-lightmode" %>
           </li>
         <% end %>
 

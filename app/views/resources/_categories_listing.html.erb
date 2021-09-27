@@ -1,6 +1,6 @@
 <div id="categoryAreal">
   <% if @categories.empty? %>
-    <p id="nothing_found">no categories found</p>
+    <p id="nothing_found"><%= "#{t('dashboard.nothing_cate')}" %></p>
   <% else %>
     <div id="categoryList">
       <% @categories.each do |cat| %>
