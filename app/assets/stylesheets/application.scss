@@ -54,12 +54,15 @@ body {
     background-image: asset-url("daylight-environment-forest-459225.jpg");
     background-size: cover;
 
-    background-blend-mode: darken;
+    //background-blend-mode: darken;
     background-position: center;
+
+    height: 100vh;
 }
 
-.container-fluid {
-    //overflow-y: scroll;
+#page-container {
+    height: inherit;
+    overflow-y: scroll;
 }
 
 input {
