@@ -41,10 +41,9 @@ class DashboardController < ApplicationController
              })
   end
 
+  #noinspection RubyNilAnalysis
   def load_in_files_and_categories
-    # TODO: change back before push !!!!!
-    # @files = @current_user.user_resources.all
-    @files = []
+    @files = @current_user.user_resources.all
     @categories = Tag.all
   end
 
