@@ -8,7 +8,7 @@ class DashboardController < ApplicationController
     init_statistics
     push_gon
     load_in_files_and_categories
-    return unless params.key?('id')
+    return if params[:id].nil?
 
     load_in_more_info_of_selected_file
     return if @called_file.file.filename.nil?
