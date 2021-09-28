@@ -20,23 +20,18 @@ document.addEventListener('turbolinks:load', () => {
       // Called when there's incoming data on the websocket for this channel
       console.log(data);
 
-      console.log("Absender ID: " + data.user_id);
-      console.log("Nachrichteninhalt: " + data.message);
-///////////////////////////
+      console.log("Sendername: " + data.senderName);
+      console.log("Nachrichteninhalt: " + data.message_content);
+
       var ul = document.getElementById("messages_container");
       var li = document.createElement("li");
 
       li.classList.add('alert');
       li.classList.add('alert-danger');
 
-
-
-      li.appendChild(document.createTextNode(data.message));
+      li.appendChild(document.createTextNode(data.senderName + ': ' + data.message_content));
       ul.appendChild(li);
 
-
-      //console.log("Name des Senders:" User.find(data.user_id).username);
-      //location.reload();
     }
   });
 })
