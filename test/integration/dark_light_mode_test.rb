@@ -1,7 +1,8 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class DarkLightModeTest < ActionDispatch::IntegrationTest
-
   def login
     post '/login', params: { email: @testUser1.email, password: '123456789asdfghxA' }
   end
@@ -19,12 +20,11 @@ class DarkLightModeTest < ActionDispatch::IntegrationTest
 
     assert_nil cookies[:theme]
 
-    #mode ändern
-    get root_path, params: {theme: 'dark'}
+    # mode ändern
+    get root_path, params: { theme: 'dark' }
     assert_equal 'dark', cookies[:theme]
 
-    get root_path, params: {theme: 'light'}
+    get root_path, params: { theme: 'light' }
     assert_equal 'light', cookies[:theme]
   end
-
 end

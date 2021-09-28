@@ -24,7 +24,6 @@ Rails.application.routes.draw do
 
   get '/password_resets', to: 'password_resets#new'
 
-
   resources :password_resets
 
   resources :users, only: %i[new create edit update] do
