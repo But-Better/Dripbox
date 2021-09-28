@@ -63,7 +63,6 @@ class User < ApplicationRecord
   end
 
   # @return [TrueClass, FalseClass]
-  #noinspection RubyNilAnalysis
   def uploaded_before? = !user_resources.size.zero?
 
   # noinspection RubyNilAnalysis
@@ -121,23 +120,17 @@ class User < ApplicationRecord
 
   private
 
-  # noinspection RubyNilAnalysis
-  # @return [Array]
-  def all_upload_dates
-    all_upload_dates = []
+  # return Array[Hash]
+  def file_type_counting
+    types = {}
     user_resources.each do |item|
-      all_upload_dates.append(item.creation_date)
+      if types.include? item.type.to_s
+        types[item.type.to_s] += 1
+      else
+        types[item.type.to_s] = 1
+      end
     end
-    all_upload_dates.uniq
+    types
   end
 
-  # noinspection RubyNilAnalysis
-  def get_number_of_files_at_date(date)
-    nof = 0 # number of files
-    # TODO: doesn't find any it, need to find out why
-    user_resources.each do |item|
-      nof += 1 if item.creation_date == date
-    end
-    nof
-  end
 end
