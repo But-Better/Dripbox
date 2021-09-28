@@ -100,20 +100,13 @@ class User < ApplicationRecord
     hash_array
   end
 
-  # rubocop:enable Metrics/MethodLength
-
   # @return Array[Hash]
   def top_five_files_by_size
     hash_array = []
-    user_resources.each do |item|
+    user_resources.sort_by(&:byte_filesize).last(5).reverse.each do |item|
       hash_array.append({ 'file': item.name, 'size': item.byte_filesize })
     end
-    hash_array.sort! { |a, b| a[:size] <=> b[:size] }
-    if hash_array.size >= 5
-      hash_array.reverse.first 5
-    else
-      hash_array.reverse
-    end
+    hash_array
   end
 
   def times_of_login
