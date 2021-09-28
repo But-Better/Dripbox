@@ -100,14 +100,17 @@ class User < ApplicationRecord
     hash_array
   end
 
+  # return [Integer]
   def times_of_login
     login_counter
   end
 
+  # return [Integer]
   def total_number_of_uploads
     user_resources.count
   end
 
+  # return [Integer]
   def total_upload_size
     total_upload_size = 0
     user_resources.each do |item|
