@@ -11,22 +11,21 @@
     <hr>
     <br>
 
-    <div class="messages_container">
-      <ul>
-        <!-- loading existing messages when entering the chatroom -->
-        <% if @roomMessages.present? %>
-          <% @roomMessages.each do |roomMessage| %>
-            <% if roomMessage.user.id == @current_user.id %>
-              <li class="alert alert-success"><%= roomMessage.user.username %>: <%= roomMessage.message %></li>
-            <% else %>
-              <li class="alert alert-danger"><%= roomMessage.user.username %>: <%= roomMessage.message %></li>
-            <% end %>
+
+    <ul id="messages_container">
+      <!-- loading existing messages when entering the chatroom -->
+      <% if @roomMessages.present? %>
+        <% @roomMessages.each do |roomMessage| %>
+          <% if roomMessage.user.id == @current_user.id %>
+            <li class="alert alert-success"><%= roomMessage.user.username %>: <%= roomMessage.message %></li>
+          <% else %>
+            <li class="alert alert-danger"><%= roomMessage.user.username %>: <%= roomMessage.message %></li>
           <% end %>
         <% end %>
-      </ul>
-      <!-- load new messages while in chatroom using ajax -->
+      <% end %>
+      <!-- load new messages while in chatroom using js -->
+    </ul>
 
-    </div>
 
     <!-- creating new message by calling room_messages_controller: create action-->
     <%= form_with model: @roomMessage do |form| %>
@@ -43,6 +42,7 @@
     <% end %>
     <br>
   </div>
-  
+
 
 </div>
+
