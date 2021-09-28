@@ -76,8 +76,8 @@ class User < ApplicationRecord
   # @return Array[Hash]
   def upload_file_history
     upload_file_history = []
-    all_upload_dates.each do |item|
-      upload_file_history.append({ 'date': item, 'number': get_number_of_files_at_date(item) })
+    user_resources.group(:created_at).count.each_key do |item|
+      upload_file_history.append({ 'date': item.to_date, 'number': user_resources.group(:created_at).count[item] })
     end
     upload_file_history
   end
