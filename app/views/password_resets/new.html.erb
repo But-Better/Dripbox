@@ -1,6 +1,6 @@
 <div class="container whiteboard">
   <div class="row">
-    <h1>Reset Password</h1>
+    <h1><%= "#{t('reset_password.title')}" %></h1>
   </div>
   <hr>
   <div class="row">
@@ -8,10 +8,10 @@
       <%= form_tag password_resets_path, :method => :post do %>
         <div class='field'>
           <%= label_tag :email %>
-          <%= text_field_tag :email, params[:email], class: "form-control", placeholder: "but-better@group.de", required: true %>
+          <%= text_field_tag :email, params[:email], class: "form-control", placeholder: "#{t('placeholder.email')}", required: true %>
         </div>
         <div class='actions'>
-          <%= submit_tag "Reset Password", class: "btn btn-primary" %>
+          <%= submit_tag "#{t('submit.reset_submit')}", class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>

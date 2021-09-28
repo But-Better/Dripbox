@@ -2,6 +2,12 @@
   <%= render "layouts/header" %>
 <% end %>
 
+<% if flash[:contactable_notice] %>
+  <div class="alert alert-danger">
+    <%= flash[:contactable_notice] %>
+  </div>
+<% end %>
+
 <div class="container-fluid">
   <div class="dashboard-container">
     <div class="content">
@@ -10,19 +16,19 @@
       </div>
       <div id="dashboard-middle-wrapper">
         <div id="newResourceButton">
-          <%= link_to 'New User Resource', new_user_resource_path %>
+          <%= link_to "#{t('dashboard.new_user')}", new_user_resource_path %>
         </div>
         <div id="editResourceButton">
-          <%= link_to 'Edit Own Resources', user_resources_path %>
+          <%= link_to "#{t('dashboard.edit_user')}", user_resources_path %>
         </div>
         <div id="searchBar">
           <label>
-            <input type="text" placeholder="Search..">
+            <input type="text" placeholder='<%= "#{t('placeholder.search')}" %>'>
           </label>
         </div>
         <div id="recentUploadsSection" class="dashboard_div_item">
           <div id="heading2">
-            <h2>Recent Uploads:</h2>
+            <h2><%= "#{t('dashboard.recent')}" %></h2>
           </div>
           <div id=contentField>
             <%= render "resources/recent_files_list" %>
@@ -31,7 +37,7 @@
         <div id="divSlice" class="dashboard_div_item">
           <div id="categorySection">
             <div id="heading2">
-              <h2>Tags:</h2>
+              <h2><%= "#{t('dashboard.tags')}" %></h2>
             </div>
             <div id=contentField>
               <%= render "resources/categories_listing" %>
@@ -39,7 +45,7 @@
           </div>
           <div id="informationSection">
             <div id="heading2">
-              <h2>Information:</h2>
+              <h2><%= "#{t('dashboard.information')}" %></h2>
             </div>
             <div id=contentField>
               <%= render "resources/selected_file_listing" %>

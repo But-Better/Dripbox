@@ -29,15 +29,18 @@ Rails.application.routes.draw do
 
   resources :password_resets
 
-  resources :users, only: %i[new create] do
+  resources :users, only: %i[new create edit update] do
     member do
       get :confirm_email
     end
   end
 
+  post 'users/:id/edit' => 'users#update'
+
   resources :user_resources
   resources :tags
   resources :search, only: :index
 
+  resources :contacts, only: %i[index new create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

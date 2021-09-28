@@ -3,6 +3,8 @@
 Dropbox-like Web-Service
 by the "but-better"-Group
 
+Heroku: https://dripbox.herokuapp.com/
+
 created with "rails new" on an Arch Linux System
 
 * Ruby version

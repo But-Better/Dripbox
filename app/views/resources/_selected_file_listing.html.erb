@@ -26,10 +26,10 @@
     <div id="relations">
       <% if @called_file.tags.length == 0 %>
         <i id="relation_id">none</i>
-      <%  else %>
-      <%    @called_file.tags.each do | relation |   %>
+      <% else %>
+        <% @called_file.tags.each do |relation| %>
           <i id="relation_id"> - <%= relation.name %></i>
-      <%  end  %>
+        <% end %>
       <% end %>
     </div>
     <p>Uploaded</p>
@@ -40,6 +40,6 @@
     <i><%= @called_file.desc %></i>
     <br><br>
   <% else %>
-    <p>Nothing selected</p>
+    <p><%= "#{t('dashboard.nothing_select')}" %></p>
   <% end %>
 </div>

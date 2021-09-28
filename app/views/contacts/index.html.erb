@@ -1,0 +1,28 @@
+<div class="container whiteboard">
+  <h2>List of sent contacts:</h2>
+  <hr />
+  <table class="table">
+    <caption>List of Contacts</caption>
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">E-Mail</th>
+      <th scope="col">Message</th>
+      <th scope="col">Sent</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @contact.each do |c| %>
+      <tr>
+        <th scope="row"><%= c.id %></th>
+        <td><%= c.name %></td>
+        <td><%= c.email %></td>
+        <td><%= c.message %></td>
+        <td><%= c.created_at %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<%= render "layouts/back_to_dashboard" %>

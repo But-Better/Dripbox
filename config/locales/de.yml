@@ -1,0 +1,66 @@
+de:
+  placeholder:
+    email: "but-better@group.de"
+    username: "your name"
+    password: "Password!123.de"
+    password-confirmed: "Password!123.de"
+    search: "suche..."
+  submit:
+    login_submit: "Anmelden"
+    registration_submit: "Registieren"
+    reset_submit: "Password wiederherstellen"
+  login_page:
+    login: "Bitte einloggen"
+    password: "Password anzeigen"
+    password_forgot: "Password vergessen?"
+    registration: "Registration"
+  footer:
+    terms: "AGB"
+    privacy: "Datenschutz"
+    about: "Über"
+    lang_button: "Sprache"
+  registration:
+    title: "Kontaktdaten:"
+    registration_submit: "Registration"
+  reset_password:
+    title: "Password wiederherstellen"
+  confirm_email:
+    text1: "Bitte bestätigen Sie Ihre E-Mail"
+    text2: "Überprüfen Sie Ihren Spam-Ordner"
+  confirmed_email:
+    text1: "E-Mail wurde erfolgreich bestätigt"
+  user_resources:
+    name: "Name:"
+    desc: "Beschreibung:"
+    preview: "Vorschau:"
+    edit: "Bearbeiten"
+    back: "Zurück"
+    file: "File"
+    tag: "Begriffe"
+    new_title: "New Datei hinzufügen"
+    index_title: "Your Resources"
+    direct_link: "Direkt link"
+    options: "Optionen"
+    show: "Zeigen"
+    destroy: "Löschen"
+    dashboard: "Hauptmenü"
+    new_user_link: "Neues Benutzer file"
+    edit_user: "Verändere Benutzer Dokumente"
+  user_mailer:
+    text1: "Um Ihr Passwort zurückzusetzen, klicken Sie auf die unten stehende URL: "
+    text2: "Wenn Sie die Zurücksetzung Ihres Passworts nicht beantragt haben, ignorieren Sie diese E-Mail einfach, und Ihr Passwort bleibt unverändert."
+    text3: "Vielen Dank für Ihre Anmeldung! Um Ihre Anmeldung zu bestätigen, klicken Sie auf die URL unten."
+    text_confirm: "Bitte bestätigen Sie Ihre E-Mail"
+  header:
+    welcome: "Willkommen"
+    login: "Anmelden"
+    logout: "Abmelden"
+  dashboard:
+    recent: "Neueste Uploads:"
+    tags: "Kennzeichnungen:"
+    information: "Informationen"
+    new_user: "Neue User Resource"
+    edit_user: "Ändern deine Resources"
+    nothing_file: "keine aktuellen Dateien gefunden"
+    nothing_cate: "keine Kategorien gefunden"
+    nothing_select: "Nichts ausgewählt"
