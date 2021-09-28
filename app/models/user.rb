@@ -82,20 +82,10 @@ class User < ApplicationRecord
     upload_file_history
   end
 
-  # @return Array[Hash]
-  # rubocop:disable Metrics/MethodLength
+  # return Array[Hash]
   def number_of_files_per_type
     hash_array = []
-    types = {}
-    user_resources.each do |item|
-      if types.include? item.type.to_s
-        types[item.type.to_s] += 1
-      else
-        types[item.type.to_s] = 1
-      end
-    end
-
-    types.each do |item|
+    file_type_counting.each do |item|
       hash_array.append({ 'type': item[0], 'number': item[1] })
     end
     hash_array
