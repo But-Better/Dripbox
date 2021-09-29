@@ -13,11 +13,15 @@
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 </head>
 
 <body>
-<div id="page-container">
+<div id="page-container " class="<%= cookies[:theme] %>">
   <div id="content-wrap">
+    <%= debug(params) if Rails.env.development? %>
+
+
     <%= yield :header unless current_page?(registrations_index_path) %>
 
     <%= yield %>
