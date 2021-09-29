@@ -18,11 +18,13 @@ class RoomsController < ApplicationController
     @room_id = params[:id]
   end
 
+  #load this site if the name of the room already exists
   def new
     @room = Room.new
     @nameConflict = false
   end
 
+  #create a new room
   def create
     @room = Room.new(room_params)
 
