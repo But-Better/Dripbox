@@ -6,12 +6,17 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
 
   def login
     post '/login', params: { email: @testUser1.email, password: '123456789asdfghxA' }
+    post '/login', params: { email: @testUser2.email, password: '123456789asdfghxA' }
   end
 
   setup do
-    @testUser1 = User.new(username: Faker::Name.name, email: Faker::Internet.email, password: '123456789asdfghxA', email_confirmed: true,
+    @testUser1 = User.new(username: 'User1', email: Faker::Internet.email, password: '123456789asdfghxA', email_confirmed: true,
                           confirm_token: nil)
     @testUser1.save!
+
+    @testUser2 = User.new(username: 'User2', email: Faker::Internet.email, password: '123456789asdfghxB', email_confirmed: true,
+                          confirm_token: nil)
+    @testUser2.save!
   end
 
   test 'access chatrooms site' do
@@ -25,18 +30,62 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'create new chatroom' do
+  test 'create new chatroom and redirect' do
+
+    #no access to roomcreation without login
+    get new_room_path
+    assert_response :redirect
+    post rooms_path, params: { room: { name: 'room 1' } }
+    assert_response :redirect
+
     login
-    #a creation of a new room should lead
-    post rooms_path , params: {room: {name: 'room 1'}}
-    assert_not Room.find_by(name: 'room 1').nil?
-    @newRoom = Room.find_by(name: 'room 1')
-    assert_redirected_to @newRoom
-    @amountOfSavedRooms = Room.count
+    #a creation of a new room should lead to the chatroomsite and save the room in the db
+    post rooms_path, params: { room: { name: 'room 1' } }
+    assert Room.find_by_name('room 1')
+    newRoom = Room.find_by_name('room 1')
+    assert_redirected_to newRoom
+
+    amountOfSavedRooms = Room.count
 
     #it should not be possible to create two rooms with the same name
-    post rooms_path , params: {room: {name: 'room 1'}}
-    assert @amountOfSavedRooms == Room.count
-    assert_select 'h2', 'Der gewählte Raumname ist schon vergeben, bitte wähle einen anderen Namen.'
+    post rooms_path, params: { room: { name: 'room 1' } }
+    assert amountOfSavedRooms == Room.count
+    assert_select 'h2', 'Der gewählte Raumname ist schon vergeben/leer/oder zu lang, bitte wähle einen anderen Namen.'
+  end
+
+  test 'load preexisting chatrooms' do
+
+    amountOfSavedRooms = Room.count
+
+    #creating preexisting rooms
+    room1 = Room.new(name: 'Room 1')
+    room2 = Room.new(name: 'Room 2')
+    room3 = Room.new(name: 'Room 3')
+
+    assert room1.save
+    assert room2.save
+    assert room3.save
+
+    assert (amountOfSavedRooms + 3) == Room.count
+
+    login
+    get rooms_path
+    assert_select 'a', "Room 1"
+    assert_select 'a', "Room 2"
+    assert_select 'a', "Room 3"
+  end
+
+  test 'access to chatroom' do
+
+    #no access to chatrooms without login
+    room1 = Room.new(name: 'Room 1')
+    assert room1.save
+    get rooms_path(id: room1.id)
+    assert_response :redirect
+
+    #access with login
+    login
+    get rooms_path(id: room1.id)
+    assert_response :success
   end
 end
