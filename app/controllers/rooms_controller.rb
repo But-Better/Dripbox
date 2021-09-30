@@ -29,21 +29,11 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
 
     # check if room name is unique
-    alreadyExistingRooms = Room.all
-    alreadyExistingRooms.each do |alreadyExistingRoom|
-      if @room.name == alreadyExistingRoom.name
-        @nameConflict = true
-        render :new
-      end
-    end
-
-    unless @nameConflict
-      if @room.save
-        ActionCable.server.broadcast 'rooms_channel', @room
-        redirect_to @room
-      else
-        render :new
-      end
+    if @room.save
+      redirect_to @room
+    else
+      @nameConflict = true
+      render :new
     end
   end
 
