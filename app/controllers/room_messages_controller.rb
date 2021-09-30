@@ -11,7 +11,10 @@ class RoomMessagesController < ApplicationController
     if @roomMessage.save
       ActionCable.server.broadcast "room_channel_#{@roomMessage.room_id}", {message_content: @roomMessage.message, senderName: @current_user.username}
       redirect_back(fallback_location: root_path)
+    else
+      redirect_back(fallback_location: root_path)
     end
+
   end
 
   private
