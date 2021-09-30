@@ -35,13 +35,13 @@ class RoomsTest < ApplicationSystemTestCase
     assert_selector 'h1', text: 'Einen neuen Raum erstellen'
   end
 
-  test 'access created chatroom' do
+  test 'creating chatroom and accessing it' do
     login
     visit new_room_url
     roomName = Faker::Beer.name
     fill_in 'room_name', with: roomName
     click_button 'commit'
-    sleep 1
+    sleep 2
     assert_selector 'h1', text: "Aktueller Chatroom: #{roomName}"
   end
 
