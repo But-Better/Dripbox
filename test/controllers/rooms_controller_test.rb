@@ -3,7 +3,6 @@
 require 'test_helper'
 
 class RoomsControllerTest < ActionDispatch::IntegrationTest
-
   def login
     post '/login', params: { email: @testUser1.email, password: '123456789asdfghxA' }
     post '/login', params: { email: @testUser2.email, password: '123456789asdfghxA' }
@@ -20,26 +19,25 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'access chatrooms site' do
-    #if not logged in the user is redirected to login
+    # if not logged in the user is redirected to login
     get rooms_path
     assert_response :redirect
 
-    #if logged in the user should be able to access the chatrooms
+    # if logged in the user should be able to access the chatrooms
     login
     get rooms_path
     assert_response :success
   end
 
   test 'create new chatroom and redirect' do
-
-    #no access to roomcreation without login
+    # no access to roomcreation without login
     get new_room_path
     assert_response :redirect
     post rooms_path, params: { room: { name: 'room 1' } }
     assert_response :redirect
 
     login
-    #a creation of a new room should lead to the chatroomsite and save the room in the db
+    # a creation of a new room should lead to the chatroomsite and save the room in the db
     post rooms_path, params: { room: { name: 'room 1' } }
     assert Room.find_by_name('room 1')
     newRoom = Room.find_by_name('room 1')
@@ -47,17 +45,16 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
 
     amountOfSavedRooms = Room.count
 
-    #it should not be possible to create two rooms with the same name
+    # it should not be possible to create two rooms with the same name
     post rooms_path, params: { room: { name: 'room 1' } }
     assert amountOfSavedRooms == Room.count
     assert_select 'h2', 'Der gewählte Raumname ist schon vergeben/leer/oder zu lang, bitte wähle einen anderen Namen.'
   end
 
   test 'load preexisting chatrooms' do
-
     amountOfSavedRooms = Room.count
 
-    #creating preexisting rooms
+    # creating preexisting rooms
     room1 = Room.new(name: 'Room 1')
     room2 = Room.new(name: 'Room 2')
     room3 = Room.new(name: 'Room 3')
@@ -70,20 +67,19 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
 
     login
     get rooms_path
-    assert_select 'a', "Room 1"
-    assert_select 'a', "Room 2"
-    assert_select 'a', "Room 3"
+    assert_select 'a', 'Room 1'
+    assert_select 'a', 'Room 2'
+    assert_select 'a', 'Room 3'
   end
 
   test 'access to chatroom' do
-
-    #no access to chatrooms without login
+    # no access to chatrooms without login
     room1 = Room.new(name: 'Room 1')
     assert room1.save
     get rooms_path(id: room1.id)
     assert_response :redirect
 
-    #access with login
+    # access with login
     login
     get rooms_path(id: room1.id)
     assert_response :success
