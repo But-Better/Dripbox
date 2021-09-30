@@ -41,7 +41,7 @@
             <span class="welcomed-userName"><%= @current_user.username %></span>
           </li>
           <li class="nav-item">
-            <%= link_to "#{t('header.logout')}", "logout", class: "nav-link header-text-lightmode" %>
+            <%= link_to "#{t('header.logout')}", logout_path, class: "nav-link header-text-lightmode" %>
           </li>
         <% end %>
 
