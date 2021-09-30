@@ -13,8 +13,7 @@ class RoomMessageTest < ActiveSupport::TestCase
   end
 
   test 'roommessage validation' do
-
-    #a message NEEDS a room a user and messageContent
+    # a message NEEDS a room a user and messageContent
     message1 = RoomMessage.new(room: nil, user: @testUser1, message: 'Hello')
     assert_not message1.save
 
@@ -24,11 +23,11 @@ class RoomMessageTest < ActiveSupport::TestCase
     message3 = RoomMessage.new(room: @testRoom1, user: @testUser1, message: '')
     assert_not message3.save
 
-    #this message fullfills all demands and should be saved
+    # this message fullfills all demands and should be saved
     message4 = RoomMessage.new(room: @testRoom1, user: @testUser1, message: 'Hello')
     assert message4.save
 
-    #but a message should not be too long
+    # but a message should not be too long
     tooLongMessage = 'c' * 501
     message5 = RoomMessage.new(room: @testRoom1, user: @testUser1, message: tooLongMessage)
     assert_not message5.save

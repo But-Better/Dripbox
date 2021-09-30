@@ -1,7 +1,8 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class RoomMessagesTest < ApplicationSystemTestCase
-
   def login
     visit login_url
     fill_in 'floatingInput', with: @emailU1
@@ -25,7 +26,6 @@ class RoomMessagesTest < ApplicationSystemTestCase
     @emailU1 = Faker::Internet.email
     @emailU2 = Faker::Internet.email
 
-
     @testUser1 = User.new(username: 'User1', email: @emailU1, password: @pwU1, email_confirmed: true,
                           confirm_token: nil)
     @testUser1.save!
@@ -37,7 +37,6 @@ class RoomMessagesTest < ApplicationSystemTestCase
     @testRoom1 = Room.new(name: 'testRoom1')
     assert @testRoom1.save
   end
-
 
   test 'writing messages' do
     visit_chatroom
@@ -58,8 +57,7 @@ class RoomMessagesTest < ApplicationSystemTestCase
     click_button 'commit'
     sleep 2
 
-    #only one message should exist in this room
+    # only one message should exist in this room
     assert_selector 'li', class: 'alert-success', text: "#{@testUser1.username}: #{goodMessage}"
   end
-
 end
