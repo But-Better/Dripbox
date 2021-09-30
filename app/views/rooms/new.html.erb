@@ -6,7 +6,7 @@
 <h1>Einen neuen Raum erstellen</h1>
 <hr>
   <%if @nameConflict %>
-    <h2>Der gewählte Raumname ist schon vergeben, bitte wähle einen anderen Namen.</h2>  
+    <h2>Der gewählte Raumname ist schon vergeben/leer/oder zu lang, bitte wähle einen anderen Namen.</h2>  
   <%end %>
 
 <%= form_with model: @room do |form| %>
