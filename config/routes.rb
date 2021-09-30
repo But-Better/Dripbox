@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :room_messages
-  resources :rooms
+  resources :room_messages, :only => [:create]
+  resources :rooms, :only => [:index, :new, :create, :show]
 
   get '/logout', to: 'sessions#destroy'
 
