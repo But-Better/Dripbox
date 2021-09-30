@@ -80,6 +80,5 @@ class RoomsTest < ApplicationSystemTestCase
     visit room_path(id: room2.id)
     sleep 1
     assert_selector 'li', class: 'alert-danger', text: "User2: Nachricht in Raum 2"
-
   end
 end
