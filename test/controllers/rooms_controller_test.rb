@@ -4,18 +4,18 @@ require 'test_helper'
 
 class RoomsControllerTest < ActionDispatch::IntegrationTest
   def login
-    post '/login', params: { email: @testUser1.email, password: '123456789asdfghxA' }
-    post '/login', params: { email: @testUser2.email, password: '123456789asdfghxA' }
+    post '/login', params: { email: @test_user1.email, password: '123456789asdfghxA' }
+    post '/login', params: { email: @test_user2.email, password: '123456789asdfghxA' }
   end
 
   setup do
-    @testUser1 = User.new(username: 'User1', email: Faker::Internet.email, password: '123456789asdfghxA', email_confirmed: true,
-                          confirm_token: nil)
-    @testUser1.save!
+    @test_user1 = User.new(username: 'User1', email: Faker::Internet.email, password: '123456789asdfghxA', email_confirmed: true,
+                           confirm_token: nil)
+    @test_user1.save!
 
-    @testUser2 = User.new(username: 'User2', email: Faker::Internet.email, password: '123456789asdfghxB', email_confirmed: true,
-                          confirm_token: nil)
-    @testUser2.save!
+    @test_user2 = User.new(username: 'User2', email: Faker::Internet.email, password: '123456789asdfghxB', email_confirmed: true,
+                           confirm_token: nil)
+    @test_user2.save!
   end
 
   test 'access chatrooms site' do
@@ -40,19 +40,19 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
     # a creation of a new room should lead to the chatroomsite and save the room in the db
     post rooms_path, params: { room: { name: 'room 1' } }
     assert Room.find_by_name('room 1')
-    newRoom = Room.find_by_name('room 1')
-    assert_redirected_to newRoom
+    new_room = Room.find_by_name('room 1')
+    assert_redirected_to new_room
 
-    amountOfSavedRooms = Room.count
+    amount_of_saved_rooms = Room.count
 
     # it should not be possible to create two rooms with the same name
     post rooms_path, params: { room: { name: 'room 1' } }
-    assert amountOfSavedRooms == Room.count
+    assert amount_of_saved_rooms == Room.count
     assert_select 'h2', 'Der gewählte Raumname ist schon vergeben/leer/oder zu lang, bitte wähle einen anderen Namen.'
   end
 
   test 'load preexisting chatrooms' do
-    amountOfSavedRooms = Room.count
+    amount_of_saved_rooms = Room.count
 
     # creating preexisting rooms
     room1 = Room.new(name: 'Room 1')
@@ -63,7 +63,7 @@ class RoomsControllerTest < ActionDispatch::IntegrationTest
     assert room2.save
     assert room3.save
 
-    assert (amountOfSavedRooms + 3) == Room.count
+    assert (amount_of_saved_rooms + 3) == Room.count
 
     login
     get rooms_path
