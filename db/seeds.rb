@@ -23,6 +23,11 @@ Tag.create(name: 'Find')
 @res.tags = Tag.all
 @res.save
 
+Room.create(name: 'TestRaum1')
+
+User.create(username: 'mathis', email: 'mathis@mail.com', password: 'Admin123', email_confirmed: true,
+            confirm_token: nil)
+
 User.create(username: 'Peter', email: 'Enis@mail.com', password: 'Admin123', email_confirmed: true,
             confirm_token: nil, contact_status: true)
 

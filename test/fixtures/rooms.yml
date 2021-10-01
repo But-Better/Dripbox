@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+test_room1:
+  name: testRoom1
+
+test_room2:
+  name: testRoom2
