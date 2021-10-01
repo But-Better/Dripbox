@@ -4,12 +4,10 @@ require 'test_helper'
 
 class RoomMessageTest < ActiveSupport::TestCase
   setup do
-    @test_user1 = User.new(username: 'User1', email: Faker::Internet.email, password: '123456789asdfghxA', email_confirmed: true,
-                           confirm_token: nil)
-    assert @test_user1.save
+    @test_user1 = users(:test_user1)
 
-    @test_room1 = Room.new(name: 'testRoom 1')
-    assert @test_room1.save
+    @test_room1 = rooms(:test_room2)
+
   end
 
   test 'roommessage validation' do

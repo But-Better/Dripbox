@@ -5,17 +5,12 @@ require 'test_helper'
 class RoomsControllerTest < ActionDispatch::IntegrationTest
   def login
     post login_path, params: { email: @test_user1.email, password: '123456789asdfghxA' }
-    post login_path, params: { email: @test_user2.email, password: '123456789asdfghxA' }
   end
 
   setup do
-    @test_user1 = User.new(username: 'User1', email: Faker::Internet.email, password: '123456789asdfghxA', email_confirmed: true,
+    @test_user1 = User.new(username: 'UserA', email: Faker::Internet.email, password: '123456789asdfghxA', email_confirmed: true,
                            confirm_token: nil)
     @test_user1.save!
-
-    @test_user2 = User.new(username: 'User2', email: Faker::Internet.email, password: '123456789asdfghxB', email_confirmed: true,
-                           confirm_token: nil)
-    @test_user2.save!
   end
 
   test 'access chatrooms site' do
