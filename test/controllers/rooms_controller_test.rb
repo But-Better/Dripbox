@@ -4,8 +4,8 @@ require 'test_helper'
 
 class RoomsControllerTest < ActionDispatch::IntegrationTest
   def login
-    post '/login', params: { email: @test_user1.email, password: '123456789asdfghxA' }
-    post '/login', params: { email: @test_user2.email, password: '123456789asdfghxA' }
+    post login_path, params: { email: @test_user1.email, password: '123456789asdfghxA' }
+    post login_path, params: { email: @test_user2.email, password: '123456789asdfghxA' }
   end
 
   setup do

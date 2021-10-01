@@ -29,7 +29,7 @@ class RoomsTest < ApplicationSystemTestCase
 
   test 'access room creation' do
     login
-    visit '/rooms'
+    visit rooms_path
     click_link 'Chatraum erstellen'
     sleep 1
     assert_selector 'h1', text: 'Einen neuen Raum erstellen'
