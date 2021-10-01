@@ -5,8 +5,8 @@ require 'application_system_test_case'
 class RoomMessagesTest < ApplicationSystemTestCase
   def login
     visit login_url
-    fill_in 'floatingInput', with: @emailU1
-    fill_in 'floatingPassword', with: @pwU1
+    fill_in 'floatingInput', with: @email_u1
+    fill_in 'floatingPassword', with: @pw_u1
     click_button 'commit'
     sleep 2
   end
@@ -16,48 +16,48 @@ class RoomMessagesTest < ApplicationSystemTestCase
     visit rooms_path
     click_link 'testRoom1'
     sleep 2
-    assert_selector 'h1', text: "Aktueller Chatroom: #{@testRoom1.name}"
+    assert_selector 'h1', text: "Aktueller Chatroom: #{@test_room1.name}"
   end
 
   setup do
-    @pwU1 = '123456789asdfghxA'
-    @pwU2 = '123456789asdfghxB'
+    @pw_u1 = '123456789asdfghxA'
+    @pw_u2 = '123456789asdfghxB'
 
-    @emailU1 = Faker::Internet.email
-    @emailU2 = Faker::Internet.email
+    @email_u1 = Faker::Internet.email
+    @email_u2 = Faker::Internet.email
 
-    @testUser1 = User.new(username: 'User1', email: @emailU1, password: @pwU1, email_confirmed: true,
-                          confirm_token: nil)
-    @testUser1.save!
+    @test_user1 = User.new(username: 'User1', email: @email_u1, password: @pw_u1, email_confirmed: true,
+                           confirm_token: nil)
+    @test_user1.save!
 
-    @testUser2 = User.new(username: 'User2', email: @emailU2, password: @pwU2, email_confirmed: true,
-                          confirm_token: nil)
-    @testUser2.save!
+    @test_user2 = User.new(username: 'User2', email: @email_u2, password: @pw_u2, email_confirmed: true,
+                           confirm_token: nil)
+    @test_user2.save!
 
-    @testRoom1 = Room.new(name: 'testRoom1')
-    assert @testRoom1.save
+    @test_room1 = Room.new(name: 'testRoom1')
+    assert @test_room1.save
   end
 
   test 'writing messages' do
     visit_chatroom
 
-    emptyMessage = ''
-    tooLongMessage = 'c' * 501
-    goodMessage = 'unique Message i guess 93021845798312759'
+    empty_message = ''
+    too_long_message = 'c' * 501
+    good_message = 'unique Message i guess 93021845798312759'
 
-    fill_in 'room_message_message_content', with: emptyMessage
+    fill_in 'room_message_message_content', with: empty_message
     click_button 'commit'
     sleep 2
 
-    fill_in 'room_message_message_content', with: tooLongMessage
+    fill_in 'room_message_message_content', with: too_long_message
     click_button 'commit'
     sleep 2
 
-    fill_in 'room_message_message_content', with: goodMessage
+    fill_in 'room_message_message_content', with: good_message
     click_button 'commit'
     sleep 2
 
     # only one message should exist in this room
-    assert_selector 'li', class: 'alert-success', text: "#{@testUser1.username}: #{goodMessage}"
+    assert_selector 'li', class: 'alert-success', text: "#{@test_user1.username}: #{good_message}"
   end
 end
