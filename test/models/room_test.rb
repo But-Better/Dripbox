@@ -4,7 +4,7 @@ require 'test_helper'
 
 class RoomTest < ActiveSupport::TestCase
   test 'room validation' do
-    numberExistingRooms = Room.count
+    number_existing_rooms = Room.count
 
     room1 = Room.new(name: 'Room 1')
     room2 = Room.new(name: 'Room 2')
@@ -15,18 +15,18 @@ class RoomTest < ActiveSupport::TestCase
     assert room2.save
     assert room3.save
 
-    assert Room.count == numberExistingRooms + 3
+    assert Room.count == number_existing_rooms + 3
 
     # Raum mit gleichem Raumnamen wird nicht gespeichert
-    roomSameName = Room.new(name: 'Room 1')
-    assert_not roomSameName.save
+    room_same_name = Room.new(name: 'Room 1')
+    assert_not room_same_name.save
 
     # Raum mit leerem Raumnamen wird nicht gespeichert
-    roomNoName = Room.new(name: '')
-    assert_not roomNoName.save
+    room_no_name = Room.new(name: '')
+    assert_not room_no_name.save
 
     # Raum mit zu langem Raumnamen wird nicht gespeichert
-    roomTooLong = Room.new(name: '012345678901234567890')
-    assert_not roomTooLong.save
+    room_too_long = Room.new(name: '012345678901234567890')
+    assert_not room_too_long.save
   end
 end
