@@ -1,6 +1,16 @@
-user_fixures:
-  username: 'note'
-  email: 'note@mail.com'
-  password_digest: '123456789asdfghxA'
+test_user1:
+  username: User1
+  email: Faker::Internet.email
+  password_digest: 123456789asdfghxA
   email_confirmed: true
   confirm_token: nil
+
+test_user2:
+  username: User2
+  email: Faker::Internet.email
+  password_digest: 123456789asdfghxB
+  email_confirmed: true
+  confirm_token: nil
+
+   
+   

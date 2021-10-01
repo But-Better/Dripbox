@@ -105,4 +105,65 @@ input {
 
 #content-wrap {
   min-height: 100vh;
+  padding-bottom: 0; /*höhe des Footers wenn der Webseiteninhalt das Fenster nicht ausfüllt*/
+}
+
+/*lightmode settings*/
+.light {
+  color: black;
+
+  /*header*/
+  .header-background-lightmode{
+    background-color: #EFEFEF !important;
+  }
+
+  .header-text-lightmode{
+    color: #212529 !important;
+    font-weight: bold;
+  }
+
+  .header-text-lightmode:hover{
+    color: cadetblue !important;
+  }
+
+  #welcome-no-hover:hover{
+    color: #212529 !important;
+  }
+
+  /*footer*/
+  .footer-inner-content{
+    color: #212529 !important;
+    background-color: #EFEFEF !important;
+  }
+
+  .footer-link-pointer a{
+    color: #212529;
+  }
+
+  .footer-link-pointer{
+    color: #EFEFEF;
+  }
+
+  .footer-link-pointer:hover {
+    color: #212529;
+  }
+
+  .footer-link-pointer a:visited {
+    color: coral;
+  }
+
+  #Home_Body{
+    background-color: #EFEFEF;
+  }
+}
+
+/*darkmode settings*/
+.dark {
+  color: white;
+  background-color: black;
+
+  .whiteboard{
+    color: white;
+    background-color: black;
+  }
 }

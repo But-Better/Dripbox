@@ -2,44 +2,37 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@media screen and(min-width: 1000px) {
-  .center {
-    float: right;
-  }
+@media screen and(min-width: 1000px){
+    .center{
+      float: right;
+    }
 }
 
-.center {
+.center{
   text-align: center;
 }
 
-.textcolorred {
-  color: red;
+.textcolorred{
+  color:red;
 }
 
-.backroundcolorAbout {
+.backroundcolorAbout{
   background-color: aquamarine;
 }
 
-.backgroundImageAGB {
+.backgroundImageAGB{
   background-image: image_url("background_plant.jpg");
 }
 
-.lateinFormat {
+.lateinFormat{
   text-align: justify;
   width: 500px;
 }
 
-.lostImageFormat {
+.lostImageFormat{
   width: 500px;
   height: 300px;
 }
 
-.headerPic {
-  height: 50px;
-  width: 50px;
-}
 
-.headTextSize {
-  font-size: xxx-large;
-}
 

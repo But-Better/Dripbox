@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :room_messages, only: [:create]
+  resources :rooms, only: %i[index new create show]
+
   get '/logout', to: 'sessions#destroy'
 
   get '/login', to: 'sessions#new'
