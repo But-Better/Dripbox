@@ -6,7 +6,7 @@
 
   <div class="container whiteboard">
 
-    <h1>Aktueller Chatroom: <%= @selectedRoom.name %></h1>
+    <h1>Aktueller Chatroom: <%= @selected_room.name %></h1>
     <br>
     <hr>
     <br>
@@ -14,8 +14,8 @@
 
     <ul id="messages_container">
       <!-- loading existing messages when entering the chatroom -->
-      <% if @roomMessages.present? %>
-        <% @roomMessages.each do |roomMessage| %>
+      <% if @room_messages.present? %>
+        <% @room_messages.each do |roomMessage| %>
           <% if roomMessage.user.id == @current_user.id %>
             <li class="alert alert-success"><%= roomMessage.user.username %>: <%= roomMessage.message %></li>
           <% else %>
@@ -28,13 +28,13 @@
 
 
     <!-- creating new message by calling room_messages_controller: create action-->
-    <%= form_with model: @roomMessage do |form| %>
+    <%= form_with model: @room_message do |form| %>
       <div>
         <%= form.label :Nachricht %>
         <%= form.text_field :message_content, autofocus: true %>
       </div>
       <div>
-        <%= form.hidden_field :room, value: @selectedRoom.id %>
+        <%= form.hidden_field :room, value: @selected_room.id %>
       </div>
       <div>
         <%= form.submit %>

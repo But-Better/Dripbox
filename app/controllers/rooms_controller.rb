@@ -5,15 +5,15 @@ class RoomsController < ApplicationController
 
   # load all existing Chatrooms for display
   def index
-    @existingRooms = Room.all
+    @existing_rooms = Room.all
   end
 
   # load data of selected Chatroom
   def show
-    @selectedRoom = Room.find(params[:id])
+    @selected_room = Room.find(params[:id])
 
-    @roomMessages = @selectedRoom.room_messages.all
-    @roomMessage = RoomMessage.new
+    @room_messages = @selected_room.room_messages.all
+    @room_message = RoomMessage.new
 
     @room_id = params[:id]
   end
@@ -21,7 +21,7 @@ class RoomsController < ApplicationController
   # load this site if the name of the room already exists
   def new
     @room = Room.new
-    @nameConflict = false
+    @name_conflict = false
   end
 
   # create a new room
@@ -32,7 +32,7 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to @room
     else
-      @nameConflict = true
+      @name_conflict = true
       render :new
     end
   end

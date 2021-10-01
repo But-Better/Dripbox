@@ -4,13 +4,13 @@ class RoomMessagesController < ApplicationController
   before_action :load_params, :not_logged_in
 
   def create
-    @roomMessage = RoomMessage.create user: @current_user,
-                                      room: @room,
-                                      message: params.dig(:room_message, :message_content)
+    @room_message = RoomMessage.create user: @current_user,
+                                       room: @room,
+                                       message: params.dig(:room_message, :message_content)
 
-    if @roomMessage.save
-      ActionCable.server.broadcast "room_channel_#{@roomMessage.room_id}",
-                                   { message_content: @roomMessage.message, senderName: @current_user.username }
+    if @room_message.save
+      ActionCable.server.broadcast "room_channel_#{@room_message.room_id}",
+                                   { message_content: @room_message.message, senderName: @current_user.username }
     end
     redirect_back(fallback_location: root_path)
   end

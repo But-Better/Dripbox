@@ -23,18 +23,18 @@ class RoomMessagesControllerTest < ActionDispatch::IntegrationTest
   test 'message creation' do
     numberExistingMessages = RoomMessage.count
     # empty messages are not saved and reload site
-    post rooms_path(id: @testRoom1.id), params: { roomMessage: { message: '' } }
+    post rooms_path(id: @testRoom1.id), params: { room_message: { message: '' } }
     assert numberExistingMessages == RoomMessage.count
     assert_response :redirect
 
     # messages that are too long also arent saved
     tooLongMessage = 'c' * 501
-    post rooms_path(id: @testRoom1.id), params: { roomMessage: { message: tooLongMessage } }
+    post rooms_path(id: @testRoom1.id), params: { room_message: { message: tooLongMessage } }
     assert numberExistingMessages == RoomMessage.count
     assert_response :redirect
 
     # valid messages are saved and reload site
-    post rooms_path(id: @testRoom1.id), params: { roomMessage: { message: 'unique Message 1239873498' } }
+    post rooms_path(id: @testRoom1.id), params: { room_message: { message: 'unique Message 1239873498' } }
     #assert RoomMessage.find_by_message('unique Message 1239873498')
     #assert (numberExistingMessages + 1) == RoomMessage.count
     assert_response :redirect
