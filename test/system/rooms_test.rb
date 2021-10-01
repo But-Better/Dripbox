@@ -5,26 +5,26 @@ require 'application_system_test_case'
 class RoomsTest < ApplicationSystemTestCase
   def login
     visit login_url
-    fill_in 'floatingInput', with: @emailU1
-    fill_in 'floatingPassword', with: @pwU1
+    fill_in 'floatingInput', with: @email_u1
+    fill_in 'floatingPassword', with: @pw_u1
     click_button 'commit'
     sleep 1
   end
 
   setup do
-    @pwU1 = '123456789asdfghxA'
-    @pwU2 = '123456789asdfghxB'
+    @pw_u1 = '123456789asdfghxA'
+    @pw_u2 = '123456789asdfghxB'
 
-    @emailU1 = Faker::Internet.email
-    @emailU2 = Faker::Internet.email
+    @email_u1 = Faker::Internet.email
+    @email_u2 = Faker::Internet.email
 
-    @testUser1 = User.new(username: 'User1', email: @emailU1, password: @pwU1, email_confirmed: true,
-                          confirm_token: nil)
-    @testUser1.save!
+    @test_user1 = User.new(username: 'User1', email: @email_u1, password: @pw_u1, email_confirmed: true,
+                           confirm_token: nil)
+    @test_user1.save!
 
-    @testUser2 = User.new(username: 'User2', email: @emailU2, password: @pwU2, email_confirmed: true,
-                          confirm_token: nil)
-    @testUser2.save!
+    @test_user2 = User.new(username: 'User2', email: @email_u2, password: @pw_u2, email_confirmed: true,
+                           confirm_token: nil)
+    @test_user2.save!
   end
 
   test 'access room creation' do
@@ -38,11 +38,11 @@ class RoomsTest < ApplicationSystemTestCase
   test 'creating chatroom and accessing it' do
     login
     visit new_room_url
-    roomName = Faker::Beer.name
-    fill_in 'room_name', with: roomName
+    room_name = Faker::Beer.name
+    fill_in 'room_name', with: room_name
     click_button 'commit'
     sleep 2
-    assert_selector 'h1', text: "Aktueller Chatroom: #{roomName}"
+    assert_selector 'h1', text: "Aktueller Chatroom: #{room_name}"
   end
 
   test 'load preexisting chatroom messages' do
@@ -52,17 +52,17 @@ class RoomsTest < ApplicationSystemTestCase
     room2 = Room.new(name: 'Room 2')
     assert room2.save
 
-    message1room1u1 = RoomMessage.new(room: room1, user: @testUser1, message: 'Nachricht 1 von User 1')
-    message2room1u1 = RoomMessage.new(room: room1, user: @testUser1, message: 'Nachricht 2 von User 1')
-    assert message1room1u1.save
-    assert message2room1u1.save
+    message1_room1_u1 = RoomMessage.new(room: room1, user: @test_user1, message: 'Nachricht 1 von User 1')
+    message2_room1_u1 = RoomMessage.new(room: room1, user: @test_user1, message: 'Nachricht 2 von User 1')
+    assert message1_room1_u1.save
+    assert message2_room1_u1.save
 
-    message1room1u2 = RoomMessage.new(room: room1, user: @testUser2, message: 'Nachricht 1 von User 2')
-    message2room1u2 = RoomMessage.new(room: room1, user: @testUser2, message: 'Nachricht 2 von User 2')
-    assert message1room1u2.save
-    assert message2room1u2.save
+    message1_room1_u2 = RoomMessage.new(room: room1, user: @test_user2, message: 'Nachricht 1 von User 2')
+    message2_room1_u2 = RoomMessage.new(room: room1, user: @test_user2, message: 'Nachricht 2 von User 2')
+    assert message1_room1_u2.save
+    assert message2_room1_u2.save
 
-    messageRoom2 = RoomMessage.new(room: room2, user: @testUser2, message: 'Nachricht in Raum 2')
+    messageRoom2 = RoomMessage.new(room: room2, user: @test_user2, message: 'Nachricht in Raum 2')
     assert messageRoom2.save
 
     # accessing the chatroom with existing messages
