@@ -19,14 +19,14 @@ class RoomTest < ActiveSupport::TestCase
 
     # Raum mit gleichem Raumnamen wird nicht gespeichert
     room_same_name = Room.new(name: 'Room 1')
-    assert_not room_same_name.save
+    assert_not room_same_name.valid?
 
     # Raum mit leerem Raumnamen wird nicht gespeichert
     room_no_name = Room.new(name: '')
-    assert_not room_no_name.save
+    assert_not room_no_name.valid?
 
     # Raum mit zu langem Raumnamen wird nicht gespeichert
     room_too_long = Room.new(name: '012345678901234567890')
-    assert_not room_too_long.save
+    assert_not room_too_long.valid?
   end
 end
