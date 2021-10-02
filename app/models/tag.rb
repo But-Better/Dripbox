@@ -11,8 +11,8 @@ class Tag < ApplicationRecord
             allow_blank: false
 
   def self.save_with_name_to(name, user_resource)
-    local_tag = Tags.find_by(name: name)
-    local_tag = Tags.create(name: name) if local_tag.nil?
+    local_tag = Tag.find_by(name: name)
+    local_tag = Tag.create(name: name) if local_tag.nil?
     user_resource.tags.append(local_tag)
   end
 end

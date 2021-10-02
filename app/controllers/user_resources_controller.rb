@@ -31,27 +31,20 @@ class UserResourcesController < ApplicationController
   def create
     redirect_to registrations_index_path unless logged_in?
     current_user
+    @user_resource = @current_user.user_resources.new user_resource_params
 
-    tag_string = if params[:tags].nil?
+    tag_string = if params['user_resource']['tags'].nil?
                    ''
                  else
-                   params[:tags]
+                   params['user_resource']['tags']
                  end
 
     string_split = tag_string.split(',')
-    tags = []
 
     string_split.each do |tag|
-      tags[tags.length] = if !Tag.find_by(name: tag.strip).nil?
-                            Tag.find_by(name: tag.strip)
-                          else
-                            Tag.create(name: tag.strip)
-                          end
+      Tag.save_with_name_to(tag, @user_resource)
     end
 
-    @user_resource = @current_user.user_resources.new user_resource_params
-
-    @user_resource.tags = tags
 
     respond_to do |format|
       if @user_resource.save

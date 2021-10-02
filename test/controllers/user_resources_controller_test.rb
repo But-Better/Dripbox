@@ -29,8 +29,8 @@ class UserResourcesControllerTest < ActionDispatch::IntegrationTest
   test 'should create user_resource' do
     assert_difference('UserResource.count') do
       post user_resources_url,
-           params: { user_resource: { desc: 'and there is some good text here', name: 'another',
-                                      tags: 'this, that, and more' } }
+           params: { user_resource: { desc: 'and there is some good text here', name: Faker::Beer.name,
+                                      tags: 'this, that' } }
     end
 
     assert_redirected_to UserResource.last, params: { locale: 'en' }
