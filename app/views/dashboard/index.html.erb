@@ -52,8 +52,17 @@
             </div>
           </div>
         </div>
+        <div id="statisticsSection" class="dashboard_div_item">
+          <div id="heading2">
+            <h2>Statistics of <%= @current_user.username %></h2>
+          </div>
+          <div id="content-field">
+            <%= render "statistics/user_statistics_section" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 

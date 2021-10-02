@@ -1,17 +1,12 @@
 # frozen_string_literal: true
 
 class UserResourcesController < ApplicationController
+  before_action :check_if_logged_in
+
   # GET /user_resources or /user_resources.json
   def index
-    unless logged_in?
-      redirect_to registrations_index_path
-      return
-    end
     current_user
-
-    @user = User.find_by_id(session[:user_id])
-
-    @user_resources = @user.user_resources
+    @user_resources = @current_user.user_resources
   end
 
   # GET /user_resources/1 or /user_resources/1.json
@@ -21,7 +16,6 @@ class UserResourcesController < ApplicationController
 
   # GET /user_resources/new
   def new
-    redirect_to registrations_index_path unless logged_in?
     @user = User.find_by_id(session[:user_id])
 
     @user_resource = UserResource.new
@@ -38,10 +32,10 @@ class UserResourcesController < ApplicationController
     redirect_to registrations_index_path unless logged_in?
     current_user
 
-    tag_string = if params[:tag].nil?
+    tag_string = if params[:tags].nil?
                    ''
                  else
-                   params[:tag]
+                   params[:tags]
                  end
 
     string_split = tag_string.split(',')
@@ -103,5 +97,9 @@ class UserResourcesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def user_resource_params
     params.require(:user_resource).permit(:name, :desc, :file)
+  end
+
+  def check_if_logged_in
+    redirect_to registrations_index_path unless logged_in?
   end
 end

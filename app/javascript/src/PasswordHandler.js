@@ -7,13 +7,13 @@ export const MIN_LENGTH = 10;
  * @param password = password input
  */
 export function showPassword(checkbox, password) {
-    checkbox.onclick = () => {
-        if (checkbox.checked) {
-            password.type = "text";
-        } else {
-            password.type = "password";
-        }
+  checkbox.onclick = () => {
+    if (checkbox.checked) {
+      password.type = "text";
+    } else {
+      password.type = "password";
     }
+  }
 }
 
 /**
@@ -22,8 +22,8 @@ export function showPassword(checkbox, password) {
  * @returns {boolean}
  */
 export function lowercaseRegex(value) {
-    const lowerCase = /[a-z]/g;
-    return !!value.match(lowerCase);
+  const lowerCase = /[a-z]/g;
+  return !!value.match(lowerCase);
 }
 
 /**
@@ -32,8 +32,8 @@ export function lowercaseRegex(value) {
  * @returns {boolean}
  */
 export function uppercaseRegex(value) {
-    const lowerCase = /[A-Z]/g;
-    return !!value.match(lowerCase);
+  const lowerCase = /[A-Z]/g;
+  return !!value.match(lowerCase);
 }
 
 /**
@@ -42,8 +42,8 @@ export function uppercaseRegex(value) {
  * @returns {boolean}
  */
 export function numberRegex(value) {
-    const numberCase = /[0-9]/g;
-    return !!value.match(numberCase);
+  const numberCase = /[0-9]/g;
+  return !!value.match(numberCase);
 }
 
 /**
@@ -52,8 +52,8 @@ export function numberRegex(value) {
  * @returns {boolean}
  */
 export function specialRegex(value) {
-    const specialCharacter = /[!@#$%^&*)(+=.<>{}\[\]:;'"|~`_\-]/g;
-    return !!value.match(specialCharacter);
+  const specialCharacter = /[!@#$%^&*)(+=.<>{}\[\]:;'"|~`_\-]/g;
+  return !!value.match(specialCharacter);
 }
 
 /**
@@ -62,12 +62,12 @@ export function specialRegex(value) {
  * @param b
  * @returns {boolean} is a or b length == 0 return false | else check is a and b equal
  */
-export function isEqual(a, b){
-    if(a.length === 0 || b.length === 0 ){
-        return false;
-    }
+export function isEqual(a, b) {
+  if (a.length === 0 || b.length === 0) {
+    return false;
+  }
 
-    return a === b;
+  return a === b;
 }
 
 /**
@@ -75,6 +75,6 @@ export function isEqual(a, b){
  * @param value
  * @returns {boolean}
  */
-export function isLengthCorrect(value){
-    return value.length >= MIN_LENGTH;
+export function isLengthCorrect(value) {
+  return value.length >= MIN_LENGTH;
 }

@@ -1,5 +1,4 @@
-
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1000px) {
   .Reg_AboutYou {
     margin-bottom: 50px;
     padding: 5px 5px 5px 5px;
@@ -8,7 +7,7 @@
   }
 }
 
-@media screen and (min-width: 1001px){
+@media screen and (min-width: 1001px) {
   .Reg_AboutYou {
     margin-bottom: 50px;
     padding: 5px 5px 5px 5px;
@@ -17,38 +16,38 @@
   }
 }
 
-.Reg_container{
+.Reg_container {
   background-color: #001f3f;
   box-shadow: 15px 15px 25px #001f3f;
   padding: 30px 30px 30px 30px;
   color: white;
 }
 
-.Reg_b_About{
+.Reg_b_About {
   background-color: white;
   color: #001f3f;
   padding: 5px 5px 5px 5px;
 }
 
-.Reg_b_You{
+.Reg_b_You {
   margin-left: 10px;
 }
 
-.Reg_Red_Alert{
+.Reg_Red_Alert {
   display: none;
 }
 
-.Reg_AboutYou{
+.Reg_AboutYou {
   border-bottom: white solid 2px;
 }
 
-.Reg_passwordRequirements div{
+.Reg_passwordRequirements div {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 50px;
 }
 
-#lowercase #uppercase #number #specialChar #length{
+#lowercase #uppercase #number #specialChar #length {
   padding: 10px 10px 10px 10px;
   font-size: large;
 }

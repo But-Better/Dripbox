@@ -61,4 +61,71 @@ class User < ApplicationRecord
       break unless User.exists?(column => self[column])
     end
   end
+
+  # @return [TrueClass, FalseClass]
+  def uploaded_before? = !user_resources.size.zero?
+
+  def last_uploaded_file
+    return 'none' unless uploaded_before?
+
+    user_resources.last.name
+  end
+
+  # @return Array[Hash]
+  def upload_file_history
+    upload_file_history = []
+    user_resources.group(:created_at).count.each_key do |item|
+      upload_file_history.append({ 'date': item.to_date, 'number': user_resources.group(:created_at).count[item] })
+    end
+    upload_file_history
+  end
+
+  # return Array[Hash]
+  def number_of_files_per_type
+    hash_array = []
+    file_type_counting.each do |item|
+      hash_array.append({ 'type': item[0], 'number': item[1] })
+    end
+    hash_array
+  end
+
+  # @return Array[Hash]
+  def top_five_files_by_size
+    hash_array = []
+    user_resources.sort_by(&:byte_filesize).last(5).reverse.each do |item|
+      hash_array.append({ 'file': item.name, 'size': item.byte_filesize })
+    end
+    hash_array
+  end
+
+  # return [Integer]
+  def times_of_login
+    login_counter
+  end
+
+  # return [Integer]
+  def total_number_of_uploads
+    user_resources.count
+  end
+
+  # return [Integer]
+  def total_upload_size
+    user_resources.sum(&:byte_filesize)
+  end
+
+  private
+
+  # return Array[Hash]
+  def file_type_counting
+    types = {}
+    user_resources.each do |item|
+      if types.include? item.type.to_s
+        types[item.type.to_s] += 1
+      else
+        types[item.type.to_s] = 1
+      end
+    end
+    types
+  end
+
 end

@@ -1,0 +1,7 @@
+<% if @file_size_classification.nil? || !@file_size_classification.any?(&:present?) %>
+  <div id="missing_file_size_data">
+  </div>
+<% else %>
+  <div id="file_size_classification">
+  </div>
+<% end %>
