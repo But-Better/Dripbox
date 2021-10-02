@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::Base
   helper_method :logged_in?
   around_action :switch_locale
-  before_action :default_url_options
+  before_action :default_url_options, :set_theme
 
   def switch_locale(&action)
     locale = params[:locale] || I18n.default_locale
@@ -46,8 +46,6 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
-
-  before_action :set_theme
 
   def set_theme
     if params[:theme].present?

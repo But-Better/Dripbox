@@ -22,9 +22,9 @@
           <%= link_to "#{t('dashboard.edit_user')}", user_resources_path %>
         </div>
         <div id="searchBar">
-          <label>
-            <input type="text" placeholder='<%= "#{t('placeholder.search')}" %>'>
-          </label>
+          <%= form_with(url: searchresults_path, method: 'get') do | form |%>
+            <%= form.text_field :search_query%>
+          <% end %>
         </div>
         <div id="recentUploadsSection" class="dashboard_div_item">
           <div id="heading2">
