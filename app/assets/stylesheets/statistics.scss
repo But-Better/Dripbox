@@ -15,3 +15,9 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+@media only screen and (min-device-width: 100px) and (max-device-width : 800px) {
+  #chart-section {
+    display: initial;
+  }
+}
