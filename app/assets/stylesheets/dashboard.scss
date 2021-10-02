@@ -82,6 +82,8 @@
   height: var(--resc-prev-size);
   width: var(--resc-prev-size);
   margin-left: var(--list-item-margin);
+
+  flex-shrink: 0;
 }
 
 #recentUploadsList #ru_item img {
