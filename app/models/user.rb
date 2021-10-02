@@ -111,11 +111,7 @@ class User < ApplicationRecord
 
   # return [Integer]
   def total_upload_size
-    total_upload_size = 0
-    user_resources.each do |item|
-      total_upload_size += item.byte_filesize
-    end
-    total_upload_size
+    user_resources.sum(&:byte_filesize)
   end
 
   private
