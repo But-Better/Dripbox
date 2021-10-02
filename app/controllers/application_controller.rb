@@ -53,6 +53,8 @@ class ApplicationController < ActionController::Base
       # session[:theme] = theme
       cookies[:theme] = theme
       redirect_to(request.referrer || root_path)
+    else
+      puts 'got here somehow ---------------------------------------------------------------------------------------------------!!!!!!!!!!!!!!!!!'
     end
   end
 end
