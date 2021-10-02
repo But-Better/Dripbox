@@ -6,7 +6,13 @@ class Tag < ApplicationRecord
   validates :name,
             uniqueness: true,
             presence: true,
-            length: { minimum: 1, maximum: 30 },
+            length: { minimum: 1, maximum: 10 },
             allow_nil: false,
             allow_blank: false
+
+  def save_tag_with_name_to(name, user_resource)
+    local_tag = Tags.find_by(name: name)
+    local_tag = Tags.create(name: name) if local_tag.nil?
+    user_resource.tags.append(local_tag)
+  end
 end
