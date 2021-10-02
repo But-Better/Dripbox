@@ -140,6 +140,8 @@
 #categoryList {
   display: block;
   padding: var(--list-item-margin);
+  height: 100%;
+  overflow: scroll;
 }
 
 #categoryList #cat_item {
