@@ -1,29 +1,37 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <strong><%= "#{t('user_resources.name')}" %></strong>
-  <%= @user_resource.name %>
-</p>
+<div id=heading>
+  <h1>Resource Preview</h1>
+</div>
+<div id="resource_preview" class="gray-boxing">
+  <div>
+    <strong><%= "#{t('user_resources.name')}" %></strong>
+    <p> <%= @user_resource.name %></p>
+    <strong><%= "#{t('user_resources.desc')}" %></strong>
+    <p><%= @user_resource.desc %></p>
+    <strong>Tags:</strong>
+    <p>
+      <% @user_resource.tags.each do |tag| %>
+        -
+        <% tag.to_s %>
+      <% end %>
+    </p>
+  </div>
 
-<p>
-  <strong><%= "#{t('user_resources.desc')}" %></strong>
-  <%= @user_resource.desc %>
-</p>
-
-<p>
-  <strong><%= "#{t('user_resources.preview')}" %></strong>
-  <li>
+  <p>
+    <strong><%= "#{t('user_resources.preview')}" %></strong>
     <% unless @user_resource.file.filename.nil? %>
       <% if @user_resource.file.representable? %>
-        <%= image_tag @user_resource.file.representation(resize_to_limit: [100, 100]) %>
+        <%= image_tag @user_resource.file.representation(resize_to_limit: [500, 500]) %>
       <% else %>
+      <div id="placeholder_img">
         <%= link_to rails_blob_path(@user_resource.file, disposition: "attachment") do %>
           <%= image_tag "placeholder.svg", alt: "Download file" %>
         <% end %>
-      <% end %>
+      </div>
     <% end %>
-  </li>
-</p>
+  <% end %>
+  </p>
+</div>
 
-
-<%= link_to "#{t('user_resources.edit')}", edit_user_resource_path(@user_resource) %> |
-<%= link_to "#{t('user_resources.back')}", user_resources_path %>
+<%= button_to "#{t('user_resources.edit')}", edit_user_resource_path(@user_resource), method: :get %>
+<%= button_to "#{t('user_resources.back')}", user_resources_path, method: :get %>

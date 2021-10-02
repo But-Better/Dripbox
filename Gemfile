@@ -22,9 +22,12 @@ gem 'server_timing'
 
 ## Security
 # Brakeman
-
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
+
+# rails-controller-testing gem
+# https://github.com/rails/rails-controller-testing
+gem 'rails-controller-testing'
 
 # image processing for storage_blob
 gem 'image_processing', '~> 1.2'
@@ -42,9 +45,20 @@ gem 'simplecov', require: false, group: :test
 # https://github.com/Azure/azure-storage-ruby
 gem 'azure-storage-blob', require: false, group: :production
 
+# Minitests
+gem 'minitest', '~> 5.14', '>= 5.14.4'
+
 # rouge one
 # https://github.com/rubocop/ruby-style-guide
 gem 'rouge'
+
+# graphing tool
+# https://github.com/dgilperez/metrics-graphics-rails
+gem 'metrics-graphics-rails'
+
+# gon variable pipeline
+# https://github.com/gazay/gon
+gem 'gon'
 
 # faker data generator
 # https://github.com/faker-ruby/faker

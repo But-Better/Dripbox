@@ -1,17 +1,19 @@
 <div id="recentUploadsList">
   <% if @files.empty? %>
     <i id="nothing_found"><%= "#{t('dashboard.nothing_file')}" %></i>
-  <%  else  %>
-    <%   @files.each do |file|   %>
+  <% else %>
+    <% @files.each do |file| %>
       <div id="ru_item">
-        <a href="/dashboard/<%=   file.id   %>">
+        <%= link_to dashboard_path(id: file.id) do%>
           <% if file.file.representable? %>
             <%= image_tag file.file.representation(resize_to_limit: [1000, 1000]) %>
           <% end %>
-        </a>
-        <a href="/dashboard/<%=   file.id   %>"><i id="name"><%=   file.name.length > 12 ? file.name[0,12] + '...' : file.name   %></i></a>
-        <i id="desc"><%=   file.desc.length > 20 ? file.desc[0,20] + '...' : file.desc   %></i>
+        <<% end %>>
+        <%= link_to dashboard_path(id: file.id) do %>
+          <i id="name"><%= file.name.length > 12 ? file.name[0, 12] + '...' : file.name %></i>
+        <%  end %>
+        <i id="desc"><%= file.desc.length > 20 ? file.desc[0, 20] + '...' : file.desc %></i>
       </div>
-    <%  end  %>
-  <%  end %>
+    <% end %>
+  <% end %>
 </div>

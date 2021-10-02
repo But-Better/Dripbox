@@ -1,0 +1,27 @@
+<div id="user_statistical_data" class="gray-boxing">
+  <div id="user_information">
+    <span>Name:</span>
+    <span><%= @current_user.username %></span>
+    <span>Email:</span>
+    <span><%= @current_user.email %></span>
+    <span>last uploaded File:</span>
+    <span><i><%= @last_uploaded_file %></i></span>
+    <span>total number of Uploads:</span>
+    <span><%= @total_number_of_uploads %></span>
+    <span>numbers of Login:</span>
+    <span><%= @times_of_login %></span>
+    <span>full upload size:</span>
+    <span><%= @total_upload_size / 1024 %> MB </span>
+  </div>
+  <div id="chart-section">
+    <%= render 'statistics/upload_file_history' %>
+    <%= render 'statistics/file_type_classification' %>
+    <%= render 'statistics/file_size_classification' %>
+    <%= javascript_pack_tag 'statistics_scripts/upload_files_history',
+                            'statistics_scripts/file_type_classification',
+                            'statistics_scripts/file_size_classification',
+                            'statistics_scripts/missing/missing_upload_files_history',
+                            'statistics_scripts/missing/missing_file_type_classification',
+                            'statistics_scripts/missing/missing_file_size_classification'%>
+  </div>
+</div>

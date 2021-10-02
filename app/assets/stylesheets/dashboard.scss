@@ -151,6 +151,8 @@
   border-width: var(--list-item-border);
 
   height: var(--cat-item-height);
+  // TODO: remove not needed for Tag/Category-Section
+  //width: var(--cat-item-width);
 
   margin-bottom: var(--list-item-margin);
 }
@@ -166,6 +168,7 @@
   width: calc(var(--cat-item-width) - calc(var(--list-item-border) * 2));
   object-fit: cover;
   object-position: center;
+
   vertical-align: 0;
 }
 
@@ -181,6 +184,12 @@
   list-style-type: none;
 
   height: var(--cat-list-height);
+
+  // TODO: remove
+  // calculate width of information field by taking the full width of the screen
+  // and subtracting all existent paddings and the width of the category field
+  // plus a custom padding between the category and the information field
+  //width: calc(calc(var(--full-horizontal-width) - calc(var(--cat-list-width) + calc(var(--fluid-container-padding) * 2) + var(--cat-inf-padding) + calc(var(--section-padding) * 2))));
 
   overflow: hidden;
   overflow-y: scroll;
@@ -214,3 +223,8 @@
 #resource-creation {
   display: flex;
 }
+
+#user_information {
+  width: inherit;
+}
+
