@@ -35,20 +35,20 @@
           </div>
         </div>
         <div id="divSlice" class="dashboard_div_item">
-          <div id="categorySection">
-            <div id="heading2">
-              <h2><%= "#{t('dashboard.tags')}" %></h2>
-            </div>
-            <div id=contentField>
-              <%= render "resources/categories_listing" %>
-            </div>
-          </div>
           <div id="informationSection">
             <div id="heading2">
               <h2><%= "#{t('dashboard.information')}" %></h2>
             </div>
             <div id=contentField>
               <%= render "resources/selected_file_listing" %>
+            </div>
+          </div>
+          <div id="categorySection">
+            <div id="heading2">
+              <h2><%= "#{t('dashboard.tags')}" %></h2>
+            </div>
+            <div id=contentField>
+              <%= render "resources/categories_listing" %>
             </div>
           </div>
         </div>

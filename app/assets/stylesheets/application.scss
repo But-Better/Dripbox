@@ -49,14 +49,6 @@
 }
 
 
-body {
-  background-image: asset-url("daylight-environment-forest-459225.jpg");
-  background-size: cover;
-
-  background-blend-mode: darken;
-  background-position: center;
-}
-
 .container-fluid {
   //overflow-y: scroll;
 }
@@ -97,9 +89,17 @@ input {
   padding-bottom: 0; /*höhe des Footers wenn der Webseiteninhalt das Fenster nicht ausfüllt*/
 }
 
+#background-container {
+  background-size: cover;
+
+  background-blend-mode: darken;
+  background-position: center;
+}
+
 /*lightmode settings*/
 .light {
   color: black;
+  background-image: asset-url("daylight-environment-forest-459225.jpg");
 
   /*header*/
   .header-background-lightmode{
@@ -153,7 +153,7 @@ input {
   }
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
+@media only screen and (min-device-width: 100px) and (max-device-width : 800px) {
   #heading,
   #heading2 {
     width: 100%;

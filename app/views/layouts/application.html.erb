@@ -17,16 +17,18 @@
 </head>
 
 <body>
-<div id="page-container " class="<%= cookies[:theme] %>">
-  <div id="content-wrap">
-    <%= debug(params) if Rails.env.development? %>
+<div id="background-container" class="<%= cookies[:theme] %>">
+  <div id="page-container">
+    <div id="content-wrap">
+      <%= debug(params) if Rails.env.development? %>
 
 
-    <%= yield :header unless current_page?(registrations_index_path) %>
+      <%= yield :header unless current_page?(registrations_index_path) %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </div>
-  <%= render 'layouts/footer' %>
 </div>
 </body>
 
