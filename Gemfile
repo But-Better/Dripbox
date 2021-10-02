@@ -25,10 +25,6 @@ gem 'server_timing'
 # https://brakemanscanner.org/docs/introduction/
 gem 'brakeman'
 
-# rspec-rails
-# https://github.com/rspec/rspec-rails
-gem 'rspec-rails'
-
 # rails-controller-testing gem
 # https://github.com/rails/rails-controller-testing
 gem 'rails-controller-testing'
