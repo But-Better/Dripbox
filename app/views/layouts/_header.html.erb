@@ -9,13 +9,13 @@
       <ul class="navbar-nav mr-auto w-100 justify-content-end">
 
 
-        <% if cookies[:theme] == "light" %>
+        <% if cookies[:theme] == "dark" %>
           <li class="nav-item">
-            <%= link_to  image_tag("darkmode.png",class: 'darkmode-lightmode-symbol'), root_path(theme: "dark"), class: "nav-link"%>
+            <%= link_to image_tag("lightmode.png", class: 'darkmode-lightmode-symbol'), root_path(theme: "light"), class: "nav-link"%>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to image_tag("lightmode.png", class: 'darkmode-lightmode-symbol'), root_path(theme: "light"), class: "nav-link"%>
+            <%= link_to  image_tag("darkmode.png",class: 'darkmode-lightmode-symbol'), root_path(theme: "dark"), class: "nav-link"%>
           </li>
         <% end %>
         
