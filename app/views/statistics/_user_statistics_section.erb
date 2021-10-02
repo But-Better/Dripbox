@@ -17,5 +17,11 @@
     <%= render 'statistics/upload_file_history' %>
     <%= render 'statistics/file_type_classification' %>
     <%= render 'statistics/file_size_classification' %>
+    <%= javascript_pack_tag 'statistics_scripts/upload_files_history',
+                            'statistics_scripts/file_type_classification',
+                            'statistics_scripts/file_size_classification',
+                            'statistics_scripts/missing/missing_upload_files_history',
+                            'statistics_scripts/missing/missing_file_type_classification',
+                            'statistics_scripts/missing/missing_file_size_classification'%>
   </div>
 </div>

@@ -1,9 +1,7 @@
 <% if @number_of_files_per_type.nil? || !@number_of_files_per_type.any?(&:present?) %>
   <div id="missing_file_type_data">
-    <%= javascript_pack_tag 'statistics_scripts/missing/missing_file_type_classification' %>
   </div>
 <% else %>
   <div id="file_type_classification">
-    <%= javascript_pack_tag 'statistics_scripts/file_type_classification' %>
   </div>
 <% end %>
