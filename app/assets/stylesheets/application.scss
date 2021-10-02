@@ -144,7 +144,7 @@ input {
   /*rooms*/
   .rooms-inner-content{
     color: #212529 !important;
-    background-color: #EFEFEF !important;
+    background-color: white !important;
   }
 
   .rooms-link-pointer a{
@@ -176,5 +176,9 @@ input {
   .whiteboard{
     color: white;
     background-color: black;
+  }
+
+  .rooms-inner-content{
+    background-color: black !important;
   }
 }
