@@ -17,9 +17,9 @@
           <i><%= user_resource.id %></i>
           <i><%= user_resource.name %></i>
           <i><%= user_resource.desc %></i>
-          <% if !user_resource.file.filename.nil?%>
+          <% if !user_resource.file.filename.nil? %>
             <i><%= link_to rails_blob_path(user_resource.file, disposition: "attachment") do %>
-                <i><%= user_resource.file.filename.to_s.length > 12 ? user_resource.file.filename.to_s[0,12] + '...' : user_resource.file.filename.to_s%></i>
+                <i><%= user_resource.file.filename.to_s.length > 12 ? user_resource.file.filename.to_s[0, 12] + '...' : user_resource.file.filename.to_s %></i>
               <% end %></i>
           <% else %>
             <i>no link available</i>

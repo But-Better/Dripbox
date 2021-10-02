@@ -1,0 +1,35 @@
+#new_resource_container {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new_resource_wrapper #selection_field {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#resourceTable {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+#resourceTable i {
+  padding: 5px;
+  border: solid;
+}
+
+#resourceTable .button_to input {
+  width: -moz-available;
+}
+
+#placeholder_img {
+  width: 500px;
+  height: auto;
+}
+
+#resource_preview {
+  width: -moz-fit-content;
+}

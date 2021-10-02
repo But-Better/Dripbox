@@ -217,6 +217,11 @@
   display: flex;
 }
 
+#user_information {
+  width: inherit;
+}
+
+
 @media only screen and (min-device-width: 100px) and (max-device-width: 800px) {
   #searchBar,
   #newResourceButton,

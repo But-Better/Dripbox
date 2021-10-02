@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  *= require _bootstrap
- */
+ *= require metricsgraphics
+*/
 
 :root {
   --background-color: none;
@@ -29,7 +30,7 @@
 
   --main-container-width: clamp(var(--min-width), 100%, 100%);
   --hrz-list-height: clamp(50px, 100px, 150px);
-  --cat-list-width:  clamp(250px, 400px, 400px);
+  --cat-list-width: clamp(250px, 400px, 400px);
   --cat-list-height: clamp(100px, 400px, 400px);
 
   --item-text-font-size: 12px;
@@ -46,6 +47,19 @@
   --hrz-list-padding: 0px 20px 0px 20px;
 
   --cat-inf-padding: 15px;
+}
+
+.floating-right {
+  float: right;
+}
+
+.floating-left {
+  float: left;
+}
+
+#page-container {
+  height: inherit;
+  overflow-y: scroll;
 }
 
 .container-fluid {

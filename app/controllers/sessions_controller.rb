@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     if auth_result
       if user.email_confirmed
         session[:user_id] = user.id
+        user.increment!(:login_counter)
         redirect_to dashboard_path
       else
         render 'user_mailer/confirm_your_email'
