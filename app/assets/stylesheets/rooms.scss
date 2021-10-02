@@ -1,3 +1,39 @@
 // Place all the styles related to the Rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.Existing-Chatrooms{
+  background-color: #DADADA;
+}
+
+/*sets background and text settings for footer*/
+#rooms-inner-content {
+  color: #F7F7F7;
+  background-color: black !important;
+  font-size: 10px;
+}
+
+/*sets link colors and style of links without setting pointer style*/
+.rooms-link-pointer a {
+  font-weight: normal;
+  color: #F7F7F7;
+  text-decoration: none;
+}
+
+/*sets color for the link pointer to background color of footer*/
+.rooms-link-pointer {
+  color: #212529;
+  font-weight: bold;
+  float: left;
+}
+
+
+/*lets the pointer appear, when user hovers over the link*/
+.rooms-link-pointer:hover {
+  color: #F7F7F7;
+}
+
+/*link will be bold when hovered above, only pointer will show*/
+.rooms-link-pointer a:hover {
+  color: #F7F7F7;
+  font-weight: bold;
+}

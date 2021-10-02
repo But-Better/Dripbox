@@ -1,24 +1,27 @@
-<% content_for :header do%>
-  <%=render "layouts/header" %>
-<%end %>
+<% content_for :header do %>
+  <%= render "layouts/header" %>
+<% end %>
 
 <div id="site-id" data-site-id="room-list">
 
-<div class="container whiteboard">
+  <div class="container whiteboard">
 
-<h1>Existierende Chatrooms</h1>
-<br>
-<hr>
-<%= link_to "Chatraum erstellen", new_room_path %>
-<br>
-<%if @existing_rooms.present?%>
-<ul class = "Existing-Chatrooms">
-<% @existing_rooms.each do |existingRoom|%>
-  <li>
-  <%=link_to existingRoom.name, existingRoom%>
-  </li>
-<% end %>
-</ul>
-<%end%>
-</div>
+    <h1>Existierende Chatrooms</h1>
+    <br>
+    <hr>
+    <%= link_to "Chatraum erstellen", new_room_path %>
+    <br>
+    <br>
+  
+    <% if @existing_rooms.present? %>
+      <div class="Existing-Chatrooms p-3 bg-dark text-white rooms-inner-content">
+        <% @existing_rooms.each do |existingRoom| %>
+  <span class="rooms-link-pointer">
+  <%= link_to existingRoom.name, existingRoom %>
+  </span>
+          <br>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
