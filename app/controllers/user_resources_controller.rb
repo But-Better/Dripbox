@@ -36,7 +36,7 @@ class UserResourcesController < ApplicationController
   # POST /user_resources or /user_resources.json
   def create
     redirect_to registrations_index_path unless logged_in?
-    @user = User.find_by_id(session[:user_id])
+    current_user
 
     tag_string = if params[:tag].nil?
                    ''
@@ -55,7 +55,7 @@ class UserResourcesController < ApplicationController
                           end
     end
 
-    @user_resource = @user.user_resources.new user_resource_params
+    @user_resource = @current_user.user_resources.new user_resource_params
 
     @user_resource.tags = tags
 
