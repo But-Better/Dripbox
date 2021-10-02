@@ -65,7 +65,6 @@ class User < ApplicationRecord
   # @return [TrueClass, FalseClass]
   def uploaded_before? = !user_resources.size.zero?
 
-  # noinspection RubyNilAnalysis
   def last_uploaded_file
     return 'none' unless uploaded_before?
 
