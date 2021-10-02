@@ -49,16 +49,6 @@
   --cat-inf-padding: 15px;
 }
 
-
-body {
-  background-image: asset-url("daylight-environment-forest-459225.jpg");
-  background-size: cover;
-
-  //background-blend-mode: darken;
-  background-position: center;
-  height: 100vh;
-}
-
 .floating-right {
   float: right;
 }
@@ -69,7 +59,6 @@ body {
 
 #page-container {
   height: inherit;
-  overflow-y: scroll;
 }
 
 input {
@@ -108,9 +97,21 @@ input {
   padding-bottom: 0; /*höhe des Footers wenn der Webseiteninhalt das Fenster nicht ausfüllt*/
 }
 
+#background-container {
+  background-size: cover;
+  background-blend-mode: darken;
+  background-position: center;
+
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: scroll;
+}
+
 /*lightmode settings*/
 .light {
   color: black;
+  background-color: transparent !important;
+  background-image: asset-url("daylight-environment-forest-459225.jpg");
 
   /*header*/
   .header-background-lightmode{
@@ -173,10 +174,6 @@ input {
   .rooms-link-pointer a:visited {
     color: #212529;
   }
-
-  #Home_Body{
-    background-color: #EFEFEF;
-  }
 }
 
 /*darkmode settings*/
@@ -191,5 +188,28 @@ input {
 
   .rooms-inner-content{
     background-color: black !important;
+  }
+
+  #heading2 h2,
+  #heading h1 {
+    font-weight: normal;
+    color: darkgrey;
+    background-color: transparent;
+  }
+}
+
+@media only screen and (min-device-width: 100px) and (max-device-width : 800px) {
+  #heading,
+  #heading2 {
+    width: 100%;
+  }
+
+  #heading2 h2,
+  #heading h1 {
+    text-align: center;
+  }
+
+  .burger-color{
+    background-color: #212529 !important;
   }
 }
