@@ -48,13 +48,16 @@ class ApplicationController < ActionController::Base
   end
 
   def set_theme
+    set_default_theme_if_necessary
     if params[:theme].present?
       theme = params[:theme].to_sym
       # session[:theme] = theme
       cookies[:theme] = theme
       redirect_to(request.referrer || root_path)
-    else
-      puts 'got here somehow ---------------------------------------------------------------------------------------------------!!!!!!!!!!!!!!!!!'
     end
+  end
+
+  def set_default_theme_if_necessary
+    cookies[:theme] = 'light' unless cookies[:theme].present?
   end
 end
