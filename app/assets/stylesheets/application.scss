@@ -62,10 +62,6 @@
   overflow-y: scroll;
 }
 
-.container-fluid {
-  //overflow-y: scroll;
-}
-
 input {
   margin-bottom: 5px !important;
 }
@@ -212,5 +208,9 @@ input {
   #heading2 h2,
   #heading h1 {
     text-align: center;
+  }
+
+  .burger-color{
+    background-color: #212529 !important;
   }
 }
