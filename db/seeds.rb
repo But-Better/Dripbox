@@ -18,9 +18,17 @@
 5.times do |i|
   @res = @user.user_resources.new(name: Faker::Beer.name, desc: Faker::Lorem.sentence(word_count: 20),
                                   created_at: "2021-09-#{i} 11:42:29.946328")
-  @res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: "#{Faker::File.name}.jpg")
+
+  @res.file.attach(io: URI.open(
+    Faker::LoremFlickr.image(
+      size: "200x240",
+      search_terms: %w[car oldtimer],
+      match_all: true)
+  ), filename: "test-car-image.jpg")
+
   @res.save
 end
+
 @res = @user.user_resources.new(name: 'file7', desc: 'cool', created_at: '2021-08-15 11:42:29.946328')
 @res.file.attach(io: File.open('app/assets/images/lost.jpg'), filename: 'file.jpg')
 @res.save
@@ -50,3 +58,4 @@ User.create(username: 'Admin', email: 'Admin@Admin.admin', password: 'Admin123',
 20.times do
   Contact.create(name: Faker::Name.name, email: Faker::Internet.email, message: Faker::Lorem.sentence(word_count: 20))
 end
+
