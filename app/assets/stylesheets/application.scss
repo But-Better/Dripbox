@@ -103,7 +103,7 @@ input {
 
   /*header*/
   .header-background-lightmode{
-    background-color: #EFEFEF !important;
+
   }
 
   .header-text-lightmode{
@@ -154,5 +154,17 @@ input {
   .whiteboard{
     color: white;
     background-color: black;
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
+  #heading,
+  #heading2 {
+    width: 100%;
+  }
+
+  #heading2 h2,
+  #heading h1 {
+    text-align: center;
   }
 }

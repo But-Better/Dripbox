@@ -214,3 +214,22 @@
 #resource-creation {
   display: flex;
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
+  #searchBar,
+  #newResourceButton,
+  #editResourceButton {
+    float: none;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  #divSlice {
+    display: inherit;
+  }
+
+  #informationSection {
+    margin-top: 25px;
+    float: none;
+  }
+}
