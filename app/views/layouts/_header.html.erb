@@ -1,6 +1,7 @@
 <header class="sticky-top">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark header-background-lightmode">
-    <a class="navbar-brand headTextSize header-text-lightmode" href="/"><%= image_tag "pepe_hacker.gif", class: "headerPic" %>DripBox</a>
+    <a class="navbar-brand headTextSize header-text-lightmode" href="/"><%= image_tag "pepe_hacker.gif", class: "headerPic" %>
+      DripBox</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,32 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto w-100 justify-content-end">
 
-
         <% if cookies[:theme] == "light" %>
           <li class="nav-item">
-            <%= link_to  image_tag("darkmode.png",class: 'darkmode-lightmode-symbol'), root_path(theme: "dark"), class: "nav-link"%>
+            <%= link_to image_tag("darkmode.png", class: 'darkmode-lightmode-symbol'), root_path(theme: "dark"), class: "nav-link" %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to image_tag("lightmode.png", class: 'darkmode-lightmode-symbol'), root_path(theme: "light"), class: "nav-link"%>
-          </li>
-        <% end %>
-        
-        <% if !@current_user.nil? %>
-          <li class="nav-item">
-            <%= link_to "Chat", rooms_path, class: "nav-link header-text-lightmode" %>
-          </li>
-        <%end %>
-
-        <li class="nav-item">
-          <%= link_to "Dashboard", dashboard_path, class: "nav-link header-text-lightmode" %>
-        </li>
-        <% unless @current_user.nil? %>
-          <li class="nav-item">
-            <%= link_to "Settings", edit_user_path(@current_user), class: "nav-link header-text-lightmode" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Contacts overview", contacts_url, class: "nav-link header-text-lightmode" %>
+            <%= link_to image_tag("lightmode.png", class: 'darkmode-lightmode-symbol'), root_path(theme: "light"), class: "nav-link" %>
           </li>
         <% end %>
 
@@ -45,10 +27,28 @@
 
         <% else %>
           <li id="welcome-no-hover" class="welcome-text header-text-lightmode"><%= "#{t('header.welcome')}" %>
-            <span class="welcomed-userName"><%= @current_user.username %></span>
+            <span class="welcomed-userName"><%= @current_user.username %> </span>
           </li>
           <li class="nav-item">
             <%= link_to "#{t('header.logout')}", logout_path, class: "nav-link header-text-lightmode" %>
+          </li>
+        <% end %>
+
+        <% unless @current_user.nil? %>
+          <li class="nav-item">
+            <%= link_to "Chat", rooms_path, class: "nav-link header-text-lightmode" %>
+          </li>
+        <% end %>
+
+        <li class="nav-item">
+          <%= link_to "Dashboard", dashboard_path, class: "nav-link header-text-lightmode" %>
+        </li>
+        <% unless @current_user.nil? %>
+          <li class="nav-item">
+            <%= link_to "Settings", edit_user_path(@current_user), class: "nav-link header-text-lightmode" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contacts overview", contacts_url, class: "nav-link header-text-lightmode" %>
           </li>
         <% end %>
       </ul>
