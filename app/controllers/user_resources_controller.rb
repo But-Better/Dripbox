@@ -17,7 +17,6 @@ class UserResourcesController < ApplicationController
   # GET /user_resources/new
   def new
     @user = User.find_by_id(session[:user_id])
-
     @user_resource = UserResource.new
     @categories = Tag.all
   end
@@ -29,28 +28,11 @@ class UserResourcesController < ApplicationController
 
   # POST /user_resources or /user_resources.json
   def create
-    @user = User.find_by_id(session[:user_id])
+    redirect_to registrations_index_path unless logged_in?
+    current_user
+    @user_resource = @current_user.user_resources.new user_resource_params
 
-    tag_string = if params[:tags].nil?
-                   ''
-                 else
-                   params[:tags]
-                 end
-
-    string_split = tag_string.split(',')
-    tags = []
-
-    string_split.each do |tag|
-      tags[tags.length] = if !Tag.find_by(name: tag.strip).nil?
-                            Tag.find_by(name: tag.strip)
-                          else
-                            Tag.create(name: tag.strip)
-                          end
-    end
-
-    @user_resource = @user.user_resources.new user_resource_params
-
-    @user_resource.tags = tags
+    add_update_tags
 
     respond_to do |format|
       if @user_resource.save
@@ -66,6 +48,7 @@ class UserResourcesController < ApplicationController
   # PATCH/PUT /user_resources/1 or /user_resources/1.json
   def update
     @user_resource = UserResource.find(params[:id])
+    add_update_tags
     respond_to do |format|
       if @user_resource.update(user_resource_params)
         format.html { redirect_to @user_resource, notice: 'User resource was successfully updated.' }
@@ -87,6 +70,16 @@ class UserResourcesController < ApplicationController
   end
 
   private
+
+  def add_update_tags
+    tag_string = if params['user_resource']['tags'].nil?
+                   ''
+                 else
+                   params['user_resource']['tags']
+                 end
+
+    @user_resource.update_tags(tag_string)
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user_resource
