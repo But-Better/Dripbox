@@ -48,11 +48,13 @@ class UserResource < ApplicationRecord
       new_tags.append Tag.convert_string_to_tag(tag)
     end
 
-    union_result = new_tags | tags
+    union_result = tags - new_tags
 
-    union_result.each do |tag|
-      tags.append(tag) unless tags.include? tag
-    end
+    tags.delete(union_result) if union_result
+
+    union_result = new_tags - tags
+
+    tags.append union_result
   end
 
   def tags_to_s

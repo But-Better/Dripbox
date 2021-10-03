@@ -111,4 +111,6 @@ class UserResourceTest < ActiveSupport::TestCase
     res.save
     assert_equal res, UserResource.find_by(id: res.id)
   end
+
+  test ''
 end
