@@ -14,7 +14,7 @@ class RoomMessagesTest < ApplicationSystemTestCase
   def visit_chatroom
     login
     visit rooms_path
-    click_link 'testRoom1'
+    click_link @test_room1.name
     sleep 2
     assert_selector 'h1', text: "Aktueller Chatroom: #{@test_room1.name}"
   end
@@ -26,15 +26,15 @@ class RoomMessagesTest < ApplicationSystemTestCase
     @email_u1 = Faker::Internet.email
     @email_u2 = Faker::Internet.email
 
-    @test_user1 = User.new(username: 'User1', email: @email_u1, password: @pw_u1, email_confirmed: true,
+    @test_user1 = User.new(username: 'User1123', email: @email_u1, password: @pw_u1, email_confirmed: true,
                            confirm_token: nil)
     @test_user1.save!
 
-    @test_user2 = User.new(username: 'User2', email: @email_u2, password: @pw_u2, email_confirmed: true,
+    @test_user2 = User.new(username: 'User2234', email: @email_u2, password: @pw_u2, email_confirmed: true,
                            confirm_token: nil)
     @test_user2.save!
 
-    @test_room1 = Room.new(name: 'testRoom1')
+    @test_room1 = Room.new(name: 'testRoom11234')
     assert @test_room1.save
   end
 
