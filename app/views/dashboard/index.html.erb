@@ -24,6 +24,7 @@
         <div id="searchBar">
           <%= form_with(url: searchresults_path, method: 'get') do | form |%>
             <%= form.text_field :search_query%>
+            <%= form.submit :Suche%>
           <% end %>
         </div>
         <div id="recentUploadsSection" class="dashboard_div_item">
