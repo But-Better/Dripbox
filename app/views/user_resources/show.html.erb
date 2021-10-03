@@ -11,8 +11,7 @@
     <strong>Tags:</strong>
     <p>
       <% @user_resource.tags.each do |tag| %>
-        -
-        <% tag.to_s %>
+        - <%= tag.name %> <br>
       <% end %>
     </p>
   </div>
@@ -31,7 +30,6 @@
     <% end %>
   <% end %>
   </p>
+  <%= button_to "#{t('user_resources.edit')}", edit_user_resource_path(@user_resource), method: :get %>
+  <%= button_to "#{t('user_resources.back')}", user_resources_path, method: :get %>
 </div>
-
-<%= button_to "#{t('user_resources.edit')}", edit_user_resource_path(@user_resource), method: :get %>
-<%= button_to "#{t('user_resources.back')}", user_resources_path, method: :get %>

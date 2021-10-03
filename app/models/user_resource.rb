@@ -40,4 +40,26 @@ class UserResource < ApplicationRecord
   def creation_date
     created_at.to_date
   end
+
+  def update_tags(string)
+    string_split = string.split(',')
+    new_tags = []
+    string_split.each do |tag|
+      new_tags.append Tag.convert_string_to_tag(tag)
+    end
+
+    union_result = new_tags | tags
+
+    union_result.each do |tag|
+      tags.append(tag) unless tags.include? tag
+    end
+  end
+
+  def tags_to_s
+    printable_string = ''
+    tags.each do |tag|
+      printable_string += "#{tag.name}, "
+    end
+    printable_string[0...-2]
+  end
 end

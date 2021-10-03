@@ -28,7 +28,7 @@ class UserResourcesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create user_resource' do
     assert_difference('UserResource.count') do
-      post user_resources_url,
+      post user_resources_path,
            params: { user_resource: { desc: 'and there is some good text here', name: Faker::Beer.name,
                                       tags: 'this, that' } }
     end

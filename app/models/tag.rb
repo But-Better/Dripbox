@@ -10,9 +10,10 @@ class Tag < ApplicationRecord
             allow_nil: false,
             allow_blank: false
 
-  def self.save_with_name_to(name, user_resource)
-    local_tag = Tag.find_by(name: name)
-    local_tag = Tag.create(name: name) if local_tag.nil?
-    user_resource.tags.append(local_tag)
+  def self.convert_string_to_tag(string)
+    string = string.tr(" \t\r\n", '')
+    local_tag = Tag.find_by(name: string)
+    local_tag = Tag.create(name: string) if local_tag.nil?
+    local_tag
   end
 end
