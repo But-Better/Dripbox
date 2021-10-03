@@ -25,8 +25,20 @@ class UserResource < ApplicationRecord
   # such in dem namen des files und usernamen nach einer nicht leeren eingabe
   def self.search(params)
     # desc vom typ text!
-    params = params.downcase
-    joins(:user).where('LOWER(name) LIKE :lookUp OR LOWER(username) LIKE :lookUp', lookUp: "%#{params}%")
+    res = []
+    if params.include? "tag:"
+      params.slice! "tag:"
+      res = find_by_t(params)
+    else
+      params = params.downcase
+      res = joins(:user).where('LOWER(name) LIKE :lookUp OR LOWER(username) LIKE :lookUp', lookUp: "%#{params}%")
+    end
+    res
+  end
+
+  def self.find_by_t(name)
+    tags = Tag.find_by_name(name)
+    tags.user_resources
   end
 
   def byte_filesize
