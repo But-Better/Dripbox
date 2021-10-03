@@ -22,7 +22,7 @@
         <% @user_resources.each do |user_resource| %>
           <i><%= user_resource.id %></i>
           <i><%= user_resource.name %></i>
-          <i><%= user_resource.desc %></i>
+          <p><%= user_resource.desc %></p>
           <% if !user_resource.file.filename.nil? %>
             <i><%= link_to rails_blob_path(user_resource.file, disposition: "attachment") do %>
                 <%= user_resource.file.filename %>
