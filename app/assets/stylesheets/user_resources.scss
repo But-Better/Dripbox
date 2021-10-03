@@ -16,9 +16,11 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
-#resourceTable i {
+#resourceTable i,
+#resourceTable p {
   padding: 5px;
   border: solid;
+  height: 100%;
 }
 
 #resourceTable .button_to input {
