@@ -4,9 +4,11 @@
   <% else %>
     <div id="categoryList">
       <% @categories.each do |cat| %>
-        <div id="cat_item">
-          <i id="title"><%= cat.name %></i>
-        </div>
+        <%= link_to searchresults_path(search_query: "tag:#{cat.name}") do %>
+          <div id="cat_item">
+            <i id="title"><%= cat.name %></i>
+          </div>
+        <% end %>
       <% end %>
     </div>
   <% end %>

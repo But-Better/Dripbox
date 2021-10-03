@@ -11,6 +11,7 @@ class Tag < ApplicationRecord
             allow_blank: false
 
   def self.convert_string_to_tag(string)
+    string = string.lowercase
     string = string.tr(" \t\r\n", '')
     local_tag = Tag.find_by(name: string)
     local_tag = Tag.create(name: string) if local_tag.nil?
