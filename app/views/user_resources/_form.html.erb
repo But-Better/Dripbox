@@ -27,7 +27,7 @@
 
       <%= form.label "#{t('user_resources.tag')}" %>
       <% if @user_resource.tags.nil? %>
-        <%= form.text_field :tags, required: true %>
+        <%= form.text_field :tags, "", required: true %>
       <% else %>
         <%= form.text_field :tags, value: @user_resource.tags_to_s %>
       <% end %>
