@@ -96,4 +96,21 @@ class UserResourceTest < ActiveSupport::TestCase
 
     assert_not res.valid?
   end
+  test 'create with tag helping append method' do
+    user = make_valid_user
+    user.save
+
+    res = user.user_resources.new(name: 'test_res', desc: 'some given description')
+
+    # needs to be used for now, maybe changed later
+    # Minitest mocking didn't work with validation
+    res.file.attach(io: File.open('app/assets/images/placeholder.svg'), filename: 'file.jpg')
+    res.add_tags('testtag')
+    assert res.valid?
+    assert_equal 'testtag', res.tags.first.name
+    res.save
+    assert_equal res, UserResource.find_by(id: res.id)
+  end
+
+  test ''
 end
