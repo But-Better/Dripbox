@@ -18,11 +18,11 @@ class RoomsTest < ApplicationSystemTestCase
     @email_u1 = Faker::Internet.email
     @email_u2 = Faker::Internet.email
 
-    @test_user1 = User.new(username: 'User1', email: @email_u1, password: @pw_u1, email_confirmed: true,
+    @test_user1 = User.new(username: 'User123', email: @email_u1, password: @pw_u1, email_confirmed: true,
                            confirm_token: nil)
     @test_user1.save!
 
-    @test_user2 = User.new(username: 'User2', email: @email_u2, password: @pw_u2, email_confirmed: true,
+    @test_user2 = User.new(username: 'User234', email: @email_u2, password: @pw_u2, email_confirmed: true,
                            confirm_token: nil)
     @test_user2.save!
   end
@@ -70,14 +70,14 @@ class RoomsTest < ApplicationSystemTestCase
     visit room_path(id: room1.id)
     sleep 1
     assert_selector 'h1', text: "Aktueller Chatroom: #{room1.name}"
-    assert_selector 'li', class: 'alert-success', text: 'User1: Nachricht 1 von User 1'
-    assert_selector 'li', class: 'alert-success', text: 'User1: Nachricht 2 von User 1'
-    assert_selector 'li', class: 'alert-danger', text: 'User2: Nachricht 1 von User 2'
-    assert_selector 'li', class: 'alert-danger', text: 'User2: Nachricht 1 von User 2'
+    assert_selector 'li', class: 'alert-success', text: 'User123: Nachricht 1 von User 1'
+    assert_selector 'li', class: 'alert-success', text: 'User123: Nachricht 2 von User 1'
+    assert_selector 'li', class: 'alert-danger', text: 'User234: Nachricht 1 von User 2'
+    assert_selector 'li', class: 'alert-danger', text: 'User234: Nachricht 1 von User 2'
 
     # accesing a differenct room with other messages
     visit room_path(id: room2.id)
     sleep 1
-    assert_selector 'li', class: 'alert-danger', text: 'User2: Nachricht in Raum 2'
+    assert_selector 'li', class: 'alert-danger', text: 'User234: Nachricht in Raum 2'
   end
 end
