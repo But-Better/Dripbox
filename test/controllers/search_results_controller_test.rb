@@ -3,27 +3,33 @@
 require 'test_helper'
 
 class SearchResultsControllerTest < ActionDispatch::IntegrationTest
-  test 'should get index' do
-    get search_results_index_url
-    assert_response :success
+
+  def login_u1
+    post login_path, params: { email: @testUser_1.email, password: '123456789asdfghxA' }
   end
 
   setup do
-    testUser1 = User.create(username: 'testUsername')
-    user1Data1 = testUser1.user_resources.new(name: 'user1Data1', desc: 'description11')
-    user1Data2 = testUser1.user_resources.new(name: 'user1Data2', desc: 'description12')
-
-    user1Data1.save
-    user1Data2.save
+    @testUser_1 = User.new(username: 'UserA', email: 'fake1@gmail.com', password: '123456789asdfghxA', email_confirmed: true,
+                           confirm_token: nil)
+    @testUser_1.save!
   end
 
-  test 'open search result with entry from dashboard' do
-    # seite wird geladen
-    get dashboard_url
+  test 'should get index' do
+
+    #keine anzeige ohne eingeloggt zu sein
+    get searchresults_path
+    assert_response :redirect
+
+    login_u1
+
+    get searchresults_path
     assert_response :success
+  end
 
-    post dashboard_path, params:
+  test 'insert in dashboard field should set @suchEingabe' do
+    login_u1
 
-    fill_in
+    get searchresults_path, params: {search_query: 'SuchMich'}
+    assert_equal 'SuchMich', @suchEingabe
   end
 end
