@@ -15,7 +15,7 @@ created with "rails new" on an Arch Linux System
     - postgresql - version : 13.3
     - node - version :  v10.24.0
     - yarn - version : 1.22.10
-    - rails - version : Rails 6.1.3.1
+    - rails - version : Rails 6.1.4.1
 
 
 * Configuration
