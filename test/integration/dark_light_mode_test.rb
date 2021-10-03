@@ -18,7 +18,7 @@ class DarkLightModeTest < ActionDispatch::IntegrationTest
     get dashboard_url
     assert_response :success
 
-    assert_nil cookies[:theme]
+    assert_equal 'light', cookies[:theme]
 
     # mode ändern
     get root_path, params: { theme: 'dark' }
