@@ -16,10 +16,10 @@
       </div>
       <div id="dashboard-middle-wrapper">
         <div id="newResourceButton">
-          <%= link_to "#{t('dashboard.new_user')}", new_user_resource_path %>
+          <%= button_to "#{t('dashboard.new_user')}", new_user_resource_path, method: :get %>
         </div>
         <div id="editResourceButton">
-          <%= link_to "#{t('dashboard.edit_user')}", user_resources_path %>
+          <%= button_to "#{t('dashboard.edit_user')}", user_resources_path, method: :get %>
         </div>
         <div id="searchBar">
           <%= form_with(url: searchresults_path, method: 'get') do | form |%>
