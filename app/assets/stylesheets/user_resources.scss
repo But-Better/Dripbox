@@ -21,6 +21,7 @@
   padding: 5px;
   border: solid;
   height: 100%;
+  overflow: hidden; /* this needs to be set so that width respects fit-content */
 }
 
 #resourceTable .button_to input {
